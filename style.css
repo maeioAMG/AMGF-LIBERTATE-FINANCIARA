@@ -1,0 +1,12 @@
+/* General Body and Container Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #eef1f6; /* Un gri deschis, mai cald */
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* ... (continuă cu tot restul codului CSS) ... */
