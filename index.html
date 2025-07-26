@@ -1,183 +1,69 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMGF - Libertate Financiară</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts - Pentru un aspect modern și lizibil -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMGF Finance - Libertate Financiară</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="logo-container">
-                <img src="AMGF.jpg" alt="AMGF Logo" class="logo">
-                <h1>AMGF</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home" data-i18n="nav-home">Acasă</a></li>
-                    <li><a href="#about" data-i18n="nav-about">Despre Noi</a></li>
-                    <li><a href="#tokenomics" data-i18n="nav-tokenomics">Tokenomics</a></li>
-                    <li><a href="#roadmap" data-i18n="nav-roadmap">Foaia de Parcurs</a></li>
-                    <li><a href="#community" data-i18n="nav-community">Comunitate</a></li>
-                    <li><a href="#disclaimer" data-i18n="nav-disclaimer">Disclaimer</a></li>
-                </ul>
-            </nav>
-            <!-- Buton pentru schimbarea limbii -->
-            <button id="language-toggle" class="btn language-btn">English</button>
-        </div>
-    </header>
+  <header>
+    <div class="top-bar">
+      <img src="logo-amgf.png" alt="Logo AMGF" class="logo">
+      <select id="lang-switcher">
+        <option value="ro">Română</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about" data-lang="nav-about">Despre</a></li>
+        <li><a href="#tokenomics" data-lang="nav-tokenomics">Tokenomics</a></li>
+        <li><a href="#roadmap" data-lang="nav-roadmap">Roadmap</a></li>
+        <li><a href="#community" data-lang="nav-community">Comunitate</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h2 data-i18n="hero-title">Revoluția Libertății Financiare</h2>
-                <p data-i18n="hero-description">AMGF este un proiect inovator în domeniul criptomonedelor, dedicat construirii unui viitor de prosperitate și autonomie financiară pentru toți.</p>
-                <a href="#about" class="btn primary-btn" data-i18n="hero-btn">Află Mai Mult</a>
-            </div>
-        </section>
+  <section id="hero">
+    <h1 data-lang="hero-title">Revoluția Libertății Financiare</h1>
+    <p data-lang="hero-text">Construim un ecosistem bazat pe transparență, implicare și autonomie.</p>
+    <a href="#community" class="cta-button" data-lang="hero-cta">Alătură-te comunității</a>
+  </section>
 
-        <section id="about" class="section-dark">
-            <div class="container">
-                <h2 data-i18n="about-title">Despre Fondator și Viziunea AMGF</h2>
-                <!-- Textul hardcodat a fost eliminat, acum va fi controlat exclusiv de script.js -->
-                <p data-i18n="about-p1"></p>
-                <p data-i18n="about-p2"></p>
-                <p data-i18n="about-p3"></p>
-            </div>
-        </section>
+  <section id="tokenomics">
+    <h2 data-lang="tokenomics-title">Distribuția Tokenului</h2>
+    <canvas id="token-chart"></canvas>
+    <ul class="token-list">
+      <li data-lang="token-team">Echipă: 20%</li>
+      <li data-lang="token-partners">Parteneriate: 15%</li>
+      <li data-lang="token-community">Comunitate: 40%</li>
+      <li data-lang="token-reserve">Rezervă: 25%</li>
+    </ul>
+  </section>
 
-        <section id="tokenomics" class="section-light">
-            <div class="container">
-                <h2 data-i18n="tokenomics-title">Tokenomics AMGF</h2>
-                <p data-i18n="tokenomics-desc">Tokenul AMGF este pilonul central al ecosistemului nostru, conceput pentru a stimula participarea, a recompensa deținătorii și a asigura sustenabilitatea pe termen lung. Structura noastră tokenomică este transparentă și echitabilă.</p>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-i18n="tokenomics-th1">Categorie de Alocare</th>
-                                <th data-i18n="tokenomics-th2-percentage">Procent din Total Supply</th>
-                                <th data-i18n="tokenomics-th3-amount">Cantitate (Tokenuri)</th>
-                                <th data-i18n="tokenomics-th4-details">Detalii</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Categorie de Alocare" data-i18n="tokenomics-public-sale-category">Vânzare Publică</td>
-                                <td data-label="Procent din Total Supply">30%</td>
-                                <td data-label="Cantitate (Tokenuri)">30.000.000</td>
-                                <td data-label="Detalii" data-i18n="tokenomics-public-sale-details">Asigură o distribuție largă și echitabilă a tokenurilor.</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Categorie de Alocare" data-i18n="tokenomics-ecosystem-fund-category">Fond de Ecosistem</td>
-                                <td data-label="Procent din Total Supply">25%</td>
-                                <td data-label="Cantitate (Tokenuri)">25.000.000</td>
-                                <td data-label="Detalii" data-i18n="tokenomics-ecosystem-fund-details">Dezvoltarea platformei, parteneriate, inovație.</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Categorie de Alocare" data-i18n="tokenomics-team-category">Echipă și Consultanți</td>
-                                <td data-label="Procent din Total Supply">20%</td>
-                                <td data-label="Cantitate (Tokenuri)">20.000.000</td>
-                                <td data-label="Detalii" data-i18n="tokenomics-team-details">Alocat membrilor echipei și consultanților cheie (cu vesting).</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Categorie de Alocare" data-i18n="tokenomics-liquidity-category">Lichiditate și Rezerve</td>
-                                <td data-label="Procent din Total Supply">15%</td>
-                                <td data-label="Cantitate (Tokenuri)">15.000.000</td>
-                                <td data-label="Detalii" data-i18n="tokenomics-liquidity-details">Asigură lichiditatea pe burse și stabilitatea prețului.</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Categorie de Alocare" data-i18n="tokenomics-marketing-category">Marketing și Comunitate</td>
-                                <td data-label="Procent din Total Supply">10%</td>
-                                <td data-label="Cantitate (Tokenuri)">10.000.000</td>
-                                <td data-label="Detalii" data-i18n="tokenomics-marketing-details">Campanii de promovare și inițiative comunitare.</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2" data-i18n="tokenomics-total-supply-label">Total Supply</td>
-                                <td colspan="2">100.000.000 AMGF</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <p data-i18n="tokenomics-p2">Mecanismele de staking și yield farming vor fi introduse pentru a recompensa deținătorii pe termen lung și a încuraja participarea activă în ecosistem.</p>
-            </div>
-        </section>
+  <section id="roadmap">
+    <h2 data-lang="roadmap-title">Foaia de Parcurs</h2>
+    <ul class="timeline">
+      <li data-lang="roadmap-q1">Q1: Lansare inițială și listare</li>
+      <li data-lang="roadmap-q2">Q2: Creșterea comunității și parteneriate</li>
+      <li data-lang="roadmap-q3">Q3: Staking & integrare cu wallet</li>
+    </ul>
+  </section>
 
-        <section id="roadmap" class="section-dark">
-            <div class="container">
-                <h2 data-i18n="roadmap-title">Foaia de Parcurs (Roadmap)</h2>
-                <p data-i18n="roadmap-desc">Viziunea AMGF este susținută de o foaie de parcurs clară și ambițioasă, împărțită în etape cheie:</p>
-                <div class="roadmap-grid">
-                    <div class="roadmap-item">
-                        <h3 data-i18n="roadmap-phase-1-title">Faza 1: Fundamentare și Lansare</h3>
-                        <ul>
-                            <li data-i18n="roadmap-phase-1-li-1">Concept și Whitepaper V1.0</li>
-                            <li data-i18n="roadmap-phase-1-li-2">Dezvoltarea Smart Contractului AMGF</li>
-                            <li data-i18n="roadmap-phase-1-li-3">Audit de Securitate al Contractului</li>
-                            <li data-i18n="roadmap-phase-1-li-4">Lansare Site Web și Prezență Social Media</li>
-                            <li data-i18n="roadmap-phase-1-li-5">Listare pe Exchange-uri Decentralizate (DEX)</li>
-                        </ul>
-                    </div>
-                    <div class="roadmap-item">
-                        <h3 data-i18n="roadmap-phase-2-title">Faza 2: Creștere și Extindere Ecosistem</h3>
-                        <ul>
-                            <li data-i18n="roadmap-phase-2-li-1">Lansare Platformă de Staking AMGF</li>
-                            <li data-i18n="roadmap-phase-2-li-2">Parteneriate Strategice</li>
-                            <li data-i18n="roadmap-phase-2-li-3">Dezvoltarea AMGF Wallet (Portofel Propriu)</li>
-                            <li data-i18n="roadmap-phase-2-li-4">Integrare cu Platforme DeFi existente</li>
-                            <li data-i18n="roadmap-phase-2-li-5">Primele Inițiative de Guvernanță Comunitară</li>
-                        </ul>
-                    </div>
-                    <div class="roadmap-item">
-                        <h3 data-i18n="roadmap-phase-3-title">Faza 3: Inovație și Adoptare Globală</h3>
-                        <ul>
-                            <li data-i18n="roadmap-phase-3-li-1">Lansare AMGF Lending/Borrowing Platform</li>
-                            <li data-i18n="roadmap-phase-3-li-2">Extindere pe Noi Blockchain-uri</li>
-                            <li data-i18n="roadmap-phase-3-li-3">Dezvoltarea AMGF Academy (Educație Financiară Crypto)</li>
-                            <li data-i18n="roadmap-phase-3-li-4">Listare pe Exchange-uri Centralizate (CEX) Majore</li>
-                            <li data-i18n="roadmap-phase-3-li-5">Implementare Soluții de Scalabilitate (Layer 2)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section id="community">
+    <h2 data-lang="community-title">Comunitatea AMGF</h2>
+    <p data-lang="community-text">Locul unde ideile prind viață și libertatea financiară devine realitate.</p>
+    <form>
+      <input type="email" placeholder="Emailul tău">
+      <button type="submit" data-lang="community-btn">Înscrie-te</button>
+    </form>
+  </section>
 
-        <section id="community" class="section-light">
-            <div class="container">
-                <h2 data-i18n="community-title">Alătură-te Comunității!</h2>
-                <p data-i18n="community-desc">Comunitatea este inima proiectului AMGF. Te invităm să te alături discuțiilor noastre, să pui întrebări și să contribui la dezvoltarea ecosistemului.</p>
-                <div class="social-links">
-                    <a href="[Link Discord AICI]" target="_blank" class="social-btn discord" data-i18n="social-discord">Discord</a>
-                    <a href="[Link X/Twitter AICI]" target="_blank" class="social-btn twitter" data-i18n="social-twitter">X (Twitter)</a>
-                    <a href="[Link Telegram AICI]" target="_blank" class="social-btn telegram" data-i18n="social-telegram">Telegram</a>
-                    <a href="[Link Reddit AICI]" target="_blank" class="social-btn reddit" data-i18n="social-reddit">Reddit</a>
-                </div>
-                <p data-i18n="community-follow-us">Urmărește-ne pe rețelele sociale pentru cele mai recente noutăți și anunțuri!</p>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="section-dark">
-            <div class="container">
-                <h2 data-i18n="disclaimer-title">Disclaimer Legal Important</h2>
-                <p data-i18n="disclaimer-p1">Informațiile prezentate pe acest site web au doar scop informativ și nu constituie sfaturi financiare, de investiții, juridice sau fiscale. Investițiile în criptomonede implică riscuri semnificative, inclusiv riscul de pierdere totală a capitalului investit. Valoarea tokenurilor AMGF poate fluctua considerabil.</p>
-                <p data-i18n="disclaimer-p2">Vă rugăm să efectuați propria cercetare (DYOR - Do Your Own Research) și să consultați un profesionist financiar calificat înainte de a lua orice decizie de investiție. Proiectul AMGF nu garantează profituri și nu este responsabil pentru nicio pierdere suferită ca urmare a investițiilor bazate pe informațiile de pe acest site.</p>
-                <p data-i18n="disclaimer-p3">Participarea la proiectul AMGF implică acceptarea termenilor și condițiilor noastre, care vor fi disponibile într-un document separat (Whitepaper complet și Termeni de Utilizare).</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p data-i18n="footer-copyright">&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.</p>
-            <p data-i18n="footer-contact">Conectează-te cu noi: <a href="mailto:contact@amgffinance.com">contact@amgffinance.com</a></p>
-        </div>
-    </footer>
-    <!-- Link către noul fișier JavaScript pentru funcționalitate -->
-    <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 AMGF Finance. Toate drepturile rezervate.</p>
+  </footer>
 </body>
 </html>
 
