@@ -303,6 +303,4 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTranslations();
     });
 
-    // Aplică traducerile inițiale la încărcarea paginii
-    applyTranslations();
-});
+  
