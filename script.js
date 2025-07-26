@@ -10,46 +10,54 @@ document.addEventListener('DOMContentLoaded', () => {
             en: 'Home'
         },
         'nav-about': {
-            ro: 'Despre',
-            en: 'About'
+            ro: 'Despre Noi',
+            en: 'About Us'
         },
         'nav-tokenomics': {
             ro: 'Tokenomics',
             en: 'Tokenomics'
         },
         'nav-roadmap': {
-            ro: 'Roadmap',
+            ro: 'Foaia de Parcurs',
             en: 'Roadmap'
         },
-        'nav-contact': {
-            ro: 'Contact',
-            en: 'Contact'
+        'nav-community': {
+            ro: 'Comunitate',
+            en: 'Community'
+        },
+        'nav-disclaimer': {
+            ro: 'Disclaimer',
+            en: 'Disclaimer'
         },
         // Secțiunea Hero
         'hero-title': {
-            ro: 'AMGF: Viitorul Gamingului pe Blockchain',
-            en: 'AMGF: The Future of Blockchain Gaming'
+            ro: 'Revoluția Libertății Financiare',
+            en: 'The Financial Freedom Revolution'
         },
         'hero-description': {
-            ro: 'AMGF este o platformă revoluționară care combină pasiunea pentru gaming cu inovația tehnologiei blockchain. Descoperă o nouă eră a jocurilor descentralizate.',
-            en: 'AMGF is a revolutionary platform combining the passion for gaming with the innovation of blockchain technology. Discover a new era of decentralized gaming.'
+            ro: 'AMGF este un proiect inovator în domeniul criptomonedelor, dedicat construirii unui viitor de prosperitate și autonomie financiară pentru toți.',
+            en: 'AMGF is an innovative cryptocurrency project dedicated to building a future of prosperity and financial autonomy for all.'
         },
         'hero-btn': {
-            ro: 'Află Mai Multe',
+            ro: 'Află Mai Mult',
             en: 'Learn More'
         },
         // Secțiunea Despre Noi
         'about-title': {
-            ro: 'Despre AMGF',
-            en: 'About AMGF'
+            ro: 'Despre AMGF și Viziunea Sa',
+            en: 'About AMGF and Its Vision'
         },
         'about-p1': {
-            ro: 'AMGF nu este doar un alt token; este o viziune. Ne propunem să construim un ecosistem vibrant unde jucătorii și dezvoltatorii se pot întâlni, interacționa și prospera. Credem în puterea descentralizării de a oferi control real utilizatorilor, eliminând intermediarii și creând o experiență de gaming mai echitabilă și mai transparentă.',
-            en: 'AMGF is not just another token; it\'s a vision. We aim to build a vibrant ecosystem where players and developers can meet, interact, and prosper. We believe in the power of decentralization to give real control to users, eliminating intermediaries and creating a more equitable and transparent gaming experience.'
+            ro: 'AMGF este un proiect inovator, născut din convingerea că libertatea financiară nu ar trebui să fie un privilegiu, ci un drept accesibil tuturor. Echipa din spatele AMGF este formată din antreprenori cu experiență vastă în domeniul financiar și o pasiune profundă pentru inovație.',
+            en: 'AMGF is an innovative project, born from the conviction that financial freedom should not be a privilege, but a right accessible to all. The team behind AMGF consists of entrepreneurs with vast experience in the financial sector and a deep passion for innovation.'
         },
         'about-p2': {
-            ro: 'Platforma noastră va integra tehnologii blockchain avansate pentru a asigura securitatea tranzacțiilor, proprietatea reală a activelor din joc (NFT-uri) și un sistem de recompensare bazat pe participare. Fie că ești un jucător dedicat sau un dezvoltator de jocuri independent, AMGF îți va oferi instrumentele și comunitatea de care ai nevoie pentru a-ți atinge potențialul maxim.',
-            en: 'Our platform will integrate advanced blockchain technologies to ensure transaction security, true ownership of in-game assets (NFTs), and a participation-based reward system. Whether you are a dedicated gamer or an independent game developer, AMGF will provide you with the tools and community you need to reach your full potential.'
+            ro: 'Misiunea AMGF este de a democratiza accesul la oportunități financiare prin intermediul tehnologiei blockchain, oferind instrumente și resurse care să permită indivizilor să-și gestioneze și să-și crească patrimoniul într-un mod sigur, transparent și eficient.',
+            en: 'AMGF\'s mission is to democratize access to financial opportunities through blockchain technology, providing tools and resources that enable individuals to manage and grow their assets in a secure, transparent, and efficient manner.'
+        },
+        'about-p3': {
+            ro: 'Viziunea noastră este de a crea un ecosistem financiar global, descentralizat, unde fiecare membru al comunității are puterea de a-și modela propriul destin financiar, contribuind la o economie mai echitabilă și mai prosperă pentru toți.',
+            en: 'Our vision is to create a global, decentralized financial ecosystem where every community member has the power to shape their own financial destiny, contributing to a more equitable and prosperous economy for all.'
         },
         // Secțiunea Tokenomics
         'tokenomics-title': {
@@ -57,135 +65,208 @@ document.addEventListener('DOMContentLoaded', () => {
             en: 'AMGF Tokenomics'
         },
         'tokenomics-desc': {
-            ro: 'Structura noastră tokenomică este concepută pentru a asigura stabilitate, creștere și recompensare echitabilă pentru toți deținătorii de tokenuri.',
-            en: 'Our tokenomic structure is designed to ensure stability, growth, and fair rewards for all token holders.'
+            ro: 'Tokenul AMGF este pilonul central al ecosistemului nostru, conceput pentru a stimula participarea, a recompensa deținătorii și a asigura sustenabilitatea pe termen lung. Structura noastră tokenomică este transparentă și echitabilă.',
+            en: 'The AMGF token is the central pillar of our ecosystem, designed to stimulate participation, reward holders, and ensure long-term sustainability. Our tokenomic structure is transparent and fair.'
         },
         'tokenomics-th1': {
-            ro: 'Aspect',
-            en: 'Aspect'
+            ro: 'Categorie de Alocare',
+            en: 'Allocation Category'
         },
-        'tokenomics-th2': {
+        'tokenomics-th2-percentage': {
+            ro: 'Procent din Total Supply',
+            en: 'Percentage of Total Supply'
+        },
+        'tokenomics-th3-amount': {
+            ro: 'Cantitate (Tokenuri)',
+            en: 'Amount (Tokens)'
+        },
+        'tokenomics-th4-details': {
             ro: 'Detalii',
             en: 'Details'
+        },
+        'tokenomics-public-sale-category': {
+            ro: 'Vânzare Publică',
+            en: 'Public Sale'
+        },
+        'tokenomics-public-sale-details': {
+            ro: 'Asigură o distribuție largă și echitabilă a tokenurilor.',
+            en: 'Ensures a broad and fair distribution of tokens.'
+        },
+        'tokenomics-ecosystem-fund-category': {
+            ro: 'Fond de Ecosistem',
+            en: 'Ecosystem Fund'
+        },
+        'tokenomics-ecosystem-fund-details': {
+            ro: 'Dezvoltarea platformei, parteneriate, inovație.',
+            en: 'Platform development, partnerships, innovation.'
+        },
+        'tokenomics-team-category': {
+            ro: 'Echipă și Consultanți',
+            en: 'Team and Advisors'
+        },
+        'tokenomics-team-details': {
+            ro: 'Alocat membrilor echipei și consultanților cheie (cu vesting).',
+            en: 'Allocated to team members and key advisors (with vesting).'
+        },
+        'tokenomics-liquidity-category': {
+            ro: 'Lichiditate și Rezerve',
+            en: 'Liquidity and Reserves'
+        },
+        'tokenomics-liquidity-details': {
+            ro: 'Asigură lichiditatea pe burse și stabilitatea prețului.',
+            en: 'Ensures exchange liquidity and price stability.'
+        },
+        'tokenomics-marketing-category': {
+            ro: 'Marketing și Comunitate',
+            en: 'Marketing and Community'
+        },
+        'tokenomics-marketing-details': {
+            ro: 'Campanii de promovare și inițiative comunitare.',
+            en: 'Promotional campaigns and community initiatives.'
         },
         'tokenomics-total-supply-label': {
             ro: 'Total Supply',
             en: 'Total Supply'
         },
-        'tokenomics-total-supply-value': {
-            ro: '1.000.000.000 AMGF',
-            en: '1,000,000,000 AMGF'
-        },
-        'tokenomics-distribution-label': {
-            ro: 'Distribuție',
-            en: 'Distribution'
-        },
-        'tokenomics-distribution-value': {
-            ro: '50% Comunitate, 20% Dezvoltare, 15% Marketing, 10% Lichiditate, 5% Echipa',
-            en: '50% Community, 20% Development, 15% Marketing, 10% Liquidity, 5% Team'
-        },
-        'tokenomics-utility-label': {
-            ro: 'Utilitate',
-            en: 'Utility'
-        },
-        'tokenomics-utility-value': {
-            ro: 'Guvernanță, Staking, Recompense In-Game, Acces Exclusiv',
-            en: 'Governance, Staking, In-Game Rewards, Exclusive Access'
-        },
-        'tokenomics-contract-label': {
-            ro: 'Adresă Contract',
-            en: 'Contract Address'
-        },
-        'tokenomics-contract-value': {
-            ro: '0x1234...abcd (Exemplu)',
-            en: '0x1234...abcd (Example)'
+        'tokenomics-p2': {
+            ro: 'Mecanismele de staking și yield farming vor fi introduse pentru a recompensa deținătorii pe termen lung și a încuraja participarea activă în ecosistem.',
+            en: 'Staking and yield farming mechanisms will be introduced to reward long-term holders and encourage active participation in the ecosystem.'
         },
         // Secțiunea Roadmap
         'roadmap-title': {
-            ro: 'Roadmap AMGF',
-            en: 'AMGF Roadmap'
+            ro: 'Foaia de Parcurs (Roadmap)',
+            en: 'Roadmap'
         },
         'roadmap-desc': {
-            ro: 'Parcursul nostru este clar definit, cu etape cheie pentru a asigura o creștere durabilă și inovație continuă.',
-            en: 'Our journey is clearly defined, with key milestones to ensure sustainable growth and continuous innovation.'
+            ro: 'Viziunea AMGF este susținută de o foaie de parcurs clară și ambițioasă, împărțită în etape cheie:',
+            en: 'AMGF\'s vision is supported by a clear and ambitious roadmap, divided into key phases:'
         },
-        'roadmap-q1-title': {
-            ro: 'Faza 1: Fundația',
-            en: 'Phase 1: Foundation'
+        'roadmap-phase-1-title': {
+            ro: 'Faza 1: Fundamentare și Lansare',
+            en: 'Phase 1: Foundation and Launch'
         },
-        'roadmap-q1-li1': {
-            ro: 'Lansarea site-ului web și a whitepaper-ului',
-            en: 'Website and whitepaper launch'
+        'roadmap-phase-1-li-1': {
+            ro: 'Concept și Whitepaper V1.0',
+            en: 'Concept and Whitepaper V1.0'
         },
-        'roadmap-q1-li2': {
-            ro: 'Listarea pe CoinMarketCap/CoinGecko',
-            en: 'CoinMarketCap/CoinGecko listing'
+        'roadmap-phase-1-li-2': {
+            ro: 'Dezvoltarea Smart Contractului AMGF',
+            en: 'AMGF Smart Contract Development'
         },
-        'roadmap-q1-li3': {
-            ro: 'Parteneriate inițiale cu dezvoltatori de jocuri',
-            en: 'Initial partnerships with game developers'
+        'roadmap-phase-1-li-3': {
+            ro: 'Audit de Securitate al Contractului',
+            en: 'Contract Security Audit'
         },
-        'roadmap-q2-title': {
-            ro: 'Faza 2: Extinderea',
-            en: 'Phase 2: Expansion'
+        'roadmap-phase-1-li-4': {
+            ro: 'Lansare Site Web și Prezență Social Media',
+            en: 'Website Launch and Social Media Presence'
         },
-        'roadmap-q2-li1': {
-            ro: 'Lansarea platformei de staking',
-            en: 'Staking platform launch'
+        'roadmap-phase-1-li-5': {
+            ro: 'Listare pe Exchange-uri Decentralizate (DEX)',
+            en: 'Decentralized Exchange (DEX) Listing'
         },
-        'roadmap-q2-li2': {
-            ro: 'Integrarea primelor jocuri pe platformă',
-            en: 'Integration of first games on the platform'
+        'roadmap-phase-2-title': {
+            ro: 'Faza 2: Creștere și Extindere Ecosistem',
+            en: 'Phase 2: Ecosystem Growth and Expansion'
         },
-        'roadmap-q2-li3': {
-            ro: 'Dezvoltarea funcționalității NFT in-game',
-            en: 'Development of in-game NFT functionality'
+        'roadmap-phase-2-li-1': {
+            ro: 'Lansare Platformă de Staking AMGF',
+            en: 'AMGF Staking Platform Launch'
         },
-        'roadmap-q3-title': {
-            ro: 'Faza 3: Inovația',
-            en: 'Phase 3: Innovation'
+        'roadmap-phase-2-li-2': {
+            ro: 'Parteneriate Strategice',
+            en: 'Strategic Partnerships'
         },
-        'roadmap-q3-li1': {
-            ro: 'Lansarea pieței NFT (marketplace)',
-            en: 'NFT marketplace launch'
+        'roadmap-phase-2-li-3': {
+            ro: 'Dezvoltarea AMGF Wallet (Portofel Propriu)',
+            en: 'AMGF Wallet Development (Proprietary Wallet)'
         },
-        'roadmap-q3-li2': {
-            ro: 'Introducerea sistemului de guvernanță DAO',
-            en: 'Introduction of DAO governance system'
+        'roadmap-phase-2-li-4': {
+            ro: 'Integrare cu Platforme DeFi existente',
+            en: 'Integration with Existing DeFi Platforms'
         },
-        'roadmap-q3-li3': {
-            ro: 'Extinderea parteneriatelor globale',
-            en: 'Expansion of global partnerships'
+        'roadmap-phase-2-li-5': {
+            ro: 'Primele Inițiative de Guvernanță Comunitară',
+            en: 'First Community Governance Initiatives'
         },
-        'roadmap-q4-title': {
-            ro: 'Faza 4: Viitorul',
-            en: 'Phase 4: The Future'
+        'roadmap-phase-3-title': {
+            ro: 'Faza 3: Inovație și Adoptare Globală',
+            en: 'Phase 3: Innovation and Global Adoption'
         },
-        'roadmap-q4-li1': {
-            ro: 'Integrarea VR/AR în experiențele de gaming',
-            en: 'VR/AR integration into gaming experiences'
+        'roadmap-phase-3-li-1': {
+            ro: 'Lansare AMGF Lending/Borrowing Platform',
+            en: 'AMGF Lending/Borrowing Platform Launch'
         },
-        'roadmap-q4-li2': {
-            ro: 'Explorarea interoperabilității blockchain',
-            en: 'Exploration of blockchain interoperability'
+        'roadmap-phase-3-li-2': {
+            ro: 'Extindere pe Noi Blockchain-uri',
+            en: 'Expansion to New Blockchains'
         },
-        'roadmap-q4-li3': {
-            ro: 'Evenimente comunitare și turnee majore',
-            en: 'Major community events and tournaments'
+        'roadmap-phase-3-li-3': {
+            ro: 'Dezvoltarea AMGF Academy (Educație Financiară Crypto)',
+            en: 'AMGF Academy Development (Crypto Financial Education)'
         },
-        // Secțiunea Contact
-        'contact-title': {
-            ro: 'Contactează-ne',
-            en: 'Contact Us'
+        'roadmap-phase-3-li-4': {
+            ro: 'Listare pe Exchange-uri Centralizate (CEX) Majore',
+            en: 'Major Centralized Exchange (CEX) Listing'
         },
-        'contact-desc': {
-            ro: 'Ai întrebări sau vrei să te alături comunității AMGF? Ne poți găsi pe rețelele sociale:',
-            en: 'Have questions or want to join the AMGF community? You can find us on social media:'
+        'roadmap-phase-3-li-5': {
+            ro: 'Implementare Soluții de Scalabilitate (Layer 2)',
+            en: 'Layer 2 Scalability Solutions Implementation'
+        },
+        // Secțiunea Comunitate
+        'community-title': {
+            ro: 'Alătură-te Comunității!',
+            en: 'Join the Community!'
+        },
+        'community-desc': {
+            ro: 'Comunitatea este inima proiectului AMGF. Te invităm să te alături discuțiilor noastre, să pui întrebări și să contribui la dezvoltarea ecosistemului.',
+            en: 'The community is the heart of the AMGF project. We invite you to join our discussions, ask questions, and contribute to the ecosystem\'s development.'
+        },
+        'social-discord': {
+            ro: 'Discord',
+            en: 'Discord'
+        },
+        'social-twitter': {
+            ro: 'X (Twitter)',
+            en: 'X (Twitter)'
+        },
+        'social-telegram': {
+            ro: 'Telegram',
+            en: 'Telegram'
+        },
+        'social-reddit': {
+            ro: 'Reddit',
+            en: 'Reddit'
+        },
+        'community-follow-us': {
+            ro: 'Urmărește-ne pe rețelele sociale pentru cele mai recente noutăți și anunțuri!',
+            en: 'Follow us on social media for the latest news and announcements!'
+        },
+        // Secțiunea Disclaimer
+        'disclaimer-title': {
+            ro: 'Disclaimer Legal Important',
+            en: 'Important Legal Disclaimer'
+        },
+        'disclaimer-p1': {
+            ro: 'Informațiile prezentate pe acest site web au doar scop informativ și nu constituie sfaturi financiare, de investiții, juridice sau fiscale. Investițiile în criptomonede implică riscuri semnificative, inclusiv riscul de pierdere totală a capitalului investit. Valoarea tokenurilor AMGF poate fluctua considerabil.',
+            en: 'The information presented on this website is for informational purposes only and does not constitute financial, investment, legal, or tax advice. Investments in cryptocurrencies involve significant risks, including the risk of total loss of invested capital. The value of AMGF tokens can fluctuate considerably.'
+        },
+        'disclaimer-p2': {
+            ro: 'Vă rugăm să efectuați propria cercetare (DYOR - Do Your Own Research) și să consultați un profesionist financiar calificat înainte de a lua orice decizie de investiție. Proiectul AMGF nu garantează profituri și nu este responsabil pentru nicio pierdere suferită ca urmare a investițiilor bazate pe informațiile de pe acest site.',
+            en: 'Please conduct your own research (DYOR - Do Your Own Research) and consult a qualified financial professional before making any investment decisions. The AMGF project does not guarantee profits and is not responsible for any losses incurred as a result of investments based on the information on this site.'
+        },
+        'disclaimer-p3': {
+            ro: 'Participarea la proiectul AMGF implică acceptarea termenilor și condițiilor noastre, care vor fi disponibile într-un document separat (Whitepaper complet și Termeni de Utilizare).',
+            en: 'Participation in the AMGF project implies acceptance of our terms and conditions, which will be available in a separate document (full Whitepaper and Terms of Use).'
         },
         // Footer
-        'footer-text': {
-            ro: '&copy; 2025 AMGF. Toate drepturile rezervate.',
-            en: '&copy; 2025 AMGF. All rights reserved.'
+        'footer-copyright': {
+            ro: '&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.',
+            en: '&copy; 2025 AMGF Financial Freedom. All rights reserved.'
+        },
+        'footer-contact': {
+            ro: 'Conectează-te cu noi: <a href="mailto:contact@amgffinance.com">contact@amgffinance.com</a>',
+            en: 'Connect with us: <a href="mailto:contact@amgffinance.com">contact@amgffinance.com</a>'
         }
     };
 
