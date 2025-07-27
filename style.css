@@ -204,3 +204,18 @@ footer {
   nav a { margin: 0 0.5rem; font-size: 0.97rem; }
   section { padding: 1.2rem 0 0.7rem 0; }
 }
+.form-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #1a1d23;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 28px;
+  font-size: 1.1em;
+  transition: background 0.2s;
+}
+.form-btn:hover {
+  background: #21213a;
+}
