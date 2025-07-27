@@ -1,1 +1,369 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMGF - Libertate Financiară</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #000;
+      color: #e2b13c;
+      font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+      margin: 0; padding: 0;
+    }
+    header {
+      background: #111;
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+      border-bottom: 2px solid #e2b13c;
+    }
+    .logo-img {
+      max-width: 180px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 2px 20px #e2b13c55);
+    }
+    h1 {
+      color: #e2b13c;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.6rem;
+      letter-spacing: 2px;
+      margin: 0 0 0.3rem 0;
+      font-weight: 700;
+      text-shadow: 0 4px 24px #000a;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: #fff;
+      letter-spacing: 1px;
+      font-weight: 400;
+      text-shadow: 0 2px 10px #000a;
+    }
+    nav {
+      margin: 2rem 0 0 0;
+    }
+    nav a {
+      color: #e2b13c;
+      text-decoration: none;
+      margin: 0 1.1rem;
+      font-size: 1.08rem;
+      font-weight: 600;
+      transition: color 0.2s;
+      letter-spacing: 1px;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+    }
+    section {
+      padding: 3.2rem 0 2.2rem 0;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      color: #e2b13c;
+      font-size: 2rem;
+      border-left: 6px solid #e2b13c;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 12px #0008;
+    }
+    .about-section, .vision-section, .tokenomics-section {
+      background: #000;
+    }
+    .why-section, .disclaimer-section {
+      background: #111;
+    }
+    p, ul, li {
+      font-size: 1.11rem;
+      line-height: 1.7;
+      color: #e2b13c;
+      margin-bottom: 1.1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    li {
+      margin-bottom: 0.7rem;
+    }
+    b {
+      color: #fff;
+      font-weight: 700;
+    }
+    /* Tokenomics Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #111;
+      color: #e2b13c;
+      font-size: 1rem;
+    }
+    th, td {
+      border: 1px solid #e2b13c;
+      padding: 0.75rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #181818;
+      color: #e2b13c;
+      font-weight: 700;
+    }
+    tr:nth-child(even) {
+      background: #181818;
+    }
+    tr:nth-child(odd) {
+      background: #111;
+    }
+    tfoot td {
+      font-size: 1.1rem;
+      color: #fff;
+      background: #222;
+      border-top: 2px solid #e2b13c;
+      text-align: center;
+    }
+    .token-note {
+      color: #fff;
+      background: #181818;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid #e2b13c;
+      margin-top: 1.5rem;
+      font-size: 1.05rem;
+    }
+    footer {
+      background: #111;
+      color: #e2b13c;
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1.02rem;
+      letter-spacing: 1px;
+      border-top: 2px solid #e2b13c;
+    }
+    @media (max-width: 700px) {
+      header, footer, .container, .section-title {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+      }
+      h1 { font-size: 2rem; }
+      .section-title { font-size: 1.3rem; }
+      table, th, td { font-size: 0.96rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="AMGF.jpg" alt="Logo AMGF" class="logo-img">
+    <h1>AMGF</h1>
+    <div class="subtitle">Financial Freedom</div>
+    <nav>
+      <a href="#despre">Despre</a>
+      <a href="#de-ce-amgf">De ce AMGF?</a>
+      <a href="#viziune">Viziune</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#disclaimer">Disclaimer</a>
+    </nav>
+  </header>
 
+  <main>
+    <!-- Cine suntem și de ce AMGF -->
+    <section id="despre" class="about-section">
+      <div class="container">
+        <h2 class="section-title">Cine Suntem și De Ce AMGF?</h2>
+        <p>
+          Salut, sunt <b>"Fondatorul AMGF"</b>, o persoană obișnuită, cu o pasiune extraordinară pentru viitorul pe care îl aduc Web3 și criptomonedele. La 53 de ani, am explorat acest univers digital de câțiva ani, participând la numeroase proiecte și airdrop-uri. Am văzut atât povești de succes incredibile, cât și eșecuri dureroase – experiențe care m-au învățat enorm despre potențialul și riscurile acestui domeniu.
+        </p>
+        <p>
+          Ca mulți alții, m-am săturat să investesc timp și încredere în proiecte anonime, conduse de interese necunoscute. Așa s-a născut AMGF. Am decis că este timpul să investesc în mine însumi și să construiesc un proiect în care cred cu adevărat, bazat pe transparență, utilitate și o comunitate autentică.
+        </p>
+        <p>
+          AMGF nu este creat de un "expert financiar" de pe Wall Street, ci de o persoană reală, care înțelege provocările și aspirațiile celor care își doresc libertatea financiară. Viziunea mea pentru AMGF este simplă: să creăm un ecosistem unde oricine, indiferent de vârstă sau experiență anterioară, poate învăța, contribui și crește alături de noi. Ne propunem să oferim un spațiu sigur și valoros, diferit de promisiunile goale și schemele rapide care domină adesea spațiul crypto.
+        </p>
+        <p>
+          Suntem aici pentru a construi pe termen lung, împreună cu voi. Încrederea se câștigă prin fapte, nu prin vorbe, iar AMGF este angajamentul meu față de un viitor mai bun, construit pas cu pas, alături de comunitate.
+        </p>
+      </div>
+    </section>
+
+    <!-- De ce AMGF -->
+    <section id="de-ce-amgf" class="why-section">
+      <div class="container">
+        <h2 class="section-title">De ce AMGF?</h2>
+        <p>
+          În peisajul dinamic și adesea haotic al Web3 și al criptomonedelor, promisiunile abundă, dar încrederea și informațiile autentice sunt adesea greu de găsit. Mulți, inclusiv eu, am simțit nevoia unui loc unde libertatea financiară să fie nu doar un vis, ci o călătorie reală, susținută de cunoaștere și o comunitate dedicată.
+        </p>
+        <p>
+          Aici intervine AMGF. Suntem mai mult decât un token; suntem un ecosistem construit de o persoană obișnuită, la fel ca tine, pasionată de viitor și de potențialul decentralizat. Misiunea noastră este să oferim un spațiu transparent și accesibil unde vei putea învăța, contribui și crește alături de o comunitate unită, transformând aspirația spre independența financiară într-o realitate concretă, pas cu pas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Viziune pe termen lung -->
+    <section id="viziune" class="vision-section">
+      <div class="container">
+        <h2 class="section-title">Viziune pe termen lung</h2>
+        <p>
+          Viziunea noastră pentru AMGF depășește orizontul unui simplu token; ne propunem să construim un ecosistem digital vibrant și autosustenabil, o adevărată Organizație Autonomă Descentralizată (DAO), unde libertatea financiară devine accesibilă tuturor. Pe termen lung, AMGF va fi recunoscut nu doar ca un simbol al potențialului Web3, ci ca un catalizator pentru transformarea personală și colectivă.
+        </p>
+        <p>
+          Ne imaginăm un viitor în care deținătorii de AMGF sunt co-proprietari și arhitecți ai propriului lor destin financiar. Prin platforma noastră, ei vor avea acces la:
+        </p>
+        <ul>
+          <li>
+            <b>O educație financiară gamificată și practică</b>, adaptată nevoilor reale ale fiecăruia, recompensată direct prin sistemul nostru <b>Learn-to-Earn</b>.
+          </li>
+          <li>
+            <b>Instrumente intuitive și analize personalizate</b>, care demistifică lumea investițiilor și îi ajută să ia decizii informate, depășind zgomotul informațional.
+          </li>
+          <li>
+            <b>O comunitate globală activă și interconectată</b>, unde membrii se sprijină reciproc, își împărtășesc experiențele și colaborează la dezvoltarea proiectului prin mecanismul <b>Build-to-Earn</b>.
+          </li>
+          <li>
+            <b>Un sistem de guvernanță DAO robust și transparent</b>, unde fiecare deținător de AMGF are o voce reală în deciziile cheie ale ecosistemului, de la alocarea resurselor până la parteneriate strategice și direcția viitoare a fondului colectiv (dacă va fi implementat).
+          </li>
+        </ul>
+        <p>
+          Pe măsură ce ecosistemul AMGF se maturizează, ne vedem transformându-ne într-un model de autonomie comunitară și de sustenabilitate financiară, unde valoarea este generată și distribuită de și pentru membrii săi. AMGF va fi un exemplu al modului în care tehnologia blockchain poate împuternici indivizii să-și preia controlul asupra viitorului lor financiar, construind împreună o moștenire de încredere și prosperitate.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section id="tokenomics" class="tokenomics-section">
+      <div class="container">
+        <h2 class="section-title">Alocarea Tokenurilor AMGF (Actualizată)</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Categorie de Alocare</th>
+                <th>Procent (%)</th>
+                <th>Cantitate AMGF</th>
+                <th>Scop și Justificare</th>
+                <th>Plan de Vesting / Acces</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Comunitate &amp; Ecosistem</td>
+                <td>40%</td>
+                <td>400,000,000</td>
+                <td>
+                  Susținerea creșterii organice a ecosistemului prin recompense pentru participare (Learn-to-Earn, Build-to-Earn), campanii de promovare, airdrop-uri strategice și stimulente pentru adoptare. Fără a fi un "investiție", ci o recompensă pentru contribuție.
+                </td>
+                <td>
+                  Eliberare treptată pe parcursul a 5-10 ani, pe măsură ce jetoanele sunt câștigate sau distribuite prin programe comunitare. Gestionat de un smart contract multi-sig sau DAO.
+                </td>
+              </tr>
+              <tr>
+                <td>Trezorerie DAO / Dezvoltare Ecosistem</td>
+                <td>20%</td>
+                <td>200,000,000</td>
+                <td>
+                  Finanțarea dezvoltării continue a platformei (instrumente, analize, simulatoare), integrarea de noi parteneriate, audituri de securitate și asigurarea sustenabilității pe termen lung a proiectului, sub guvernanța comunității.
+                </td>
+                <td>
+                  Blocate într-o trezorerie DAO, accesibile prin votul deținătorilor de tokenuri, cu praguri de vot minime și perioade de propunere/vot.
+                </td>
+              </tr>
+              <tr>
+                <td>Fond de Lichiditate Inițială (DEX)</td>
+                <td>15%</td>
+                <td>150,000,000</td>
+                <td>
+                  Asigurarea lichidității inițiale pe burse descentralizate (DEX-uri), pentru a permite tranzacționarea eficientă și a facilita accesul utilizatorilor la AMGF, fără a fi nevoie de o ofertă publică reglementată.
+                </td>
+                <td>
+                  Eliberare imediată pentru a fi plasată în pool-uri de lichiditate la lansare (ex: Uniswap, PancakeSwap).
+                </td>
+              </tr>
+              <tr>
+                <td>Echipă Fondatoare &amp; Consultanți Cheie</td>
+                <td>15%</td>
+                <td>150,000,000</td>
+                <td>
+                  Recompensarea muncii, viziunii și angajamentului pe termen lung al echipei de bază și a consultanților strategici. (Din acest procent, 5% alocat fondatorului principal). Vesting-ul demonstrează alinierea intereselor cu succesul proiectului.
+                </td>
+                <td>
+                  Vesting: Blocare inițială de 1 an, urmată de eliberare liniară lunară pe parcursul a 3-4 ani. Acest lucru încurajează angajamentul pe termen lung și previne "dumping-ul".
+                </td>
+              </tr>
+              <tr>
+                <td>Parteneriate Strategice &amp; Granturi</td>
+                <td>5%</td>
+                <td>50,000,000</td>
+                <td>
+                  Alocare pentru parteneriate cheie care aduc valoare ecosistemului (ex: integrare cu alte platforme, colaborări cu experți financiari, instituții educaționale).
+                </td>
+                <td>
+                  Eliberare la îndeplinirea unor jaloane specifice și măsurabile ale parteneriatelor, pe parcursul a 2-3 ani.
+                </td>
+              </tr>
+              <tr>
+                <td>Rezervă de Urgență / Dezvoltare Viitoare</td>
+                <td>5%</td>
+                <td>50,000,000</td>
+                <td>
+                  O rezervă strategică pentru evenimente neprevăzute, oportunități de creștere neanticipate sau pentru a finanța inițiative viitoare importante care necesită capital.
+                </td>
+                <td>
+                  Blocată și accesibilă doar prin vot majoritar al Trezoreriei DAO sau decizie a echipei fondatoare în circumstanțe excepționale, cu o justificare transparentă.
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td><strong>TOTAL</strong></td>
+                <td><strong>100%</strong></td>
+                <td><strong>1,000,000,000 AMGF</strong></td>
+                <td colspan="2"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="token-note">
+          <strong>Notă:</strong> Tokenurile Fondatorului și Echipei (15% din total supply) vor fi blocate pentru 12 luni, urmate de o deblocare liniară pe parcursul a 24 de luni.
+        </p>
+      </div>
+    </section>
+
+    <!-- Disclaimer Legal -->
+    <section id="disclaimer" class="disclaimer-section">
+      <div class="container">
+        <h2 class="section-title">Disclaimer Legal Important</h2>
+        <p>
+          AMGF este un token de utilitate și guvernanță creat pe blockchain-ul Solana și <b>NU</b> este un instrument financiar reglementat.
+        </p>
+        <p>
+          AMGF nu constituie o ofertă de investiții sau o valoare mobiliară și nu promite randamente sau profituri garantate.
+        </p>
+        <p>
+          Achiziționarea, deținerea și utilizarea tokenurilor AMGF implică riscuri semnificative, inclusiv riscul de pierdere totală a capitalului. Valoarea AMGF depinde exclusiv de utilitatea sa în ecosistem și de cererea și oferta de pe piața liberă.
+        </p>
+        <p>
+          Acest document și orice comunicare legată de AMGF nu reprezintă consultanță financiară, juridică sau fiscală. Utilizatorii sunt responsabili să își efectueze propria diligență (DYOR) și să consulte profesioniști calificați.
+        </p>
+        <p>
+          Asigurați-vă că respectați toate legile și reglementările aplicabile în jurisdicția dumneavoastră.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      &copy; 2025 AMGF. Toate drepturile rezervate.<br>
+      Contact: <a href="mailto:contact@amgffinance.com" style="color:#e2b13c;">contact@amgffinance.com</a>
+    </div>
+  </footer>
+</body>
+</html>
