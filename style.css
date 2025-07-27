@@ -1,4 +1,3 @@
-/* Paleta principală: Gold & Black, inspirat de logo */
 :root {
     --gold: #FFD700;
     --gold-dark: #bfa100;
@@ -10,7 +9,6 @@
     --font-alt: 'Montserrat', 'Inter', Arial, sans-serif;
 }
 
-/* Reset & bază */
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +27,9 @@ header {
     background: var(--black);
     box-shadow: 0 2px 16px #ffd70014;
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .container {
@@ -43,31 +44,38 @@ header {
     justify-content: space-between;
 }
 
-.logo-container {
+.logo-area {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
 .logo {
-    height: 54px;
-    width: auto;
+    height: 58px;
+    width: 58px;
     border-radius: 50%;
     border: 2px solid var(--gold);
     background: var(--black);
+    object-fit: cover;
 }
 
-header h1 {
+.brand h1 {
     font-family: var(--font-alt);
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--gold);
     letter-spacing: 2px;
 }
+.brand .subtitle {
+    font-size: 1rem;
+    font-family: var(--font-main);
+    color: var(--white);
+    opacity: 0.9;
+}
 
 nav ul {
     display: flex;
-    gap: 1.7rem;
+    gap: 1.5rem;
     list-style: none;
 }
 
@@ -76,10 +84,10 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     font-family: var(--font-alt);
+    font-size: 1.08rem;
     position: relative;
     transition: color 0.2s;
 }
-
 nav a::after {
     content: '';
     display: block;
@@ -89,7 +97,6 @@ nav a::after {
     transition: width 0.3s;
     margin: 0 auto;
 }
-
 nav a:hover,
 nav a:focus {
     color: var(--white);
@@ -97,24 +104,6 @@ nav a:focus {
 nav a:hover::after,
 nav a:focus::after {
     width: 100%;
-}
-
-/* Buton limbă */
-.language-btn {
-    background: var(--gold);
-    color: var(--black);
-    border: none;
-    border-radius: 18px;
-    padding: 0.4em 1.2em;
-    font-family: var(--font-alt);
-    font-weight: 700;
-    cursor: pointer;
-    margin-left: 1.5rem;
-    transition: background 0.2s, color 0.2s;
-}
-.language-btn:hover {
-    background: var(--gold-dark);
-    color: var(--white);
 }
 
 /* HERO */
@@ -125,34 +114,16 @@ nav a:focus::after {
     text-align: center;
 }
 .hero h2 {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     font-family: var(--font-alt);
     font-weight: 700;
     color: var(--gold);
     margin-bottom: 1rem;
 }
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.17rem;
     color: var(--white);
     margin-bottom: 2rem;
-}
-.primary-btn {
-    background: var(--gold);
-    color: var(--black);
-    font-family: var(--font-alt);
-    font-weight: 700;
-    border: none;
-    border-radius: 30px;
-    padding: 0.9em 2em;
-    box-shadow: 0 2px 8px #ffd70033;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: background 0.2s, color 0.2s;
-    display: inline-block;
-}
-.primary-btn:hover {
-    background: var(--gold-dark);
-    color: var(--white);
 }
 
 /* SECTIONS */
@@ -169,14 +140,26 @@ nav a:focus::after {
 
 section h2 {
     font-family: var(--font-alt);
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: 1.2rem;
     color: var(--gold);
     text-align: center;
 }
+
 section p, section ul, section table {
     color: var(--white);
     font-size: 1.08rem;
+    margin-bottom: 1em;
+}
+
+section ul {
+    margin-left: 2em;
+    margin-bottom: 1.3em;
+}
+
+strong {
+    color: var(--gold);
+    font-weight: 700;
 }
 
 /* Tokenomics Table */
@@ -190,7 +173,7 @@ table {
     background: var(--gray-mid);
     color: var(--gold);
     box-shadow: 0 2px 16px #ffd70022;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
 }
 table th, table td {
@@ -221,64 +204,11 @@ table tfoot td {
     font-family: var(--font-alt);
 }
 
-/* Roadmap */
-.roadmap-grid {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2rem;
-}
-.roadmap-item {
-    background: var(--gray-mid);
-    border: 2px solid var(--gold);
-    border-radius: 12px;
-    padding: 1.5rem;
-    min-width: 260px;
-    max-width: 340px;
-    flex: 1 1 260px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 24px #ffd70014;
-}
-.roadmap-item h3 {
+.token-note {
+    font-size: 0.98em;
     color: var(--gold);
-    font-family: var(--font-alt);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-}
-.roadmap-item ul {
-    padding-left: 1.2em;
-    color: var(--white);
-}
-
-.social-links {
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
-    margin: 2rem 0 1rem 0;
-}
-.social-btn {
-    background: var(--gold);
-    color: var(--black);
-    border-radius: 30px;
-    padding: 0.5em 1.6em;
-    font-family: var(--font-alt);
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 2px 8px #ffd70022;
-    transition: background 0.2s, color 0.2s;
-    border: none;
-    display: inline-block;
-}
-.social-btn:hover {
-    background: var(--gold-dark);
-    color: var(--white);
-}
-
-/* Disclaimer Section */
-#disclaimer {
-    border-top: 2px solid var(--gold);
-    border-bottom: 2px solid var(--gold);
+    text-align: center;
+    margin-top: 1rem;
 }
 
 /* Footer */
@@ -308,9 +238,9 @@ footer a:hover {
         align-items: flex-start;
         gap: 1rem;
     }
-    .roadmap-grid {
+    nav ul {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 0.7rem;
     }
 }
 
@@ -319,14 +249,11 @@ footer a:hover {
         width: 98%;
     }
     .logo {
-        height: 38px;
+        height: 40px;
+        width: 40px;
     }
     .hero h2 {
-        font-size: 1.5rem;
-    }
-    nav ul {
-        flex-direction: column;
-        gap: 0.7rem;
+        font-size: 1.3rem;
     }
     .roadmap-item {
         padding: 1rem;
@@ -336,5 +263,8 @@ footer a:hover {
     table th, table td {
         padding: 0.6em 0.5em;
         font-size: 0.95em;
+    }
+    .brand h1 {
+        font-size: 1.3rem;
     }
 }
