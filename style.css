@@ -1,152 +1,58 @@
-/* style.css: Acest fișier conține stilurile CSS pentru pagina web "AMGF - Libertate Financiară". */
-
-/* Paleta de culori propusă:
-   - #28a745 (Verde închis, pentru creștere, succes)
-   - #007bff (Albastru primar, pentru încredere, stabilitate)
-   - #ffc107 (Auriu/Galben, pentru prosperitate, accent)
-   - #343a40 (Gri închis, pentru text principal)
-   - #6c757d (Gri mediu, pentru text secundar)
-   - #f8f9fa (Alb aproape, pentru fundaluri deschise)
-   - #ffffff (Alb pur)
-*/
-
-/* Reset de bază pentru a asigura o consistență între browsere. */
-*,
-*::before,
-*::after {
-    box-sizing: border-box; /* Asigură că padding-ul și border-ul sunt incluse în lățimea și înălțimea elementului. */
-    margin: 0;             /* Elimină marginile implicite ale tuturor elementelor. */
-    padding: 0;            /* Elimină padding-ul implicit al tuturor elementelor. */
-}
-
-/* Stiluri pentru elementul <body> (corpul paginii). */
 body {
-    font-family: 'Inter', sans-serif; /* Setează fontul principal. Asigură-te că "Inter" este importat (ex: din Google Fonts). */
-    line-height: 1.7;                  /* Setează înălțimea liniei pentru o lizibilitate mai bună. */
-    color: #343a40;                    /* Culoarea textului implicită (gri închis). */
-    background-color: #f8f9fa;         /* Culoarea de fundal a paginii (alb aproape). */
-    display: flex;                     /* Utilizează flexbox pentru a centra conținutul. */
-    flex-direction: column;            /* Aranjează elementele pe coloană. */
-    min-height: 100vh;                 /* Asigură că corpul ocupă cel puțin toată înălțimea viewport-ului. */
-    align-items: center;               /* Centrează orizontal conținutul flexbox. */
-    justify-content: center;           /* Centrează vertical conținutul flexbox. */
-    padding: 20px;                     /* Adaugă un padding general pentru a evita lipirea de margini. */
+    background: #000;
+    color: #ffd700;
+    font-family: Arial, sans-serif;
 }
-
-/* Stiluri pentru un container generic care centrează conținutul și îi limitează lățimea. */
-.container {
-    max-width: 960px;          /* Lățimea maximă a containerului. */
-    width: 100%;               /* Asigură că containerul ocupă toată lățimea disponibilă până la max-width. */
-    margin: 0 auto;            /* Centrează containerul orizontal. */
-    padding: 30px;             /* Adaugă padding generos în interiorul containerului. */
-    background-color: #ffffff; /* Culoarea de fundal a containerului (alb pur). */
-    border-radius: 15px;       /* Colțuri rotunjite, puțin mai pronunțate. */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Umbră mai pronunțată pentru un efect premium. */
-    text-align: center;        /* Centrează textul în interiorul containerului. */
+header {
+    background: #111;
+    padding: 1rem;
 }
-
-/* Stiluri pentru titluri (H1). */
-h1 {
-    font-size: 3em;            /* Dimensiunea fontului mai mare. */
-    color: #28a745;            /* O culoare verde închis pentru titluri (sugerează creștere). */
-    margin-bottom: 25px;       /* Spațiu sub titlu. */
-    font-weight: 800;          /* Grosimea fontului mai mare. */
-    letter-spacing: -0.03em;   /* Spațiere negativă pentru un aspect mai compact și modern. */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Umbră subtilă pentru text. */
+.logo {
+    height: 48px;
 }
-
-/* Stiluri pentru paragrafe. */
-p {
-    font-size: 1.15em;         /* Dimensiunea fontului puțin mai mare. */
-    color: #6c757d;            /* Culoarea textului (gri mediu). */
-    margin-bottom: 20px;       /* Spațiu sub paragraf. */
-    line-height: 1.8;          /* Înălțimea liniei pentru lizibilitate optimă. */
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-
-/* Stiluri pentru butoane. */
-.btn {
-    display: inline-block;     /* Permite setarea lățimii și înălțimii. */
-    background: linear-gradient(45deg, #28a745, #007bff); /* Gradient de la verde la albastru. */
-    color: #ffffff;           /* Culoarea textului butonului (alb). */
-    padding: 14px 30px;        /* Padding intern generos. */
-    border: none;              /* Fără margine. */
-    border-radius: 10px;       /* Colțuri rotunjite. */
-    font-size: 1.1em;          /* Dimensiunea fontului. */
-    cursor: pointer;           /* Schimbă cursorul la "pointer" la hover. */
-    transition: all 0.3s ease; /* Tranziție lină pentru toate proprietățile la hover. */
-    text-decoration: none;     /* Elimină sublinierea pentru link-uri stilizate ca butoane. */
-    font-weight: 700;          /* Grosimea fontului. */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Umbră pronunțată. */
-    text-transform: uppercase; /* Textul butonului în majuscule. */
-    letter-spacing: 0.05em;    /* Spațiere între litere. */
+nav a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
 }
-
-/* Efect la hover pentru butoane. */
-.btn:hover {
-    background: linear-gradient(45deg, #007bff, #28a745); /* Inversarea gradientului la hover. */
-    transform: translateY(-3px) scale(1.01); /* Ridică ușor și mărește puțin butonul. */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Umbră mai pronunțată la hover. */
+nav a:hover {
+    color: #fff;
 }
-
-/* Stiluri pentru o zonă de mesaj (similară cu cea din exemplul HTML anterior). */
-#messageArea {
-    margin-top: 30px;          /* Spațiu deasupra zonei de mesaj. */
-    font-size: 1.2em;          /* Dimensiunea fontului mai mare. */
-    color: #6c757d;            /* Culoarea textului. */
-    min-height: 25px;          /* Asigură o înălțime minimă chiar și fără conținut. */
-    font-weight: 500;          /* Grosimea fontului. */
+section {
+    background: #181818;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px #ffd70022;
+    max-width: 800px;
 }
-
-/* Stiluri specifice pentru mesajul activ/apăsat. */
-#messageArea.active {
-    color: #28a745;            /* Culoare verde vibrant pentru mesajul activ. */
-    font-weight: 700;          /* Text mai îngroșat. */
-    animation: fadeIn 0.5s ease-out; /* Animație de apariție. */
+.cta-button {
+    background: #ffd700;
+    color: #181818;
+    padding: 1em 2em;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 8px #ffd70044;
+    border: none;
+    transition: background 0.2s;
 }
-
-/* Animație simplă de fadeIn. */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.cta-button:hover {
+    background: #bfa100;
+    color: #fff;
 }
-
-/* Media Queries pentru responsivitate: Ajustări pentru ecrane mai mici. */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5em; /* Dimensiune mai mică pentru titlu pe ecrane mici. */
-    }
-
-    p {
-        font-size: 1.05em; /* Dimensiune mai mică pentru paragrafe pe ecrane mici. */
-    }
-
-    .container {
-        padding: 20px; /* Padding mai mic pentru container pe ecrane mici. */
-        border-radius: 10px;
-    }
-
-    .btn {
-        padding: 12px 25px; /* Padding mai mic pentru butoane pe ecrane mici. */
-        font-size: 1em;
-    }
+footer {
+    background: #111;
+    color: #ffd700;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-radius: 12px 12px 0 0;
+    margin-top: 2rem;
 }
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2em; /* Și mai mic pentru telefoane. */
-    }
-
-    p {
-        font-size: 0.95em; /* Și mai mic pentru telefoane. */
-    }
-
-    .container {
-        padding: 15px;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.95em;
-    }
-}
-
