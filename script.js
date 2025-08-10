@@ -248,16 +248,16 @@ document.addEventListener('DOMContentLoaded', () => {
             en: 'Important Legal Disclaimer'
         },
         'disclaimer-p1': {
-            ro: 'Informațiile prezentate pe acest site web au doar scop informativ și nu constituie sfaturi financiare, de investiții, juridice sau fiscale. Investițiile în criptomonede implică riscuri semnificative, inclusiv riscul de pierdere totală a capitalului investit. Valoarea tokenurilor AMGF poate fluctua considerabil.',
-            en: 'The information presented on this website is for informational purposes only and does not constitute financial, investment, legal, or tax advice. Investments in cryptocurrencies involve significant risks, including the risk of total loss of invested capital. The value of AMGF tokens can fluctuate considerably.'
+            ro: 'AMGF-FINANCE nu are nicio legătură cu alte site-uri sau platforme AMGF-FINANCE, inclusiv cele considerate scam sau suspecte. Toate informațiile oficiale și serviciile legitime se regăsesc exclusiv pe acest domeniu.',
+            en: 'AMGF-FINANCE has no connection with any other websites or platforms, including those considered suspicious or scams. All official information and legitimate services are available exclusively on this domain.'
         },
         'disclaimer-p2': {
-            ro: 'Vă rugăm să efectuați propria cercetare (DYOR - Do Your Own Research) și să consultați un profesionist financiar calificat înainte de a lua orice decizie de investiție. Proiectul AMGF nu garantează profituri și nu este responsabil pentru nicio pierdere suferită ca urmare a investițiilor bazate pe informațiile de pe acest site.',
-            en: 'Please conduct your own research (DYOR - Do Your Own Research) and consult a qualified financial professional before making any investment decisions. The AMGF project does not guarantee profits and is not responsible for any losses incurred as a result of investments based on the information on this site.'
+            ro: 'Vă recomandăm să verificați întotdeauna adresa web înainte de a interacționa cu orice platformă care pretinde că reprezintă AMGF-FINANCE.',
+            en: 'We strongly advise you to always verify the web address before interacting with any platform claiming to represent AMGF-FINANCE.'
         },
         'disclaimer-p3': {
-            ro: 'Participarea la proiectul AMGF implică acceptarea termenilor și condițiilor noastre, care vor fi disponibile într-un document separat (Whitepaper complet și Termeni de Utilizare).',
-            en: 'Participation in the AMGF project implies acceptance of our terms and conditions, which will be available in a separate document (full Whitepaper and Terms of Use).'
+            ro: 'Acest site are scop exclusiv informativ și nu constituie sfaturi financiare, juridice sau fiscale. Investițiile implică riscuri semnificante.',
+            en: 'This website is for informational purposes only and does not constitute financial, legal, or tax advice. Investments involve significant risks.'
         },
         // Footer
         'footer-copyright': {
@@ -303,4 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTranslations();
     });
 
-  
+    // Aplică traducerile la încărcarea paginii
+    applyTranslations();
+});

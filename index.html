@@ -54,6 +54,10 @@
     nav a:hover {
       color: #fff;
     }
+    #language-toggle:hover {
+      background: #e2b13c;
+      color: #000;
+    }
     .container {
       max-width: 950px;
       margin: 0 auto;
@@ -166,11 +170,12 @@
     <h1>AMGF</h1>
     <div class="subtitle">Financial Freedom</div>
     <nav>
-      <a href="#despre">Despre</a>
+      <a href="#despre" data-i18n="nav-about">Despre</a>
       <a href="#de-ce-amgf">De ce AMGF?</a>
       <a href="#viziune">Viziune</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#disclaimer">Disclaimer</a>
+      <a href="#tokenomics" data-i18n="nav-tokenomics">Tokenomics</a>
+      <a href="#disclaimer" data-i18n="nav-disclaimer">Disclaimer</a>
+      <button id="language-toggle" style="background: transparent; border: 1px solid #e2b13c; color: #e2b13c; padding: 0.5rem 1rem; margin-left: 1rem; cursor: pointer; border-radius: 4px; font-size: 0.9rem; transition: all 0.2s;">English</button>
     </nav>
   </header>
 
@@ -339,21 +344,15 @@
     <!-- Disclaimer Legal -->
     <section id="disclaimer" class="disclaimer-section">
       <div class="container">
-        <h2 class="section-title">Disclaimer Legal Important</h2>
-        <p>
-          AMGF este un token de utilitate și guvernanță creat pe blockchain-ul Solana și <b>NU</b> este un instrument financiar reglementat.
+        <h2 class="section-title" data-i18n="disclaimer-title">Disclaimer Legal Important</h2>
+        <p data-i18n="disclaimer-p1">
+          AMGF-FINANCE nu are nicio legătură cu alte site-uri sau platforme AMGF-FINANCE, inclusiv cele considerate scam sau suspecte. Toate informațiile oficiale și serviciile legitime se regăsesc exclusiv pe acest domeniu.
         </p>
-        <p>
-          AMGF nu constituie o ofertă de investiții sau o valoare mobiliară și nu promite randamente sau profituri garantate.
+        <p data-i18n="disclaimer-p2">
+          Vă recomandăm să verificați întotdeauna adresa web înainte de a interacționa cu orice platformă care pretinde că reprezintă AMGF-FINANCE.
         </p>
-        <p>
-          Achiziționarea, deținerea și utilizarea tokenurilor AMGF implică riscuri semnificative, inclusiv riscul de pierdere totală a capitalului. Valoarea AMGF depinde exclusiv de utilitatea sa în ecosistem și de cererea și oferta de pe piața liberă.
-        </p>
-        <p>
-          Acest document și orice comunicare legată de AMGF nu reprezintă consultanță financiară, juridică sau fiscală. Utilizatorii sunt responsabili să își efectueze propria diligență (DYOR) și să consulte profesioniști calificați.
-        </p>
-        <p>
-          Asigurați-vă că respectați toate legile și reglementările aplicabile în jurisdicția dumneavoastră.
+        <p data-i18n="disclaimer-p3">
+          Acest site are scop exclusiv informativ și nu constituie sfaturi financiare, juridice sau fiscale. Investițiile implică riscuri semnificante.
         </p>
       </div>
     </section>
@@ -365,5 +364,6 @@
       Contact: <a href="mailto:contact@amgffinance.com" style="color:#e2b13c;">contact@amgffinance.com</a>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
