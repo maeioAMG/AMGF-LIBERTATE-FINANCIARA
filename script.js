@@ -267,6 +267,11 @@ document.addEventListener('DOMContentLoaded', () => {
         'footer-contact': {
             ro: 'Conectează-te cu noi: <a href="mailto:contact@amgffinance.com">contact@amgffinance.com</a>',
             en: 'Connect with us: <a href="mailto:contact@amgffinance.com">contact@amgffinance.com</a>'
+        },
+        // Telegram Bot Link
+        'telegram-bot-link': {
+            ro: 'Contactează botul Telegram pentru suport și notificări: <a href="https://t.me/amgf_libertate_bot" target="_blank" style="color: #e2b13c; text-decoration: none;">@amgf_libertate_bot</a>',
+            en: 'Contact the Telegram bot for support and notifications: <a href="https://t.me/amgf_libertate_bot" target="_blank" style="color: #e2b13c; text-decoration: none;">@amgf_libertate_bot</a>'
         }
     };
 
@@ -303,4 +308,21 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTranslations();
     });
 
-  
+    // Aplică traducerile inițiale când se încarcă pagina
+    applyTranslations();
+});
+
+// Funcție pentru aplicarea stilului butonului de limbă la hover
+document.addEventListener('DOMContentLoaded', () => {
+    const languageButton = document.getElementById('language-toggle');
+    if (languageButton) {
+        languageButton.addEventListener('mouseenter', () => {
+            languageButton.style.backgroundColor = '#e2b13c';
+            languageButton.style.color = '#000';
+        });
+        languageButton.addEventListener('mouseleave', () => {
+            languageButton.style.backgroundColor = 'transparent';
+            languageButton.style.color = '#e2b13c';
+        });
+    }
+});
