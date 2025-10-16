@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Navigație
         'nav-home': { ro: 'Acasă', en: 'Home' },
         'nav-about': { ro: 'Despre Noi', en: 'About Us' },
-        'nav-why': { ro: 'De Ce AMGF?', en: 'Why AMGF?' }, 
-        'nav-links': { ro: 'Link-uri Utile', en: 'Useful Links' }, 
-        'nav-vision': { ro: 'Viziune', en: 'Vision' }, 
+        'nav-why': { ro: 'De Ce AMGF?', en: 'Why AMGF?' }, 
+        'nav-links': { ro: 'Link-uri Utile', en: 'Useful Links' }, 
+        'nav-vision': { ro: 'Viziune', en: 'Vision' }, 
         'nav-tokenomics': { ro: 'Tokenomics', en: 'Tokenomics' },
         'nav-disclaimer': { ro: 'Disclaimer', en: 'Disclaimer' },
         
@@ -28,25 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
         'why-p1': { ro: 'În peisajul dinamic și adesea haotic al Web3 și al criptomonedelor, promisiunile abundă, dar încrederea și informațiile autentice sunt adesea greu de găsit. Mulți, inclusiv eu, am simțit nevoia unui loc unde libertatea financiară să fie nu doar un vis, ci o călătorie reală, susținută de cunoaștere și o comunitate dedicată.', en: 'In the dynamic and often chaotic landscape of Web3 and cryptocurrencies, promises abound, but trust and authentic information are often hard to find. Many, including myself, felt the need for a place where financial freedom is not just a dream, but a real journey, supported by knowledge and a dedicated community.' },
         'why-p2': { ro: 'Aici intervine AMGF. Suntem mai mult decât un token; suntem un ecosistem construit de o persoană obișnuită, la fel ca tine, pasionată de viitor și de potențialul decentralizat. Misiunea noastră este să oferim un spațiu transparent și accesibil unde vei putea învăța, contribui și crește alături de o comunitate unită, transformând aspirația spre independența financiară într-o realitate concretă, pas cu pas.', en: 'This is where AMGF comes in. We are more than just a token; we are an ecosystem built by an ordinary person, just like you, passionate about the future and decentralized potential. Our mission is to provide a transparent and accessible space where you can learn, contribute, and grow alongside a united community, turning the aspiration for financial independence into a concrete reality, step by step.' },
 
-        // Secțiunea Link-uri (MODIFICATĂ)
+        // Secțiunea Link-uri (Păstrate ca la pasul anterior)
         'links-title': { ro: 'Comunitate & Tranzacționare', en: 'Community & Trading' },
-        'links-desc': { 
-            ro: 'Adresa de Mint (Solana): <b>HhQ6zu27pugw9KnxvvjGZFcPzwhwoT1U8AZJAmhECEJp</b>', 
-            en: 'Mint Address (Solana): <b>HhQ6zu27pugw9KnxvvjGZFcPzwhwoT1U8AZJAmhECEJp</b>' 
-        },
-        'link-telegram': { 
-            ro: 'Contact Telegram (@amgf_libertate_bot)', 
-            en: 'Contact Telegram (@amgf_libertate_bot)' 
-        },
-        'link-exchange1': { 
-            ro: 'Tranzacționează pe PumpFun', 
-            en: 'Trade on PumpFun' 
-        },
-        'link-exchange2': { 
-            ro: 'Verifică Adresa de Mint (SolanaScan)', 
-            en: 'Verify Mint Address (SolanaScan)' 
-        },
-        // SFÂRȘITUL MODIFICĂRILOR PENTRU LINK-URI
+        'links-desc': { 
+            ro: 'Adresa de Mint (Solana): <b>HhQ6zu27pugw9KnxvvjGZFcPzwhwoT1U8AZJAmhECEJp</b>', 
+            en: 'Mint Address (Solana): <b>HhQ6zu27pugw9KnxvvjGZFcPzwhwoT1U8AZJAmhECEJp</b>' 
+        },
+        'link-telegram': { 
+            ro: 'Contact Telegram (@amgf_libertate_bot)', 
+            en: 'Contact Telegram (@amgf_libertate_bot)' 
+        },
+        'link-exchange1': { 
+            ro: 'Tranzacționează pe PumpFun', 
+            en: 'Trade on PumpFun' 
+        },
+        'link-exchange2': { 
+            ro: 'Verifică Adresa de Mint (SolanaScan)', 
+            en: 'Verify Mint Address (SolanaScan)' 
+        },
 
         // Secțiunea Viziune
         'vision-title': { ro: 'Viziune pe termen lung', en: 'Long-Term Vision' },
@@ -95,9 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
         'disclaimer-p2': { ro: 'Vă rugăm să efectuați propria cercetare (DYOR - Do Your Own Research) și să consultați un profesionist financiar calificat înainte de a lua orice decizie de investiție. Proiectul AMGF nu garantează profituri și nu este responsabil pentru nicio pierdere suferită ca urmare a investițiilor bazate pe informațiile de pe acest site.', en: 'Please conduct your own research (DYOR - Do Your Own Research) and consult a qualified financial professional before making any investment decisions. The AMGF project does not guarantee profits and does not assume responsibility for any losses incurred as a result of investments based on the information on this site.' },
         'disclaimer-p3': { ro: 'Participarea la proiectul AMGF implică acceptarea termenilor și condițiilor noastre, care vor fi disponibile într-un document separat (Whitepaper complet și Termeni de Utilizare).', en: 'Participation in the AMGF project implies acceptance of our terms and conditions, which will be available in a separate document (full Whitepaper and Terms of Use).' },
         
-        // Footer
+        // Footer (MODIFICAT)
         'footer-copyright': { ro: '&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.', en: '&copy; 2025 AMGF Financial Freedom. All rights reserved.' },
-        'footer-contact': { ro: 'Conectează-te cu noi: <a href="mailto:contact@amgffinance.com">contact@amgffinance.com</a>', en: 'Connect with us: <a href="mailto:contact@amgffinance.com">contact@amgffinance.com</a>' }
+        'footer-contact': { 
+            ro: 'Conectează-te cu noi: <a href="mailto:AMG3775@protonmail.com">AMG3775@protonmail.com</a>', 
+            en: 'Connect with us: <a href="mailto:AMG3775@protonmail.com">AMG3775@protonmail.com</a>' 
+        }
+        // SFÂRȘITUL MODIFICĂRILOR PENTRU FOOTER
     };
 
     // Obține limba curentă din localStorage sau setează implicit la română
