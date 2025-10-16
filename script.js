@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'why-p2': { 
             ro: 'Aici intervine AMGF. Suntem mai mult decât un token; suntem un ecosistem construit de o persoană obișnuită, la fel ca tine, pasionată de viitor și de potențialul decentralizat. Misiunea noastră este să oferim un spațiu transparent și accesibil unde vei putea învăța, contribui și crește alături de o comunitate unită, transformând aspirația spre independența financiară într-o realitate concretă, pas cu pas.', 
             en: 'This is where AMGF comes in. We are more than just a token; we are an ecosystem built by an ordinary person, just like you, passionate about the future and decentralized potential. Our mission is to provide a transparent and accessible space where you can learn, contribute, and grow alongside a united community, turning the aspiration for financial independence into a concrete reality, step by step.',
-            fr: 'C\'est là qu\'intervient AMGF. Nous sommes plus qu\'un simple jeton; nous sommes un écosystème construit par une personne ordinaire, tout comme vous, passionnée par l\'avenir et le potentiel décentralisé. Notre mission est de fournir un espace transparent et accessible où vous pouvez apprendre, contribuer et grandir aux côtés d\'une communauté unie, transformant l\'aspirare à l\'indépendance financiară en une réalité concrète, étape par étape.',
+            fr: 'C\'est là qu\'intervient AMGF. Nous sommes plus qu\'un simple jeton; nous sommes un écosystème construit par une personne ordinaire, tout comme vous, passionnée par l\'avenir et le potentiel décentralisé. Notre mission est de fournir un espace transparent et accessible où vous pouvez apprendre, contribuer et grandir aux côtés d\'une communauté unie, transformant l\'aspirare à l\'indépendance financiară en une réalité concretă, étape par etapă.',
             ru: 'Вот тут и появляется AMGF. Мы больше, чем просто токен; мы — экосистема, построенная обычным человеком, таким же, как вы, увлеченным будущим и децентрализованным потенциалом. Наша миссия — предоставить прозрачное и доступное пространство, где вы сможете учиться, вносить свой вклад и расти вместе с сплоченным сообществом, превращая стремление к финансовой независимости в конкретную реальность, шаг за шагом.'
         },
 
@@ -80,13 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
             fr: 'Contact Telegram (@amgf_libertate_bot)',
             ru: 'Контакт Telegram (@amgf_libertate_bot)' 
         },
+        // MODIFICARE AICI: Schimbarea textului butonului PumpFun
         'link-exchange1': { 
-            ro: 'PumpFun', 
-            en: 'PumpFun',
-            fr: 'PumpFun',
-            ru: 'PumpFun'
+            ro: 'Tranzacționează pe PumpFun', 
+            en: 'Trade on PumpFun',
+            fr: 'Trader sur PumpFun',
+            ru: 'Торговать на PumpFun'
         },
-        // MODIFICARE AICI: Schimbarea textului butonului în toate limbile
         'link-exchange2': { 
             ro: 'Tranzacționează pe Jupiter 🪐', 
             en: 'Trade on Jupiter 🪐',
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'tokenomics-row2-scope': { ro: 'Finanțarea dezvoltării continue a platformei (instrumente, analize, simulatoare), integrarea de noi parteneriate, audituri de securitate și asigurarea sustenabilității pe termen lung a proiectului, sub guvernanța comunității.', en: 'Funding the continuous platform development (tools, analytics, simulators), integration of new partnerships, security audits, and ensuring the project\'s long-term sustainability, under community governance.', fr: 'Financement du développement de la plateforme (outils, audits, partenariats) et de la pérennité du projet, sous gouvernance communautaire.', ru: 'Финансирование разработки платформы (инструменты, аудиты, партнерства) и обеспечение долгосрочной устойчивости, под управлением сообщества.' },
         'tokenomics-row2-vesting': { ro: 'Blocate într-o trezorerie DAO, accesibile prin votul deținătorilor de tokenuri, cu praguri de vot minime și perioade de propunere/vot.', en: 'Locked in a DAO treasury, accessible through token holder votes, with minimum voting thresholds and proposal/voting periods.', fr: 'Bloqué en trésorerie DAO, accessible par vote des détenteurs, avec seuils minimums.', ru: 'Заблокировано в казначействе DAO, доступно через голосование держателей токенов.' },
 
-        'tokenomics-row3-cat': { ro: 'Fond de Lichiditate Inițială (DEX)', en: 'Initial Liquidity Fund (DEX)', fr: 'Fonds de Liquidité Initial (DEX)', ru: 'Начальный Фонд Ликвидности (DEX)' },
+        'tokenomics-row3-cat': { ro: 'Fond de Lichiditate Inițială (DEX)', en: 'Initial Liquidity Fund (DEX)', fr: 'Fonds de Liquidité Initial (DEX)', ru: 'Начальный Фонд Лиcвиности (DEX)' },
         'tokenomics-row3-scope': { ro: 'Asigurarea lichidității inițiale pe burse descentralizate (DEX-uri), pentru a permite tranzacționarea eficientă și a facilita accesul utilizatorilor la AMGF, fără a fi nevoie de o ofertă publică reglementată.', en: 'Ensuring initial liquidity on decentralized exchanges (DEXs) to allow efficient trading and facilitate user access to AMGF, without the need for a regulated public offering.', fr: 'Assurer la liquidité initiale sur les DEXs pour un trading efficace et un accès facile aux utilisateurs.', ru: 'Обеспечение начальной ликвидности на DEX для эффективной торговли и доступа пользователей.' },
         'tokenomics-row3-vesting': { ro: 'Eliberare imediată pentru a fi plasată în pool-uri de lichiditate și blocată prin contracte de staking/farming pentru cel puțin 2-5 ani. Nu sunt destinate vânzării, ci pentru a facilita tranzacțiile.', en: 'Immediate release to be placed in liquidity pools and locked via staking/farming contracts for at least 2-5 years. Not intended for sale, but to facilitate transactions.', fr: 'Libération immédiate pour placement dans des pools de liquidité et verrouillage (2-5 ans). Destiné à faciliter les transactions.', ru: 'Немедленный выпуск для размещения в пулах ликвидности и блокировки (2-5 лет). Предназначено для облегчения транзакций.' },
 
