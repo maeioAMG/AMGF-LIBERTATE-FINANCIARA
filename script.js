@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'about-p3': { 
             ro: 'AMGF nu este creat de un "expert financiar" de pe Wall Street, ci de o persoană reală, care înțelege provocările și aspirațiile celor care își doresc libertatea financiară. Viziunea mea pentru AMGF este simplă: să creăm un ecosistem unde oricine, indiferent de vârstă sau experiență anterioară, poate învăța, contribui și crește alături de noi. Ne propunem să oferim un spațiu sigur și valoros, diferit de promisiunile goale și schemele rapide care domină adesea spațiul crypto.', 
             en: 'AMGF is not created by a Wall Street "financial expert," but by a real person who understands the challenges and aspirations of those seeking financial freedom. My vision for AMGF is simple: to create an ecosystem where anyone, regardless of age or prior experience, can learn, contribute, and grow with us. We aim to provide a safe and valuable space, different from the empty promises and quick schemes that often dominate the crypto space.',
-            fr: 'AMGF n\'est pas créé par un "expert financier" de Wall Street, mais par une personne réelle qui comprend les défis et les aspirations de ceux qui recherchent la liberté financière. Ma vision pour AMGF est simple : créer un écosystème où tout le monde, quel que soit l\'âge ou l\'expérience antérieure, peut apprendre, contribuer et grandir avec nous. Nous visons à fournir un espace sûr et précieux, différent des promesses vides et des schémas rapides qui dominent souvent l\'espace crypto.',
+            fr: 'AMGF n\'est pas créé par un "expert financier" de Wall Street, but par une personne réelle qui comprend les défis et les aspirations de ceux qui recherchent la liberté financière. Ma vision pour AMGF est simple : créer un écosystème où tout le monde, quel que soit l\'âge ou l\'expérience antérieure, peut apprendre, contribuer et grandir avec nous. Nous visons à fournir un espace sûr et précieux, différent des promesses vides et des schémas rapides qui dominent souvent l\'espace crypto.',
             ru: 'AMGF создан не "финансовым экспертом" с Уолл-стрит, а реальным человеком, который понимает проблемы и стремления тех, кто ищет финансовой свободы. Мое видение AMGF просто: создать экосистему, где каждый, независимо от возраста или предыдущего опыта, может учиться, вносить свой вклад и расти вместе с нами. Мы стремимся предоставить безопасное и ценное пространство, отличное от пустых обещаний и быстрых схем, которые часто доминируют в криптопространстве.'
         },
         'about-p4': { 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'why-p2': { 
             ro: 'Aici intervine AMGF. Suntem mai mult decât un token; suntem un ecosistem construit de o persoană obișnuită, la fel ca tine, pasionată de viitor și de potențialul decentralizat. Misiunea noastră este să oferim un spațiu transparent și accesibil unde vei putea învăța, contribui și crește alături de o comunitate unită, transformând aspirația spre independența financiară într-o realitate concretă, pas cu pas.', 
             en: 'This is where AMGF comes in. We are more than just a token; we are an ecosystem built by an ordinary person, just like you, passionate about the future and decentralized potential. Our mission is to provide a transparent and accessible space where you can learn, contribute, and grow alongside a united community, turning the aspiration for financial independence into a concrete reality, step by step.',
-            fr: 'C\'est là qu\'intervient AMGF. Nous sommes plus qu\'un simple jeton; nous sommes un écosystème construit par une personne ordinaire, tout comme vous, passionnée par l\'avenir et le potentiel décentralisé. Notre mission est de fournir un espace transparent et accessible où vous pouvez apprendre, contribuer et grandir aux côtés d\'une comunitate unită, transformând l\'aspirare à l\'indépendance financiară en une réalité concretă, étape par etapă.',
+            fr: 'C\'est là qu\'intervient AMGF. Nous sommes plus qu\'un simple jeton; nous sommes un écosystème construit par une personne ordinaire, tout comme vous, passionnée par l\'avenir et le potentiel décentralizat. Notre mission est de fournir un spațiu transparent și accesibil où vous pouvez apprendre, contribuer et grandir aux côtés d\'une comunitate unită, transformând l\'aspirare à l\'indépendance financiară en une réalité concretă, étape par étape.',
             ru: 'Вот тут и появляется AMGF. Мы больше, чем просто токен; мы — экосистема, построенная обычным человеком, таким же, как вы, увлеченным будущим и децентрализованным потенциалом. Наша миссия — предоставить прозрачное и доступное пространство, где вы сможете учиться, вносить свой вклад и расти вместе с сплоченным сообществом, превращая стремление к финансовой независимости в конкретную реальность, шаг за шагом.'
         },
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ro: 'Tranzacționează pe Jupiter 🪐', 
             en: 'Trade on Jupiter 🪐',
             fr: 'Trader sur Jupiter 🪐',
-            ru: 'Торговать на Jupiter 🪐' 
+            ru: 'Торговать pe Jupiter 🪐' 
         },
 
         // Secțiunea Viziune
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'vision-p1': { 
             ro: 'Viziunea noastră pentru AMGF depășește orizontul unui simplu token; ne propunem să construim un ecosistem digital vibrant și autosustenabil, o adevărată Organizație Autonomă Descentralizată (DAO), unde libertatea financiară devine accesibilă tuturor. Pe termen lung, AMGF va fi recunoscut nu doar ca un simbol al potențialului Web3, ci ca un catalizator pentru transformarea personală și colectivă.', 
             en: 'Our vision for AMGF extends beyond the horizon of a simple token; we aim to build a vibrant and self-sustaining digital ecosystem, a true Decentralized Autonomous Organization (DAO), where financial freedom becomes accessible to all. In the long term, AMGF will be recognized not only as a symbol of Web3 potential but as a catalyst for personal and collective transformation.',
-            fr: 'Notre vision pour AMGF dépasse l\'horizon d\'un simple jeton; nous visons à construire un écosystème numérique vibrant et auto-suffisant, une véritable Organisation Autonome Décentralisée (DAO), où la liberté financière devient accessible à tous. À long terme, AMGF sera reconnu non seulement comme un symbole du potentiel Web3, mais comme un catalyseur pour la transformation personnelle et collective.',
+            fr: 'Notre vision pour AMGF dépasse l\'horizon d\'un simple jeton; nous visons à construire un écosystème numérique vibrant et auto-suffisant, une véritable Organisation Autonome Décentralisée (DAO), où la liberté financiară devine accessible à tous. À long terme, AMGF sera reconnu non seulement comme un symbole al potențialului Web3, ci ca un catalizator pentru transformarea personală și colectivă.',
             ru: 'Наше видение AMGF выходит за рамки простого токена; мы стремимся построить живую и самодостаточную цифровую экосистему, настоящую Децентрализованную Автономную Организацию (DAO), где финансовая свобода становится доступной каждому. В долгосрочной перспективе AMGF будет признан не только символом потенциала Web3, но и катализатором личной и коллективной трансформации.'
         },
         'vision-p2': { 
@@ -111,31 +111,31 @@ document.addEventListener('DOMContentLoaded', () => {
         'vision-li1': { 
             ro: '<b>O educație financiară gamificată și practică</b>, adaptată nevoilor reale ale fiecăruia, recompensată direct prin sistemul nostru <b>Learn-to-Earn</b>.', 
             en: '<b>Gamified and practical financial education</b>, tailored to everyone\'s real needs, rewarded directly through our <b>Learn-to-Earn</b> system.',
-            fr: '<b>Une éducation financière gamifiée et pratique</b>, adaptée aux besoins réels de chacun, récompensée directement par notre système <b>Learn-to-Earn</b>.',
+            fr: '<b>Une éducation financiară gamifiée et pratique</b>, adaptée aux besoins réels de chacun, recompensată direct prin sistemul nostru <b>Learn-to-Earn</b>.',
             ru: '<b>Геймифицированное и практическое финансовое образование</b>, адаптированное к реальным потребностям каждого, вознаграждаемое непосредственно через нашу систему <b>Learn-to-Earn</b>.'
         },
         'vision-li2': { 
             ro: '<b>Instrumente intuitive și analize personalizate</b>, care demistifică lumea investițiilor și îi ajută să ia decizii informate, depășind zgomotul informațional.', 
             en: '<b>Intuitive tools and personalized analytics</b>, which demystify the world of investments and help them make informed decisions, overcoming information noise.',
-            fr: '<b>Des outils intuitifs et des analyses personnalisées</b>, qui démystifient le monde des investissements et les aident à prendre des décisions éclairées, en dépassant le bruit informationnel.',
+            fr: '<b>Des outils intuitifs et des analyses personnalisées</b>, qui demistifică lumea investițiilor și îi ajută să ia decizii informate, depășind zgomotul informațional.',
             ru: '<b>Интуитивно понятные инструменты и персонализированная аналитика</b>, которые демистифицируют мир инвестиций и помогают принимать обоснованные решения, преодолевая информационный шум.'
         },
         'vision-li3': { 
             ro: '<b>O comunitate globală activă și interconectată</b>, unde membrii se sprijină reciproc, își împărtășesc experiențele și colaborează la dezvoltarea proiectului prin mecanismul <b>Build-to-Earn</b>.', 
             en: '<b>An active and interconnected global community</b>, where members support each other, share their experiences, and collaborate in the project\'s development through the <b>Build-to-Earn</b> mechanism.',
-            fr: '<b>Une communauté mondiale active et interconnectée</b>, où les membres se soutiennent mutuellement, partagent leurs expériences et collaborent au développement du projet via le mécanisme <b>Build-to-Earn</b>.',
+            fr: '<b>Une comunitate globală activă și interconectată</b>, unde membrii se sprijină reciproc, își împărtășesc experiențele și colaborează la dezvoltarea proiectului prin mecanismul <b>Build-to-Earn</b>.',
             ru: '<b>Активное и взаимосвязанное глобальное сообщество</b>, где участники поддерживают друг друга, делятся опытом и сотрудничают в развитии проекта через механизм <b>Build-to-Earn</b>.'
         },
         'vision-li4': { 
             ro: '<b>Un sistem de guvernanță DAO robust și transparent</b>, unde fiecare deținător de AMGF are o voce reală în deciziile cheie ale ecosistemului, de la alocarea resurselor până la parteneriate strategice și direcția viitoare a fondului colectiv (dacă va fi implementat).', 
             en: '<b>A robust and transparent DAO governance system</b>, where every AMGF holder has a real voice in the ecosystem\'s key decisions, from resource allocation to strategic partnerships and the future direction of the collective fund (if implemented).',
-            fr: '<b>Un système de gouvernance DAO robuste et transparent</b>, où chaque détenteur d\'AMGF a une voix réelle dans les décisions clés de l\'écosystème, de l\'allocation des ressources aux partenariats stratégiques et à la direction future du fonds collectif (si implémenté).',
+            fr: '<b>Un sistem de guvernanță DAO robust și transparent</b>, unde fiecare deținător de AMGF are o voce reală în deciziile cheie ale ecosistemului, de la alocarea resurselor până la parteneriate strategice și direcția viitoare a fondului colectiv (dacă va fi implementat).',
             ru: '<b>Надежная и прозрачная система управления DAO</b>, где каждый держатель AMGF имеет реальный голос в ключевых решениях экосистемы, от распределения ресурсов до стратегических партнерств и будущего направления коллективного фонда (если будет реализовано).'
         },
         'vision-p3': { 
             ro: 'Pe măsură ce ecosistemul AMGF se maturizează, ne vedem transformându-ne într-un model de autonomie comunitară și de sustenabilitate financiară, unde valoarea este generată și distribuită de și pentru membrii săi. AMGF va fi un exemplu al modului în care tehnologia blockchain poate împuternici indivizii să-și preia controlul asupra viitorului lor financiar, construind împreună o moștenire de încredere și prosperitate.', 
             en: 'As the AMGF ecosystem matures, we see ourselves transforming into a model of community autonomy and financial sustainability, where value is generated and distributed by and for its members. AMGF will be an example of how blockchain technology can empower individuals to take control of their financial future, building a legacy of trust and prosperity.',
-            fr: 'À mesure que l\'écosystème AMGF mûrit, nous nous voyons nous transformer en un modèle d\'autonomie communautaire et de durabilité financière, où la valeur est générée et distribuée par et pour ses membres. AMGF sera un exemple de la façon dont la technologie blockchain peut donner aux individus les moyens de prendre le contrôle de leur avenir financiar, construisant ensemble un héritage de confiance et de prospérité.',
+            fr: 'À mesure ce ecosistemul AMGF se maturizează, ne vedem transformându-ne într-un model de autonomie comunitară și de sustenabilitate financiară, unde valoarea este generată și distribuită de și pentru membrii săi. AMGF va fi un exemplu al modului în care tehnologia blockchain poate împuternici indivizii să-și preia controlul asupra viitorului lor financiar, construind împreună o moștenire de încredere și prosperitate.',
             ru: 'По мере того, как экосистема AMGF созревает, мы видим, что превращаемся в модель автономности сообщества и финансовой устойчивости, где ценность генерируется и распределяется членами и для членов. AMGF станет примером того, как технология блокчейн может дать людям возможность взять под контроль свое финансовое будущее, совместно создавая наследие доверия и процветания.'
         },
 
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Rândurile tabelului
         'tokenomics-row1-cat': { ro: 'Comunitate & Ecosistem', en: 'Community & Ecosystem', fr: 'Communauté & Écosystème', ru: 'Сообщество и Экосистема' },
         'tokenomics-row1-scope': { ro: 'Susținerea creșterii organice a ecosistemului prin recompense pentru participare (Learn-to-Earn, Build-to-Earn), campanii de promovare, airdrop-uri strategice și stimulente pentru adoptare. Fără a fi un "investiție", ci o recompensă pentru contribuție.', en: 'Supporting the ecosystem\'s organic growth through participation rewards (Learn-to-Earn, Build-to-Earn), promotional campaigns, strategic airdrops, and adoption incentives. Not an "investment," but a reward for contribution.', fr: 'Soutien à la croissance organique via récompenses (Learn-to-Earn, Build-to-Earn) et airdrops. Récompense pentru contribution, non investissement.', ru: 'Поддержка органического роста через вознаграждения (Learn-to-Earn, Build-to-Earn) и аирдропы. Вознаграждение за вклад, а не инвестиция.' },
-        'tokenomics-row1-vesting': { ro: 'Eliberare treptată pe parcursul a 5-10 ani, pe măsură ce jetoanele sunt câștigate sau distribuite prin programe comunitare. Gestionat de un smart contract multi-sig sau DAO.', en: 'Gradual release over 5-10 years, as tokens are earned or distributed through community programs. Managed by a multi-sig smart contract or DAO.', fr: 'Libération progressive sur 5-10 ans, via des programmes communautaires. Géré par contrat multi-sig sau DAO.', ru: 'Постепенный выпуск в течение 5-10 лет, управляемый мультисиг контрактом или DAO.' },
+        'tokenomics-row1-vesting': { ro: 'Eliberare treptată pe parcursul a 5-10 ani, pe măsură ce jetoanele sunt câștigate sau distribuite prin programe comunitare. Gestionat de un smart contract multi-sig sau DAO.', en: 'Gradual release over 5-10 years, as tokens are earned or distributed through community programs. Managed by a multi-sig smart contract or DAO.', fr: 'Libération progressive sur 5-10 ans, via des programmes communautaire. Géré par contrat multi-sig sau DAO.', ru: 'Постепенный выпуск в течение 5-10 лет, управляемый мультисиг контрактом или DAO.' },
         
         'tokenomics-row2-cat': { ro: 'Trezorerie DAO / Dezvoltare Ecosistem', en: 'DAO Treasury / Ecosystem Development', fr: 'Trésorerie DAO / Développement Écosystème', ru: 'Казначейство DAO / Развитие Экосистема' },
         'tokenomics-row2-scope': { ro: 'Finanțarea dezvoltării continue a platformei (instrumente, analize, simulatoare), integrarea de noi parteneriate, audituri de securitate și asigurarea sustenabilității pe termen lung a proiectului, sub guvernanța comunității.', en: 'Funding the continuous platform development (tools, analytics, simulators), integration of new partnerships, security audits, and ensuring the project\'s long-term sustainability, under community governance.', fr: 'Financement du développement de la plateforme (outils, audits, partenariats) et de la pérennité du projet, sous gouvernance communautaire.', ru: 'Финансирование разработки платформы (инструменты, аудиты, партнерства) и обеспечение долгосрочной устойчивости, под управлением сообщества.' },
@@ -158,23 +158,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         'tokenomics-row3-cat': { ro: 'Fond de Lichiditate Inițială (DEX)', en: 'Initial Liquidity Fund (DEX)', fr: 'Fonds de Liquidité Initial (DEX)', ru: 'Начальный Фонд Лиcвиности (DEX)' },
         'tokenomics-row3-scope': { ro: 'Asigurarea lichidității inițiale pe burse descentralizate (DEX-uri), pentru a permite tranzacționarea eficientă și a facilita accesul utilizatorilor la AMGF, fără a fi nevoie de o ofertă publică reglementată.', en: 'Ensuring initial liquidity on decentralized exchanges (DEXs) to allow efficient trading and facilitate user access to AMGF, without the need for a regulated public offering.', fr: 'Assurer la liquidité initiale sur les DEXs pour un trading efficace et un accès facile aux utilisateurs.', ru: 'Обеспечение начальной ликвидности на DEX для эффективной торговли и доступа пользователей.' },
-        'tokenomics-row3-vesting': { ro: 'Eliberare imediată pentru a fi plasată în pool-uri de lichiditate și blocată prin contracte de staking/farming pentru cel puțin 2-5 ani. Nu sunt destinate vânzării, ci pentru a facilita tranzacțiile.', en: 'Immediate release to be placed in liquidity pools and locked via staking/farming contracts for at least 2-5 years. Not intended for sale, but to facilitate transactions.', fr: 'Libération immédiate pour placement dans des pools de liquidité et verrouillage (2-5 ans). Destiné à faciliter les transactions.', ru: 'Немедленный выпуск для размещения в пулах ликвидности и блокировки (2-5 лет). Предназначено для облегчения транзакций.' },
+        'tokenomics-row3-vesting': { ro: 'Eliberare imediată pentru a fi plasată în pool-uri de lichiditate și blocată prin contracte de staking/farming pentru cel puțin 2-5 ani. Nu sunt destinate vânzării, ci pentru a facilita tranzacțiile.', en: 'Immediate release to be placed in liquidity pools and locked via staking/farming contracts for at least 2-5 years. Not intended for sale, but to facilitate transactions.', fr: 'Libération immédiate pour placement dans des pools de lichiditate și verrouillage (2-5 ans). Destinat à faciliter les transactions.', ru: 'Немедленный выпуск для размещения в пулах ликвидности и блокировки (2-5 лет). Предназначено для облегчения транзакций.' },
 
         'tokenomics-row4-cat': { ro: 'Echipa și Fondator', en: 'Team and Founder', fr: 'Équipe et Fondateur', ru: 'Команда и Основатель' },
         'tokenomics-row4-scope': { ro: 'Alocare pentru Fondator și echipa de bază. Compensarea efortului inițial și stimularea loialității pe termen lung. (Fondatorul: 5%, Echipa 5%)', en: 'Allocation for the Founder and core team. Compensation for initial effort and incentivizing long-term loyalty. (Founder: 5%, Team 5%)', fr: 'Allocation pour le Fondateur et l\'équipe. Compensation et incitation à la fidélité à long terme. (Fondateur: 5%, Équipe 5%)', ru: 'Выделение для Основателя и основной команды. Компенсация и стимулирование долгосрочной лояльности. (Основатель: 5%, Команда 5%)' },
-        'tokenomics-row4-vesting': { ro: 'Blocare inițială de 1 an (Cliff), urmată de eliberare liniară pe 3 ani (Vesting). Această blocare asigură angajamentul pe termen lung.', en: '1-year initial lock (Cliff), followed by linear release over 3 years (Vesting). This lock-up ensures long-term commitment.', fr: 'Blocage initial d\'1 an (Cliff), suivi d\'une libération linéaire sur 3 ans (Vesting).', ru: 'Начальная блокировка на 1 год (Cliff), затем линейный выпуск в течение 3 лет (Vesting).' },
+        'tokenomics-row4-vesting': { ro: 'Blocare inițială de 1 an (Cliff), urmată de eliberare liniară pe 3 ani (Vesting). Această blocare asigură angajamentul pe termen lung.', en: '1-year initial lock (Cliff), followed by linear release over 3 years (Vesting). This lock-up ensures long-term commitment.', fr: 'Blocage initial d\'1 an (Cliff), urmată de o libération linéaire sur 3 ans (Vesting).', ru: 'Начальная блокировка на 1 год (Cliff), затем линейный выпуск в течение 3 лет (Vesting).' },
 
         // Total
         'tokenomics-total': { ro: 'Total', en: 'Total', fr: 'Total', ru: 'Итого' },
 
         // Nota finală
-        'tokenomics-note': { ro: '<b>Notă:</b> Strategia Tokenomics este proiectată pentru a minimiza presiunea de vânzare inițială și a alinia interesele echipei și ale comunității pentru succesul pe termen lung. Jetoanele nu sunt vândute, ci distribuite pentru a construi ecosistemul.', en: '<b>Note:</b> The Tokenomics strategy is designed to minimize initial selling pressure and align the interests of the team and community for long-term success. Tokens are not sold, but distributed to build the ecosystem.', fr: '<b>Note:</b> La stratégie Tokenomics vise à minimiser la pression de vente initiale et à aliner les intérêts pour un succes à long terme.', ru: '<b>Примечание:</b> Токеномика разработана для минимизации начального давления продаж и согласования интересов для долгосрочного успеха.' },
+        'tokenomics-note': { ro: '<b>Notă:</b> Strategia Tokenomics este proiectată pentru a minimiza presiunea de vânzare inițială și a alinia interesele echipei și ale comunității pentru succesul pe termen lung. Jetoanele nu sunt vândute, ci distribuite pentru a construi ecosistemul.', en: '<b>Note:</b> The Tokenomics strategy is designed to minimize initial selling pressure and align the interests of the team and community for long-term success. Tokens are not sold, but distributed to build the ecosystem.', fr: '<b>Note:</b> La stratégie Tokenomics vise à minimiser la pression de vente initiale și à aliner les intérêts pentru un succes à long terme.', ru: '<b>Примечание:</b> Токеномика разработана для минимизации начального давления продаж и согласования интересов для долгосрочного успеха.' },
         
         // Secțiunea Disclaimer
         'disclaimer-title': { ro: 'Disclaimer Legal Important', en: 'Important Legal Disclaimer', fr: 'Avertissement Légal Important', ru: 'Важное Юридическое Предупреждение' },
         'disclaimer-p1': { ro: 'Informațiile prezentate pe acest site web au doar scop informativ și nu constituie sfaturi financiare, de investiții, juridice sau fiscale. Investițiile în criptomonede implică riscuri semnificative, inclusiv riscul de pierdere totală a capitalului investit. Valoarea tokenurilor AMGF poate fluctua considerabil.', en: 'The information presented on this website is for informational purposes only and does not constitute financial, investment, legal, or tax advice. Investments in cryptocurrencies involve significant risks, including the risk of total loss of invested capital. The value of AMGF tokens can fluctuate considerably.', fr: 'Les informations sont à titre informatif uniquement et ne constituent pas un conseil financier ou légal. Les investissements dans les crypto-monnaies comportent des risques significatifs.', ru: 'Информация носит исключительно ознакомительный характер и не является финансовым или юридическим советом. Инвестиции в криптовалюты сопряжены со значительными рисками.' },
-        'disclaimer-p2': { ro: 'Vă rugăm să efectuați propria cercetare (DYOR - Do Your Own Research) și să consultați un profesionist financiar calificat înainte de a lua orice decizie de investiție. Proiectul AMGF nu garantează profituri și nu este responsabil pentru nicio pierdere suferită ca urmare a investițiilor bazate pe informațiile de pe acest site.', en: 'Please conduct your own research (DYOR - Do Your Own Research) and consult a qualified financial professional before making any investment decisions. The AMGF project does not guarantee profits and does not assume responsibility for any losses incurred as a result of investments based on the information on this site.', fr: 'Veuillez effectuer vos propres recherches (DYOR) et consulter un professionnel financier qualifié avant toute décision. AMGF ne garantează pas de profits.', ru: 'Пожалуйста, проведите собственное исследование (DYOR) и проконсультируйтесь с квалифицированным специалистом перед принятием решений. Проект AMGF не гарантирует прибыль.' },
-        'disclaimer-p3': { ro: 'Participarea la proiectul AMGF implică acceptarea termenilor și condițiilor noastre, care vor fi disponibile într-un document separat (Whitepaper complet și Termeni de Utilizare).', en: 'Participation in the AMGF project implies acceptance of our terms and conditions, which will be available in a separate document (full Whitepaper and Terms of Use).', fr: 'La participation implique l\'acceptation de nos conditions générales, disponibles dans un document séparé (Whitepaper et Conditions d\'Utilisation).', ru: 'Участие подразумевает принятие наших условий, доступных в отдельном документе (Whitepaper и Условия использования).' },
+        'disclaimer-p2': { ro: 'Vă rugăm să efectuați propria cercetare (DYOR - Do Your Own Research) și să consultați un profesionist financiar calificat înainte de a lua orice decizie de investiție. Proiectul AMGF nu garantează profituri și nu este responsabil pentru nicio pierdere suferită ca urmare a investițiilor bazate pe informațiile de pe acest site.', en: 'Please conduct your own research (DYOR - Do Your Own Research) and consult a qualified financial professional before making any investment decisions. The AMGF project does not guarantee profits and does not assume responsibility for any losses incurred as a result of investments based on the information on this site.', fr: 'Veuillez effectuer vos propres recherches (DYOR) et consulter un professionnel financier qualifié avant toute décision. AMGF nu garantează de profits.', ru: 'Пожалуйста, проведите собственное исследование (DYOR) и проконсультируйтесь с квалифицированным специалистом перед принятием решений. Проект AMGF не гарантирует прибыль.' },
+        'disclaimer-p3': { ro: 'Participarea la proiectul AMGF implică acceptarea termenilor și condițiilor noastre, care vor fi disponibile într-un document separat (Whitepaper complet și Termeni de Utilizare).', en: 'Participation in the AMGF project implies acceptance of our terms and conditions, which will be available in a separate document (full Whitepaper and Terms of Use).', fr: 'La participation implică l\'acceptarea termenilor și condițiilor noastre, care vor fi disponibile într-un document separat (Whitepaper complet și Termeni de Utilizare).', ru: 'Участие подразумевает принятие наших условий, доступных в отдельном документе (Whitepaper и Условия использования).' },
         
         // Footer (Adresa de email este corectă)
         'footer-copyright': { 
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Obiect de mapare pentru a afișa numele complet al limbii pe buton
+    // Obiectul languageNames nu mai este strict necesar pentru afișarea butonului, dar îl păstrăm.
     const languageNames = {
         'ro': 'Română',
         'en': 'English',
@@ -203,13 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const availableLanguages = ['ro', 'en', 'fr', 'ru'];
     let currentLanguage = localStorage.getItem('language') || 'ro';
     const languageButton = document.getElementById('language-toggle');
-
-    // Funcție pentru a obține limba următoare (ro -> en -> fr -> ru -> ro)
-    function getNextLanguage(lang) {
-        const currentIndex = availableLanguages.indexOf(lang);
-        const nextIndex = (currentIndex + 1) % availableLanguages.length;
-        return availableLanguages[nextIndex];
-    }
     
     // Funcție pentru a aplica traducerile
     function applyTranslations(lang) {
@@ -225,20 +218,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // SETAREA TEXTULUI BUTONULUI DE LIMBĂ: Afișează limba curentă
-        const currentName = languageNames[currentLanguage] || currentLanguage.toUpperCase();
-        const nextName = languageNames[getNextLanguage(currentLanguage)] || getNextLanguage(currentLanguage).toUpperCase();
-
-        // Noul text afișează limba curentă completă și următoarea
-        languageButton.textContent = `${currentName} | Next: ${nextName}`;
+        // MODIFICAREA CRITICĂ: Afișează TOATE limbile, evidențiind limba curentă
+        const displayLang = availableLanguages.map(l => {
+            const code = l.toUpperCase();
+            // Evidențiază limba curentă cu paranteze drepte
+            return l === lang ? `[${code}]` : code; 
+        }).join(' / ');
         
-        // Setează clasa 'lang-ro', 'lang-en', etc. pe <body> pentru stilizare specifică limbii
+        // Setează noul text pe buton
+        languageButton.textContent = displayLang; 
+        
+        // Setează clasa 'lang-ro', 'lang-en', etc. pe <body>
         document.body.className = `lang-${currentLanguage}`; 
     }
 
-    // Funcție pentru a schimba limba
+    // Funcție pentru a schimba limba (se trece la următoarea limbă în listă)
     function toggleLanguage() {
-        currentLanguage = getNextLanguage(currentLanguage);
+        const currentIndex = availableLanguages.indexOf(currentLanguage);
+        const nextIndex = (currentIndex + 1) % availableLanguages.length;
+        currentLanguage = availableLanguages[nextIndex];
+        
         localStorage.setItem('language', currentLanguage);
         applyTranslations(currentLanguage);
     }
