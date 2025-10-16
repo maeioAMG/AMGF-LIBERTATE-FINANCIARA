@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'about-p1': { 
             ro: 'Salut, sunt <b>"Fondatorul AMGF"</b>, o persoană obișnuită, cu o pasiune extraordinară pentru viitorul pe care îl aduc Web3 și criptomonedele. La 53 de ani, am explorat acest univers digital de câțiva ani, participând la numeroase proiecte și airdrop-uri. Am văzut atât povești de succes incredibile, cât și eșecuri dureroase – experiențe care m-au învățat enorm despre potențialul și riscurile acestui domeniu.', 
             en: 'Hello, I am the <b>"AMGF Founder"</b>, an ordinary person with an extraordinary passion for the future brought by Web3 and cryptocurrencies. At 53, I\'ve explored this digital universe for several years, participating in numerous projects and airdrops. I\'ve seen incredible success stories as well as painful failures – experiences that taught me a lot about the potential and risks of this field.',
-            fr: 'Bonjour, je suis le <b>"Fondateur d\'AMGF"</b>, une personne ordinaire avec une passion extraordinaire pour l\'avenir apporté par le Web3 et les crypto-monnaies. À 53 ans, j\'ai exploré cet univers numérique pendant plusieurs années, participant à de nombreux projets et airdrops. J\'ai vu d\'incroyables réussites ainsi que des échecs douloureux – des expériences qui m\'ont beaucoup appris sur le potentiel et les risques de ce domaine.',
+            fr: 'Bonjour, je suis le <b>"Fondateur d\'AMGF"</b>, une personne ordinaire avec une passion extraordinaire pour l\'avenir apporté par le Web3 et les crypto-monnaies. À 53 ans, j\'ai exploré cet univers numérique pendant plusieurs années, participant à de nombreux projets et airdrops. J\'ai vu d\'incroyables réussites ainsi que des échecs douloureux – expériences qui m\'ont beaucoup appris sur le potentiel et les risques de ce domaine.',
             ru: 'Здравствуйте, я <b>"Основатель AMGF"</b>, обычный человек с необычайной страстью к будущему, которое приносят Web3 и криптовалюты. В свои 53 года я несколько лет изучал эту цифровую вселенную, участвуя в многочисленных проектах и аирдропах. Я видел как невероятные истории успеха, так и болезненные неудачи — опыт, который многому научил меня о потенциале и рисках этой области.'
         },
         'about-p2': { 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'why-p2': { 
             ro: 'Aici intervine AMGF. Suntem mai mult decât un token; suntem un ecosistem construit de o persoană obișnuită, la fel ca tine, pasionată de viitor și de potențialul decentralizat. Misiunea noastră este să oferim un spațiu transparent și accesibil unde vei putea învăța, contribui și crește alături de o comunitate unită, transformând aspirația spre independența financiară într-o realitate concretă, pas cu pas.', 
             en: 'This is where AMGF comes in. We are more than just a token; we are an ecosystem built by an ordinary person, just like you, passionate about the future and decentralized potential. Our mission is to provide a transparent and accessible space where you can learn, contribute, and grow alongside a united community, turning the aspiration for financial independence into a concrete reality, step by step.',
-            fr: 'C\'est là qu\'intervient AMGF. Nous sommes plus qu\'un simple jeton; nous sommes un écosystème construit par une personne ordinaire, tout comme vous, passionnée par l\'avenir et le potentiel décentralisé. Notre mission est de fournir un espace transparent et accessible où vous pouvez apprendre, contribuer et grandir aux côtés d\'une communauté unie, transformant l\'aspirare à l\'indépendance financiară en une réalité concretă, étape par etapă.',
+            fr: 'C\'est là qu\'intervient AMGF. Nous sommes plus qu\'un simple jeton; nous sommes un écosystème construit par une personne ordinaire, tout comme vous, passionnée par l\'avenir et le potentiel décentralisé. Notre mission est de fournir un espace transparent et accessible où vous pouvez apprendre, contribuer et grandir aux côtés d\'une comunitate unită, transformând l\'aspirare à l\'indépendance financiară en une réalité concretă, étape par etapă.',
             ru: 'Вот тут и появляется AMGF. Мы больше, чем просто токен; мы — экосистема, построенная обычным человеком, таким же, как вы, увлеченным будущим и децентрализованным потенциалом. Наша миссия — предоставить прозрачное и доступное пространство, где вы сможете учиться, вносить свой вклад и расти вместе с сплоченным сообществом, превращая стремление к финансовой независимости в конкретную реальность, шаг за шагом.'
         },
 
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fr: 'Contact Telegram (@amgf_libertate_bot)',
             ru: 'Контакт Telegram (@amgf_libertate_bot)' 
         },
-        // MODIFICARE AICI: Schimbarea textului butonului PumpFun
+        // Aici este modificarea pentru textul butonului PumpFun
         'link-exchange1': { 
             ro: 'Tranzacționează pe PumpFun', 
             en: 'Trade on PumpFun',
@@ -135,10 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'vision-p3': { 
             ro: 'Pe măsură ce ecosistemul AMGF se maturizează, ne vedem transformându-ne într-un model de autonomie comunitară și de sustenabilitate financiară, unde valoarea este generată și distribuită de și pentru membrii săi. AMGF va fi un exemplu al modului în care tehnologia blockchain poate împuternici indivizii să-și preia controlul asupra viitorului lor financiar, construind împreună o moștenire de încredere și prosperitate.', 
             en: 'As the AMGF ecosystem matures, we see ourselves transforming into a model of community autonomy and financial sustainability, where value is generated and distributed by and for its members. AMGF will be an example of how blockchain technology can empower individuals to take control of their financial future, building a legacy of trust and prosperity.',
-            fr: 'À mesure que l\'écosystème AMGF mûrit, nous nous voyons nous transformer en un modèle d\'autonomie communautaire et de durabilité financière, où la valeur est générée et distribuée par et pour ses membres. AMGF sera un exemple de la façon dont la technologie blockchain peut donner aux individus les moyens de prendre le contrôle de leur avenir financier, construisant ensemble un héritage de confiance et de prospérité.',
+            fr: 'À mesure que l\'écosystème AMGF mûrit, nous nous voyons nous transformer en un modèle d\'autonomie communautaire et de durabilité financière, où la valeur est générée et distribuée par et pour ses membres. AMGF sera un exemple de la façon dont la technologie blockchain peut donner aux individus les moyens de prendre le contrôle de leur avenir financiar, construisant ensemble un héritage de confiance et de prospérité.',
             ru: 'По мере того, как экосистема AMGF созревает, мы видим, что превращаемся в модель автономности сообщества и финансовой устойчивости, где ценность генерируется и распределяется членами и для членов. AMGF станет примером того, как технология блокчейн может дать людям возможность взять под контроль свое финансовое будущее, совместно создавая наследие доверия и процветания.'
         },
-
 
         // Secțiunea Tokenomics
         'tokenomics-title': { ro: 'Alocarea Tokenurilor AMGF (Actualizată)', en: 'AMGF Token Allocation (Updated)', fr: 'Allocation des Jetons AMGF (Mise à Jour)', ru: 'Распределение Токенов AMGF (Обновлено)' },
@@ -153,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'tokenomics-row1-scope': { ro: 'Susținerea creșterii organice a ecosistemului prin recompense pentru participare (Learn-to-Earn, Build-to-Earn), campanii de promovare, airdrop-uri strategice și stimulente pentru adoptare. Fără a fi un "investiție", ci o recompensă pentru contribuție.', en: 'Supporting the ecosystem\'s organic growth through participation rewards (Learn-to-Earn, Build-to-Earn), promotional campaigns, strategic airdrops, and adoption incentives. Not an "investment," but a reward for contribution.', fr: 'Soutien à la croissance organique via récompenses (Learn-to-Earn, Build-to-Earn) et airdrops. Récompense pentru contribution, non investissement.', ru: 'Поддержка органического роста через вознаграждения (Learn-to-Earn, Build-to-Earn) и аирдропы. Вознаграждение за вклад, а не инвестиция.' },
         'tokenomics-row1-vesting': { ro: 'Eliberare treptată pe parcursul a 5-10 ani, pe măsură ce jetoanele sunt câștigate sau distribuite prin programe comunitare. Gestionat de un smart contract multi-sig sau DAO.', en: 'Gradual release over 5-10 years, as tokens are earned or distributed through community programs. Managed by a multi-sig smart contract or DAO.', fr: 'Libération progressive sur 5-10 ans, via des programmes communautaires. Géré par contrat multi-sig sau DAO.', ru: 'Постепенный выпуск в течение 5-10 лет, управляемый мультисиг контрактом или DAO.' },
         
-        'tokenomics-row2-cat': { ro: 'Trezorerie DAO / Dezvoltare Ecosistem', en: 'DAO Treasury / Ecosystem Development', fr: 'Trésorerie DAO / Développement Écosystème', ru: 'Казначейство DAO / Развитие Экосистемы' },
+        'tokenomics-row2-cat': { ro: 'Trezorerie DAO / Dezvoltare Ecosistem', en: 'DAO Treasury / Ecosystem Development', fr: 'Trésorerie DAO / Développement Écosystème', ru: 'Казначейство DAO / Развитие Экосистема' },
         'tokenomics-row2-scope': { ro: 'Finanțarea dezvoltării continue a platformei (instrumente, analize, simulatoare), integrarea de noi parteneriate, audituri de securitate și asigurarea sustenabilității pe termen lung a proiectului, sub guvernanța comunității.', en: 'Funding the continuous platform development (tools, analytics, simulators), integration of new partnerships, security audits, and ensuring the project\'s long-term sustainability, under community governance.', fr: 'Financement du développement de la plateforme (outils, audits, partenariats) et de la pérennité du projet, sous gouvernance communautaire.', ru: 'Финансирование разработки платформы (инструменты, аудиты, партнерства) и обеспечение долгосрочной устойчивости, под управлением сообщества.' },
         'tokenomics-row2-vesting': { ro: 'Blocate într-o trezorerie DAO, accesibile prin votul deținătorilor de tokenuri, cu praguri de vot minime și perioade de propunere/vot.', en: 'Locked in a DAO treasury, accessible through token holder votes, with minimum voting thresholds and proposal/voting periods.', fr: 'Bloqué en trésorerie DAO, accessible par vote des détenteurs, avec seuils minimums.', ru: 'Заблокировано в казначействе DAO, доступно через голосование держателей токенов.' },
 
@@ -169,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'tokenomics-total': { ro: 'Total', en: 'Total', fr: 'Total', ru: 'Итого' },
 
         // Nota finală
-        'tokenomics-note': { ro: '<b>Notă:</b> Strategia Tokenomics este proiectată pentru a minimiza presiunea de vânzare inițială și a alinia interesele echipei și ale comunității pentru succesul pe termen lung. Jetoanele nu sunt vândute, ci distribuite pentru a construi ecosistemul.', en: '<b>Note:</b> The Tokenomics strategy is designed to minimize initial selling pressure and align the interests of the team and community for long-term success. Tokens are not sold, but distributed to build the ecosystem.', fr: '<b>Note:</b> La stratégie Tokenomics vise à minimiser la pression de vente initiale et à aligner les intérêts pour un succes à long terme.', ru: '<b>Примечание:</b> Токеномика разработана для минимизации начального давления продаж и согласования интересов для долгосрочного успеха.' },
+        'tokenomics-note': { ro: '<b>Notă:</b> Strategia Tokenomics este proiectată pentru a minimiza presiunea de vânzare inițială și a alinia interesele echipei și ale comunității pentru succesul pe termen lung. Jetoanele nu sunt vândute, ci distribuite pentru a construi ecosistemul.', en: '<b>Note:</b> The Tokenomics strategy is designed to minimize initial selling pressure and align the interests of the team and community for long-term success. Tokens are not sold, but distributed to build the ecosystem.', fr: '<b>Note:</b> La stratégie Tokenomics vise à minimiser la pression de vente initiale et à aliner les intérêts pour un succes à long terme.', ru: '<b>Примечание:</b> Токеномика разработана для минимизации начального давления продаж и согласования интересов для долгосрочного успеха.' },
         
         // Secțiunea Disclaimer
         'disclaimer-title': { ro: 'Disclaimer Legal Important', en: 'Important Legal Disclaimer', fr: 'Avertissement Légal Important', ru: 'Важное Юридическое Предупреждение' },
@@ -192,6 +191,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Obiect de mapare pentru a afișa numele complet al limbii pe buton
+    const languageNames = {
+        'ro': 'Română',
+        'en': 'English',
+        'fr': 'Français',
+        'ru': 'Русский'
+    };
+
     // Lista limbilor disponibile
     const availableLanguages = ['ro', 'en', 'fr', 'ru'];
     let currentLanguage = localStorage.getItem('language') || 'ro';
@@ -210,14 +217,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const key = element.getAttribute('data-i18n');
             if (translations[key] && translations[key][lang]) {
                 // Verifică dacă textul conține HTML (ex. <b>)
-                if (key.includes('p') || key.includes('li') || key.includes('footer')) {
+                if (key.includes('p') || key.includes('li') || key.includes('footer') || key.includes('desc')) {
                      element.innerHTML = translations[key][lang];
                 } else {
                      element.textContent = translations[key][lang];
                 }
             }
         });
-        languageButton.textContent = currentLanguage.toUpperCase() + ' / ' + getNextLanguage(currentLanguage).toUpperCase();
+
+        // SETAREA TEXTULUI BUTONULUI DE LIMBĂ: Afișează limba curentă
+        const currentName = languageNames[currentLanguage] || currentLanguage.toUpperCase();
+        const nextName = languageNames[getNextLanguage(currentLanguage)] || getNextLanguage(currentLanguage).toUpperCase();
+
+        // Noul text afișează limba curentă completă și următoarea
+        languageButton.textContent = `${currentName} | Next: ${nextName}`;
+        
         // Setează clasa 'lang-ro', 'lang-en', etc. pe <body> pentru stilizare specifică limbii
         document.body.className = `lang-${currentLanguage}`; 
     }
