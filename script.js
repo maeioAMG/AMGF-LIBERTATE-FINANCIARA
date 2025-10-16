@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'why-p1': { ro: 'În peisajul dinamic și adesea haotic al Web3 și al criptomonedelor, promisiunile abundă, dar încrederea și informațiile autentice sunt adesea greu de găsit. Mulți, inclusiv eu, am simțit nevoia unui loc unde libertatea financiară să fie nu doar un vis, ci o călătorie reală, susținută de cunoaștere și o comunitate dedicată.', en: 'In the dynamic and often chaotic landscape of Web3 and cryptocurrencies, promises abound, but trust and authentic information are often hard to find. Many, including myself, felt the need for a place where financial freedom is not just a dream, but a real journey, supported by knowledge and a dedicated community.' },
         'why-p2': { ro: 'Aici intervine AMGF. Suntem mai mult decât un token; suntem un ecosistem construit de o persoană obișnuită, la fel ca tine, pasionată de viitor și de potențialul decentralizat. Misiunea noastră este să oferim un spațiu transparent și accesibil unde vei putea învăța, contribui și crește alături de o comunitate unită, transformând aspirația spre independența financiară într-o realitate concretă, pas cu pas.', en: 'This is where AMGF comes in. We are more than just a token; we are an ecosystem built by an ordinary person, just like you, passionate about the future and decentralized potential. Our mission is to provide a transparent and accessible space where you can learn, contribute, and grow alongside a united community, turning the aspiration for financial independence into a concrete reality, step by step.' },
 
-        // Secțiunea Link-uri (MODIFICATĂ AICI)
+        // Secțiunea Link-uri (MODIFICATĂ)
         'links-title': { ro: 'Comunitate & Tranzacționare', en: 'Community & Trading' },
         'links-desc': { 
             ro: 'Adresa de Mint (Solana): <b>HhQ6zu27pugw9KnxvvjGZFcPzwhwoT1U8AZJAmhECEJp</b>', 
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
             en: 'Contact Telegram (@amgf_libertate_bot)' 
         },
         'link-exchange1': { 
-            ro: 'PumpFun', // MODIFICAT AICI
-            en: 'PumpFun'  // MODIFICAT AICI
+            ro: '**PumpFun**', // MODIFICAT AICI
+            en: '**PumpFun**'  // MODIFICAT AICI
         },
         'link-exchange2': { 
             ro: 'Verifică Adresa de Mint (SolanaScan)', 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'disclaimer-p2': { ro: 'Vă rugăm să efectuați propria cercetare (DYOR - Do Your Own Research) și să consultați un profesionist financiar calificat înainte de a lua orice decizie de investiție. Proiectul AMGF nu garantează profituri și nu este responsabil pentru nicio pierdere suferită ca urmare a investițiilor bazate pe informațiile de pe acest site.', en: 'Please conduct your own research (DYOR - Do Your Own Research) and consult a qualified financial professional before making any investment decisions. The AMGF project does not guarantee profits and does not assume responsibility for any losses incurred as a result of investments based on the information on this site.' },
         'disclaimer-p3': { ro: 'Participarea la proiectul AMGF implică acceptarea termenilor și condițiilor noastre, care vor fi disponibile într-un document separat (Whitepaper complet și Termeni de Utilizare).', en: 'Participation in the AMGF project implies acceptance of our terms and conditions, which will be available in a separate document (full Whitepaper and Terms of Use).' },
         
-        // Footer (Păstrat ca la pasul anterior)
+        // Footer (Adresa de email este corectă)
         'footer-copyright': { ro: '&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.', en: '&copy; 2025 AMGF Financial Freedom. All rights reserved.' },
         'footer-contact': { 
             ro: 'Conectează-te cu noi: <a href="mailto:AMG3775@protonmail.com">AMG3775@protonmail.com</a>', 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Funcție pentru a aplica traducerile
     function applyTranslations() {
-        // 🎉 Îmbunătățire: Afișează limba curentă (RO sau EN) și textul celeilalte
+        // Afișează limba curentă (RO sau EN) și textul celeilalte
         if (currentLanguage === 'ro') {
             languageButton.innerHTML = '<b>RO</b> / EN'; 
             languageButton.title = 'Switch to English';
@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (translations[key] && translations[key][currentLanguage]) {
-                // ... (Logica de traducere rămâne identică)
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = translations[key][currentLanguage];
                 } else {
