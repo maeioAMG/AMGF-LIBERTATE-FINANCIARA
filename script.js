@@ -1,7 +1,7 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Obiect pentru a stoca traducerile (Acum include ro, en, fr, ru)
+    // Obiect pentru a stoca traducerile (ro, en, fr, ru)
     const translations = {
         // Navigație
         'nav-home': { ro: 'Acasă', en: 'Home', fr: 'Accueil', ru: 'Главная' },
@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Header
         'hero-title': { ro: 'AMGF', en: 'AMGF', fr: 'AMGF', ru: 'AMGF' },
         'hero-subtitle': { ro: 'Libertate Financiară', en: 'Financial Freedom', fr: 'Liberté Financière', ru: 'Финансовая Свобода' },
-
-        // Buton Limbă
-        'language-toggle': { ro: 'RO / EN / FR / RU', en: 'RO / EN / FR / RU', fr: 'RO / EN / FR / RU', ru: 'RO / EN / FR / RU' },
 
         // Secțiunea Despre Noi
         'about-title': { 
@@ -66,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ru: 'Вот тут и появляется AMGF. Мы больше, чем просто токен; мы — экосистема, построенная обычным человеком, таким же, как вы, увлеченным будущим и децентрализованным потенциалом. Наша миссия — предоставить прозрачное и доступное пространство, где вы сможете учиться, вносить свой вклад и расти вместе с сплоченным сообществом, превращая стремление к финансовой независимости в конкретную реальность, шаг за шагом.'
         },
 
-        // Secțiunea Link-uri (MODIFICATĂ)
+        // Secțiunea Link-uri (PumpFun este menționat)
         'links-title': { 
             ro: 'Comunitate & Tranzacționare', 
             en: 'Community & Trading', 
@@ -86,10 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
             ru: 'Контакт Telegram (@amgf_libertate_bot)' 
         },
         'link-exchange1': { 
-            ro: '**PumpFun**', 
-            en: '**PumpFun**',
-            fr: '**PumpFun**',
-            ru: '**PumpFun**'
+            ro: 'PumpFun', 
+            en: 'PumpFun',
+            fr: 'PumpFun',
+            ru: 'PumpFun'
         },
         'link-exchange2': { 
             ro: 'Verifică Adresa de Mint (SolanaScan)', 
@@ -155,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Rândurile tabelului
         'tokenomics-row1-cat': { ro: 'Comunitate & Ecosistem', en: 'Community & Ecosystem', fr: 'Communauté & Écosystème', ru: 'Сообщество и Экосистема' },
         'tokenomics-row1-scope': { ro: 'Susținerea creșterii organice a ecosistemului prin recompense pentru participare (Learn-to-Earn, Build-to-Earn), campanii de promovare, airdrop-uri strategice și stimulente pentru adoptare. Fără a fi un "investiție", ci o recompensă pentru contribuție.', en: 'Supporting the ecosystem\'s organic growth through participation rewards (Learn-to-Earn, Build-to-Earn), promotional campaigns, strategic airdrops, and adoption incentives. Not an "investment," but a reward for contribution.', fr: 'Soutien à la croissance organique via récompenses (Learn-to-Earn, Build-to-Earn) et airdrops. Récompense pour contribution, non investissement.', ru: 'Поддержка органического роста через вознаграждения (Learn-to-Earn, Build-to-Earn) и аирдропы. Вознаграждение за вклад, а не инвестиция.' },
-        'tokenomics-row1-vesting': { ro: 'Eliberare treptată pe parcursul a 5-10 ani, pe măsură ce jetoanele sunt câștigate sau distribuite prin programe comunitare. Gestionat de un smart contract multi-sig sau DAO.', en: 'Gradual release over 5-10 years, as tokens are earned or distributed through community programs. Managed by a multi-sig smart contract or DAO.', fr: 'Libération progressive sur 5-10 ans, via des programmes communautaires. Géré par contrat multi-sig ou DAO.', ru: 'Постепенный выпуск в течение 5-10 лет, управляемый мультисиг контрактом или DAO.' },
+        'tokenomics-row1-vesting': { ro: 'Eliberare treptată pe parcursul a 5-10 ani, pe măsură ce jetoanele sunt câștigate sau distribuite prin programe comunitare. Gestionat de un smart contract multi-sig sau DAO.', en: 'Gradual release over 5-10 years, as tokens are earned or distributed through community programs. Managed by a multi-sig smart contract or DAO.', fr: 'Libération progressive sur 5-10 ans, via des programmes communautaires. Géré par contrat multi-sig sau DAO.', ru: 'Постепенный выпуск в течение 5-10 лет, управляемый мультисиг контрактом или DAO.' },
         
         'tokenomics-row2-cat': { ro: 'Trezorerie DAO / Dezvoltare Ecosistem', en: 'DAO Treasury / Ecosystem Development', fr: 'Trésorerie DAO / Développement Écosystème', ru: 'Казначейство DAO / Развитие Экосистемы' },
         'tokenomics-row2-scope': { ro: 'Finanțarea dezvoltării continue a platformei (instrumente, analize, simulatoare), integrarea de noi parteneriate, audituri de securitate și asigurarea sustenabilității pe termen lung a proiectului, sub guvernanța comunității.', en: 'Funding the continuous platform development (tools, analytics, simulators), integration of new partnerships, security audits, and ensuring the project\'s long-term sustainability, under community governance.', fr: 'Financement du développement de la plateforme (outils, audits, partenariats) et de la pérennité du projet, sous gouvernance communautaire.', ru: 'Финансирование разработки платформы (инструменты, аудиты, партнерства) и обеспечение долгосрочной устойчивости, под управлением сообщества.' },
@@ -210,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Funcție pentru a aplica traducerile
     function applyTranslations() {
-        // Actualizează textul butonului de limbă (opțional, dar păstrează coerența)
+        // Actualizează textul butonului de limbă (RO / EN / FR / RU cu limba curentă bold-uită)
         languageButton.innerHTML = availableLanguages.map(lang => 
             lang.toUpperCase() === currentLanguage.toUpperCase() ? `<b>${lang.toUpperCase()}</b>` : lang.toUpperCase()
         ).join(' / ');
