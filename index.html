@@ -2,57 +2,153 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMGF - Financial Freedom</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="hero-title">AMGF - Libertate Financiară</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img src="AMGF.jpg" alt="Logo" class="logo-img">
+        <img src="AMGF.jpg" alt="Logo AMGF" class="logo-img">
         <h1 data-i18n="hero-title">AMGF</h1>
+        <div class="subtitle" data-i18n="hero-subtitle">Financial Freedom</div>
+         
         <nav>
             <a href="#despre" data-i18n="nav-about">Despre</a>
-            <a href="#valori" data-i18n="nav-values">Valori</a>
-            <a href="#linkuri" data-i18n="nav-links">Link-uri</a>
+            <a href="#de-ce-amgf" data-i18n="nav-why">De ce AMGF?</a>
+            <a href="#linkuri" data-i18n="nav-links">Link-uri Utile</a>
+            <a href="#viziune" data-i18n="nav-vision">Viziune</a>
             <a href="#tokenomics" data-i18n="nav-tokenomics">Tokenomics</a>
+            <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Albă</a> 
+            <a href="#disclaimer" data-i18n="nav-disclaimer">Disclaimer</a>
         </nav>
+         
         <button id="language-toggle">RO / EN / FR / RU</button>
     </header>
 
-    <main class="container">
-        <section id="despre">
-            <h2 class="section-title" data-i18n="about-title">Cine Suntem</h2>
-            <p data-i18n="about-p1">Salut, sunt Fondatorul AMGF, o persoană reală de 53 de ani, pasionată de Web3 și transparență.</p>
-            <p data-i18n="about-p2">Am creat AMGF pe rețeaua Base pentru a oferi o alternativă sigură și corectă în spațiul crypto.</p>
+    <main>
+        <section id="despre" class="about-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="about-title">Cine Suntem și De Ce AMGF?</h2>
+                <p data-i18n="about-p1"></p>
+                <p data-i18n="about-p2"></p>
+                <p data-i18n="about-p3"></p>
+                <p data-i18n="about-p4"></p>
+            </div>
         </section>
 
-        <section id="valori">
-            <h2 class="section-title" data-i18n="values-title">Valorile Noastre</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3 data-i18n="val-1-t">🛡️ Transparență</h3>
-                    <p data-i18n="val-1-p">Construim cu cărțile pe față, direct pe blockchain-ul Base.</p>
-                </div>
-                <div class="value-card">
-                    <h3 data-i18n="val-2-t">📚 Educație</h3>
-                    <p data-i18n="val-2-p">Cunoașterea este puterea care protejează comunitatea.</p>
+        <section id="de-ce-amgf" class="why-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="why-title">De ce AMGF?</h2>
+                <p data-i18n="why-p1"></p>
+                <p data-i18n="why-p2"></p>
+            </div>
+        </section>
+         
+        <section id="linkuri" class="links-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="links-title">Comunitate &amp; Tranzacționare</h2>
+                <p style="text-align: center; word-break: break-all;" data-i18n="links-desc">
+                    Adresa de Contract (BASE): <br>
+                    <b>0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765</b>
+                </p>
+                <div class="link-button-container">
+                    <a href="https://t.me/amgf_libertate_bot" target="_blank" class="link-button" data-i18n="link-telegram">Contact Telegram (@amgf_libertate_bot)</a>
+                    <a href="https://app.uniswap.org/#/swap?outputCurrency=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&chain=base" target="_blank" class="link-button" data-i18n="link-exchange1">Cumpără pe Uniswap (Base)</a>
+                    <a href="https://dexscreener.com/base/0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765" target="_blank" class="link-button" data-i18n="link-exchange2">Grafic DexScreener</a>
                 </div>
             </div>
         </section>
 
-        <section id="linkuri">
-            <h2 class="section-title" data-i18n="links-title">Tranzacționare BASE</h2>
-            <p style="text-align:center; word-break:break-all;">
-                Contract: <b>0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765</b>
-            </p>
-            <div class="link-button-container">
-                <a href="https://t.me/amgf_libertate_bot" class="link-button">Telegram</a>
-                <a href="https://app.uniswap.org/#/swap?outputCurrency=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&chain=base" class="link-button">Uniswap</a>
-                <a href="https://dexscreener.com/base/0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765" class="link-button">Grafic</a>
+        <section id="viziune" class="vision-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="vision-title">Viziune pe termen lung</h2>
+                <p data-i18n="vision-p1"></p>
+                <p data-i18n="vision-p2"></p>
+                <ul>
+                    <li data-i18n="vision-li1"></li>
+                    <li data-i18n="vision-li2"></li>
+                    <li data-i18n="vision-li3"></li>
+                    <li data-i18n="vision-li4"></li>
+                </ul>
+                <p data-i18n="vision-p3"></p>
+            </div>
+        </section>
+
+        <section id="tokenomics" class="tokenomics-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="tokenomics-title">Alocarea Tokenurilor AMGF (Actualizată)</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-i18n="tokenomics-th1">Categorie de Alocare</th>
+                                <th data-i18n="tokenomics-th2">Procent (%)</th>
+                                <th data-i18n="tokenomics-th3">Cantitate AMGF</th>
+                                <th data-i18n="tokenomics-th4">Scop și Justificare</th>
+                                <th data-i18n="tokenomics-th5">Plan de Vesting / Acces</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-i18n="tokenomics-row1-cat">Comunitate &amp; Ecosistem</td>
+                                <td>40%</td>
+                                <td>400,000,000</td>
+                                <td data-i18n="tokenomics-row1-scope"></td>
+                                <td data-i18n="tokenomics-row1-vesting"></td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="tokenomics-row2-cat">Trezorerie DAO / Dezvoltare Ecosistem</td>
+                                <td>20%</td>
+                                <td>200,000,000</td>
+                                <td data-i18n="tokenomics-row2-scope"></td>
+                                <td data-i18n="tokenomics-row2-vesting"></td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="tokenomics-row3-cat">Fond de Lichiditate Inițială (DEX)</td>
+                                <td>15%</td>
+                                <td>150,000,000</td>
+                                <td data-i18n="tokenomics-row3-scope"></td>
+                                <td data-i18n="tokenomics-row3-vesting"></td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="tokenomics-row4-cat">Echipa și Fondator</td>
+                                <td>25%</td>
+                                <td>250,000,000</td>
+                                <td data-i18n="tokenomics-row4-scope"></td>
+                                <td data-i18n="tokenomics-row4-vesting"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2" data-i18n="tokenomics-total">Total</td>
+                                <td>1,000,000,000</td>
+                                <td colspan="2">100% (Total Supply)</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="token-note" data-i18n="tokenomics-note"></div>
+            </div>
+        </section>
+
+        <section id="disclaimer" class="disclaimer-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="disclaimer-title">Disclaimer Legal Important</h2>
+                <p data-i18n="disclaimer-p1"></p>
+                <p data-i18n="disclaimer-p2"></p>
+                <p data-i18n="disclaimer-p3"></p>
             </div>
         </section>
     </main>
 
+    <footer>
+        <div class="container">
+            <p data-i18n="footer-copyright">&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.</p>
+            <p data-i18n="footer-contact"></p>
+        </div>
+    </footer>
+     
     <script src="script.js"></script>
 </body>
 </html>
