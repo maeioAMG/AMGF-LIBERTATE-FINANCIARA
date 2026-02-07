@@ -1,28 +1,98 @@
-/* ... pastreaza tot ce am trimis anterior si adauga la final: ... */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap');
+
+body {
+    background: #0a0a0a;
+    color: #bdbdbd;
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background: #111111;
+    padding: 2.5rem 0;
+    text-align: center;
+    border-bottom: 3px solid #e2b13c;
+    box-shadow: 0 4px 16px #000;
+}
+
+.logo-img {
+    max-width: 150px;
+    filter: drop-shadow(0 0 15px #e2b13c66);
+}
+
+h1 {
+    color: #e2b13c;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+nav a {
+    color: #e2b13c;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background: #111;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2b13c22;
+}
+
+.section-title {
+    color: #e2b13c;
+    border-left: 5px solid #fff;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
 
 .values-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 20px;
 }
 
 .value-card {
     flex: 1;
     min-width: 250px;
     background: #1a1a1a;
-    padding: 1.5rem;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 8px;
     border-top: 3px solid #e2b13c;
-    transition: transform 0.3s;
 }
 
-.value-card:hover {
-    transform: translateY(-10px);
+.link-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.link-button {
+    background: #e2b13c;
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#language-toggle {
     background: #222;
-}
-
-.value-card h3 {
     color: #e2b13c;
-    margin-bottom: 1rem;
+    border: 1px solid #e2b13c;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 15px;
 }
