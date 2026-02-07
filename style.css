@@ -1,242 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap');
+/* ... pastreaza tot ce am trimis anterior si adauga la final: ... */
 
-/* Reset și Stiluri de Bază */
-body {
-    background: #0a0a0a;
-    color: #bdbdbd;
-    font-family: 'Inter', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Previne scroll-ul orizontal pe mobil */
-}
-
-header {
-    background: #111111;
-    padding: 2.5rem 0 1.5rem 0;
-    text-align: center;
-    border-bottom: 3px solid #e2b13c;
-    box-shadow: 0 4px 16px #0009;
-}
-
-.logo-img {
-    max-width: 180px;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 25px #e2b13c99);
-}
-
-h1 {
-    color: #e2b13c;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    letter-spacing: 3px;
-    margin: 0 0 0.3rem 0;
-    font-weight: 700;
-    text-shadow: 0 0 10px #e2b13c, 0 0 25px #000c;
-}
-
-.subtitle {
-    font-size: 1.25rem;
-    color: #fff;
-    letter-spacing: 1.5px;
-    font-weight: 400;
-    text-shadow: 0 2px 10px #000a;
-}
-
-/* Navigație */
-nav {
-    margin: 2rem 0 0 0;
+.values-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-nav a {
-    color: #e2b13c;
-    text-decoration: none;
-    margin: 0 0.8rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: color 0.3s, border-bottom 0.3s, transform 0.3s;
-    letter-spacing: 1px;
-    padding-bottom: 4px;
-    border-bottom: 2px solid transparent;
-}
-
-nav a:hover {
-    color: #fff;
-    border-bottom: 2px solid #e2b13c;
-    transform: translateY(-2px);
-}
-
-/* Butonul de Limbă */
-#language-toggle {
-    background: #222;
-    color: #e2b13c;
-    border: 1px solid #e2b13c;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: background 0.3s, color 0.3s, transform 0.2s;
-    margin-top: 1.5rem;
-    display: inline-block;
-}
-
-#language-toggle:hover {
-    background: #e2b13c;
-    color: #121212;
-    transform: scale(1.05);
-}
-
-/* Structură & Titluri */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-section {
-    padding: 4rem 0 3rem 0;
-}
-
-.section-title {
-    font-family: 'Montserrat', sans-serif;
-    color: #e2b13c;
-    font-size: 2.2rem;
-    border-left: 6px solid #fff;
-    padding-left: 1.2rem;
-    margin-bottom: 1.8rem;
-    letter-spacing: 1px;
-    font-weight: 700;
-}
-
-/* Secțiuni de Conținut */
-.about-section, .vision-section, .tokenomics-section, .links-section {
-    background: #111111;
-    border-radius: 12px;
-    box-shadow: 0 2px 20px #0007;
-    margin-bottom: 3rem;
-    padding: 2.5rem;
-}
-
-/* Fix pentru Adresa de Contract BASE pe mobil */
-#linkuri b {
-    display: block;
-    word-break: break-all; /* Forțează adresa lungă de Base să nu iasă din ecran */
-    font-family: monospace;
-    background: #1a1a1a;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    color: #e2b13c;
-    border: 1px dashed #e2b13c55;
-}
-
-.why-section, .disclaimer-section {
-    background: #0e0e0e;
-    border-radius: 12px;
-    box-shadow: 0 2px 20px #0007;
-    margin-bottom: 3rem;
-    padding: 2.5rem;
-    border: 1px solid #e2b13c33;
-}
-
-p, ul, li {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: #bdbdbd;
-    margin-bottom: 1.2rem;
-}
-
-ul {
-    padding-left: 1.5rem;
-    list-style-type: '⚡ ';
-}
-
-li {
-    margin-bottom: 0.8rem;
-    padding-left: 0.5rem;
-}
-
-b {
-    color: #fff;
-    font-weight: 700;
-}
-
-/* Tokenomics Table */
-.table-responsive {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #0e0e0e;
-    color: #e2b13c;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-th, td {
-    border: 1px solid #e2b13c55;
-    padding: 1rem;
-    text-align: left;
-}
-
-th {
-    background: #181818;
-    font-weight: 700;
-}
-
-tfoot td {
-    color: #000;
-    background: #e2b13c;
-    text-align: center;
-    font-weight: 700;
-}
-
-/* Link Buttons */
-.link-button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
     margin-top: 2rem;
 }
 
-.link-button {
-    display: inline-block;
-    background: #e2b13c;
-    color: #111;
-    padding: 1rem 2rem;
+.value-card {
+    flex: 1;
+    min-width: 250px;
+    background: #1a1a1a;
+    padding: 1.5rem;
     border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.15rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(226, 177, 60, 0.4);
-    text-align: center;
-}
-
-.link-button:hover {
-    background: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(226, 177, 60, 0.7);
-}
-
-/* Footer */
-footer {
-    background: #111111;
-    padding: 2.5rem 1rem;
     border-top: 3px solid #e2b13c;
-    margin-top: 5rem;
+    transition: transform 0.3s;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    h1 { font-size: 2rem; }
-    .section-title { font-size: 1.3rem; }
-    nav a { margin: 0.3rem; font-size: 0.9rem; }
-    .link-button { width: 100%; }
+.value-card:hover {
+    transform: translateY(-10px);
+    background: #222;
+}
+
+.value-card h3 {
+    color: #e2b13c;
+    margin-bottom: 1rem;
 }
