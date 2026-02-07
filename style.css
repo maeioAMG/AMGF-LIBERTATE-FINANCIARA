@@ -2,15 +2,16 @@
 
 /* Reset și Stiluri de Bază */
 body {
-    background: #0a0a0a; /* Fundal mai subtil */
-    color: #bdbdbd; /* Textul corpului în gri deschis pentru lizibilitate */
+    background: #0a0a0a;
+    color: #bdbdbd;
     font-family: 'Inter', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Previne scroll-ul orizontal pe mobil */
 }
 
 header {
-    background: #111111; /* Ușor mai deschis decât body */
+    background: #111111;
     padding: 2.5rem 0 1.5rem 0;
     text-align: center;
     border-bottom: 3px solid #e2b13c;
@@ -20,17 +21,17 @@ header {
 .logo-img {
     max-width: 180px;
     margin-bottom: 1rem;
-    filter: drop-shadow(0 0 25px #e2b13c99); /* Efect de glow mai puternic */
+    filter: drop-shadow(0 0 25px #e2b13c99);
 }
 
 h1 {
     color: #e2b13c;
     font-family: 'Montserrat', sans-serif;
-    font-size: 3rem; /* Mărit pentru impact */
+    font-size: 3rem;
     letter-spacing: 3px;
     margin: 0 0 0.3rem 0;
     font-weight: 700;
-    text-shadow: 0 0 10px #e2b13c, 0 0 25px #000c; /* Efect de neon subtil */
+    text-shadow: 0 0 10px #e2b13c, 0 0 25px #000c;
 }
 
 .subtitle {
@@ -44,12 +45,16 @@ h1 {
 /* Navigație */
 nav {
     margin: 2rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 nav a {
     color: #e2b13c;
     text-decoration: none;
-    margin: 0 1.2rem;
+    margin: 0 0.8rem;
     font-size: 1.1rem;
     font-weight: 600;
     transition: color 0.3s, border-bottom 0.3s, transform 0.3s;
@@ -61,10 +66,10 @@ nav a {
 nav a:hover {
     color: #fff;
     border-bottom: 2px solid #e2b13c;
-    transform: translateY(-2px); /* Efect de ridicare la hover */
+    transform: translateY(-2px);
 }
 
-/* Butonul de Limbă (NOU) */
+/* Butonul de Limbă */
 #language-toggle {
     background: #222;
     color: #e2b13c;
@@ -99,43 +104,54 @@ section {
     font-family: 'Montserrat', sans-serif;
     color: #e2b13c;
     font-size: 2.2rem;
-    border-left: 6px solid #fff; /* Border în alb pentru contrast */
+    border-left: 6px solid #fff;
     padding-left: 1.2rem;
     margin-bottom: 1.8rem;
     letter-spacing: 1px;
     font-weight: 700;
-    text-shadow: 0 0 5px #e2b13c44;
 }
 
 /* Secțiuni de Conținut */
 .about-section, .vision-section, .tokenomics-section, .links-section {
-    background: #111111; /* Separă vizual de body */
-    border-radius: 12px;
-    box-shadow: 0 2px 20px #0007;
-    margin-bottom: 3rem;
-    padding: 2.5rem; /* Adaugă padding interior */
-}
-
-.why-section, .disclaimer-section {
-    background: #0e0e0e; /* Ușor mai întunecat pentru fundal alternativ */
+    background: #111111;
     border-radius: 12px;
     box-shadow: 0 2px 20px #0007;
     margin-bottom: 3rem;
     padding: 2.5rem;
-    border: 1px solid #e2b13c33; /* Border subtil */
+}
+
+/* Fix pentru Adresa de Contract BASE pe mobil */
+#linkuri b {
+    display: block;
+    word-break: break-all; /* Forțează adresa lungă de Base să nu iasă din ecran */
+    font-family: monospace;
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #e2b13c;
+    border: 1px dashed #e2b13c55;
+}
+
+.why-section, .disclaimer-section {
+    background: #0e0e0e;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px #0007;
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    border: 1px solid #e2b13c33;
 }
 
 p, ul, li {
-    font-size: 1.15rem; /* Mărit ușor */
+    font-size: 1.15rem;
     line-height: 1.8;
-    color: #bdbdbd; /* Gri deschis */
+    color: #bdbdbd;
     margin-bottom: 1.2rem;
 }
 
 ul {
     padding-left: 1.5rem;
-    margin-top: 0.5rem;
-    list-style-type: '⚡ '; /* Bullet personalizat */
+    list-style-type: '⚡ ';
 }
 
 li {
@@ -144,65 +160,40 @@ li {
 }
 
 b {
-    color: #fff; /* Alb pur pentru accent */
+    color: #fff;
     font-weight: 700;
 }
 
 /* Tokenomics Table */
 .table-responsive {
     overflow-x: auto;
-    margin-bottom: 1.5rem;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background: #0e0e0e; /* Fundal tabel */
+    background: #0e0e0e;
     color: #e2b13c;
-    font-size: 1rem;
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 1rem;
 }
 
 th, td {
-    border: 1px solid #e2b13c55; /* Border mai subtil */
-    padding: 0.8rem 0.7rem;
+    border: 1px solid #e2b13c55;
+    padding: 1rem;
     text-align: left;
-    vertical-align: top;
 }
 
 th {
     background: #181818;
-    color: #e2b13c;
     font-weight: 700;
-}
-
-tr:nth-child(even) {
-    background: #121212;
-}
-
-tr:nth-child(odd) {
-    background: #0e0e0e;
 }
 
 tfoot td {
-    font-size: 1.15rem;
-    color: #000; /* Text negru */
-    background: #e2b13c; /* Fundal auriu pentru total */
-    border-top: 2px solid #fff;
+    color: #000;
+    background: #e2b13c;
     text-align: center;
     font-weight: 700;
-}
-
-.token-note {
-    color: #fff;
-    background: #181818;
-    padding: 1.2rem 1.8rem;
-    border-left: 6px solid #fff; /* Border alb */
-    margin-top: 1.5rem;
-    font-size: 1.05rem;
-    border-radius: 0 7px 7px 0;
 }
 
 /* Link Buttons */
@@ -223,65 +214,29 @@ tfoot td {
     text-decoration: none;
     font-weight: 700;
     font-size: 1.15rem;
-    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-    letter-spacing: 1px;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(226, 177, 60, 0.4);
+    text-align: center;
 }
 
 .link-button:hover {
     background: #fff;
-    transform: translateY(-3px) scale(1.02);
+    transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(226, 177, 60, 0.7);
 }
 
 /* Footer */
 footer {
     background: #111111;
-    color: #e2b13c;
-    text-align: center;
-    padding: 2.5rem 1rem 1.5rem 1rem;
-    font-size: 1.05rem;
-    letter-spacing: 1px;
+    padding: 2.5rem 1rem;
     border-top: 3px solid #e2b13c;
     margin-top: 5rem;
-    box-shadow: 0 -2px 16px #000c;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-footer a:hover {
-    color: #e2b13c;
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-    .container {
-        max-width: 98vw;
-        padding: 0 3vw;
-    }
-    .section-title { font-size: 1.6rem; }
-    table, th, td { font-size: 0.95rem; }
-    .about-section, .why-section, .disclaimer-section, .vision-section, .tokenomics-section {
-        padding: 1.5rem;
-    }
-}
-
 @media (max-width: 600px) {
-    h1 { font-size: 2rem; letter-spacing: 1.5px; }
-    .subtitle { font-size: 1rem; }
-    .section-title { font-size: 1.3rem; padding-left: 0.8rem; }
-    .logo-img { max-width: 130px; }
-    nav { margin-top: 1rem; }
-    nav a { margin: 0 0.5rem; font-size: 0.95rem; }
-    section { padding: 2rem 0 1.5rem 0; }
-    .link-button {
-        width: 100%;
-        margin-bottom: 0.5rem;
-        font-size: 1.05rem;
-    }
-    #language-toggle { margin-top: 1rem; }
+    h1 { font-size: 2rem; }
+    .section-title { font-size: 1.3rem; }
+    nav a { margin: 0.3rem; font-size: 0.9rem; }
+    .link-button { width: 100%; }
 }
