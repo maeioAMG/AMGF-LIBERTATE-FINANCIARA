@@ -6,13 +6,66 @@
     <title data-i18n="hero-title">AMGF - Libertate Financiară</title>
     <link rel="stylesheet" href="style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .wallet-button-wrap {
+            text-align: center;
+            margin: 32px 0 8px;
+        }
+        .wallet-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, #C9951A, #7A5A10);
+            color: #050503 !important;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-decoration: none !important;
+            border-radius: 10px;
+            border: 2px solid #E8B832;
+            box-shadow: 0 0 28px rgba(201,149,26,0.5), 0 4px 16px rgba(0,0,0,0.3);
+            transition: all 0.25s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+        .wallet-button:hover {
+            background: linear-gradient(135deg, #E8B832, #C9951A);
+            transform: translateY(-3px);
+            box-shadow: 0 0 44px rgba(201,149,26,0.7), 0 8px 24px rgba(0,0,0,0.3);
+            color: #050503 !important;
+        }
+        .wallet-button-icon { font-size: 22px; }
+        .wallet-button-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
+        .wallet-button-label { font-size: 11px; letter-spacing: 2px; opacity: 0.8; }
+        .wallet-button-name { font-size: 16px; letter-spacing: 1.5px; }
+        .wallet-button-badge {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 14px;
+            background: rgba(201,149,26,0.12);
+            border: 1px solid rgba(201,149,26,0.3);
+            border-radius: 20px;
+            font-size: 11px;
+            color: #C9951A;
+            letter-spacing: 1px;
+            font-family: 'Inter', sans-serif;
+        }
+        @keyframes wallet-pulse {
+            0%,100% { box-shadow: 0 0 28px rgba(201,149,26,0.5), 0 4px 16px rgba(0,0,0,0.3); }
+            50%      { box-shadow: 0 0 44px rgba(201,149,26,0.8), 0 4px 16px rgba(0,0,0,0.3); }
+        }
+        .wallet-button { animation: wallet-pulse 3s ease-in-out infinite; }
+        .wallet-button:hover { animation: none; }
+    </style>
 </head>
 <body>
     <header>
         <img src="AMGF.jpg" alt="Logo AMGF" class="logo-img">
         <h1 data-i18n="hero-title">AMGF</h1>
         <div class="subtitle" data-i18n="hero-subtitle">Financial Freedom</div>
-         
         <nav>
             <a href="#despre" data-i18n="nav-about">Despre</a>
             <a href="#de-ce-amgf" data-i18n="nav-why">De ce AMGF?</a>
@@ -22,7 +75,6 @@
             <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Albă</a> 
             <a href="#disclaimer" data-i18n="nav-disclaimer">Disclaimer</a>
         </nav>
-         
         <button id="language-toggle">RO / EN / FR / RU</button>
     </header>
 
@@ -52,6 +104,22 @@
                     Adresa de Contract (BASE): <br>
                     <b>0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765</b>
                 </p>
+
+                <!-- AMGF WALLET BUTTON -->
+                <div class="wallet-button-wrap">
+                    <a href="https://wallet.amgf-finance.com" target="_blank" class="wallet-button">
+                        <span class="wallet-button-icon">🗽</span>
+                        <span class="wallet-button-text">
+                            <span class="wallet-button-label">AMGF ECOSYSTEM</span>
+                            <span class="wallet-button-name">AMGF WALLET N.C.</span>
+                        </span>
+                        <span style="font-size:18px; margin-left:4px;">↗</span>
+                    </a>
+                    <br>
+                    <span class="wallet-button-badge">🔒 Non-Custodial · Base Network · HTTPS</span>
+                </div>
+                <!-- END WALLET BUTTON -->
+
                 <div class="link-button-container">
                     <a href="https://t.me/amgf_libertate_bot" target="_blank" class="link-button" data-i18n="link-telegram">Contact Telegram (@amgf_libertate_bot)</a>
                     <a href="https://app.uniswap.org/#/swap?outputCurrency=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&chain=base" target="_blank" class="link-button" data-i18n="link-exchange1">Cumpără pe Uniswap (Base)</a>
