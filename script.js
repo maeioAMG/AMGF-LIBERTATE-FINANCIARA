@@ -47,8 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
         'eco-app3-desc': { ro: 'Pune tokenurile AMGF la lucru și generează randamente pasive. Contribuie la stabilitatea ecosistemului.', en: 'Put your AMGF tokens to work and generate passive returns. Contributes to ecosystem stability.', fr: 'Mettez vos tokens AMGF au travail et générez des rendements passifs. Contribue à la stabilité de l\'écosystème.', ru: 'Заставьте свои токены AMGF работать и генерируйте пассивный доход. Способствует стабильности экосистемы.' },
         'eco-app4-name': { ro: 'AMGF Code App', en: 'AMGF Code App', fr: 'AMGF Code App', ru: 'AMGF Code App' },
         'eco-app4-desc': { ro: 'Platformă de dezvoltare și colaborare pentru membrii tehnici. Susține mecanismul Build-to-Earn al comunității.', en: 'Development and collaboration platform for technical members. Supports the community\'s Build-to-Earn mechanism.', fr: 'Plateforme de développement et de collaboration pour les membres techniques. Soutient le mécanisme Build-to-Earn de la communauté.', ru: 'Платформа разработки и сотрудничества для технических членов. Поддерживает механизм Build-to-Earn сообщества.' },
-        'eco-app5-name': { ro: 'DAO Governance', en: 'DAO Governance', fr: 'Gouvernance DAO', ru: 'Управление DAO' },
-        'eco-app5-desc': { ro: 'Votează și decide viitorul proiectului. Fiecare deținător de AMGF are o voce reală în guvernanța ecosistemului.', en: 'Vote and decide the future of the project. Every AMGF holder has a real voice in ecosystem governance.', fr: 'Votez et décidez de l\'avenir du projet. Chaque détenteur d\'AMGF a une vraie voix dans la gouvernance de l\'écosystème.', ru: 'Голосуйте и решайте будущее проекта. Каждый держатель AMGF имеет реальный голос в управлении экосистемой.' },
+
+        // ✅ ACTUALIZAT: eco-app5 = Learn-to-Earn (înlocuiește DAO)
+        'eco-app5-name': {
+            ro: 'Learn-to-Earn',
+            en: 'Learn-to-Earn',
+            fr: 'Apprendre-et-Gagner',
+            ru: 'Учись-и-Зарабатывай'
+        },
+        'eco-app5-desc': {
+            ro: 'Platformă educațională crypto & finanțe. Completează lecții, câștigă puncte și primești recompense în $AMGF trimestrial.',
+            en: 'Crypto & finance educational platform. Complete lessons, earn points and receive $AMGF rewards quarterly.',
+            fr: 'Plateforme éducative crypto & finance. Complétez des leçons, gagnez des points et recevez des récompenses en $AMGF trimestriellement.',
+            ru: 'Образовательная платформа по крипто и финансам. Проходите уроки, зарабатывайте очки и получайте вознаграждения в $AMGF ежеквартально.'
+        },
+
         'eco-app6-name': { ro: 'Liberty Bot', en: 'Liberty Bot', fr: 'Bot Liberty', ru: 'Бот Liberty' },
         'eco-app6-desc': { ro: 'Bot Telegram pentru interacțiunea cu comunitatea, notificări în timp real și informații despre tokenul AMGF.', en: 'Telegram bot for community interaction, real-time notifications and information about the AMGF token.', fr: 'Bot Telegram pour l\'interaction avec la communauté, les notifications en temps réel et les informations sur le token AMGF.', ru: 'Telegram-бот для взаимодействия с сообществом, уведомлений в реальном времени и информации о токене AMGF.' },
         'eco-free': { ro: '✅ GRATUIT', en: '✅ FREE', fr: '✅ GRATUIT', ru: '✅ БЕСПЛАТНО' },
@@ -157,3 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     applyTranslations(currentLanguage);
 });
+```
+
+---
+
+**✅ Singura schimbare față de originalul tău:**
+```
+eco-app5-name: DAO Governance → Learn-to-Earn (RO/EN/FR/RU)
+eco-app5-desc: Votează și decide... → Platformă educațională... (RO/EN/FR/RU)
