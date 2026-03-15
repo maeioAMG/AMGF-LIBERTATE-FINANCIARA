@@ -73,6 +73,7 @@
         .eco-card-desc { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.6; color: #b0a080; flex: 1; }
         .eco-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
         .eco-card-free { display: inline-block; padding: 2px 10px; background: rgba(80,200,80,0.1); border: 1px solid rgba(80,200,80,0.3); border-radius: 20px; font-size: 10px; color: #6ddc6d; font-family: 'Inter', sans-serif; letter-spacing: 1px; font-weight: 600; }
+        .eco-card-new { display: inline-block; padding: 2px 10px; background: rgba(100,100,255,0.1); border: 1px solid rgba(100,100,255,0.3); border-radius: 20px; font-size: 10px; color: #9999ee; font-family: 'Inter', sans-serif; letter-spacing: 1px; font-weight: 600; }
         .eco-card-link { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: rgba(201,149,26,0.1); border: 1px solid rgba(201,149,26,0.35); border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #E8B832 !important; text-decoration: none !important; text-transform: uppercase; transition: all 0.25s; }
         .eco-card-link:hover { background: rgba(201,149,26,0.2); border-color: #E8B832; }
         .ecosystem-more-btn { display: block; text-align: center; margin: 8px auto 0; }
@@ -195,6 +196,8 @@
                     <span data-i18n="eco-intro">Fondatorul AMGF construiește activ un ecosistem complet de aplicații Web3, toate disponibile gratuit pentru comunitate. Pe viitor, o <strong>taxă simbolică</strong> poate fi introdusă pentru a susține dezvoltarea continuă a proiectului.</span>
                 </div>
                 <div class="ecosystem-grid">
+
+                    <!-- WALLET -->
                     <div class="eco-card">
                         <div class="eco-card-icon">🗽</div>
                         <div class="eco-card-name" data-i18n="eco-app1-name">AMGF Wallet N.C.</div>
@@ -205,6 +208,8 @@
                             <a href="https://wallet.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
                         </div>
                     </div>
+
+                    <!-- AIRDROP -->
                     <div class="eco-card">
                         <div class="eco-card-icon">🎯</div>
                         <div class="eco-card-name" data-i18n="eco-app2-name">Airdrop Manager</div>
@@ -215,6 +220,8 @@
                             <a href="https://airdrop.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
                         </div>
                     </div>
+
+                    <!-- STAKING -->
                     <div class="eco-card">
                         <div class="eco-card-icon">💎</div>
                         <div class="eco-card-name" data-i18n="eco-app3-name">Staking Hub</div>
@@ -225,6 +232,8 @@
                             <a href="https://staking.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
                         </div>
                     </div>
+
+                    <!-- CODE APP -->
                     <div class="eco-card">
                         <div class="eco-card-icon">💻</div>
                         <div class="eco-card-name" data-i18n="eco-app4-name">AMGF Code App</div>
@@ -235,16 +244,20 @@
                             <a href="https://code.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
                         </div>
                     </div>
+
+                    <!-- LEARN TO EARN (înlocuiește DAO) -->
                     <div class="eco-card">
-                        <div class="eco-card-icon">🏛️</div>
-                        <div class="eco-card-name" data-i18n="eco-app5-name">DAO Governance</div>
-                        <div class="eco-card-url">dao.amgf-finance.com</div>
-                        <div class="eco-card-desc" data-i18n="eco-app5-desc">Votează și decide viitorul proiectului. Fiecare deținător de AMGF are o voce reală în guvernanța ecosistemului.</div>
+                        <div class="eco-card-icon">🎓</div>
+                        <div class="eco-card-name" data-i18n="eco-app5-name">Learn-to-Earn</div>
+                        <div class="eco-card-url">learn.amgf-finance.com</div>
+                        <div class="eco-card-desc" data-i18n="eco-app5-desc">Platformă educațională crypto & finanțe. Completează lecții, câștigă puncte și primești recompense în $AMGF trimestrial.</div>
                         <div class="eco-card-footer">
                             <span class="eco-card-free" data-i18n="eco-free">✅ GRATUIT</span>
-                            <a href="https://dao.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
+                            <a href="https://learn.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
                         </div>
                     </div>
+
+                    <!-- LIBERTY BOT -->
                     <div class="eco-card">
                         <div class="eco-card-icon">🤖</div>
                         <div class="eco-card-name" data-i18n="eco-app6-name">Liberty Bot</div>
@@ -255,10 +268,14 @@
                             <a href="https://t.me/amgf_libertate_bot" target="_blank" class="eco-card-link">Deschide ↗</a>
                         </div>
                     </div>
+
                 </div>
+
+                <!-- BUTON - trimite la #ecosistem în loc de ecosystem.html -->
                 <div class="ecosystem-more-btn">
-                    <a href="ecosystem.html" data-i18n="eco-more-btn">🌐 Vezi toate aplicațiile ↗</a>
+                    <a href="#ecosistem" data-i18n="eco-more-btn">🌐 Vezi toate aplicațiile ↗</a>
                 </div>
+
                 <div class="ecosystem-future-note" data-i18n="eco-future-note">
                     💡 Toate aplicațiile sunt în prezent <strong>100% gratuite</strong>. Pe viitor, o taxă simbolică poate fi introdusă pentru a susține dezvoltarea continuă și echipa proiectului. Comunitatea va fi consultată înainte de orice schimbare.
                 </div>
@@ -298,7 +315,6 @@
                 </div>
             </div>
         </section>
-        <!-- ══════════ END ROADMAP ══════════ -->
 
         <!-- ══════════ TRANSPARENȚĂ LICHIDITATE ══════════ -->
         <section id="lichiditate" class="liquidity-section">
@@ -349,7 +365,6 @@
                 </div>
             </div>
         </section>
-        <!-- ══════════ END TRANSPARENȚĂ ══════════ -->
 
         <section id="tokenomics" class="tokenomics-section">
             <div class="container">
