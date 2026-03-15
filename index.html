@@ -1,4 +1,4 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -7,29 +7,18 @@ html<!DOCTYPE html>
     <link rel="stylesheet" href="style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        .wallet-button-wrap {
-            text-align: center;
-            margin: 32px 0 8px;
-        }
+        .wallet-button-wrap { text-align: center; margin: 32px 0 8px; }
         .wallet-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            display: inline-flex; align-items: center; gap: 10px;
             padding: 16px 36px;
             background: linear-gradient(135deg, #C9951A, #7A5A10);
             color: #050503 !important;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-decoration: none !important;
-            border-radius: 10px;
-            border: 2px solid #E8B832;
+            font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700;
+            letter-spacing: 1.5px; text-decoration: none !important;
+            border-radius: 10px; border: 2px solid #E8B832;
             box-shadow: 0 0 28px rgba(201,149,26,0.5), 0 4px 16px rgba(0,0,0,0.3);
-            transition: all 0.25s ease;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.25s ease; text-transform: uppercase;
+            position: relative; overflow: hidden;
         }
         .wallet-button:hover {
             background: linear-gradient(135deg, #E8B832, #C9951A);
@@ -42,16 +31,10 @@ html<!DOCTYPE html>
         .wallet-button-label { font-size: 11px; letter-spacing: 2px; opacity: 0.8; }
         .wallet-button-name { font-size: 16px; letter-spacing: 1.5px; }
         .wallet-button-badge {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 4px 14px;
-            background: rgba(201,149,26,0.12);
-            border: 1px solid rgba(201,149,26,0.3);
-            border-radius: 20px;
-            font-size: 11px;
-            color: #C9951A;
-            letter-spacing: 1px;
-            font-family: 'Inter', sans-serif;
+            display: inline-block; margin-top: 8px; padding: 4px 14px;
+            background: rgba(201,149,26,0.12); border: 1px solid rgba(201,149,26,0.3);
+            border-radius: 20px; font-size: 11px; color: #C9951A;
+            letter-spacing: 1px; font-family: 'Inter', sans-serif;
         }
         @keyframes wallet-pulse {
             0%,100% { box-shadow: 0 0 28px rgba(201,149,26,0.5), 0 4px 16px rgba(0,0,0,0.3); }
@@ -59,6 +42,47 @@ html<!DOCTYPE html>
         }
         .wallet-button { animation: wallet-pulse 3s ease-in-out infinite; }
         .wallet-button:hover { animation: none; }
+
+        /* ── ROADMAP ── */
+        .roadmap-section { padding: 64px 0; }
+        .roadmap-timeline {
+            position: relative; max-width: 780px;
+            margin: 40px auto 0; padding-left: 36px;
+        }
+        .roadmap-timeline::before {
+            content: ''; position: absolute;
+            left: 10px; top: 0; bottom: 0; width: 2px;
+            background: linear-gradient(to bottom, #C9951A, rgba(201,149,26,0.1));
+        }
+        .roadmap-item {
+            position: relative; margin-bottom: 44px; padding: 22px 28px;
+            background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.18);
+            border-radius: 10px; transition: border-color 0.3s, background 0.3s;
+        }
+        .roadmap-item:hover { border-color: rgba(201,149,26,0.5); background: rgba(201,149,26,0.09); }
+        .roadmap-item::before {
+            content: ''; position: absolute; left: -31px; top: 24px;
+            width: 12px; height: 12px; background: #C9951A;
+            border: 2px solid #E8B832; border-radius: 3px; transform: rotate(45deg);
+        }
+        .roadmap-phase {
+            font-family: 'Montserrat', sans-serif; font-size: 10px;
+            letter-spacing: 3px; text-transform: uppercase; color: #C9951A; margin-bottom: 6px;
+        }
+        .roadmap-item-title {
+            font-family: 'Montserrat', sans-serif; font-size: 17px;
+            font-weight: 700; color: #E8B832; margin-bottom: 10px;
+        }
+        .roadmap-desc { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.7; color: #b0a080; }
+        .roadmap-status {
+            display: inline-block; margin-top: 10px; padding: 3px 12px;
+            border-radius: 20px; font-size: 11px; font-family: 'Inter', sans-serif;
+            letter-spacing: 1px; font-weight: 600;
+        }
+        .status-done   { background: rgba(80,200,80,0.1);   border: 1px solid rgba(80,200,80,0.35);   color: #6ddc6d; }
+        .status-active { background: rgba(201,149,26,0.15); border: 1px solid rgba(201,149,26,0.5);   color: #E8B832; }
+        .status-soon   { background: rgba(100,100,200,0.1); border: 1px solid rgba(100,100,200,0.3);  color: #9999dd; }
+        .status-future { background: rgba(150,150,150,0.08);border: 1px solid rgba(150,150,150,0.25); color: #888; }
     </style>
 </head>
 <body>
@@ -71,6 +95,7 @@ html<!DOCTYPE html>
             <a href="#de-ce-amgf" data-i18n="nav-why">De ce AMGF?</a>
             <a href="#linkuri" data-i18n="nav-links">Link-uri Utile</a>
             <a href="#viziune" data-i18n="nav-vision">Viziune</a>
+            <a href="#roadmap" data-i18n="nav-roadmap">Roadmap</a>
             <a href="#tokenomics" data-i18n="nav-tokenomics">Tokenomics</a>
             <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Albă</a> 
             <a href="#disclaimer" data-i18n="nav-disclaimer">Disclaimer</a>
@@ -104,7 +129,6 @@ html<!DOCTYPE html>
                     Adresa de Contract (BASE): <br>
                     <b>0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765</b>
                 </p>
-
                 <!-- AMGF WALLET BUTTON -->
                 <div class="wallet-button-wrap">
                     <a href="https://wallet.amgf-finance.com" target="_blank" class="wallet-button">
@@ -119,7 +143,6 @@ html<!DOCTYPE html>
                     <span class="wallet-button-badge">🔒 Non-Custodial · Base Network · HTTPS</span>
                 </div>
                 <!-- END WALLET BUTTON -->
-
                 <div class="link-button-container">
                     <a href="https://t.me/amgf_libertate_bot" target="_blank" class="link-button" data-i18n="link-telegram">Contact Telegram (@amgf_libertate_bot)</a>
                     <a href="https://app.uniswap.org/#/swap?outputCurrency=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&chain=base" target="_blank" class="link-button" data-i18n="link-exchange1">Cumpără pe Uniswap (Base)</a>
@@ -142,6 +165,61 @@ html<!DOCTYPE html>
                 <p data-i18n="vision-p3"></p>
             </div>
         </section>
+
+        <!-- ══════════ ROADMAP ══════════ -->
+        <section id="roadmap" class="roadmap-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="roadmap-title">Roadmap</h2>
+                <div class="roadmap-timeline">
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-phase">Faza 1 · 2024–2025 · Fundație</div>
+                        <div class="roadmap-item-title">Lansare &amp; Infrastructură</div>
+                        <div class="roadmap-desc">
+                            Crearea tokenului AMGF pe rețeaua Base. Lansarea site-ului principal amgf-finance.com.
+                            Construirea comunității Telegram. Publicarea Cărții Albe v1.0.
+                            Lansarea AMGF Wallet N.C., Liberty Bot și Airdrop Manager.
+                        </div>
+                        <span class="roadmap-status status-done">✔ Realizat</span>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-phase">Faza 2 · 2025 · Creștere</div>
+                        <div class="roadmap-item-title">Ecosistem &amp; Comunitate</div>
+                        <div class="roadmap-desc">
+                            Lansarea Staking Hub și AMGF Code App. Campanii de airdrop strategice.
+                            Listare pe DEX-uri (Uniswap / Base). Lansarea Crypto Vault Keeper.
+                            Parteneriate strategice. Creșterea comunității la 10,000+ membri.
+                        </div>
+                        <span class="roadmap-status status-active">⚡ În desfășurare</span>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-phase">Faza 3 · 2026 · Maturizare</div>
+                        <div class="roadmap-item-title">DAO &amp; Learn-to-Earn</div>
+                        <div class="roadmap-desc">
+                            Implementarea mecanismului DAO complet. Lansarea platformei educaționale Learn-to-Earn.
+                            Sistem Build-to-Earn activ. Audit smart contract independent.
+                            Extinderea ecosistemului cu noi instrumente și integrări.
+                        </div>
+                        <span class="roadmap-status status-soon">🔜 În pregătire</span>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-phase">Faza 4 · 2026–2027 · Expansiune</div>
+                        <div class="roadmap-item-title">Autonomie &amp; Scalare</div>
+                        <div class="roadmap-desc">
+                            Listare pe exchange-uri centralizate (CEX). Guvernanță DAO complet autonomă.
+                            Fond colectiv administrat de comunitate. Extindere internațională.
+                            AMGF ca model de autonomie comunitară în Web3.
+                        </div>
+                        <span class="roadmap-status status-future">◎ Viitor</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- ══════════ END ROADMAP ══════════ -->
 
         <section id="tokenomics" class="tokenomics-section">
             <div class="container">
@@ -220,7 +298,3 @@ html<!DOCTYPE html>
     <script src="script.js"></script>
 </body>
 </html>
-     
-    <script src="script.js"></script>
-</body>
-</html>0
