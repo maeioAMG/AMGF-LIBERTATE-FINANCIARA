@@ -83,6 +83,48 @@
         .status-active { background: rgba(201,149,26,0.15); border: 1px solid rgba(201,149,26,0.5);   color: #E8B832; }
         .status-soon   { background: rgba(100,100,200,0.1); border: 1px solid rgba(100,100,200,0.3);  color: #9999dd; }
         .status-future { background: rgba(150,150,150,0.08);border: 1px solid rgba(150,150,150,0.25); color: #888; }
+
+        /* ── TRANSPARENȚĂ LICHIDITATE ── */
+        .liquidity-section { padding: 64px 0; }
+        .liquidity-founder-msg {
+            max-width: 700px; margin: 0 auto 40px; text-align: center;
+            font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; color: #b0a080;
+            padding: 24px 32px; border-left: 3px solid #C9951A; border-right: 3px solid #C9951A;
+            background: rgba(201,149,26,0.04); border-radius: 4px;
+        }
+        .liquidity-founder-msg strong { color: #E8B832; }
+        .liquidity-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px; max-width: 900px; margin: 0 auto 36px;
+        }
+        .lock-card {
+            background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.2);
+            border-radius: 10px; padding: 20px 22px; transition: border-color 0.3s, background 0.3s;
+        }
+        .lock-card:hover { border-color: rgba(201,149,26,0.5); background: rgba(201,149,26,0.09); }
+        .lock-card-icon { font-size: 24px; margin-bottom: 10px; }
+        .lock-card-pct { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 700; color: #E8B832; line-height: 1; margin-bottom: 4px; }
+        .lock-card-title { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+        .lock-card-desc { font-family: 'Inter', sans-serif; font-size: 12px; color: #7a6a3a; line-height: 1.5; }
+        .lock-card-badge { display: inline-block; margin-top: 10px; padding: 3px 10px; background: rgba(80,200,80,0.1); border: 1px solid rgba(80,200,80,0.3); border-radius: 20px; font-size: 11px; color: #6ddc6d; font-family: 'Inter', sans-serif; letter-spacing: 1px; }
+        .lock-card-badge-yellow { display: inline-block; margin-top: 10px; padding: 3px 10px; background: rgba(201,149,26,0.12); border: 1px solid rgba(201,149,26,0.4); border-radius: 20px; font-size: 11px; color: #E8B832; font-family: 'Inter', sans-serif; letter-spacing: 1px; }
+        .liquidity-verify-wrap { text-align: center; margin-top: 8px; }
+        .liquidity-verify-btn {
+            display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px;
+            background: transparent; border: 2px solid #C9951A; color: #E8B832 !important;
+            font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700;
+            letter-spacing: 2px; text-decoration: none !important; border-radius: 8px;
+            text-transform: uppercase; transition: all 0.25s;
+        }
+        .liquidity-verify-btn:hover { background: rgba(201,149,26,0.12); border-color: #E8B832; transform: translateY(-2px); }
+        .liquidity-total-bar {
+            max-width: 700px; margin: 32px auto 0;
+            background: rgba(201,149,26,0.06); border: 1px solid rgba(201,149,26,0.2);
+            border-radius: 10px; padding: 20px 28px; text-align: center;
+        }
+        .liquidity-total-label { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7a6a3a; margin-bottom: 8px; }
+        .liquidity-total-value { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 700; color: #E8B832; }
+        .liquidity-total-sub { font-family: 'Inter', sans-serif; font-size: 12px; color: #7a6a3a; margin-top: 4px; }
     </style>
 </head>
 <body>
@@ -96,6 +138,7 @@
             <a href="#linkuri" data-i18n="nav-links">Link-uri Utile</a>
             <a href="#viziune" data-i18n="nav-vision">Viziune</a>
             <a href="#roadmap" data-i18n="nav-roadmap">Roadmap</a>
+            <a href="#lichiditate" data-i18n="nav-liquidity">Transparență</a>
             <a href="#tokenomics" data-i18n="nav-tokenomics">Tokenomics</a>
             <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Albă</a> 
             <a href="#disclaimer" data-i18n="nav-disclaimer">Disclaimer</a>
@@ -173,53 +216,93 @@
                 <div class="roadmap-timeline">
 
                     <div class="roadmap-item">
-                        <div class="roadmap-phase">Faza 1 · 2024–2025 · Fundație</div>
-                        <div class="roadmap-item-title">Lansare &amp; Infrastructură</div>
-                        <div class="roadmap-desc">
-                            Crearea tokenului AMGF pe rețeaua Base. Lansarea site-ului principal amgf-finance.com.
-                            Construirea comunității Telegram. Publicarea Cărții Albe v1.0.
-                            Lansarea AMGF Wallet N.C., Liberty Bot și Airdrop Manager.
-                        </div>
-                        <span class="roadmap-status status-done">✔ Realizat</span>
+                        <div class="roadmap-phase" data-i18n="roadmap-phase1-label">Faza 1 · 2024–2025 · Fundație</div>
+                        <div class="roadmap-item-title" data-i18n="roadmap-phase1-title">Lansare &amp; Infrastructură</div>
+                        <div class="roadmap-desc" data-i18n="roadmap-phase1-desc">Crearea tokenului AMGF pe rețeaua Base. Lansarea site-ului principal amgf-finance.com. Construirea comunității Telegram. Publicarea Cărții Albe v1.0. Lansarea AMGF Wallet N.C., Liberty Bot și Airdrop Manager.</div>
+                        <span class="roadmap-status status-done" data-i18n="roadmap-status-done">✔ Realizat</span>
                     </div>
 
                     <div class="roadmap-item">
-                        <div class="roadmap-phase">Faza 2 · 2025 · Creștere</div>
-                        <div class="roadmap-item-title">Ecosistem &amp; Comunitate</div>
-                        <div class="roadmap-desc">
-                            Lansarea Staking Hub și AMGF Code App. Campanii de airdrop strategice.
-                            Listare pe DEX-uri (Uniswap / Base). Lansarea Crypto Vault Keeper.
-                            Parteneriate strategice. Creșterea comunității la 10,000+ membri.
-                        </div>
-                        <span class="roadmap-status status-active">⚡ În desfășurare</span>
+                        <div class="roadmap-phase" data-i18n="roadmap-phase2-label">Faza 2 · 2025 · Creștere</div>
+                        <div class="roadmap-item-title" data-i18n="roadmap-phase2-title">Ecosistem &amp; Comunitate</div>
+                        <div class="roadmap-desc" data-i18n="roadmap-phase2-desc">Lansarea Staking Hub și AMGF Code App. Campanii de airdrop strategice. Listare pe DEX-uri (Uniswap / Base). Lansarea Crypto Vault Keeper. Parteneriate strategice. Creșterea comunității la 10,000+ membri.</div>
+                        <span class="roadmap-status status-active" data-i18n="roadmap-status-active">⚡ În desfășurare</span>
                     </div>
 
                     <div class="roadmap-item">
-                        <div class="roadmap-phase">Faza 3 · 2026 · Maturizare</div>
-                        <div class="roadmap-item-title">DAO &amp; Learn-to-Earn</div>
-                        <div class="roadmap-desc">
-                            Implementarea mecanismului DAO complet. Lansarea platformei educaționale Learn-to-Earn.
-                            Sistem Build-to-Earn activ. Audit smart contract independent.
-                            Extinderea ecosistemului cu noi instrumente și integrări.
-                        </div>
-                        <span class="roadmap-status status-soon">🔜 În pregătire</span>
+                        <div class="roadmap-phase" data-i18n="roadmap-phase3-label">Faza 3 · 2026 · Maturizare</div>
+                        <div class="roadmap-item-title" data-i18n="roadmap-phase3-title">DAO &amp; Learn-to-Earn</div>
+                        <div class="roadmap-desc" data-i18n="roadmap-phase3-desc">Implementarea mecanismului DAO complet. Lansarea platformei educaționale Learn-to-Earn. Sistem Build-to-Earn activ. Audit smart contract independent. Extinderea ecosistemului cu noi instrumente și integrări.</div>
+                        <span class="roadmap-status status-soon" data-i18n="roadmap-status-soon">🔜 În pregătire</span>
                     </div>
 
                     <div class="roadmap-item">
-                        <div class="roadmap-phase">Faza 4 · 2026–2027 · Expansiune</div>
-                        <div class="roadmap-item-title">Autonomie &amp; Scalare</div>
-                        <div class="roadmap-desc">
-                            Listare pe exchange-uri centralizate (CEX). Guvernanță DAO complet autonomă.
-                            Fond colectiv administrat de comunitate. Extindere internațională.
-                            AMGF ca model de autonomie comunitară în Web3.
-                        </div>
-                        <span class="roadmap-status status-future">◎ Viitor</span>
+                        <div class="roadmap-phase" data-i18n="roadmap-phase4-label">Faza 4 · 2026–2027 · Expansiune</div>
+                        <div class="roadmap-item-title" data-i18n="roadmap-phase4-title">Autonomie &amp; Scalare</div>
+                        <div class="roadmap-desc" data-i18n="roadmap-phase4-desc">Listare pe exchange-uri centralizate (CEX). Guvernanță DAO complet autonomă. Fond colectiv administrat de comunitate. Extindere internațională. AMGF ca model de autonomie comunitară în Web3.</div>
+                        <span class="roadmap-status status-future" data-i18n="roadmap-status-future">◎ Viitor</span>
                     </div>
 
                 </div>
             </div>
         </section>
         <!-- ══════════ END ROADMAP ══════════ -->
+
+        <!-- ══════════ TRANSPARENȚĂ LICHIDITATE ══════════ -->
+        <section id="lichiditate" class="liquidity-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="liq-title">Transparență &amp; Lichiditate Blocată</h2>
+
+                <div class="liquidity-founder-msg">
+                    <span data-i18n="liq-founder-msg">🔒 <strong>Angajamentul Fondatorului:</strong> Fondatorul AMGF adaugă lichiditate treptat și o blochează pe GemPad pentru perioade lungi de timp. Aceasta este dovada concretă a angajamentului pe termen lung față de comunitate — fondurile nu pot fi retrase până la expirarea perioadei de blocare. <strong>Transparența nu este o promisiune, ci o realitate verificabilă public.</strong></span>
+                </div>
+
+                <div class="liquidity-grid">
+                    <div class="lock-card">
+                        <div class="lock-card-icon">💧</div>
+                        <div class="lock-card-pct">61%</div>
+                        <div class="lock-card-title" data-i18n="liq-card1-title">Lichiditate Blocată</div>
+                        <div class="lock-card-desc" data-i18n="liq-card1-desc">Uniswap V2 · Rețeaua Base<br>Blocat până pe <strong style="color:#E8B832;">5 Iunie 2027</strong></div>
+                        <span class="lock-card-badge" data-i18n="liq-locked">🔒 BLOCAT</span>
+                    </div>
+                    <div class="lock-card">
+                        <div class="lock-card-icon">👥</div>
+                        <div class="lock-card-pct">25%</div>
+                        <div class="lock-card-title" data-i18n="liq-card2-title">Echipă &amp; Fondator</div>
+                        <div class="lock-card-desc" data-i18n="liq-card2-desc">Team &amp; Founder Lock<br><strong style="color:#E8B832;">451+ zile</strong> rămase</div>
+                        <span class="lock-card-badge" data-i18n="liq-locked">🔒 BLOCAT</span>
+                    </div>
+                    <div class="lock-card">
+                        <div class="lock-card-icon">🏛️</div>
+                        <div class="lock-card-pct">20%</div>
+                        <div class="lock-card-title" data-i18n="liq-card3-title">Trezorerie DAO</div>
+                        <div class="lock-card-desc" data-i18n="liq-card3-desc">DAO Treasury &amp; Ecosystem<br><strong style="color:#E8B832;">Vesting treptat</strong> · 534+ zile</div>
+                        <span class="lock-card-badge-yellow" data-i18n="liq-vesting">📈 VESTING</span>
+                    </div>
+                    <div class="lock-card">
+                        <div class="lock-card-icon">🛡️</div>
+                        <div class="lock-card-pct">15%</div>
+                        <div class="lock-card-title" data-i18n="liq-card4-title">Rezervă Fondator</div>
+                        <div class="lock-card-desc" data-i18n="liq-card4-desc">Founder Reserve Lock<br><strong style="color:#E8B832;">841+ zile</strong> rămase</div>
+                        <span class="lock-card-badge" data-i18n="liq-locked">🔒 BLOCAT</span>
+                    </div>
+                </div>
+
+                <div class="liquidity-total-bar">
+                    <div class="liquidity-total-label" data-i18n="liq-total-label">Total Fonduri Blocate &amp; Vesting</div>
+                    <div class="liquidity-total-value">61.65%</div>
+                    <div class="liquidity-total-sub" data-i18n="liq-total-sub">Verificat pe GemPad · Rețeaua Base · Actualizat în timp real</div>
+                </div>
+
+                <div class="liquidity-verify-wrap" style="margin-top:28px;">
+                    <a href="https://gempad.app/locks/project?token=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&lockId=0&nftId=0&network=Base"
+                       target="_blank" class="liquidity-verify-btn">
+                        🔍 <span data-i18n="liq-verify-btn">Verifică pe GemPad</span> ↗
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ══════════ END TRANSPARENȚĂ ══════════ -->
 
         <section id="tokenomics" class="tokenomics-section">
             <div class="container">
@@ -238,29 +321,25 @@
                         <tbody>
                             <tr>
                                 <td data-i18n="tokenomics-row1-cat">Comunitate &amp; Ecosistem</td>
-                                <td>40%</td>
-                                <td>400,000,000</td>
+                                <td>40%</td><td>400,000,000</td>
                                 <td data-i18n="tokenomics-row1-scope"></td>
                                 <td data-i18n="tokenomics-row1-vesting"></td>
                             </tr>
                             <tr>
                                 <td data-i18n="tokenomics-row2-cat">Trezorerie DAO / Dezvoltare Ecosistem</td>
-                                <td>20%</td>
-                                <td>200,000,000</td>
+                                <td>20%</td><td>200,000,000</td>
                                 <td data-i18n="tokenomics-row2-scope"></td>
                                 <td data-i18n="tokenomics-row2-vesting"></td>
                             </tr>
                             <tr>
                                 <td data-i18n="tokenomics-row3-cat">Fond de Lichiditate Inițială (DEX)</td>
-                                <td>15%</td>
-                                <td>150,000,000</td>
+                                <td>15%</td><td>150,000,000</td>
                                 <td data-i18n="tokenomics-row3-scope"></td>
                                 <td data-i18n="tokenomics-row3-vesting"></td>
                             </tr>
                             <tr>
                                 <td data-i18n="tokenomics-row4-cat">Echipa și Fondator</td>
-                                <td>25%</td>
-                                <td>250,000,000</td>
+                                <td>25%</td><td>250,000,000</td>
                                 <td data-i18n="tokenomics-row4-scope"></td>
                                 <td data-i18n="tokenomics-row4-vesting"></td>
                             </tr>
@@ -294,6 +373,10 @@
             <p data-i18n="footer-contact"></p>
         </div>
     </footer>
+     
+    <script src="script.js"></script>
+</body>
+</html>
      
     <script src="script.js"></script>
 </body>
