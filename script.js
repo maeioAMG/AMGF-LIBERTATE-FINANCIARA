@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Obiect pentru a stoca traducerile (ro, en, fr, ru)
     const translations = {
         // Navigație
         'nav-home': { ro: 'Acasă', en: 'Home', fr: 'Accueil', ru: 'Главная' },
@@ -7,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'nav-why': { ro: 'De Ce AMGF?', en: 'Why AMGF?', fr: 'Pourquoi AMGF?', ru: 'Почему AMGF?' }, 
         'nav-links': { ro: 'Link-uri Utile', en: 'Useful Links', fr: 'Liens Utiles', ru: 'Полезные Ссылки' }, 
         'nav-vision': { ro: 'Viziune', en: 'Vision', fr: 'Vision', ru: 'Видение' }, 
+        'nav-roadmap': { ro: 'Roadmap', en: 'Roadmap', fr: 'Feuille de Route', ru: 'Дорожная Карта' },
         'nav-tokenomics': { ro: 'Tokenomics', en: 'Tokenomics', fr: 'Tokenomics', ru: 'Токеномика' },
         'nav-disclaimer': { ro: 'Disclaimer', en: 'Disclaimer', fr: 'Avertissement', ru: 'Отказ от ответственности' },
         'nav-whitepaper': { ro: 'Cartea Albă', en: 'Whitepaper', fr: 'Livre Blanc', ru: 'Whitepaper' },
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ru: 'Вот тут и появляется AMGF. Мы больше, чем просто токен; мы — экосистема, построенная обычным человеком, таким же, как вы, увлеченным будущим и децентрализованным потенциалом. Наша миссия — предоставить прозрачное и доступное пространство, где вы сможете учиться, вносить свой вклад и расти вместе с сплоченным сообществом, превращая стремление к финансовой независимости в конкретную реальность, шаг за шагом.'
         },
 
-        // Secțiunea Link-uri (MODIFICATĂ PENTRU BASE)
+        // Secțiunea Link-uri
         'links-title': { 
             ro: 'Comunitate & Tranzacționare', 
             en: 'Community & Trading', 
@@ -139,6 +139,111 @@ document.addEventListener('DOMContentLoaded', () => {
             ru: 'По мере того, как экосистема AMGF созревает, мы видим, что превращаемся в модель автономности сообщества и финансовой устойчивости, где ценность генерируется и распределяется членами и для членов. AMGF станет примером того, как технология блокчейн может дать людям возможность взять под контроль свое финансовое будущее, совместно создавая наследие доверия и процветания.'
         },
 
+        // ══════════ ROADMAP — TRADUCERI NOI ══════════
+        'roadmap-title': {
+            ro: 'Roadmap',
+            en: 'Roadmap',
+            fr: 'Feuille de Route',
+            ru: 'Дорожная Карта'
+        },
+        'roadmap-phase1-label': {
+            ro: 'Faza 1 · 2024–2025 · Fundație',
+            en: 'Phase 1 · 2024–2025 · Foundation',
+            fr: 'Phase 1 · 2024–2025 · Fondation',
+            ru: 'Этап 1 · 2024–2025 · Основание'
+        },
+        'roadmap-phase1-title': {
+            ro: 'Lansare & Infrastructură',
+            en: 'Launch & Infrastructure',
+            fr: 'Lancement & Infrastructure',
+            ru: 'Запуск и Инфраструктура'
+        },
+        'roadmap-phase1-desc': {
+            ro: 'Crearea tokenului AMGF pe rețeaua Base. Lansarea site-ului principal amgf-finance.com. Construirea comunității Telegram. Publicarea Cărții Albe v1.0. Lansarea AMGF Wallet N.C., Liberty Bot și Airdrop Manager.',
+            en: 'Creation of the AMGF token on the Base network. Launch of the main site amgf-finance.com. Building the Telegram community. Publication of White Paper v1.0. Launch of AMGF Wallet N.C., Liberty Bot and Airdrop Manager.',
+            fr: 'Création du token AMGF sur le réseau Base. Lancement du site principal amgf-finance.com. Construction de la communauté Telegram. Publication du Livre Blanc v1.0. Lancement du Portefeuille AMGF N.C., Liberty Bot et Airdrop Manager.',
+            ru: 'Создание токена AMGF в сети Base. Запуск основного сайта amgf-finance.com. Создание сообщества Telegram. Публикация Белой книги v1.0. Запуск AMGF Wallet N.C., Liberty Bot и Airdrop Manager.'
+        },
+        'roadmap-status-done': {
+            ro: '✔ Realizat',
+            en: '✔ Completed',
+            fr: '✔ Réalisé',
+            ru: '✔ Выполнено'
+        },
+        'roadmap-phase2-label': {
+            ro: 'Faza 2 · 2025 · Creștere',
+            en: 'Phase 2 · 2025 · Growth',
+            fr: 'Phase 2 · 2025 · Croissance',
+            ru: 'Этап 2 · 2025 · Рост'
+        },
+        'roadmap-phase2-title': {
+            ro: 'Ecosistem & Comunitate',
+            en: 'Ecosystem & Community',
+            fr: 'Écosystème & Communauté',
+            ru: 'Экосистема и Сообщество'
+        },
+        'roadmap-phase2-desc': {
+            ro: 'Lansarea Staking Hub și AMGF Code App. Campanii de airdrop strategice. Listare pe DEX-uri (Uniswap / Base). Lansarea Crypto Vault Keeper. Parteneriate strategice. Creșterea comunității la 10,000+ membri.',
+            en: 'Launch of Staking Hub and AMGF Code App. Strategic airdrop campaigns. Listing on DEXs (Uniswap / Base). Launch of Crypto Vault Keeper. Strategic partnerships. Growing the community to 10,000+ members.',
+            fr: 'Lancement du Staking Hub et de l\'AMGF Code App. Campagnes d\'airdrop stratégiques. Cotation sur les DEX (Uniswap / Base). Lancement de Crypto Vault Keeper. Partenariats stratégiques. Croissance de la communauté à 10 000+ membres.',
+            ru: 'Запуск Staking Hub и AMGF Code App. Стратегические аирдроп-кампании. Листинг на DEX (Uniswap / Base). Запуск Crypto Vault Keeper. Стратегические партнерства. Рост сообщества до 10 000+ участников.'
+        },
+        'roadmap-status-active': {
+            ro: '⚡ În desfășurare',
+            en: '⚡ In Progress',
+            fr: '⚡ En cours',
+            ru: '⚡ В процессе'
+        },
+        'roadmap-phase3-label': {
+            ro: 'Faza 3 · 2026 · Maturizare',
+            en: 'Phase 3 · 2026 · Maturation',
+            fr: 'Phase 3 · 2026 · Maturité',
+            ru: 'Этап 3 · 2026 · Созревание'
+        },
+        'roadmap-phase3-title': {
+            ro: 'DAO & Learn-to-Earn',
+            en: 'DAO & Learn-to-Earn',
+            fr: 'DAO & Learn-to-Earn',
+            ru: 'DAO и Learn-to-Earn'
+        },
+        'roadmap-phase3-desc': {
+            ro: 'Implementarea mecanismului DAO complet. Lansarea platformei educaționale Learn-to-Earn. Sistem Build-to-Earn activ. Audit smart contract independent. Extinderea ecosistemului cu noi instrumente și integrări.',
+            en: 'Implementation of full DAO mechanism. Launch of Learn-to-Earn educational platform. Active Build-to-Earn system. Independent smart contract audit. Ecosystem expansion with new tools and integrations.',
+            fr: 'Mise en place du mécanisme DAO complet. Lancement de la plateforme éducative Learn-to-Earn. Système Build-to-Earn actif. Audit indépendant des smart contracts. Expansion de l\'écosystème avec de nouveaux outils.',
+            ru: 'Реализация полного механизма DAO. Запуск образовательной платформы Learn-to-Earn. Активная система Build-to-Earn. Независимый аудит смарт-контракта. Расширение экосистемы новыми инструментами.'
+        },
+        'roadmap-status-soon': {
+            ro: '🔜 În pregătire',
+            en: '🔜 Coming Soon',
+            fr: '🔜 Bientôt',
+            ru: '🔜 Скоро'
+        },
+        'roadmap-phase4-label': {
+            ro: 'Faza 4 · 2026–2027 · Expansiune',
+            en: 'Phase 4 · 2026–2027 · Expansion',
+            fr: 'Phase 4 · 2026–2027 · Expansion',
+            ru: 'Этап 4 · 2026–2027 · Расширение'
+        },
+        'roadmap-phase4-title': {
+            ro: 'Autonomie & Scalare',
+            en: 'Autonomy & Scaling',
+            fr: 'Autonomie & Mise à l\'Échelle',
+            ru: 'Автономия и Масштабирование'
+        },
+        'roadmap-phase4-desc': {
+            ro: 'Listare pe exchange-uri centralizate (CEX). Guvernanță DAO complet autonomă. Fond colectiv administrat de comunitate. Extindere internațională. AMGF ca model de autonomie comunitară în Web3.',
+            en: 'Listing on centralized exchanges (CEX). Fully autonomous DAO governance. Community-managed collective fund. International expansion. AMGF as a model of community autonomy in Web3.',
+            fr: 'Cotation sur les exchanges centralisés (CEX). Gouvernance DAO entièrement autonome. Fonds collectif géré par la communauté. Expansion internationale. AMGF comme modèle d\'autonomie communautaire dans le Web3.',
+            ru: 'Листинг на централизованных биржах (CEX). Полностью автономное управление DAO. Коллективный фонд под управлением сообщества. Международное расширение. AMGF как модель общественной автономии в Web3.'
+        },
+        'roadmap-status-future': {
+            ro: '◎ Viitor',
+            en: '◎ Future',
+            fr: '◎ Futur',
+            ru: '◎ Будущее'
+        },
+        // ══════════ END ROADMAP ══════════
+
         // Secțiunea Tokenomics
         'tokenomics-title': { ro: 'Alocarea Tokenurilor AMGF (Actualizată)', en: 'AMGF Token Allocation (Updated)', fr: 'Allocation des Jetons AMGF (Mise à Jour)', ru: 'Распределение Токенов AMGF (Обновлено)' },
         'tokenomics-th1': { ro: 'Categorie de Alocare', en: 'Allocation Category', fr: 'Catégorie d\'Allocation', ru: 'Категория Распределения' },
@@ -146,24 +251,18 @@ document.addEventListener('DOMContentLoaded', () => {
         'tokenomics-th3': { ro: 'Cantitate AMGF', en: 'AMGF Amount', fr: 'Montant AMGF', ru: 'Количество AMGF' },
         'tokenomics-th4': { ro: 'Scop și Justificare', en: 'Purpose and Justification', fr: 'But et Justification', ru: 'Цель и Обоснование' },
         'tokenomics-th5': { ro: 'Plan de Vesting / Acces', en: 'Vesting / Access Plan', fr: 'Plan de Vesting / Accès', ru: 'План Вестинга / Доступа' },
-        
-        // Rândurile tabelului
         'tokenomics-row1-cat': { ro: 'Comunitate & Ecosistem', en: 'Community & Ecosystem', fr: 'Communauté & Écosystème', ru: 'Сообщество и Экосистема' },
         'tokenomics-row1-scope': { ro: 'Susținerea creșterii organice a ecosistemului prin recompense pentru participare (Learn-to-Earn, Build-to-Earn), campanii de promovare, airdrop-uri strategice și stimulente pentru adoptare.', en: 'Supporting the ecosystem\'s organic growth through participation rewards (Learn-to-Earn, Build-to-Earn), promotional campaigns, strategic airdrops, and adoption incentives.', fr: 'Soutien à la croissance organique via récompenses (Learn-to-Earn, Build-to-Earn) et airdrops.', ru: 'Поддержка органического роста через вознаграждения (Learn-to-Earn, Build-to-Earn) и аирдропы.' },
         'tokenomics-row1-vesting': { ro: 'Eliberare treptată pe parcursul a 5-10 ani.', en: 'Gradual release over 5-10 years.', fr: 'Libération progressive sur 5-10 ans.', ru: 'Постепенный выпуск в течение 5-10 лет.' },
-        
         'tokenomics-row2-cat': { ro: 'Trezorerie DAO / Dezvoltare Ecosistem', en: 'DAO Treasury / Ecosystem Development', fr: 'Trésorerie DAO / Développement Écosystème', ru: 'Казначейство DAO / Развитие Экосистема' },
         'tokenomics-row2-scope': { ro: 'Finanțarea dezvoltării platformei, noi parteneriate și audituri sub guvernanța comunității.', en: 'Funding the platform development, new partnerships, and audits under community governance.', fr: 'Financement du développement de la plateforme și de la pérennité du projet, sous gouvernance communautaire.', ru: 'Финансирование разработки платформы и обеспечение устойчивости под управлением сообщества.' },
         'tokenomics-row2-vesting': { ro: 'Blocate într-o trezorerie DAO.', en: 'Locked in a DAO treasury.', fr: 'Bloqué en trésorerie DAO.', ru: 'Заблокировано в казначействе DAO.' },
-
         'tokenomics-row3-cat': { ro: 'Fond de Lichiditate Inițială (DEX)', en: 'Initial Liquidity Fund (DEX)', fr: 'Fonds de Liquidité Initial (DEX)', ru: 'Начальный Фонд Лиcвиности (DEX)' },
         'tokenomics-row3-scope': { ro: 'Asigurarea lichidității pe burse descentralizate (DEX) pe Base.', en: 'Ensuring liquidity on decentralized exchanges (DEX) on Base.', fr: 'Assurer la liquidité initiale sur les DEXs.', ru: 'Обеспечение начальной ликвидности на DEX.' },
         'tokenomics-row3-vesting': { ro: 'Blocată prin contracte de staking/farming pentru cel puțin 2-5 ani.', en: 'Locked via staking/farming contracts for at least 2-5 years.', fr: 'Verrouillage de 2-5 ans.', ru: 'Блокировки на 2-5 лет.' },
-
         'tokenomics-row4-cat': { ro: 'Echipa și Fondator', en: 'Team and Founder', fr: 'Équipe et Fondateur', ru: 'Команда и Основатель' },
         'tokenomics-row4-scope': { ro: 'Alocare pentru Fondator și echipa de bază. (Fondatorul: 5%, Echipa 5%)', en: 'Allocation for the Founder and core team. (Founder: 5%, Team 5%)', fr: 'Allocation pour le Fondateur et l\'équipe. (Fondateur: 5%, Équipe 5%)', ru: 'Выделение для Основателя и основной команды. (Основатель: 5%, Команда 5%)' },
         'tokenomics-row4-vesting': { ro: 'Cliff de 1 an, urmat de eliberare pe 3 ani.', en: '1-year cliff, followed by 3-year linear release.', fr: 'Blocage initial d\'1 an, urmată de o libération linéaire sur 3 ans.', ru: 'Начальная блокировка на 1 год, затем выпуск в течение 3 лет.' },
-
         'tokenomics-total': { ro: 'Total', en: 'Total', fr: 'Total', ru: 'Итого' },
         'tokenomics-note': { ro: '<b>Notă:</b> Strategia Tokenomics este proiectată pentru a minimiza presiunea de vânzare.', en: '<b>Note:</b> The Tokenomics strategy is designed to minimize selling pressure.', fr: '<b>Note:</b> La stratégie Tokenomics vise à minimiser la pression de vente.', ru: '<b>Примечание:</b> Токеномика разработана для минимизации давления продаж.' },
         
@@ -172,7 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'disclaimer-p1': { ro: 'Informațiile prezentate nu constituie sfaturi financiare. Investițiile în crypto implică riscuri.', en: 'The information does not constitute financial advice. Crypto investments involve risks.', fr: 'Les informations ne constituent pas un conseil financier. Les crypto comportent des risques.', ru: 'Информация не является финансовым советом. Инвестиции связаны с риском.' },
         'disclaimer-p2': { ro: 'Efectuați propria cercetare (DYOR).', en: 'Do Your Own Research (DYOR).', fr: 'Faites vos propres recherches (DYOR).', ru: 'Проведите собственное исследование (DYOR).' },
         'disclaimer-p3': { ro: 'Participarea implică acceptarea termenilor.', en: 'Participation implies acceptance of terms.', fr: 'La participation implique l\'acceptation des termes.', ru: 'Участие подразумевает принятие условий.' },
-        
         'footer-copyright': { 
             ro: '&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.', 
             en: '&copy; 2025 AMGF Financial Freedom. All rights reserved.',
