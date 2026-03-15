@@ -59,6 +59,100 @@
         }
         .wallet-button { animation: wallet-pulse 3s ease-in-out infinite; }
         .wallet-button:hover { animation: none; }
+
+        /* ── ROADMAP ── */
+        .roadmap-section {
+            padding: 64px 0;
+        }
+        .roadmap-timeline {
+            position: relative;
+            max-width: 780px;
+            margin: 40px auto 0;
+            padding-left: 36px;
+        }
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #C9951A, rgba(201,149,26,0.1));
+        }
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 44px;
+            padding: 22px 28px;
+            background: rgba(201,149,26,0.05);
+            border: 1px solid rgba(201,149,26,0.18);
+            border-radius: 10px;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .roadmap-item:hover {
+            border-color: rgba(201,149,26,0.5);
+            background: rgba(201,149,26,0.09);
+        }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 24px;
+            width: 12px; height: 12px;
+            background: #C9951A;
+            border: 2px solid #E8B832;
+            border-radius: 3px;
+            transform: rotate(45deg);
+        }
+        .roadmap-phase {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9951A;
+            margin-bottom: 6px;
+        }
+        .roadmap-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: #E8B832;
+            margin-bottom: 10px;
+        }
+        .roadmap-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #b0a080;
+        }
+        .roadmap-status {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .status-done {
+            background: rgba(80,200,80,0.1);
+            border: 1px solid rgba(80,200,80,0.35);
+            color: #6ddc6d;
+        }
+        .status-active {
+            background: rgba(201,149,26,0.15);
+            border: 1px solid rgba(201,149,26,0.5);
+            color: #E8B832;
+        }
+        .status-soon {
+            background: rgba(100,100,200,0.1);
+            border: 1px solid rgba(100,100,200,0.3);
+            color: #9999dd;
+        }
+        .status-future {
+            background: rgba(150,150,150,0.08);
+            border: 1px solid rgba(150,150,150,0.25);
+            color: #888;
+        }
     </style>
 </head>
 <body>
@@ -71,8 +165,9 @@
             <a href="#de-ce-amgf" data-i18n="nav-why">De ce AMGF?</a>
             <a href="#linkuri" data-i18n="nav-links">Link-uri Utile</a>
             <a href="#viziune" data-i18n="nav-vision">Viziune</a>
+            <a href="#roadmap" data-i18n="nav-roadmap">Roadmap</a>
             <a href="#tokenomics" data-i18n="nav-tokenomics">Tokenomics</a>
-            <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Albă</a> 
+            <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Albă</a>
             <a href="#disclaimer" data-i18n="nav-disclaimer">Disclaimer</a>
         </nav>
         <button id="language-toggle">RO / EN / FR / RU</button>
@@ -96,7 +191,7 @@
                 <p data-i18n="why-p2"></p>
             </div>
         </section>
-         
+
         <section id="linkuri" class="links-section">
             <div class="container">
                 <h2 class="section-title" data-i18n="links-title">Comunitate &amp; Tranzacționare</h2>
@@ -142,6 +237,61 @@
                 <p data-i18n="vision-p3"></p>
             </div>
         </section>
+
+        <!-- ══════════ ROADMAP ══════════ -->
+        <section id="roadmap" class="roadmap-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="roadmap-title">Roadmap</h2>
+                <div class="roadmap-timeline">
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-phase" data-i18n="roadmap-phase1-label">Faza 1 · 2024–2025 · Fundație</div>
+                        <div class="roadmap-title" data-i18n="roadmap-phase1-title">Lansare &amp; Infrastructură</div>
+                        <div class="roadmap-desc" data-i18n="roadmap-phase1-desc">
+                            Crearea tokenului AMGF pe rețeaua Base. Lansarea site-ului principal amgf-finance.com.
+                            Construirea comunității Telegram. Publicarea Cărții Albe v1.0.
+                            Lansarea AMGF Wallet N.C., Liberty Bot și Airdrop Manager.
+                        </div>
+                        <span class="roadmap-status status-done" data-i18n="roadmap-status-done">✔ Realizat</span>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-phase" data-i18n="roadmap-phase2-label">Faza 2 · 2025 · Creștere</div>
+                        <div class="roadmap-title" data-i18n="roadmap-phase2-title">Ecosistem &amp; Comunitate</div>
+                        <div class="roadmap-desc" data-i18n="roadmap-phase2-desc">
+                            Lansarea Staking Hub și AMGF Code App. Campanii de airdrop strategice.
+                            Listare pe DEX-uri (Uniswap / Base). Lansarea Crypto Vault Keeper.
+                            Parteneriate strategice. Creșterea comunității la 10,000+ membri.
+                        </div>
+                        <span class="roadmap-status status-active" data-i18n="roadmap-status-active">⚡ În desfășurare</span>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-phase" data-i18n="roadmap-phase3-label">Faza 3 · 2026 · Maturizare</div>
+                        <div class="roadmap-title" data-i18n="roadmap-phase3-title">DAO &amp; Learn-to-Earn</div>
+                        <div class="roadmap-desc" data-i18n="roadmap-phase3-desc">
+                            Implementarea mecanismului DAO complet. Lansarea platformei educaționale Learn-to-Earn.
+                            Sistem Build-to-Earn activ. Audit smart contract independent.
+                            Extinderea ecosistemului cu noi instrumente și integrări.
+                        </div>
+                        <span class="roadmap-status status-soon" data-i18n="roadmap-status-soon">🔜 În pregătire</span>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-phase" data-i18n="roadmap-phase4-label">Faza 4 · 2026–2027 · Expansiune</div>
+                        <div class="roadmap-title" data-i18n="roadmap-phase4-title">Autonomie &amp; Scalare</div>
+                        <div class="roadmap-desc" data-i18n="roadmap-phase4-desc">
+                            Listare pe exchange-uri centralizate (CEX). Guvernanță DAO complet autonomă.
+                            Fond colectiv administrat de comunitate. Extindere internațională.
+                            AMGF ca model de autonomie comunitară în Web3.
+                        </div>
+                        <span class="roadmap-status status-future" data-i18n="roadmap-status-future">◎ Viitor</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- ══════════ END ROADMAP ══════════ -->
 
         <section id="tokenomics" class="tokenomics-section">
             <div class="container">
@@ -196,27 +346,3 @@
                         </tfoot>
                     </table>
                 </div>
-                <div class="token-note" data-i18n="tokenomics-note"></div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="disclaimer-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="disclaimer-title">Disclaimer Legal Important</h2>
-                <p data-i18n="disclaimer-p1"></p>
-                <p data-i18n="disclaimer-p2"></p>
-                <p data-i18n="disclaimer-p3"></p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p data-i18n="footer-copyright">&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.</p>
-            <p data-i18n="footer-contact"></p>
-        </div>
-    </footer>
-     
-    <script src="script.js"></script>
-</body>
-</html>
