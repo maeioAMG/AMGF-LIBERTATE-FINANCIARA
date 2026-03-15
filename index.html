@@ -45,62 +45,47 @@
 
         /* ── ROADMAP ── */
         .roadmap-section { padding: 64px 0; }
-        .roadmap-timeline {
-            position: relative; max-width: 780px;
-            margin: 40px auto 0; padding-left: 36px;
-        }
-        .roadmap-timeline::before {
-            content: ''; position: absolute;
-            left: 10px; top: 0; bottom: 0; width: 2px;
-            background: linear-gradient(to bottom, #C9951A, rgba(201,149,26,0.1));
-        }
-        .roadmap-item {
-            position: relative; margin-bottom: 44px; padding: 22px 28px;
-            background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.18);
-            border-radius: 10px; transition: border-color 0.3s, background 0.3s;
-        }
+        .roadmap-timeline { position: relative; max-width: 780px; margin: 40px auto 0; padding-left: 36px; }
+        .roadmap-timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #C9951A, rgba(201,149,26,0.1)); }
+        .roadmap-item { position: relative; margin-bottom: 44px; padding: 22px 28px; background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.18); border-radius: 10px; transition: border-color 0.3s, background 0.3s; }
         .roadmap-item:hover { border-color: rgba(201,149,26,0.5); background: rgba(201,149,26,0.09); }
-        .roadmap-item::before {
-            content: ''; position: absolute; left: -31px; top: 24px;
-            width: 12px; height: 12px; background: #C9951A;
-            border: 2px solid #E8B832; border-radius: 3px; transform: rotate(45deg);
-        }
-        .roadmap-phase {
-            font-family: 'Montserrat', sans-serif; font-size: 10px;
-            letter-spacing: 3px; text-transform: uppercase; color: #C9951A; margin-bottom: 6px;
-        }
-        .roadmap-item-title {
-            font-family: 'Montserrat', sans-serif; font-size: 17px;
-            font-weight: 700; color: #E8B832; margin-bottom: 10px;
-        }
+        .roadmap-item::before { content: ''; position: absolute; left: -31px; top: 24px; width: 12px; height: 12px; background: #C9951A; border: 2px solid #E8B832; border-radius: 3px; transform: rotate(45deg); }
+        .roadmap-phase { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #C9951A; margin-bottom: 6px; }
+        .roadmap-item-title { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 700; color: #E8B832; margin-bottom: 10px; }
         .roadmap-desc { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.7; color: #b0a080; }
-        .roadmap-status {
-            display: inline-block; margin-top: 10px; padding: 3px 12px;
-            border-radius: 20px; font-size: 11px; font-family: 'Inter', sans-serif;
-            letter-spacing: 1px; font-weight: 600;
-        }
+        .roadmap-status { display: inline-block; margin-top: 10px; padding: 3px 12px; border-radius: 20px; font-size: 11px; font-family: 'Inter', sans-serif; letter-spacing: 1px; font-weight: 600; }
         .status-done   { background: rgba(80,200,80,0.1);   border: 1px solid rgba(80,200,80,0.35);   color: #6ddc6d; }
         .status-active { background: rgba(201,149,26,0.15); border: 1px solid rgba(201,149,26,0.5);   color: #E8B832; }
         .status-soon   { background: rgba(100,100,200,0.1); border: 1px solid rgba(100,100,200,0.3);  color: #9999dd; }
         .status-future { background: rgba(150,150,150,0.08);border: 1px solid rgba(150,150,150,0.25); color: #888; }
 
+        /* ── ECOSISTEM ── */
+        .ecosystem-section { padding: 64px 0; }
+        .ecosystem-intro { max-width: 700px; margin: 0 auto 48px; text-align: center; font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; color: #b0a080; }
+        .ecosystem-intro strong { color: #E8B832; }
+        .ecosystem-free-badge { display: inline-block; margin-bottom: 32px; padding: 8px 24px; background: rgba(80,200,80,0.1); border: 1px solid rgba(80,200,80,0.35); border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #6ddc6d; text-transform: uppercase; }
+        .ecosystem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 960px; margin: 0 auto 40px; }
+        .eco-card { background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.18); border-radius: 12px; padding: 28px 24px; transition: border-color 0.3s, background 0.3s, transform 0.3s; display: flex; flex-direction: column; gap: 10px; }
+        .eco-card:hover { border-color: rgba(201,149,26,0.5); background: rgba(201,149,26,0.09); transform: translateY(-4px); }
+        .eco-card-icon { font-size: 32px; }
+        .eco-card-name { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #E8B832; }
+        .eco-card-url { font-family: 'Inter', sans-serif; font-size: 11px; color: #7a6a3a; letter-spacing: 1px; margin-top: -4px; }
+        .eco-card-desc { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.6; color: #b0a080; flex: 1; }
+        .eco-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+        .eco-card-free { display: inline-block; padding: 2px 10px; background: rgba(80,200,80,0.1); border: 1px solid rgba(80,200,80,0.3); border-radius: 20px; font-size: 10px; color: #6ddc6d; font-family: 'Inter', sans-serif; letter-spacing: 1px; font-weight: 600; }
+        .eco-card-link { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: rgba(201,149,26,0.1); border: 1px solid rgba(201,149,26,0.35); border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #E8B832 !important; text-decoration: none !important; text-transform: uppercase; transition: all 0.25s; }
+        .eco-card-link:hover { background: rgba(201,149,26,0.2); border-color: #E8B832; }
+        .ecosystem-more-btn { display: block; text-align: center; margin: 8px auto 0; }
+        .ecosystem-more-btn a { display: inline-flex; align-items: center; gap: 10px; padding: 14px 36px; background: transparent; border: 2px solid #C9951A; color: #E8B832 !important; text-decoration: none !important; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; border-radius: 8px; text-transform: uppercase; transition: all 0.25s; }
+        .ecosystem-more-btn a:hover { background: rgba(201,149,26,0.12); border-color: #E8B832; transform: translateY(-2px); }
+        .ecosystem-future-note { max-width: 640px; margin: 32px auto 0; text-align: center; font-family: 'Inter', sans-serif; font-size: 12px; color: #7a6a3a; line-height: 1.6; padding: 12px 20px; border: 1px dashed rgba(201,149,26,0.2); border-radius: 8px; }
+
         /* ── TRANSPARENȚĂ LICHIDITATE ── */
         .liquidity-section { padding: 64px 0; }
-        .liquidity-founder-msg {
-            max-width: 700px; margin: 0 auto 40px; text-align: center;
-            font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; color: #b0a080;
-            padding: 24px 32px; border-left: 3px solid #C9951A; border-right: 3px solid #C9951A;
-            background: rgba(201,149,26,0.04); border-radius: 4px;
-        }
+        .liquidity-founder-msg { max-width: 700px; margin: 0 auto 40px; text-align: center; font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; color: #b0a080; padding: 24px 32px; border-left: 3px solid #C9951A; border-right: 3px solid #C9951A; background: rgba(201,149,26,0.04); border-radius: 4px; }
         .liquidity-founder-msg strong { color: #E8B832; }
-        .liquidity-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px; max-width: 900px; margin: 0 auto 36px;
-        }
-        .lock-card {
-            background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.2);
-            border-radius: 10px; padding: 20px 22px; transition: border-color 0.3s, background 0.3s;
-        }
+        .liquidity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto 36px; }
+        .lock-card { background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.2); border-radius: 10px; padding: 20px 22px; transition: border-color 0.3s, background 0.3s; }
         .lock-card:hover { border-color: rgba(201,149,26,0.5); background: rgba(201,149,26,0.09); }
         .lock-card-icon { font-size: 24px; margin-bottom: 10px; }
         .lock-card-pct { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 700; color: #E8B832; line-height: 1; margin-bottom: 4px; }
@@ -109,22 +94,14 @@
         .lock-card-badge { display: inline-block; margin-top: 10px; padding: 3px 10px; background: rgba(80,200,80,0.1); border: 1px solid rgba(80,200,80,0.3); border-radius: 20px; font-size: 11px; color: #6ddc6d; font-family: 'Inter', sans-serif; letter-spacing: 1px; }
         .lock-card-badge-yellow { display: inline-block; margin-top: 10px; padding: 3px 10px; background: rgba(201,149,26,0.12); border: 1px solid rgba(201,149,26,0.4); border-radius: 20px; font-size: 11px; color: #E8B832; font-family: 'Inter', sans-serif; letter-spacing: 1px; }
         .liquidity-verify-wrap { text-align: center; margin-top: 8px; }
-        .liquidity-verify-btn {
-            display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px;
-            background: transparent; border: 2px solid #C9951A; color: #E8B832 !important;
-            font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700;
-            letter-spacing: 2px; text-decoration: none !important; border-radius: 8px;
-            text-transform: uppercase; transition: all 0.25s;
-        }
+        .liquidity-verify-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; background: transparent; border: 2px solid #C9951A; color: #E8B832 !important; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-decoration: none !important; border-radius: 8px; text-transform: uppercase; transition: all 0.25s; }
         .liquidity-verify-btn:hover { background: rgba(201,149,26,0.12); border-color: #E8B832; transform: translateY(-2px); }
-        .liquidity-total-bar {
-            max-width: 700px; margin: 32px auto 0;
-            background: rgba(201,149,26,0.06); border: 1px solid rgba(201,149,26,0.2);
-            border-radius: 10px; padding: 20px 28px; text-align: center;
-        }
+        .liquidity-total-bar { max-width: 700px; margin: 32px auto 0; background: rgba(201,149,26,0.06); border: 1px solid rgba(201,149,26,0.2); border-radius: 10px; padding: 20px 28px; text-align: center; }
         .liquidity-total-label { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7a6a3a; margin-bottom: 8px; }
         .liquidity-total-value { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 700; color: #E8B832; }
         .liquidity-total-sub { font-family: 'Inter', sans-serif; font-size: 12px; color: #7a6a3a; margin-top: 4px; }
+
+        @media (max-width: 600px) { .ecosystem-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -137,6 +114,7 @@
             <a href="#de-ce-amgf" data-i18n="nav-why">De ce AMGF?</a>
             <a href="#linkuri" data-i18n="nav-links">Link-uri Utile</a>
             <a href="#viziune" data-i18n="nav-vision">Viziune</a>
+            <a href="#ecosistem" data-i18n="nav-ecosystem">Ecosistem</a>
             <a href="#roadmap" data-i18n="nav-roadmap">Roadmap</a>
             <a href="#lichiditate" data-i18n="nav-liquidity">Transparență</a>
             <a href="#tokenomics" data-i18n="nav-tokenomics">Tokenomics</a>
@@ -172,7 +150,6 @@
                     Adresa de Contract (BASE): <br>
                     <b>0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765</b>
                 </p>
-                <!-- AMGF WALLET BUTTON -->
                 <div class="wallet-button-wrap">
                     <a href="https://wallet.amgf-finance.com" target="_blank" class="wallet-button">
                         <span class="wallet-button-icon">🗽</span>
@@ -185,7 +162,6 @@
                     <br>
                     <span class="wallet-button-badge">🔒 Non-Custodial · Base Network · HTTPS</span>
                 </div>
-                <!-- END WALLET BUTTON -->
                 <div class="link-button-container">
                     <a href="https://t.me/amgf_libertate_bot" target="_blank" class="link-button" data-i18n="link-telegram">Contact Telegram (@amgf_libertate_bot)</a>
                     <a href="https://app.uniswap.org/#/swap?outputCurrency=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&chain=base" target="_blank" class="link-button" data-i18n="link-exchange1">Cumpără pe Uniswap (Base)</a>
@@ -209,40 +185,116 @@
             </div>
         </section>
 
+        <!-- ══════════ ECOSISTEM ══════════ -->
+        <section id="ecosistem" class="ecosystem-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="eco-title">Ecosistemul AMGF</h2>
+                <div class="ecosystem-intro">
+                    <div class="ecosystem-free-badge" data-i18n="eco-free-badge">✅ Toate aplicațiile sunt gratuite</div>
+                    <br>
+                    <span data-i18n="eco-intro">Fondatorul AMGF construiește activ un ecosistem complet de aplicații Web3, toate disponibile gratuit pentru comunitate. Pe viitor, o <strong>taxă simbolică</strong> poate fi introdusă pentru a susține dezvoltarea continuă a proiectului.</span>
+                </div>
+                <div class="ecosystem-grid">
+                    <div class="eco-card">
+                        <div class="eco-card-icon">🗽</div>
+                        <div class="eco-card-name" data-i18n="eco-app1-name">AMGF Wallet N.C.</div>
+                        <div class="eco-card-url">wallet.amgf-finance.com</div>
+                        <div class="eco-card-desc" data-i18n="eco-app1-desc">Portofel non-custodial pe rețeaua Base. Tu deții cheile private — securitate maximă fără dependență de terți.</div>
+                        <div class="eco-card-footer">
+                            <span class="eco-card-free" data-i18n="eco-free">✅ GRATUIT</span>
+                            <a href="https://wallet.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
+                        </div>
+                    </div>
+                    <div class="eco-card">
+                        <div class="eco-card-icon">🎯</div>
+                        <div class="eco-card-name" data-i18n="eco-app2-name">Airdrop Manager</div>
+                        <div class="eco-card-url">airdrop.amgf-finance.com</div>
+                        <div class="eco-card-desc" data-i18n="eco-app2-desc">Gestionează și participă la campaniile de airdrop AMGF. Recompensează participarea activă în comunitate.</div>
+                        <div class="eco-card-footer">
+                            <span class="eco-card-free" data-i18n="eco-free">✅ GRATUIT</span>
+                            <a href="https://airdrop.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
+                        </div>
+                    </div>
+                    <div class="eco-card">
+                        <div class="eco-card-icon">💎</div>
+                        <div class="eco-card-name" data-i18n="eco-app3-name">Staking Hub</div>
+                        <div class="eco-card-url">staking.amgf-finance.com</div>
+                        <div class="eco-card-desc" data-i18n="eco-app3-desc">Pune tokenurile AMGF la lucru și generează randamente pasive. Contribuie la stabilitatea ecosistemului.</div>
+                        <div class="eco-card-footer">
+                            <span class="eco-card-free" data-i18n="eco-free">✅ GRATUIT</span>
+                            <a href="https://staking.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
+                        </div>
+                    </div>
+                    <div class="eco-card">
+                        <div class="eco-card-icon">💻</div>
+                        <div class="eco-card-name" data-i18n="eco-app4-name">AMGF Code App</div>
+                        <div class="eco-card-url">code.amgf-finance.com</div>
+                        <div class="eco-card-desc" data-i18n="eco-app4-desc">Platformă de dezvoltare și colaborare pentru membrii tehnici. Susține mecanismul Build-to-Earn al comunității.</div>
+                        <div class="eco-card-footer">
+                            <span class="eco-card-free" data-i18n="eco-free">✅ GRATUIT</span>
+                            <a href="https://code.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
+                        </div>
+                    </div>
+                    <div class="eco-card">
+                        <div class="eco-card-icon">🏛️</div>
+                        <div class="eco-card-name" data-i18n="eco-app5-name">DAO Governance</div>
+                        <div class="eco-card-url">dao.amgf-finance.com</div>
+                        <div class="eco-card-desc" data-i18n="eco-app5-desc">Votează și decide viitorul proiectului. Fiecare deținător de AMGF are o voce reală în guvernanța ecosistemului.</div>
+                        <div class="eco-card-footer">
+                            <span class="eco-card-free" data-i18n="eco-free">✅ GRATUIT</span>
+                            <a href="https://dao.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
+                        </div>
+                    </div>
+                    <div class="eco-card">
+                        <div class="eco-card-icon">🤖</div>
+                        <div class="eco-card-name" data-i18n="eco-app6-name">Liberty Bot</div>
+                        <div class="eco-card-url">t.me/amgf_libertate_bot</div>
+                        <div class="eco-card-desc" data-i18n="eco-app6-desc">Bot Telegram pentru interacțiunea cu comunitatea, notificări în timp real și informații despre tokenul AMGF.</div>
+                        <div class="eco-card-footer">
+                            <span class="eco-card-free" data-i18n="eco-free">✅ GRATUIT</span>
+                            <a href="https://t.me/amgf_libertate_bot" target="_blank" class="eco-card-link">Deschide ↗</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ecosystem-more-btn">
+                    <a href="ecosystem.html" data-i18n="eco-more-btn">🌐 Vezi toate aplicațiile ↗</a>
+                </div>
+                <div class="ecosystem-future-note" data-i18n="eco-future-note">
+                    💡 Toate aplicațiile sunt în prezent <strong>100% gratuite</strong>. Pe viitor, o taxă simbolică poate fi introdusă pentru a susține dezvoltarea continuă și echipa proiectului. Comunitatea va fi consultată înainte de orice schimbare.
+                </div>
+            </div>
+        </section>
+        <!-- ══════════ END ECOSISTEM ══════════ -->
+
         <!-- ══════════ ROADMAP ══════════ -->
         <section id="roadmap" class="roadmap-section">
             <div class="container">
                 <h2 class="section-title" data-i18n="roadmap-title">Roadmap</h2>
                 <div class="roadmap-timeline">
-
                     <div class="roadmap-item">
                         <div class="roadmap-phase" data-i18n="roadmap-phase1-label">Faza 1 · 2024–2025 · Fundație</div>
                         <div class="roadmap-item-title" data-i18n="roadmap-phase1-title">Lansare &amp; Infrastructură</div>
                         <div class="roadmap-desc" data-i18n="roadmap-phase1-desc">Crearea tokenului AMGF pe rețeaua Base. Lansarea site-ului principal amgf-finance.com. Construirea comunității Telegram. Publicarea Cărții Albe v1.0. Lansarea AMGF Wallet N.C., Liberty Bot și Airdrop Manager.</div>
                         <span class="roadmap-status status-done" data-i18n="roadmap-status-done">✔ Realizat</span>
                     </div>
-
                     <div class="roadmap-item">
                         <div class="roadmap-phase" data-i18n="roadmap-phase2-label">Faza 2 · 2025 · Creștere</div>
                         <div class="roadmap-item-title" data-i18n="roadmap-phase2-title">Ecosistem &amp; Comunitate</div>
                         <div class="roadmap-desc" data-i18n="roadmap-phase2-desc">Lansarea Staking Hub și AMGF Code App. Campanii de airdrop strategice. Listare pe DEX-uri (Uniswap / Base). Lansarea Crypto Vault Keeper. Parteneriate strategice. Creșterea comunității la 10,000+ membri.</div>
                         <span class="roadmap-status status-active" data-i18n="roadmap-status-active">⚡ În desfășurare</span>
                     </div>
-
                     <div class="roadmap-item">
                         <div class="roadmap-phase" data-i18n="roadmap-phase3-label">Faza 3 · 2026 · Maturizare</div>
                         <div class="roadmap-item-title" data-i18n="roadmap-phase3-title">DAO &amp; Learn-to-Earn</div>
                         <div class="roadmap-desc" data-i18n="roadmap-phase3-desc">Implementarea mecanismului DAO complet. Lansarea platformei educaționale Learn-to-Earn. Sistem Build-to-Earn activ. Audit smart contract independent. Extinderea ecosistemului cu noi instrumente și integrări.</div>
                         <span class="roadmap-status status-soon" data-i18n="roadmap-status-soon">🔜 În pregătire</span>
                     </div>
-
                     <div class="roadmap-item">
                         <div class="roadmap-phase" data-i18n="roadmap-phase4-label">Faza 4 · 2026–2027 · Expansiune</div>
                         <div class="roadmap-item-title" data-i18n="roadmap-phase4-title">Autonomie &amp; Scalare</div>
                         <div class="roadmap-desc" data-i18n="roadmap-phase4-desc">Listare pe exchange-uri centralizate (CEX). Guvernanță DAO complet autonomă. Fond colectiv administrat de comunitate. Extindere internațională. AMGF ca model de autonomie comunitară în Web3.</div>
                         <span class="roadmap-status status-future" data-i18n="roadmap-status-future">◎ Viitor</span>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -252,11 +304,9 @@
         <section id="lichiditate" class="liquidity-section">
             <div class="container">
                 <h2 class="section-title" data-i18n="liq-title">Transparență &amp; Lichiditate Blocată</h2>
-
                 <div class="liquidity-founder-msg">
                     <span data-i18n="liq-founder-msg">🔒 <strong>Angajamentul Fondatorului:</strong> Fondatorul AMGF adaugă lichiditate treptat și o blochează pe GemPad pentru perioade lungi de timp. Aceasta este dovada concretă a angajamentului pe termen lung față de comunitate — fondurile nu pot fi retrase până la expirarea perioadei de blocare. <strong>Transparența nu este o promisiune, ci o realitate verificabilă public.</strong></span>
                 </div>
-
                 <div class="liquidity-grid">
                     <div class="lock-card">
                         <div class="lock-card-icon">💧</div>
@@ -287,16 +337,13 @@
                         <span class="lock-card-badge" data-i18n="liq-locked">🔒 BLOCAT</span>
                     </div>
                 </div>
-
                 <div class="liquidity-total-bar">
                     <div class="liquidity-total-label" data-i18n="liq-total-label">Total Fonduri Blocate &amp; Vesting</div>
                     <div class="liquidity-total-value">61.65%</div>
                     <div class="liquidity-total-sub" data-i18n="liq-total-sub">Verificat pe GemPad · Rețeaua Base · Actualizat în timp real</div>
                 </div>
-
                 <div class="liquidity-verify-wrap" style="margin-top:28px;">
-                    <a href="https://gempad.app/locks/project?token=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&lockId=0&nftId=0&network=Base"
-                       target="_blank" class="liquidity-verify-btn">
+                    <a href="https://gempad.app/locks/project?token=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&lockId=0&nftId=0&network=Base" target="_blank" class="liquidity-verify-btn">
                         🔍 <span data-i18n="liq-verify-btn">Verifică pe GemPad</span> ↗
                     </a>
                 </div>
@@ -373,10 +420,6 @@
             <p data-i18n="footer-contact"></p>
         </div>
     </footer>
-     
-    <script src="script.js"></script>
-</body>
-</html>
      
     <script src="script.js"></script>
 </body>
