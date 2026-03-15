@@ -4,16 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="nav-whitepaper">AMGF - Cartea Albă</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        .whitepaper-section { padding: 40px 0; line-height: 1.7; color: #bdbdbd; }
-        .whitepaper-section h2 { color: #e2b13c; margin-top: 40px; border-bottom: 2px solid #e2b13c; padding-bottom: 10px; }
-        .whitepaper-section h3 { color: #fff; margin-top: 25px; }
-        .token-details-box { background: #111; padding: 20px; border-radius: 10px; border: 1px solid #e2b13c44; margin: 20px 0; }
-        .token-details-box ul { list-style: none; padding: 0; }
-        .token-details-box li { margin-bottom: 10px; }
+        .wp-hero { text-align: center; padding: 60px 20px 40px; border-bottom: 1px solid #e2b13c44; }
+        .wp-hero .wp-version { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #e2b13c; margin-bottom: 16px; }
+        .wp-hero h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 5vw, 52px); color: #e2b13c; margin-bottom: 12px; }
+        .wp-hero .wp-tagline { font-family: 'Inter', sans-serif; font-size: 15px; color: #bdbdbd; letter-spacing: 1px; }
+        .wp-meta { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 32px; }
+        .wp-meta-item { text-align: center; }
+        .wp-meta-label { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #7a6a3a; margin-bottom: 4px; }
+        .wp-meta-value { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: #e2b13c; }
+        .wp-toc { background: #111; border: 1px solid #e2b13c33; border-radius: 10px; padding: 28px 32px; margin: 40px 0; }
+        .wp-toc-title { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #e2b13c; margin-bottom: 16px; }
+        .wp-toc a { display: block; padding: 7px 0; color: #bdbdbd; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 14px; border-bottom: 1px solid #e2b13c11; transition: color 0.2s; }
+        .wp-toc a:hover { color: #e2b13c; }
+        .wp-toc a span { color: #7a6a3a; margin-right: 12px; font-size: 12px; }
+        .wp-section { padding: 48px 0 24px; border-bottom: 1px solid #e2b13c22; }
+        .wp-section h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 3vw, 26px); color: #e2b13c; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2b13c44; }
+        .wp-section h3 { font-family: 'Montserrat', sans-serif; font-size: 16px; color: #fff; margin: 24px 0 12px; }
+        .wp-section p { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; color: #bdbdbd; margin-bottom: 16px; }
+        .wp-section strong { color: #e2b13c; }
+        .wp-highlight { border-left: 3px solid #e2b13c; padding: 16px 24px; margin: 24px 0; background: rgba(226,177,60,0.05); font-family: 'Inter', sans-serif; font-size: 15px; color: #e2b13c; font-style: italic; line-height: 1.7; }
+        .token-details-box { background: #111; padding: 24px 28px; border-radius: 10px; border: 1px solid #e2b13c44; margin: 24px 0; }
+        .token-details-box ul { list-style: none; padding: 0; margin: 0; }
+        .token-details-box li { padding: 10px 0; border-bottom: 1px solid #e2b13c11; font-family: 'Inter', sans-serif; font-size: 14px; color: #bdbdbd; }
+        .token-details-box li:last-child { border-bottom: none; }
+        .token-details-box strong { color: #e2b13c; }
+        .token-details-box code { color: #fff; background: #1a1a1a; padding: 2px 8px; border-radius: 4px; font-size: 13px; word-break: break-all; }
+        .token-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .token-bar-label { font-family: 'Inter', sans-serif; font-size: 12px; color: #bdbdbd; min-width: 200px; }
+        .token-bar-track { flex: 1; height: 6px; background: rgba(226,177,60,0.1); }
+        .token-bar-fill { height: 100%; background: linear-gradient(90deg, #7a5a10, #e2b13c); }
+        .token-bar-pct { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #e2b13c; min-width: 36px; text-align: right; }
+        .wp-roadmap { position: relative; padding-left: 32px; margin-top: 24px; }
+        .wp-roadmap::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #e2b13c, rgba(226,177,60,0.1)); }
+        .wp-road-item { position: relative; margin-bottom: 36px; }
+        .wp-road-item::before { content: ''; position: absolute; left: -28px; top: 4px; width: 10px; height: 10px; background: #e2b13c; border: 2px solid #e2b13c; border-radius: 2px; transform: rotate(45deg); }
+        .wp-road-phase { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #e2b13c; margin-bottom: 4px; }
+        .wp-road-title { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .wp-road-desc { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.6; color: #9a8a6a; }
+        .wp-road-status { display: inline-block; margin-top: 8px; padding: 2px 10px; border-radius: 20px; font-size: 11px; font-family: 'Inter', sans-serif; letter-spacing: 1px; font-weight: 600; }
+        .s-done   { background: rgba(80,200,80,0.1);   border: 1px solid rgba(80,200,80,0.35);   color: #6ddc6d; }
+        .s-active { background: rgba(226,177,60,0.15); border: 1px solid rgba(226,177,60,0.5);   color: #e2b13c; }
+        .s-soon   { background: rgba(100,100,200,0.1); border: 1px solid rgba(100,100,200,0.3);  color: #9999dd; }
+        .s-future { background: rgba(150,150,150,0.08);border: 1px solid rgba(150,150,150,0.25); color: #888; }
+        .wp-disclaimer { background: rgba(226,177,60,0.04); border: 1px solid #e2b13c33; border-radius: 10px; padding: 24px 28px; margin-top: 24px; font-family: 'Inter', sans-serif; font-size: 13px; color: #7a7060; line-height: 1.7; }
+        .wp-disclaimer strong { color: #e2b13c; }
+        .wp-back { display: inline-flex; align-items: center; gap: 8px; margin: 32px 0 0; padding: 10px 24px; border: 1px solid #e2b13c44; color: #e2b13c; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 1px; border-radius: 6px; transition: all 0.25s; }
+        .wp-back:hover { background: rgba(226,177,60,0.08); border-color: #e2b13c; }
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        @media (max-width: 600px) { .wp-meta { gap: 24px; } .token-bar-label { min-width: 130px; font-size: 11px; } }
     </style>
 </head>
 <body>
@@ -22,54 +63,318 @@
         <h1 data-i18n="hero-title">AMGF</h1>
         <div class="subtitle" data-i18n="hero-subtitle">Financial Freedom</div>
         <nav>
-            <a href="index.html">Acasă</a>
-            <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Albă</a> 
+            <a href="index.html" data-i18n="nav-home">Acasă</a>
+            <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Albă</a>
         </nav>
+        <button id="language-toggle">RO / EN / FR / RU</button>
     </header>
 
     <main>
-        <section class="whitepaper-section">
-            <div class="container">
-                <h1 class="section-title" style="color:#e2b13c;">CARTEA ALBĂ AMGF: Libertate Financiară</h1>
-                <p><strong>$AMGF: Ecosistemul Descentralizat pe rețeaua BASE</strong></p>
-                
+        <div class="container">
+
+            <div class="wp-hero">
+                <div class="wp-version" data-i18n="wp-version">Cartea Albă · Versiunea 1.0 · 2025</div>
+                <h1 data-i18n="wp-title">AMGF — Libertate Financiară</h1>
+                <div class="wp-tagline" data-i18n="wp-tagline">Ecosistem Web3 Descentralizat pe Rețeaua Base</div>
+                <div class="wp-meta">
+                    <div class="wp-meta-item">
+                        <div class="wp-meta-label" data-i18n="wp-meta-supply-label">Total Supply</div>
+                        <div class="wp-meta-value">1,000,000,000</div>
+                    </div>
+                    <div class="wp-meta-item">
+                        <div class="wp-meta-label" data-i18n="wp-meta-network-label">Rețea</div>
+                        <div class="wp-meta-value">Base (L2)</div>
+                    </div>
+                    <div class="wp-meta-item">
+                        <div class="wp-meta-label" data-i18n="wp-meta-symbol-label">Simbol</div>
+                        <div class="wp-meta-value">$AMGF</div>
+                    </div>
+                    <div class="wp-meta-item">
+                        <div class="wp-meta-label" data-i18n="wp-meta-version-label">Versiune</div>
+                        <div class="wp-meta-value">1.0 — 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wp-toc">
+                <div class="wp-toc-title" data-i18n="wp-toc-title">Cuprins</div>
+                <a href="#s1"><span>01</span><span data-i18n="wp-toc-1">Informații Tehnice Token</span></a>
+                <a href="#s2"><span>02</span><span data-i18n="wp-toc-2">Misiune & Viziune</span></a>
+                <a href="#s3"><span>03</span><span data-i18n="wp-toc-3">Angajamentul Fondatorului</span></a>
+                <a href="#s4"><span>04</span><span data-i18n="wp-toc-4">Ecosistemul AMGF</span></a>
+                <a href="#s5"><span>05</span><span data-i18n="wp-toc-5">Tokenomics</span></a>
+                <a href="#s6"><span>06</span><span data-i18n="wp-toc-6">Guvernanță DAO</span></a>
+                <a href="#s7"><span>07</span><span data-i18n="wp-toc-7">Roadmap</span></a>
+                <a href="#s8"><span>08</span><span data-i18n="wp-toc-8">Aspecte Tehnice</span></a>
+                <a href="#s9"><span>09</span><span data-i18n="wp-toc-9">Disclaimer Legal</span></a>
+            </div>
+
+            <section class="wp-section" id="s1">
+                <h2 data-i18n="wp-s1-title">1. Informații Tehnice Token</h2>
                 <div class="token-details-box">
-                    <h2>Informații Tehnice Token</h2>
                     <ul>
-                        <li><strong>Blockchain:</strong> BASE (Ethereum L2)</li>
-                        <li><strong>Contract (BASE):</strong> <code style="color:#fff;">0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765</code></li>
-                        <li><strong>Simbol:</strong> $AMGF</li>
-                        <li><strong>Total Supply:</strong> 1.000.000.000 $AMGF</li>
-                        <li><strong>Lichiditate:</strong> Blocată pe Uniswap</li>
+                        <li><strong data-i18n="wp-s1-blockchain">Blockchain:</strong> BASE (Ethereum L2)</li>
+                        <li><strong data-i18n="wp-s1-contract">Contract (BASE):</strong> <code>0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765</code></li>
+                        <li><strong data-i18n="wp-s1-symbol">Simbol:</strong> $AMGF</li>
+                        <li><strong data-i18n="wp-s1-supply">Total Supply:</strong> 1.000.000.000 $AMGF</li>
+                        <li><strong data-i18n="wp-s1-standard">Standard:</strong> ERC-20</li>
+                        <li><strong data-i18n="wp-s1-liquidity">Lichiditate:</strong> <span data-i18n="wp-s1-liquidity-val">Blocată pe Uniswap (Base)</span></li>
                     </ul>
                 </div>
+            </section>
 
-                <h2 id="misiune">1. MISIUNE ȘI VIZIUNE</h2>
-                <p>AMGF s-a mutat pe rețeaua <b>Base</b> pentru a beneficia de securitatea Ethereum și taxele reduse ale soluției Layer 2 susținută de Coinbase. Viziunea noastră este crearea unei punți între utilizatorii obișnuiți și complexitatea Web3.</p>
+            <section class="wp-section" id="s2">
+                <h2 data-i18n="wp-s2-title">2. Misiune & Viziune</h2>
+                <p data-i18n="wp-s2-p1">AMGF s-a construit pe rețeaua <strong>Base</strong> pentru a beneficia de securitatea Ethereum și taxele reduse ale soluției Layer 2 susținută de Coinbase.</p>
+                <div class="wp-highlight" data-i18n="wp-s2-quote">„Suntem mai mult decât un token — suntem un ecosistem construit de oameni reali, pentru oameni reali, cu un singur scop: libertatea financiară."</div>
+                <p data-i18n="wp-s2-p2">AMGF nu este creat de un expert financiar de pe Wall Street, ci de o persoană reală care înțelege provocările și aspirațiile celor care își doresc independența financiară.</p>
+            </section>
 
-                <h2 id="fondator">2. ANGAJAMENTUL FONDATORULUI</h2>
-                <p>La 53 de ani, fondatorul AMGF pune preț pe <b>reputație</b>. Migrarea pe Base reprezintă un pas către un ecosistem mai stabil și mai accesibil pentru investitorii de cursă lungă.</p>
+            <section class="wp-section" id="s3">
+                <h2 data-i18n="wp-s3-title">3. Angajamentul Fondatorului</h2>
+                <p data-i18n="wp-s3-p1">La 53 de ani, fondatorul AMGF pune preț pe <strong>reputație și transparență</strong>. Spre deosebire de majoritatea proiectelor crypto conduse de fondatori anonimi, AMGF are un fondator identificat.</p>
+                <p data-i18n="wp-s3-p2">Alocarea fondatorului (5% din total supply) este supusă unui cliff de 1 an și eliberare pe 3 ani — demonstrând angajamentul pe termen lung față de proiect și comunitate.</p>
+                <p data-i18n="wp-s3-contact"><strong>Contact direct:</strong> AMG3775@protonmail.com | Telegram: @amgf_libertate_bot</p>
+            </section>
 
-                <h2 id="tokenomics-wp">3. TOKENOMICS ACTUALIZAT</h2>
-                <p>Distribuția tokenurilor rămâne axată pe comunitate (40%) și dezvoltare durabilă. Toate mecanismele de vesting sunt acum aplicate pe smart-contractul de pe rețeaua Base.</p>
+            <section class="wp-section" id="s4">
+                <h2 data-i18n="wp-s4-title">4. Ecosistemul AMGF</h2>
+                <p data-i18n="wp-s4-intro">Ecosistemul AMGF este format din mai multe aplicații integrate, fiecare servind unui scop specific:</p>
+                <h3 data-i18n="wp-s4-wallet-title">AMGF Wallet N.C.</h3>
+                <p data-i18n="wp-s4-wallet-desc">Portofel non-custodial pe rețeaua Base. Utilizatorii dețin întotdeauna cheile private și controlul deplin asupra activelor. Disponibil la wallet.amgf-finance.com</p>
+                <h3 data-i18n="wp-s4-airdrop-title">Airdrop Manager</h3>
+                <p data-i18n="wp-s4-airdrop-desc">Instrument dedicat gestionării campaniilor de airdrop, recompensând participarea activă în comunitate și promovând adoptarea tokenului AMGF.</p>
+                <h3 data-i18n="wp-s4-staking-title">Staking Hub</h3>
+                <p data-i18n="wp-s4-staking-desc">Platformă de staking care permite deținătorilor de AMGF să genereze randamente pasive, contribuind totodată la stabilitatea ecosistemului.</p>
+                <h3 data-i18n="wp-s4-code-title">AMGF Code App</h3>
+                <p data-i18n="wp-s4-code-desc">Platformă de dezvoltare și colaborare pentru membrii tehnici ai comunității, susținând mecanismul Build-to-Earn.</p>
+                <h3 data-i18n="wp-s4-bot-title">AMGF Liberty Bot</h3>
+                <p data-i18n="wp-s4-bot-desc">Bot Telegram pentru interacțiunea directă cu comunitatea, notificări, informații despre token și suport automatizat.</p>
+                <h3 data-i18n="wp-s4-vault-title">Crypto Vault Keeper</h3>
+                <p data-i18n="wp-s4-vault-desc">Soluție de stocare și gestionare securizată a activelor cripto, integrată în ecosistemul AMGF.</p>
+            </section>
 
-                <h2 id="roadmap">4. ROADMAP</h2>
-                <ul>
-                    <li><b>Faza 1:</b> Lansare pe rețeaua Base și listare pe Uniswap (Finalizat).</li>
-                    <li><b>Faza 2:</b> Verificare Metadata și branding pe Basescan / Thirdweb.</li>
-                    <li><b>Faza 3:</b> Dezvoltare platformă educațională Learn-to-Earn.</li>
-                </ul>
+            <section class="wp-section" id="s5">
+                <h2 data-i18n="wp-s5-title">5. Tokenomics</h2>
+                <p data-i18n="wp-s5-intro">Strategia Tokenomics este proiectată pentru a <strong>minimiza presiunea de vânzare</strong> și a proteja valoarea pe termen lung a ecosistemului.</p>
+                <div class="token-bar-row">
+                    <span class="token-bar-label" data-i18n="wp-tok-cat1">Comunitate & Ecosistem</span>
+                    <div class="token-bar-track"><div class="token-bar-fill" style="width:40%"></div></div>
+                    <span class="token-bar-pct">40%</span>
+                </div>
+                <div class="token-bar-row">
+                    <span class="token-bar-label" data-i18n="wp-tok-cat2">Echipă & Fondator</span>
+                    <div class="token-bar-track"><div class="token-bar-fill" style="width:25%"></div></div>
+                    <span class="token-bar-pct">25%</span>
+                </div>
+                <div class="token-bar-row">
+                    <span class="token-bar-label" data-i18n="wp-tok-cat3">Trezorerie DAO</span>
+                    <div class="token-bar-track"><div class="token-bar-fill" style="width:20%"></div></div>
+                    <span class="token-bar-pct">20%</span>
+                </div>
+                <div class="token-bar-row">
+                    <span class="token-bar-label" data-i18n="wp-tok-cat4">Lichiditate DEX</span>
+                    <div class="token-bar-track"><div class="token-bar-fill" style="width:15%"></div></div>
+                    <span class="token-bar-pct">15%</span>
+                </div>
+                <div class="token-details-box" style="margin-top:28px;">
+                    <ul>
+                        <li><strong data-i18n="wp-tok-cat1">Comunitate & Ecosistem</strong> — 400,000,000 AMGF — <span data-i18n="wp-tok-vest1">Eliberare treptată 5–10 ani</span></li>
+                        <li><strong data-i18n="wp-tok-cat2">Echipă & Fondator</strong> — 250,000,000 AMGF — <span data-i18n="wp-tok-vest2">Cliff 1 an + eliberare 3 ani</span></li>
+                        <li><strong data-i18n="wp-tok-cat3">Trezorerie DAO</strong> — 200,000,000 AMGF — <span data-i18n="wp-tok-vest3">Blocate în trezorerie DAO</span></li>
+                        <li><strong data-i18n="wp-tok-cat4">Lichiditate DEX</strong> — 150,000,000 AMGF — <span data-i18n="wp-tok-vest4">Staking/farming 2–5 ani</span></li>
+                    </ul>
+                </div>
+            </section>
 
-                <h2 id="disclaimer-wp">5. DISCLAIMER LEGAL</h2>
-                <p>Criptomonedele sunt active volatile. $AMGF este un token de utilitate în cadrul ecosistemului AMGF. Nu investiți mai mult decât vă puteți permite să pierdeți. DYOR.</p>
-            </div>
-        </section>
+            <section class="wp-section" id="s6">
+                <h2 data-i18n="wp-s6-title">6. Guvernanță DAO</h2>
+                <p data-i18n="wp-s6-p1">AMGF se angajează să evolueze către o <strong>Organizație Autonomă Descentralizată (DAO)</strong> complet funcțională, unde deținătorii de token au putere reală de decizie asupra ecosistemului.</p>
+                <p data-i18n="wp-s6-p2">Prin mecanismul de guvernanță DAO, membrii comunității vor putea vota și decide asupra alocării resurselor, parteneriatelor strategice, direcției de dezvoltare a platformei și parametrilor de staking.</p>
+                <div class="wp-highlight" data-i18n="wp-s6-quote">Trezoreria DAO conține 200,000,000 AMGF (20%) — blocate și administrate exclusiv prin votul comunității.</div>
+            </section>
+
+            <section class="wp-section" id="s7">
+                <h2 data-i18n="wp-s7-title">7. Roadmap</h2>
+                <div class="wp-roadmap">
+                    <div class="wp-road-item">
+                        <div class="wp-road-phase" data-i18n="wp-road-phase1">Faza 1 · 2024–2025 · Fundație</div>
+                        <div class="wp-road-title" data-i18n="wp-road-title1">Lansare & Infrastructură</div>
+                        <div class="wp-road-desc" data-i18n="wp-road-desc1">Crearea tokenului AMGF pe rețeaua Base. Lansarea site-ului principal. Construirea comunității Telegram. Publicarea Cărții Albe v1.0. Lansarea AMGF Wallet N.C., Liberty Bot și Airdrop Manager.</div>
+                        <span class="wp-road-status s-done" data-i18n="wp-road-s1">✔ Realizat</span>
+                    </div>
+                    <div class="wp-road-item">
+                        <div class="wp-road-phase" data-i18n="wp-road-phase2">Faza 2 · 2025 · Creștere</div>
+                        <div class="wp-road-title" data-i18n="wp-road-title2">Ecosistem & Comunitate</div>
+                        <div class="wp-road-desc" data-i18n="wp-road-desc2">Lansarea Staking Hub și AMGF Code App. Campanii de airdrop strategice. Listare pe DEX-uri (Uniswap / Base). Lansarea Crypto Vault Keeper. Parteneriate strategice. Creșterea comunității la 10,000+ membri.</div>
+                        <span class="wp-road-status s-active" data-i18n="wp-road-s2">⚡ În desfășurare</span>
+                    </div>
+                    <div class="wp-road-item">
+                        <div class="wp-road-phase" data-i18n="wp-road-phase3">Faza 3 · 2026 · Maturizare</div>
+                        <div class="wp-road-title" data-i18n="wp-road-title3">DAO & Learn-to-Earn</div>
+                        <div class="wp-road-desc" data-i18n="wp-road-desc3">Implementarea mecanismului DAO complet. Lansarea platformei educaționale Learn-to-Earn. Sistem Build-to-Earn activ. Audit smart contract independent. Extinderea ecosistemului cu noi instrumente.</div>
+                        <span class="wp-road-status s-soon" data-i18n="wp-road-s3">🔜 În pregătire</span>
+                    </div>
+                    <div class="wp-road-item">
+                        <div class="wp-road-phase" data-i18n="wp-road-phase4">Faza 4 · 2026–2027 · Expansiune</div>
+                        <div class="wp-road-title" data-i18n="wp-road-title4">Autonomie & Scalare</div>
+                        <div class="wp-road-desc" data-i18n="wp-road-desc4">Listare pe exchange-uri centralizate (CEX). Guvernanță DAO complet autonomă. Fond colectiv administrat de comunitate. Extindere internațională. AMGF ca model de autonomie comunitară în Web3.</div>
+                        <span class="wp-road-status s-future" data-i18n="wp-road-s4">◎ Viitor</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="wp-section" id="s8">
+                <h2 data-i18n="wp-s8-title">8. Aspecte Tehnice</h2>
+                <p data-i18n="wp-s8-p1"><strong>Rețeaua Base</strong> — Layer 2 Ethereum dezvoltat de Coinbase. Oferă tranzacții rapide, costuri reduse și securitatea completă a rețelei Ethereum prin mecanismul Optimistic Rollup.</p>
+                <p data-i18n="wp-s8-p2"><strong>Standard ERC-20</strong> — Tokenul AMGF respectă standardul ERC-20, asigurând compatibilitate cu toate portofelele și exchange-urile care suportă rețeaua Base.</p>
+                <p data-i18n="wp-s8-p3"><strong>Non-Custodial</strong> — Portofelul AMGF Wallet N.C. este complet non-custodial: utilizatorii dețin întotdeauna cheile private și controlul deplin. AMGF nu poate accesa fondurile utilizatorilor.</p>
+                <p data-i18n="wp-s8-p4"><strong>Transparență</strong> — Toate tranzacțiile sunt publice și verificabile pe blockchain. Adresa de contract este publicată și verificabilă pe BaseScan.</p>
+            </section>
+
+            <section class="wp-section" id="s9">
+                <h2 data-i18n="wp-s9-title">9. Disclaimer Legal</h2>
+                <div class="wp-disclaimer">
+                    <p data-i18n="wp-s9-p1"><strong>AVERTISMENT LEGAL IMPORTANT:</strong> Informațiile prezentate în această Carte Albă nu constituie sfaturi financiare, de investiții, juridice sau fiscale.</p>
+                    <p data-i18n="wp-s9-p2">Criptomonedele sunt active volatile. $AMGF este un token de utilitate în cadrul ecosistemului AMGF. Nu investiți mai mult decât vă puteți permite să pierdeți.</p>
+                    <p data-i18n="wp-s9-p3">Participanții sunt sfătuiți să efectueze propria cercetare independentă (DYOR) și să consulte un consilier financiar autorizat înainte de orice decizie de investiție.</p>
+                    <p data-i18n="wp-s9-copy"><strong>&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.</strong></p>
+                </div>
+            </section>
+
+            <a href="index.html" class="wp-back" data-i18n="wp-back">← Înapoi la site principal</a>
+
+        </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.</p>
+            <p data-i18n="footer-copyright">&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.</p>
+            <p data-i18n="footer-contact"></p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const wpTranslations = {
+            'wp-version':            { ro: 'Cartea Albă · Versiunea 1.0 · 2025', en: 'White Paper · Version 1.0 · 2025', fr: 'Livre Blanc · Version 1.0 · 2025', ru: 'Белая Книга · Версия 1.0 · 2025' },
+            'wp-title':              { ro: 'AMGF — Libertate Financiară', en: 'AMGF — Financial Freedom', fr: 'AMGF — Liberté Financière', ru: 'AMGF — Финансовая Свобода' },
+            'wp-tagline':            { ro: 'Ecosistem Web3 Descentralizat pe Rețeaua Base', en: 'Decentralized Web3 Ecosystem on the Base Network', fr: 'Écosystème Web3 Décentralisé sur le Réseau Base', ru: 'Децентрализованная Экосистема Web3 в сети Base' },
+            'wp-meta-supply-label':  { ro: 'Total Supply', en: 'Total Supply', fr: 'Offre Totale', ru: 'Общее Предложение' },
+            'wp-meta-network-label': { ro: 'Rețea', en: 'Network', fr: 'Réseau', ru: 'Сеть' },
+            'wp-meta-symbol-label':  { ro: 'Simbol', en: 'Symbol', fr: 'Symbole', ru: 'Символ' },
+            'wp-meta-version-label': { ro: 'Versiune', en: 'Version', fr: 'Version', ru: 'Версия' },
+            'wp-toc-title':          { ro: 'Cuprins', en: 'Table of Contents', fr: 'Table des Matières', ru: 'Содержание' },
+            'wp-toc-1':              { ro: 'Informații Tehnice Token', en: 'Token Technical Info', fr: 'Informations Techniques Token', ru: 'Технические Данные Токена' },
+            'wp-toc-2':              { ro: 'Misiune & Viziune', en: 'Mission & Vision', fr: 'Mission & Vision', ru: 'Миссия и Видение' },
+            'wp-toc-3':              { ro: 'Angajamentul Fondatorului', en: 'Founder\'s Commitment', fr: 'Engagement du Fondateur', ru: 'Обязательство Основателя' },
+            'wp-toc-4':              { ro: 'Ecosistemul AMGF', en: 'AMGF Ecosystem', fr: 'Écosystème AMGF', ru: 'Экосистема AMGF' },
+            'wp-toc-5':              { ro: 'Tokenomics', en: 'Tokenomics', fr: 'Tokenomics', ru: 'Токеномика' },
+            'wp-toc-6':              { ro: 'Guvernanță DAO', en: 'DAO Governance', fr: 'Gouvernance DAO', ru: 'Управление DAO' },
+            'wp-toc-7':              { ro: 'Roadmap', en: 'Roadmap', fr: 'Feuille de Route', ru: 'Дорожная Карта' },
+            'wp-toc-8':              { ro: 'Aspecte Tehnice', en: 'Technical Overview', fr: 'Aspects Techniques', ru: 'Технический Обзор' },
+            'wp-toc-9':              { ro: 'Disclaimer Legal', en: 'Legal Disclaimer', fr: 'Avertissement Légal', ru: 'Юридическое Предупреждение' },
+            'wp-s1-title':           { ro: '1. Informații Tehnice Token', en: '1. Token Technical Info', fr: '1. Informations Techniques Token', ru: '1. Технические Данные Токена' },
+            'wp-s1-blockchain':      { ro: 'Blockchain:', en: 'Blockchain:', fr: 'Blockchain:', ru: 'Блокчейн:' },
+            'wp-s1-contract':        { ro: 'Contract (BASE):', en: 'Contract (BASE):', fr: 'Contrat (BASE):', ru: 'Контракт (BASE):' },
+            'wp-s1-symbol':          { ro: 'Simbol:', en: 'Symbol:', fr: 'Symbole:', ru: 'Символ:' },
+            'wp-s1-supply':          { ro: 'Total Supply:', en: 'Total Supply:', fr: 'Offre Totale:', ru: 'Общее Предложение:' },
+            'wp-s1-standard':        { ro: 'Standard:', en: 'Standard:', fr: 'Standard:', ru: 'Стандарт:' },
+            'wp-s1-liquidity':       { ro: 'Lichiditate:', en: 'Liquidity:', fr: 'Liquidité:', ru: 'Ликвидность:' },
+            'wp-s1-liquidity-val':   { ro: 'Blocată pe Uniswap (Base)', en: 'Locked on Uniswap (Base)', fr: 'Bloquée sur Uniswap (Base)', ru: 'Заблокирована на Uniswap (Base)' },
+            'wp-s2-title':           { ro: '2. Misiune & Viziune', en: '2. Mission & Vision', fr: '2. Mission & Vision', ru: '2. Миссия и Видение' },
+            'wp-s2-p1':              { ro: 'AMGF s-a construit pe rețeaua <strong>Base</strong> pentru a beneficia de securitatea Ethereum și taxele reduse ale soluției Layer 2 susținută de Coinbase. Viziunea noastră este crearea unei punți între utilizatorii obișnuiți și complexitatea Web3.', en: 'AMGF is built on the <strong>Base</strong> network to benefit from Ethereum security and the low fees of Coinbase\'s Layer 2 solution. Our vision is to create a bridge between ordinary users and the complexity of Web3.', fr: 'AMGF est construit sur le réseau <strong>Base</strong> pour bénéficier de la sécurité d\'Ethereum et des frais réduits de la solution Layer 2 de Coinbase. Notre vision est de créer un pont entre les utilisateurs ordinaires et la complexité du Web3.', ru: 'AMGF построен в сети <strong>Base</strong> для использования безопасности Ethereum и низких комиссий решения Layer 2 от Coinbase. Наше видение — создание моста между обычными пользователями и сложностью Web3.' },
+            'wp-s2-quote':           { ro: '„Suntem mai mult decât un token — suntem un ecosistem construit de oameni reali, pentru oameni reali, cu un singur scop: libertatea financiară."', en: '"We are more than a token — we are an ecosystem built by real people, for real people, with one goal: financial freedom."', fr: '« Nous sommes plus qu\'un token — nous sommes un écosystème construit par de vraies personnes, pour de vraies personnes, avec un seul objectif : la liberté financière. »', ru: '«Мы больше, чем токен — мы экосистема, созданная реальными людьми, для реальных людей, с одной целью: финансовая свобода».' },
+            'wp-s2-p2':              { ro: 'AMGF nu este creat de un expert financiar de pe Wall Street, ci de o persoană reală care înțelege provocările și aspirațiile celor care își doresc independența financiară. Misiunea noastră este să oferim un spațiu transparent, accesibil și valoros, diferit de promisiunile goale care domină adesea spațiul crypto.', en: 'AMGF is not created by a Wall Street financial expert, but by a real person who understands the challenges and aspirations of those seeking financial independence. Our mission is to provide a transparent, accessible and valuable space, different from the empty promises that often dominate the crypto space.', fr: 'AMGF n\'est pas créé par un expert financier de Wall Street, mais par une personne réelle qui comprend les défis et les aspirations de ceux qui souhaitent l\'indépendance financière. Notre mission est d\'offrir un espace transparent, accessible et précieux, différent des promesses vides qui dominent souvent l\'espace crypto.', ru: 'AMGF создан не финансовым экспертом с Уолл-стрит, а реальным человеком, который понимает проблемы и стремления тех, кто хочет финансовой независимости. Наша миссия — предоставить прозрачное, доступное и ценное пространство.' },
+            'wp-s3-title':           { ro: '3. Angajamentul Fondatorului', en: '3. Founder\'s Commitment', fr: '3. Engagement du Fondateur', ru: '3. Обязательство Основателя' },
+            'wp-s3-p1':              { ro: 'La 53 de ani, fondatorul AMGF pune preț pe <strong>reputație și transparență</strong>. Spre deosebire de majoritatea proiectelor crypto conduse de fondatori anonimi, AMGF are un fondator identificat, cu capital de reputație real în joc.', en: 'At 53, the AMGF founder values <strong>reputation and transparency</strong>. Unlike most crypto projects led by anonymous founders, AMGF has an identified founder with real reputational capital at stake.', fr: 'À 53 ans, le fondateur d\'AMGF accorde de l\'importance à la <strong>réputation et à la transparence</strong>. Contrairement à la plupart des projets crypto dirigés par des fondateurs anonymes, AMGF a un fondateur identifié.', ru: 'В 53 года основатель AMGF ценит <strong>репутацию и прозрачность</strong>. В отличие от большинства криптопроектов с анонимными основателями, у AMGF есть идентифицированный основатель.' },
+            'wp-s3-p2':              { ro: 'Alocarea fondatorului (5% din total supply) este supusă unui cliff de 1 an și eliberare pe 3 ani — demonstrând angajamentul pe termen lung față de proiect și comunitate.', en: 'The founder\'s allocation (5% of total supply) is subject to a 1-year cliff and 3-year release — demonstrating long-term commitment to the project and community.', fr: 'L\'allocation du fondateur (5% de l\'offre totale) est soumise à un cliff d\'un an et une libération sur 3 ans — démontrant un engagement à long terme.', ru: 'Аллокация основателя (5% от общего предложения) подлежит клиффу в 1 год и выпуску в течение 3 лет — демонстрируя долгосрочную приверженность.' },
+            'wp-s3-contact':         { ro: '<strong>Contact direct:</strong> AMG3775@protonmail.com | Telegram: @amgf_libertate_bot', en: '<strong>Direct contact:</strong> AMG3775@protonmail.com | Telegram: @amgf_libertate_bot', fr: '<strong>Contact direct:</strong> AMG3775@protonmail.com | Telegram: @amgf_libertate_bot', ru: '<strong>Прямой контакт:</strong> AMG3775@protonmail.com | Telegram: @amgf_libertate_bot' },
+            'wp-s4-title':           { ro: '4. Ecosistemul AMGF', en: '4. AMGF Ecosystem', fr: '4. Écosystème AMGF', ru: '4. Экосистема AMGF' },
+            'wp-s4-intro':           { ro: 'Ecosistemul AMGF este format din mai multe aplicații integrate, fiecare servind unui scop specific:', en: 'The AMGF ecosystem consists of several integrated applications, each serving a specific purpose:', fr: 'L\'écosystème AMGF est composé de plusieurs applications intégrées, chacune servant un objectif spécifique:', ru: 'Экосистема AMGF состоит из нескольких интегрированных приложений:' },
+            'wp-s4-wallet-title':    { ro: 'AMGF Wallet N.C.', en: 'AMGF Wallet N.C.', fr: 'AMGF Wallet N.C.', ru: 'AMGF Wallet N.C.' },
+            'wp-s4-wallet-desc':     { ro: 'Portofel non-custodial pe rețeaua Base. Utilizatorii dețin întotdeauna cheile private și controlul deplin asupra activelor. Disponibil la wallet.amgf-finance.com', en: 'Non-custodial wallet on the Base network. Users always hold their private keys and full control over assets. Available at wallet.amgf-finance.com', fr: 'Portefeuille non-custodial sur le réseau Base. Les utilisateurs détiennent toujours leurs clés privées. Disponible sur wallet.amgf-finance.com', ru: 'Некастодиальный кошелёк в сети Base. Пользователи всегда владеют своими ключами. Доступен на wallet.amgf-finance.com' },
+            'wp-s4-airdrop-title':   { ro: 'Airdrop Manager', en: 'Airdrop Manager', fr: 'Gestionnaire d\'Airdrop', ru: 'Менеджер Аирдропов' },
+            'wp-s4-airdrop-desc':    { ro: 'Instrument dedicat gestionării campaniilor de airdrop, recompensând participarea activă în comunitate și promovând adoptarea tokenului AMGF.', en: 'Dedicated tool for managing airdrop campaigns, rewarding active community participation and promoting AMGF token adoption.', fr: 'Outil dédié à la gestion des campagnes d\'airdrop, récompensant la participation active de la communauté.', ru: 'Инструмент для управления аирдроп-кампаниями и вознаграждения участников сообщества.' },
+            'wp-s4-staking-title':   { ro: 'Staking Hub', en: 'Staking Hub', fr: 'Hub de Staking', ru: 'Стейкинг Хаб' },
+            'wp-s4-staking-desc':    { ro: 'Platformă de staking care permite deținătorilor de AMGF să genereze randamente pasive, contribuind totodată la stabilitatea ecosistemului.', en: 'Staking platform allowing AMGF holders to generate passive returns while contributing to ecosystem stability.', fr: 'Plateforme de staking permettant aux détenteurs d\'AMGF de générer des rendements passifs.', ru: 'Платформа стейкинга для генерации пассивного дохода держателями AMGF.' },
+            'wp-s4-code-title':      { ro: 'AMGF Code App', en: 'AMGF Code App', fr: 'AMGF Code App', ru: 'AMGF Code App' },
+            'wp-s4-code-desc':       { ro: 'Platformă de dezvoltare și colaborare pentru membrii tehnici ai comunității, susținând mecanismul Build-to-Earn.', en: 'Development and collaboration platform for technical community members, supporting the Build-to-Earn mechanism.', fr: 'Plateforme de développement pour les membres techniques, soutenant le mécanisme Build-to-Earn.', ru: 'Платформа разработки для технических членов сообщества, поддерживающая Build-to-Earn.' },
+            'wp-s4-bot-title':       { ro: 'AMGF Liberty Bot', en: 'AMGF Liberty Bot', fr: 'Bot AMGF Liberty', ru: 'Бот AMGF Liberty' },
+            'wp-s4-bot-desc':        { ro: 'Bot Telegram pentru interacțiunea directă cu comunitatea, notificări, informații despre token și suport automatizat.', en: 'Telegram bot for direct community interaction, notifications, token information and automated support.', fr: 'Bot Telegram pour l\'interaction avec la communauté, notifications et support automatisé.', ru: 'Telegram-бот для взаимодействия с сообществом и автоматической поддержки.' },
+            'wp-s4-vault-title':     { ro: 'Crypto Vault Keeper', en: 'Crypto Vault Keeper', fr: 'Crypto Vault Keeper', ru: 'Crypto Vault Keeper' },
+            'wp-s4-vault-desc':      { ro: 'Soluție de stocare și gestionare securizată a activelor cripto, integrată în ecosistemul AMGF.', en: 'Secure crypto asset storage and management solution, integrated into the AMGF ecosystem.', fr: 'Solution de stockage sécurisé des actifs crypto, intégrée dans l\'écosystème AMGF.', ru: 'Решение для безопасного хранения криптоактивов в экосистеме AMGF.' },
+            'wp-s5-title':           { ro: '5. Tokenomics', en: '5. Tokenomics', fr: '5. Tokenomics', ru: '5. Токеномика' },
+            'wp-s5-intro':           { ro: 'Strategia Tokenomics este proiectată pentru a <strong>minimiza presiunea de vânzare</strong> și a proteja valoarea pe termen lung a ecosistemului.', en: 'The Tokenomics strategy is designed to <strong>minimize selling pressure</strong> and protect the long-term value of the ecosystem.', fr: 'La stratégie Tokenomics est conçue pour <strong>minimiser la pression de vente</strong> et protéger la valeur à long terme.', ru: 'Стратегия токеномики для <strong>минимизации давления продаж</strong> и защиты долгосрочной ценности.' },
+            'wp-tok-cat1':           { ro: 'Comunitate & Ecosistem', en: 'Community & Ecosystem', fr: 'Communauté & Écosystème', ru: 'Сообщество и Экосистема' },
+            'wp-tok-cat2':           { ro: 'Echipă & Fondator', en: 'Team & Founder', fr: 'Équipe & Fondateur', ru: 'Команда и Основатель' },
+            'wp-tok-cat3':           { ro: 'Trezorerie DAO', en: 'DAO Treasury', fr: 'Trésorerie DAO', ru: 'Казначейство DAO' },
+            'wp-tok-cat4':           { ro: 'Lichiditate DEX', en: 'DEX Liquidity', fr: 'Liquidité DEX', ru: 'Ликвидность DEX' },
+            'wp-tok-vest1':          { ro: 'Eliberare treptată 5–10 ani', en: 'Gradual release 5–10 years', fr: 'Libération progressive 5–10 ans', ru: 'Постепенный выпуск 5–10 лет' },
+            'wp-tok-vest2':          { ro: 'Cliff 1 an + eliberare 3 ani', en: '1-year cliff + 3-year release', fr: 'Cliff 1 an + libération 3 ans', ru: 'Клифф 1 год + выпуск 3 года' },
+            'wp-tok-vest3':          { ro: 'Blocate în trezorerie DAO', en: 'Locked in DAO treasury', fr: 'Bloqué en trésorerie DAO', ru: 'Заблокировано в казначействе DAO' },
+            'wp-tok-vest4':          { ro: 'Staking/farming 2–5 ani', en: 'Staking/farming 2–5 years', fr: 'Staking/farming 2–5 ans', ru: 'Стейкинг/фарминг 2–5 лет' },
+            'wp-s6-title':           { ro: '6. Guvernanță DAO', en: '6. DAO Governance', fr: '6. Gouvernance DAO', ru: '6. Управление DAO' },
+            'wp-s6-p1':              { ro: 'AMGF se angajează să evolueze către o <strong>Organizație Autonomă Descentralizată (DAO)</strong> complet funcțională, unde deținătorii de token au putere reală de decizie asupra ecosistemului.', en: 'AMGF is committed to evolving into a fully functional <strong>Decentralized Autonomous Organization (DAO)</strong>, where token holders have real decision-making power.', fr: 'AMGF s\'engage à évoluer vers une <strong>Organisation Autonome Décentralisée (DAO)</strong> entièrement fonctionnelle.', ru: 'AMGF стремится стать полностью функциональной <strong>DAO</strong>, где держатели токенов имеют реальную власть.' },
+            'wp-s6-p2':              { ro: 'Prin mecanismul de guvernanță DAO, membrii comunității vor putea vota și decide asupra alocării resurselor, parteneriatelor strategice, direcției de dezvoltare a platformei și parametrilor de staking.', en: 'Through the DAO governance mechanism, community members will vote and decide on resource allocation, partnerships, platform direction and staking parameters.', fr: 'Via le mécanisme DAO, les membres pourront voter sur l\'allocation des ressources, les partenariats et les paramètres de staking.', ru: 'Через механизм DAO члены сообщества голосуют о распределении ресурсов, партнёрствах и параметрах стейкинга.' },
+            'wp-s6-quote':           { ro: 'Trezoreria DAO conține 200,000,000 AMGF (20%) — blocate și administrate exclusiv prin votul comunității.', en: 'The DAO treasury holds 200,000,000 AMGF (20%) — locked and managed exclusively through community vote.', fr: 'La trésorerie DAO contient 200 000 000 AMGF (20%) — bloqués et gérés par le vote de la communauté.', ru: 'Казначейство DAO содержит 200 000 000 AMGF (20%) — управляемых голосованием сообщества.' },
+            'wp-s7-title':           { ro: '7. Roadmap', en: '7. Roadmap', fr: '7. Feuille de Route', ru: '7. Дорожная Карта' },
+            'wp-road-phase1':        { ro: 'Faza 1 · 2024–2025 · Fundație', en: 'Phase 1 · 2024–2025 · Foundation', fr: 'Phase 1 · 2024–2025 · Fondation', ru: 'Этап 1 · 2024–2025 · Основание' },
+            'wp-road-title1':        { ro: 'Lansare & Infrastructură', en: 'Launch & Infrastructure', fr: 'Lancement & Infrastructure', ru: 'Запуск и Инфраструктура' },
+            'wp-road-desc1':         { ro: 'Crearea tokenului AMGF pe rețeaua Base. Lansarea site-ului principal. Construirea comunității Telegram. Publicarea Cărții Albe v1.0. Lansarea AMGF Wallet N.C., Liberty Bot și Airdrop Manager.', en: 'Creation of the AMGF token on Base. Launch of the main site. Building the Telegram community. Publication of White Paper v1.0. Launch of AMGF Wallet N.C., Liberty Bot and Airdrop Manager.', fr: 'Création du token sur Base. Lancement du site. Construction de la communauté Telegram. Publication du Livre Blanc v1.0.', ru: 'Создание токена в Base. Запуск сайта. Сообщество Telegram. Белая книга v1.0. AMGF Wallet N.C.' },
+            'wp-road-s1':            { ro: '✔ Realizat', en: '✔ Completed', fr: '✔ Réalisé', ru: '✔ Выполнено' },
+            'wp-road-phase2':        { ro: 'Faza 2 · 2025 · Creștere', en: 'Phase 2 · 2025 · Growth', fr: 'Phase 2 · 2025 · Croissance', ru: 'Этап 2 · 2025 · Рост' },
+            'wp-road-title2':        { ro: 'Ecosistem & Comunitate', en: 'Ecosystem & Community', fr: 'Écosystème & Communauté', ru: 'Экосистема и Сообщество' },
+            'wp-road-desc2':         { ro: 'Lansarea Staking Hub și AMGF Code App. Campanii de airdrop. Listare pe DEX-uri. Lansarea Crypto Vault Keeper. Parteneriate. Creșterea comunității la 10,000+ membri.', en: 'Launch of Staking Hub and AMGF Code App. Airdrop campaigns. DEX listings. Launch of Crypto Vault Keeper. Partnerships. Growing to 10,000+ members.', fr: 'Lancement Staking Hub et Code App. Airdrops. Cotation DEX. Crypto Vault Keeper. Partenariats. 10 000+ membres.', ru: 'Запуск Staking Hub и Code App. Аирдропы. Листинг DEX. Crypto Vault Keeper. Партнёрства. 10 000+ участников.' },
+            'wp-road-s2':            { ro: '⚡ În desfășurare', en: '⚡ In Progress', fr: '⚡ En cours', ru: '⚡ В процессе' },
+            'wp-road-phase3':        { ro: 'Faza 3 · 2026 · Maturizare', en: 'Phase 3 · 2026 · Maturation', fr: 'Phase 3 · 2026 · Maturité', ru: 'Этап 3 · 2026 · Созревание' },
+            'wp-road-title3':        { ro: 'DAO & Learn-to-Earn', en: 'DAO & Learn-to-Earn', fr: 'DAO & Learn-to-Earn', ru: 'DAO и Learn-to-Earn' },
+            'wp-road-desc3':         { ro: 'Implementarea DAO complet. Platforma Learn-to-Earn. Build-to-Earn activ. Audit smart contract. Extinderea ecosistemului.', en: 'Full DAO implementation. Learn-to-Earn platform. Active Build-to-Earn. Smart contract audit. Ecosystem expansion.', fr: 'DAO complet. Plateforme Learn-to-Earn. Build-to-Earn. Audit smart contract. Expansion.', ru: 'Полный DAO. Платформа Learn-to-Earn. Build-to-Earn. Аудит контракта. Расширение.' },
+            'wp-road-s3':            { ro: '🔜 În pregătire', en: '🔜 Coming Soon', fr: '🔜 Bientôt', ru: '🔜 Скоро' },
+            'wp-road-phase4':        { ro: 'Faza 4 · 2026–2027 · Expansiune', en: 'Phase 4 · 2026–2027 · Expansion', fr: 'Phase 4 · 2026–2027 · Expansion', ru: 'Этап 4 · 2026–2027 · Расширение' },
+            'wp-road-title4':        { ro: 'Autonomie & Scalare', en: 'Autonomy & Scaling', fr: 'Autonomie & Mise à l\'Échelle', ru: 'Автономия и Масштабирование' },
+            'wp-road-desc4':         { ro: 'Listare CEX. Guvernanță DAO autonomă. Fond colectiv. Extindere internațională. AMGF ca model Web3.', en: 'CEX listing. Autonomous DAO governance. Collective fund. International expansion. AMGF as Web3 model.', fr: 'Cotation CEX. Gouvernance DAO autonome. Fonds collectif. Expansion internationale.', ru: 'Листинг CEX. Автономное DAO. Коллективный фонд. Международное расширение.' },
+            'wp-road-s4':            { ro: '◎ Viitor', en: '◎ Future', fr: '◎ Futur', ru: '◎ Будущее' },
+            'wp-s8-title':           { ro: '8. Aspecte Tehnice', en: '8. Technical Overview', fr: '8. Aspects Techniques', ru: '8. Технический Обзор' },
+            'wp-s8-p1':              { ro: '<strong>Rețeaua Base</strong> — Layer 2 Ethereum dezvoltat de Coinbase. Oferă tranzacții rapide, costuri reduse și securitatea completă Ethereum prin Optimistic Rollup.', en: '<strong>Base Network</strong> — Ethereum Layer 2 by Coinbase. Fast transactions, low costs, full Ethereum security via Optimistic Rollup.', fr: '<strong>Réseau Base</strong> — Layer 2 Ethereum de Coinbase. Transactions rapides, faibles coûts, sécurité Ethereum via Optimistic Rollup.', ru: '<strong>Сеть Base</strong> — Layer 2 от Coinbase. Быстрые транзакции, низкие комиссии, безопасность Ethereum.' },
+            'wp-s8-p2':              { ro: '<strong>Standard ERC-20</strong> — Compatibilitate cu toate portofelele și exchange-urile care suportă rețeaua Base.', en: '<strong>ERC-20 Standard</strong> — Compatible with all wallets and exchanges supporting the Base network.', fr: '<strong>Standard ERC-20</strong> — Compatible avec tous les portefeuilles et exchanges sur Base.', ru: '<strong>Стандарт ERC-20</strong> — Совместимость со всеми кошельками и биржами Base.' },
+            'wp-s8-p3':              { ro: '<strong>Non-Custodial</strong> — Utilizatorii dețin întotdeauna cheile private. AMGF nu poate accesa fondurile utilizatorilor.', en: '<strong>Non-Custodial</strong> — Users always hold their private keys. AMGF cannot access user funds.', fr: '<strong>Non-Custodial</strong> — Les utilisateurs détiennent toujours leurs clés. AMGF ne peut accéder aux fonds.', ru: '<strong>Некастодиальный</strong> — Пользователи всегда держат свои ключи. AMGF не имеет доступа к средствам.' },
+            'wp-s8-p4':              { ro: '<strong>Transparență</strong> — Toate tranzacțiile sunt publice și verificabile pe BaseScan.', en: '<strong>Transparency</strong> — All transactions are public and verifiable on BaseScan.', fr: '<strong>Transparence</strong> — Toutes les transactions sont vérifiables sur BaseScan.', ru: '<strong>Прозрачность</strong> — Все транзакции публичны и проверяемы на BaseScan.' },
+            'wp-s9-title':           { ro: '9. Disclaimer Legal', en: '9. Legal Disclaimer', fr: '9. Avertissement Légal', ru: '9. Юридическое Предупреждение' },
+            'wp-s9-p1':              { ro: '<strong>AVERTISMENT LEGAL IMPORTANT:</strong> Informațiile prezentate nu constituie sfaturi financiare, de investiții, juridice sau fiscale.', en: '<strong>IMPORTANT LEGAL WARNING:</strong> The information presented does not constitute financial, investment, legal or tax advice.', fr: '<strong>AVERTISSEMENT LÉGAL IMPORTANT:</strong> Les informations ne constituent pas des conseils financiers ou juridiques.', ru: '<strong>ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ:</strong> Информация не является финансовым или юридическим советом.' },
+            'wp-s9-p2':              { ro: 'Criptomonedele sunt active volatile. $AMGF este un token de utilitate. Nu investiți mai mult decât vă puteți permite să pierdeți.', en: 'Cryptocurrencies are volatile. $AMGF is a utility token. Do not invest more than you can afford to lose.', fr: 'Les cryptos sont volatiles. $AMGF est un token utilitaire. N\'investissez pas plus que ce vous pouvez perdre.', ru: 'Криптовалюты волатильны. $AMGF — утилитарный токен. Не инвестируйте больше, чем можете потерять.' },
+            'wp-s9-p3':              { ro: 'Participanții sunt sfătuiți să efectueze propria cercetare (DYOR) și să consulte un consilier financiar autorizat.', en: 'Participants are advised to do their own research (DYOR) and consult a licensed financial advisor.', fr: 'Les participants sont invités à faire leurs propres recherches (DYOR) et consulter un conseiller financier.', ru: 'Участникам рекомендуется DYOR и консультация с лицензированным финансовым советником.' },
+            'wp-s9-copy':            { ro: '<strong>&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.</strong>', en: '<strong>&copy; 2025 AMGF Financial Freedom. All rights reserved.</strong>', fr: '<strong>&copy; 2025 AMGF Liberté Financière. Tous droits réservés.</strong>', ru: '<strong>&copy; 2025 AMGF Финансовая Свобода. Все права защищены.</strong>' },
+            'wp-back':               { ro: '← Înapoi la site principal', en: '← Back to main site', fr: '← Retour au site principal', ru: '← Вернуться на главный сайт' },
+        };
+
+        const availableLanguages = ['ro', 'en', 'fr', 'ru'];
+        let currentLanguage = localStorage.getItem('language') || 'ro';
+
+        function applyWpTranslations(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (wpTranslations[key] && wpTranslations[key][lang]) {
+                    element.innerHTML = wpTranslations[key][lang];
+                }
+            });
+        }
+
+        applyWpTranslations(currentLanguage);
+
+        const btn = document.getElementById('language-toggle');
+        if (btn) {
+            btn.addEventListener('click', () => {
+                const idx = availableLanguages.indexOf(currentLanguage);
+                currentLanguage = availableLanguages[(idx + 1) % availableLanguages.length];
+                localStorage.setItem('language', currentLanguage);
+                applyWpTranslations(currentLanguage);
+                const displayLang = availableLanguages.map(l => l === currentLanguage ? `[${l.toUpperCase()}]` : l.toUpperCase()).join(' / ');
+                btn.textContent = displayLang;
+            });
+        }
+    });
+    </script>
 </body>
 </html>
