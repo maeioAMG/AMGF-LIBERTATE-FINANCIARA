@@ -1,423 +1,439 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AMGF - Libertate Financiara</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        .wallet-button-wrap { text-align: center; margin: 32px 0 8px; }
-        .wallet-button {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 16px 36px;
-            background: linear-gradient(135deg, #C9951A, #7A5A10);
-            color: #050503 !important;
-            font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700;
-            letter-spacing: 1.5px; text-decoration: none !important;
-            border-radius: 10px; border: 2px solid #E8B832;
-            box-shadow: 0 0 28px rgba(201,149,26,0.5), 0 4px 16px rgba(0,0,0,0.3);
-            transition: all 0.25s ease; text-transform: uppercase;
-            position: relative; overflow: hidden;
-        }
-        .wallet-button:hover {
-            background: linear-gradient(135deg, #E8B832, #C9951A);
-            transform: translateY(-3px);
-            box-shadow: 0 0 44px rgba(201,149,26,0.7), 0 8px 24px rgba(0,0,0,0.3);
-            color: #050503 !important;
-        }
-        .wallet-button-icon { font-size: 22px; }
-        .wallet-button-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
-        .wallet-button-label { font-size: 11px; letter-spacing: 2px; opacity: 0.8; }
-        .wallet-button-name { font-size: 16px; letter-spacing: 1.5px; }
-        .wallet-button-badge {
-            display: inline-block; margin-top: 8px; padding: 4px 14px;
-            background: rgba(201,149,26,0.12); border: 1px solid rgba(201,149,26,0.3);
-            border-radius: 20px; font-size: 11px; color: #C9951A;
-            letter-spacing: 1px; font-family: 'Inter', sans-serif;
-        }
-        @keyframes wallet-pulse {
-            0%,100% { box-shadow: 0 0 28px rgba(201,149,26,0.5), 0 4px 16px rgba(0,0,0,0.3); }
-            50%      { box-shadow: 0 0 44px rgba(201,149,26,0.8), 0 4px 16px rgba(0,0,0,0.3); }
-        }
-        .wallet-button { animation: wallet-pulse 3s ease-in-out infinite; }
-        .wallet-button:hover { animation: none; }
-        .roadmap-section { padding: 64px 0; }
-        .roadmap-timeline { position: relative; max-width: 780px; margin: 40px auto 0; padding-left: 36px; }
-        .roadmap-timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #C9951A, rgba(201,149,26,0.1)); }
-        .roadmap-item { position: relative; margin-bottom: 44px; padding: 22px 28px; background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.18); border-radius: 10px; transition: border-color 0.3s, background 0.3s; }
-        .roadmap-item:hover { border-color: rgba(201,149,26,0.5); background: rgba(201,149,26,0.09); }
-        .roadmap-item::before { content: ''; position: absolute; left: -31px; top: 24px; width: 12px; height: 12px; background: #C9951A; border: 2px solid #E8B832; border-radius: 3px; transform: rotate(45deg); }
-        .roadmap-phase { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #C9951A; margin-bottom: 6px; }
-        .roadmap-item-title { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 700; color: #E8B832; margin-bottom: 10px; }
-        .roadmap-desc { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.7; color: #b0a080; }
-        .roadmap-status { display: inline-block; margin-top: 10px; padding: 3px 12px; border-radius: 20px; font-size: 11px; font-family: 'Inter', sans-serif; letter-spacing: 1px; font-weight: 600; }
-        .status-done   { background: rgba(80,200,80,0.1);   border: 1px solid rgba(80,200,80,0.35);   color: #6ddc6d; }
-        .status-active { background: rgba(201,149,26,0.15); border: 1px solid rgba(201,149,26,0.5);   color: #E8B832; }
-        .status-soon   { background: rgba(100,100,200,0.1); border: 1px solid rgba(100,100,200,0.3);  color: #9999dd; }
-        .status-future { background: rgba(150,150,150,0.08);border: 1px solid rgba(150,150,150,0.25); color: #888; }
-        .ecosystem-section { padding: 64px 0; }
-        .ecosystem-intro { max-width: 700px; margin: 0 auto 48px; text-align: center; font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; color: #b0a080; }
-        .ecosystem-intro strong { color: #E8B832; }
-        .ecosystem-free-badge { display: inline-block; margin-bottom: 32px; padding: 8px 24px; background: rgba(80,200,80,0.1); border: 1px solid rgba(80,200,80,0.35); border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #6ddc6d; text-transform: uppercase; }
-        .ecosystem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 960px; margin: 0 auto 40px; }
-        .eco-card { background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.18); border-radius: 12px; padding: 28px 24px; transition: border-color 0.3s, background 0.3s, transform 0.3s; display: flex; flex-direction: column; gap: 10px; }
-        .eco-card:hover { border-color: rgba(201,149,26,0.5); background: rgba(201,149,26,0.09); transform: translateY(-4px); }
-        .eco-card-icon { font-size: 32px; }
-        .eco-card-name { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #E8B832; }
-        .eco-card-url { font-family: 'Inter', sans-serif; font-size: 11px; color: #7a6a3a; letter-spacing: 1px; margin-top: -4px; }
-        .eco-card-desc { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.6; color: #b0a080; flex: 1; }
-        .eco-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
-        .eco-card-free { display: inline-block; padding: 2px 10px; background: rgba(80,200,80,0.1); border: 1px solid rgba(80,200,80,0.3); border-radius: 20px; font-size: 10px; color: #6ddc6d; font-family: 'Inter', sans-serif; letter-spacing: 1px; font-weight: 600; }
-        .eco-card-link { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: rgba(201,149,26,0.1); border: 1px solid rgba(201,149,26,0.35); border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #E8B832 !important; text-decoration: none !important; text-transform: uppercase; transition: all 0.25s; }
-        .eco-card-link:hover { background: rgba(201,149,26,0.2); border-color: #E8B832; }
-        .ecosystem-more-btn { display: block; text-align: center; margin: 8px auto 0; }
-        .ecosystem-more-btn a { display: inline-flex; align-items: center; gap: 10px; padding: 14px 36px; background: transparent; border: 2px solid #C9951A; color: #E8B832 !important; text-decoration: none !important; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; border-radius: 8px; text-transform: uppercase; transition: all 0.25s; }
-        .ecosystem-more-btn a:hover { background: rgba(201,149,26,0.12); border-color: #E8B832; transform: translateY(-2px); }
-        .ecosystem-future-note { max-width: 640px; margin: 32px auto 0; text-align: center; font-family: 'Inter', sans-serif; font-size: 12px; color: #7a6a3a; line-height: 1.6; padding: 12px 20px; border: 1px dashed rgba(201,149,26,0.2); border-radius: 8px; }
-        .liquidity-section { padding: 64px 0; }
-        .liquidity-founder-msg { max-width: 700px; margin: 0 auto 40px; text-align: center; font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; color: #b0a080; padding: 24px 32px; border-left: 3px solid #C9951A; border-right: 3px solid #C9951A; background: rgba(201,149,26,0.04); border-radius: 4px; }
-        .liquidity-founder-msg strong { color: #E8B832; }
-        .liquidity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto 36px; }
-        .lock-card { background: rgba(201,149,26,0.05); border: 1px solid rgba(201,149,26,0.2); border-radius: 10px; padding: 20px 22px; transition: border-color 0.3s, background 0.3s; }
-        .lock-card:hover { border-color: rgba(201,149,26,0.5); background: rgba(201,149,26,0.09); }
-        .lock-card-icon { font-size: 24px; margin-bottom: 10px; }
-        .lock-card-pct { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 700; color: #E8B832; line-height: 1; margin-bottom: 4px; }
-        .lock-card-title { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-        .lock-card-desc { font-family: 'Inter', sans-serif; font-size: 12px; color: #7a6a3a; line-height: 1.5; }
-        .lock-card-badge { display: inline-block; margin-top: 10px; padding: 3px 10px; background: rgba(80,200,80,0.1); border: 1px solid rgba(80,200,80,0.3); border-radius: 20px; font-size: 11px; color: #6ddc6d; font-family: 'Inter', sans-serif; letter-spacing: 1px; }
-        .lock-card-badge-yellow { display: inline-block; margin-top: 10px; padding: 3px 10px; background: rgba(201,149,26,0.12); border: 1px solid rgba(201,149,26,0.4); border-radius: 20px; font-size: 11px; color: #E8B832; font-family: 'Inter', sans-serif; letter-spacing: 1px; }
-        .liquidity-verify-wrap { text-align: center; margin-top: 8px; }
-        .liquidity-verify-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; background: transparent; border: 2px solid #C9951A; color: #E8B832 !important; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-decoration: none !important; border-radius: 8px; text-transform: uppercase; transition: all 0.25s; }
-        .liquidity-verify-btn:hover { background: rgba(201,149,26,0.12); border-color: #E8B832; transform: translateY(-2px); }
-        .liquidity-total-bar { max-width: 700px; margin: 32px auto 0; background: rgba(201,149,26,0.06); border: 1px solid rgba(201,149,26,0.2); border-radius: 10px; padding: 20px 28px; text-align: center; }
-        .liquidity-total-label { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7a6a3a; margin-bottom: 8px; }
-        .liquidity-total-value { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 700; color: #E8B832; }
-        .liquidity-total-sub { font-family: 'Inter', sans-serif; font-size: 12px; color: #7a6a3a; margin-top: 4px; }
-        @media (max-width: 600px) { .ecosystem-grid { grid-template-columns: 1fr; } }
-    </style>
-</head>
-<body>
-    <header>
-        <img src="AMGF.jpg" alt="Logo AMGF" class="logo-img">
-        <h1 data-i18n="hero-title">AMGF</h1>
-        <div class="subtitle" data-i18n="hero-subtitle">Libertate Financiara</div>
-        <nav>
-            <a href="#despre" data-i18n="nav-about">Despre</a>
-            <a href="#de-ce-amgf" data-i18n="nav-why">De ce AMGF?</a>
-            <a href="#linkuri" data-i18n="nav-links">Link-uri Utile</a>
-            <a href="#viziune" data-i18n="nav-vision">Viziune</a>
-            <a href="#ecosistem">Ecosistem</a>
-            <a href="#roadmap" data-i18n="nav-roadmap">Roadmap</a>
-            <a href="#lichiditate" data-i18n="nav-liquidity">Transparenta</a>
-            <a href="#tokenomics" data-i18n="nav-tokenomics">Tokenomics</a>
-            <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Alba</a>
-            <a href="#disclaimer" data-i18n="nav-disclaimer">Disclaimer</a>
-        </nav>
-        <button id="language-toggle">RO / EN / FR / RU</button>
-    </header>
+// ============================================================
+//  AMGF - Sistema de Traduceri / Translation System
+//  Limbi / Languages: RO / EN / FR / RU
+// ============================================================
 
-    <main>
-        <!-- DESPRE -->
-        <section id="despre" class="about-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="about-title">Cine Suntem si De Ce AMGF?</h2>
-                <p data-i18n="about-p1">Salut, sunt <b>"Fondatorul AMGF"</b>, o persoana obisnuita, cu o pasiune extraordinara pentru viitorul pe care il aduc Web3 si criptomonedele. La 53 de ani, am explorat acest univers digital de cativa ani, participand la numeroase proiecte si airdrop-uri. Am vazut atat povesti de succes incredibile, cat si esecuri dureroase - experiente care m-au invatat enorm despre potentialul si riscurile acestui domeniu.</p>
-                <p data-i18n="about-p2">Ca multi altii, m-am saturat sa investesc timp si incredere in proiecte anonime, conduse de interese necunoscute. Asa s-a nascut AMGF. Am decis ca este timpul sa investesc in mine insumi si sa construiesc un proiect in care cred cu adevarat, bazat pe transparenta, utilitate si o comunitate autentica.</p>
-                <p data-i18n="about-p3">AMGF nu este creat de un "expert financiar" de pe Wall Street, ci de o persoana reala, care intelege provocarile si aspiratiile celor care isi doresc libertatea financiara. Viziunea mea pentru AMGF este simpla: sa cream un ecosistem unde oricine, indiferent de varsta sau experienta anterioara, poate invata, contribui si creste alaturi de noi.</p>
-                <p data-i18n="about-p4">Suntem aici pentru a construi pe termen lung, impreuna cu voi. Increderea se castiga prin fapte, nu prin vorbe, iar AMGF este angajamentul meu fata de un viitor mai bun, construit pas cu pas, alaturi de comunitate.</p>
-            </div>
-        </section>
+const translations = {
 
-        <!-- DE CE AMGF -->
-        <section id="de-ce-amgf" class="why-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="why-title">De ce AMGF?</h2>
-                <p data-i18n="why-p1">In peisajul dinamic si adesea haotic al Web3 si al criptomonedelor, promisiunile abunda, dar increderea si informatiile autentice sunt adesea greu de gasit. Multi, inclusiv eu, am simtit nevoia unui loc unde libertatea financiara sa fie nu doar un vis, ci o calatorie reala, sustinuta de cunoastere si o comunitate dedicata.</p>
-                <p data-i18n="why-p2">Aici intervine AMGF. Suntem mai mult decat un token; suntem un ecosistem construit de o persoana obisnuita, la fel ca tine, pasionata de viitor si de potentialul decentralizat. Misiunea noastra este sa oferim un spatiu transparent si accesibil unde vei putea invata, contribui si creste alaturi de o comunitate unita, transformand aspiratia spre independenta financiara intr-o realitate concreta, pas cu pas.</p>
-            </div>
-        </section>
+  ro: {
+    "nav-about":      "Despre",
+    "nav-why":        "De ce AMGF?",
+    "nav-links":      "Link-uri Utile",
+    "nav-vision":     "Viziune",
+    "nav-roadmap":    "Roadmap",
+    "nav-liquidity":  "Transparenta",
+    "nav-tokenomics": "Tokenomics",
+    "nav-whitepaper": "Cartea Alba",
+    "nav-disclaimer": "Disclaimer",
+    "hero-title":    "AMGF",
+    "hero-subtitle": "Libertate Financiara",
+    "about-title": "Cine Suntem si De Ce AMGF?",
+    "about-p1": 'Salut, sunt <b>"Fondatorul AMGF"</b>, o persoana obisnuita, cu o pasiune extraordinara pentru viitorul pe care il aduc Web3 si criptomonedele. La 53 de ani, am explorat acest univers digital de cativa ani, participand la numeroase proiecte si airdrop-uri. Am vazut atat povesti de succes incredibile, cat si esecuri dureroase - experiente care m-au invatat enorm despre potentialul si riscurile acestui domeniu.',
+    "about-p2": "Ca multi altii, m-am saturat sa investesc timp si incredere in proiecte anonime, conduse de interese necunoscute. Asa s-a nascut AMGF. Am decis ca este timpul sa investesc in mine insumi si sa construiesc un proiect in care cred cu adevarat, bazat pe transparenta, utilitate si o comunitate autentica.",
+    "about-p3": 'AMGF nu este creat de un "expert financiar" de pe Wall Street, ci de o persoana reala, care intelege provocarile si aspiratiile celor care isi doresc libertatea financiara. Viziunea mea pentru AMGF este simpla: sa cream un ecosistem unde oricine, indiferent de varsta sau experienta anterioara, poate invata, contribui si creste alaturi de noi.',
+    "about-p4": "Suntem aici pentru a construi pe termen lung, impreuna cu voi. Increderea se castiga prin fapte, nu prin vorbe, iar AMGF este angajamentul meu fata de un viitor mai bun, construit pas cu pas, alaturi de comunitate.",
+    "why-title": "De ce AMGF?",
+    "why-p1": "In peisajul dinamic si adesea haotic al Web3 si al criptomonedelor, promisiunile abunda, dar increderea si informatiile autentice sunt adesea greu de gasit. Multi, inclusiv eu, am simtit nevoia unui loc unde libertatea financiara sa fie nu doar un vis, ci o calatorie reala, sustinuta de cunoastere si o comunitate dedicata.",
+    "why-p2": "Aici intervine AMGF. Suntem mai mult decat un token; suntem un ecosistem construit de o persoana obisnuita, la fel ca tine, pasionata de viitor si de potentialul decentralizat. Misiunea noastra este sa oferim un spatiu transparent si accesibil unde vei putea invata, contribui si creste alaturi de o comunitate unita, transformand aspiratia spre independenta financiara intr-o realitate concreta, pas cu pas.",
+    "links-title": "Comunitate & Tranzactionare",
+    "links-desc":  "Adresa de Contract (BASE):",
+    "link-telegram":  "Contact Telegram (@amgf_libertate_bot)",
+    "link-exchange1": "Cumpara pe Uniswap (Base)",
+    "link-exchange2": "Grafic DexScreener",
+    "vision-title": "Viziune pe termen lung",
+    "vision-p1": "Viziunea noastra pentru AMGF depaseste orizontul unui simplu token; ne propunem sa construim un ecosistem digital vibrant si autosustenabil, o adevarata Organizatie Autonoma Descentralizata (DAO), unde libertatea financiara devine accesibila tuturor.",
+    "vision-p2": "Ne imaginam un viitor in care detinatorii de AMGF sunt co-proprietari si arhitecti ai propriului lor destin financiar. Prin platforma noastra, ei vor avea acces la:",
+    "vision-li1": "<b>O educatie financiara gamificata si practica</b>, adaptata nevoilor reale ale fiecaruia, recompensata direct prin sistemul nostru <b>Learn-to-Earn</b>.",
+    "vision-li2": "<b>Instrumente intuitive si analize personalizate</b>, care demistifica lumea investitiilor si ii ajuta sa ia decizii informate, depasind zgomotul informational.",
+    "vision-li3": "<b>O comunitate globala activa si interconectata</b>, unde membrii se sprijina reciproc si colaboreaza la dezvoltarea proiectului prin mecanismul <b>Build-to-Earn</b>.",
+    "vision-li4": "<b>Un sistem de guvernanta DAO robust si transparent</b>, unde fiecare detinator de AMGF are o voce reala in deciziile cheie ale ecosistemului.",
+    "vision-p3": "Pe masura ce ecosistemul AMGF se maturizeaza, ne vedem transformandu-ne intr-un model de autonomie comunitara si de sustenabilitate financiara, unde valoarea este generata si distribuita de si pentru membrii sai.",
+    "roadmap-title":         "Roadmap",
+    "roadmap-phase1-label":  "Faza 1 · 2024-2025 · Fundatie",
+    "roadmap-phase1-title":  "Lansare & Infrastructura",
+    "roadmap-phase1-desc":   "Crearea tokenului AMGF pe reteaua Base. Lansarea site-ului principal amgf-finance.com. Construirea comunitatii Telegram. Publicarea Cartii Albe v1.0. Lansarea AMGF Wallet N.C., Liberty Bot si Airdrop Manager.",
+    "roadmap-phase2-label":  "Faza 2 · 2025 · Crestere",
+    "roadmap-phase2-title":  "Ecosistem & Comunitate",
+    "roadmap-phase2-desc":   "Lansarea Staking Hub si AMGF Code App. Campanii de airdrop strategice. Listare pe DEX-uri (Uniswap / Base). Lansarea Crypto Vault Keeper. Parteneriate strategice. Cresterea comunitatii la 10,000+ membri.",
+    "roadmap-phase3-label":  "Faza 3 · 2026 · Maturizare",
+    "roadmap-phase3-title":  "DAO & Learn-to-Earn",
+    "roadmap-phase3-desc":   "Implementarea mecanismului DAO complet. Lansarea platformei educationale Learn-to-Earn. Sistem Build-to-Earn activ. Audit smart contract independent. Extinderea ecosistemului cu noi instrumente si integrari.",
+    "roadmap-phase4-label":  "Faza 4 · 2026-2027 · Expansiune",
+    "roadmap-phase4-title":  "Autonomie & Scalare",
+    "roadmap-phase4-desc":   "Listare pe exchange-uri centralizate (CEX). Guvernanta DAO complet autonoma. Fond colectiv administrat de comunitate. Extindere internationala. AMGF ca model de autonomie comunitara in Web3.",
+    "roadmap-status-done":   "✔ Realizat",
+    "roadmap-status-active": "⚡ In desfasurare",
+    "roadmap-status-soon":   "🔜 In pregatire",
+    "roadmap-status-future": "◎ Viitor",
+    "liq-title":       "Transparenta & Lichiditate Blocata",
+    "liq-founder-msg": '🔒 <strong>Angajamentul Fondatorului:</strong> Fondatorul AMGF adauga lichiditate treptat si o blocheaza pe GemPad pentru perioade lungi de timp. Aceasta este dovada concreta a angajamentului pe termen lung fata de comunitate — fondurile nu pot fi retrase pana la expirarea perioadei de blocare. <strong>Transparenta nu este o promisiune, ci o realitate verificabila public.</strong>',
+    "liq-card1-title": "Lichiditate Blocata",
+    "liq-card1-desc":  'Uniswap V2 · Reteaua Base<br>Blocat pana pe <strong style="color:#E8B832;">5 Iunie 2027</strong>',
+    "liq-card2-title": "Echipa & Fondator",
+    "liq-card2-desc":  'Team & Founder Lock<br><strong style="color:#E8B832;">451+ zile</strong> ramase',
+    "liq-card3-title": "Trezorerie DAO",
+    "liq-card3-desc":  'DAO Treasury & Ecosystem<br><strong style="color:#E8B832;">Vesting treptat</strong> · 534+ zile',
+    "liq-card4-title": "Rezerva Fondator",
+    "liq-card4-desc":  'Founder Reserve Lock<br><strong style="color:#E8B832;">841+ zile</strong> ramase',
+    "liq-locked":      "🔒 BLOCAT",
+    "liq-vesting":     "📈 VESTING",
+    "liq-total-label": "Total Fonduri Blocate & Vesting",
+    "liq-total-sub":   "Verificat pe GemPad · Reteaua Base · Actualizat in timp real",
+    "liq-verify-btn":  "Verifica pe GemPad",
+    "tokenomics-title":       "Alocarea Tokenurilor AMGF (Actualizata)",
+    "tokenomics-th1":         "Categorie de Alocare",
+    "tokenomics-th2":         "Procent (%)",
+    "tokenomics-th3":         "Cantitate AMGF",
+    "tokenomics-th4":         "Scop si Justificare",
+    "tokenomics-th5":         "Plan de Vesting / Acces",
+    "tokenomics-row1-cat":    "Comunitate & Ecosistem",
+    "tokenomics-row1-scope":  "Sustinerea cresterii organice prin recompense pentru participare (Learn-to-Earn, Build-to-Earn), campanii de promovare si airdrop-uri strategice.",
+    "tokenomics-row1-vesting":"Eliberare treptata pe parcursul a 5-10 ani.",
+    "tokenomics-row2-cat":    "Trezorerie DAO / Dezvoltare Ecosistem",
+    "tokenomics-row2-scope":  "Finantarea dezvoltarii platformei, noi parteneriate si audituri sub guvernanta comunitatii.",
+    "tokenomics-row2-vesting":"Blocate intr-o trezorerie DAO.",
+    "tokenomics-row3-cat":    "Fond de Lichiditate Initiala (DEX)",
+    "tokenomics-row3-scope":  "Asigurarea lichiditatii pe burse descentralizate (DEX) pe Base.",
+    "tokenomics-row3-vesting":"Blocata prin contracte de staking/farming pentru cel putin 2-5 ani.",
+    "tokenomics-row4-cat":    "Echipa si Fondator",
+    "tokenomics-row4-scope":  "Alocare pentru Fondator si echipa de baza. (Fondatorul: 5%, Echipa 5%)",
+    "tokenomics-row4-vesting":"Cliff de 1 an, urmat de eliberare pe 3 ani.",
+    "tokenomics-total":       "Total",
+    "tokenomics-note":        "<b>Nota:</b> Strategia Tokenomics este proiectata pentru a minimiza presiunea de vanzare.",
+    "disclaimer-title": "Disclaimer Legal Important",
+    "disclaimer-p1": "Informatiile prezentate pe acest site nu constituie sfaturi financiare, de investitii sau juridice. Investitiile in criptomonede si tokenuri digitale implica riscuri semnificative, inclusiv pierderea totala a capitalului investit.",
+    "disclaimer-p2": "Efectuati propria cercetare (DYOR - Do Your Own Research) inainte de orice decizie de investitie. Consultati un consilier financiar autorizat daca aveti dubii. Performantele trecute nu garanteaza rezultate viitoare.",
+    "disclaimer-p3": "Participarea la ecosistemul AMGF implica acceptarea acestor termeni si conditii. AMGF nu este responsabil pentru pierderile financiare rezultate din utilizarea platformei sau din deciziile de investitie ale utilizatorilor.",
+    "footer-copyright": "© 2025 AMGF Financial Freedom. Toate drepturile rezervate.",
+    "footer-contact":   "Contact: <a href='mailto:AMG3775@protonmail.com' style='color:#E8B832;'>AMG3775@protonmail.com</a>",
+  },
 
-        <!-- LINKURI -->
-        <section id="linkuri" class="links-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="links-title">Comunitate &amp; Tranzactionare</h2>
-                <p style="text-align: center; word-break: break-all;" data-i18n="links-desc">
-                    Adresa de Contract (BASE): <br>
-                    <b>0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765</b>
-                </p>
-                <div class="wallet-button-wrap">
-                    <a href="https://wallet.amgf-finance.com" target="_blank" class="wallet-button">
-                        <span class="wallet-button-icon">🗽</span>
-                        <span class="wallet-button-text">
-                            <span class="wallet-button-label">AMGF ECOSYSTEM</span>
-                            <span class="wallet-button-name">AMGF WALLET N.C.</span>
-                        </span>
-                        <span style="font-size:18px; margin-left:4px;">↗</span>
-                    </a>
-                    <br>
-                    <span class="wallet-button-badge">🔒 Non-Custodial · Base Network · HTTPS</span>
-                </div>
-                <div class="link-button-container">
-                    <a href="https://t.me/amgf_libertate_bot" target="_blank" class="link-button" data-i18n="link-telegram">Contact Telegram (@amgf_libertate_bot)</a>
-                    <a href="https://app.uniswap.org/#/swap?outputCurrency=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&chain=base" target="_blank" class="link-button" data-i18n="link-exchange1">Cumpara pe Uniswap (Base)</a>
-                    <a href="https://dexscreener.com/base/0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765" target="_blank" class="link-button" data-i18n="link-exchange2">Grafic DexScreener</a>
-                </div>
-            </div>
-        </section>
+  // ============================================================
+  en: {
+    "nav-about":      "About",
+    "nav-why":        "Why AMGF?",
+    "nav-links":      "Useful Links",
+    "nav-vision":     "Vision",
+    "nav-roadmap":    "Roadmap",
+    "nav-liquidity":  "Transparency",
+    "nav-tokenomics": "Tokenomics",
+    "nav-whitepaper": "White Paper",
+    "nav-disclaimer": "Disclaimer",
+    "hero-title":    "AMGF",
+    "hero-subtitle": "Financial Freedom",
+    "about-title": "Who We Are and Why AMGF?",
+    "about-p1": 'Hello, I am the <b>"AMGF Founder"</b> — an ordinary person with an extraordinary passion for the future that Web3 and cryptocurrencies bring. At 53, I have explored this digital universe for several years, participating in numerous projects and airdrops. I have witnessed incredible success stories as well as painful failures — experiences that taught me enormously about the potential and risks of this space.',
+    "about-p2": "Like many others, I grew tired of investing time and trust in anonymous projects driven by unknown interests. That is how AMGF was born. I decided it was time to invest in myself and build a project I truly believe in, based on transparency, utility, and an authentic community.",
+    "about-p3": 'AMGF was not created by a Wall Street "financial expert" but by a real person who understands the challenges and aspirations of those seeking financial freedom. My vision for AMGF is simple: to create an ecosystem where anyone, regardless of age or prior experience, can learn, contribute, and grow alongside us.',
+    "about-p4": "We are here to build for the long term, together with you. Trust is earned through actions, not words, and AMGF is my commitment to a better future, built step by step, alongside the community.",
+    "why-title": "Why AMGF?",
+    "why-p1": "In the dynamic and often chaotic landscape of Web3 and cryptocurrencies, promises abound, but trust and authentic information are often hard to find. Many, including myself, have felt the need for a place where financial freedom is not just a dream but a real journey, supported by knowledge and a dedicated community.",
+    "why-p2": "This is where AMGF comes in. We are more than a token; we are an ecosystem built by an ordinary person, just like you, passionate about the future and decentralized potential. Our mission is to provide a transparent and accessible space where you can learn, contribute, and grow alongside a united community, turning the aspiration for financial independence into concrete reality, step by step.",
+    "links-title": "Community & Trading",
+    "links-desc":  "Contract Address (BASE):",
+    "link-telegram":  "Telegram Contact (@amgf_libertate_bot)",
+    "link-exchange1": "Buy on Uniswap (Base)",
+    "link-exchange2": "DexScreener Chart",
+    "vision-title": "Long-term Vision",
+    "vision-p1": "Our vision for AMGF goes beyond a simple token; we aim to build a vibrant and self-sustaining digital ecosystem, a true Decentralized Autonomous Organization (DAO), where financial freedom becomes accessible to everyone.",
+    "vision-p2": "We envision a future where AMGF holders are co-owners and architects of their own financial destiny. Through our platform, they will have access to:",
+    "vision-li1": "<b>Gamified and practical financial education</b>, tailored to everyone's real needs, rewarded directly through our <b>Learn-to-Earn</b> system.",
+    "vision-li2": "<b>Intuitive tools and personalized analytics</b>, demystifying the investment world and helping members make informed decisions.",
+    "vision-li3": "<b>An active and interconnected global community</b>, where members support each other and collaborate on project development through the <b>Build-to-Earn</b> mechanism.",
+    "vision-li4": "<b>A robust and transparent DAO governance system</b>, where every AMGF holder has a real voice in the ecosystem's key decisions.",
+    "vision-p3": "As the AMGF ecosystem matures, we see ourselves becoming a model of community autonomy and financial sustainability, where value is generated and distributed by and for its members.",
+    "roadmap-title":         "Roadmap",
+    "roadmap-phase1-label":  "Phase 1 · 2024-2025 · Foundation",
+    "roadmap-phase1-title":  "Launch & Infrastructure",
+    "roadmap-phase1-desc":   "Creation of the AMGF token on the Base network. Launch of the main website amgf-finance.com. Building the Telegram community. Publishing the White Paper v1.0. Launch of AMGF Wallet N.C., Liberty Bot and Airdrop Manager.",
+    "roadmap-phase2-label":  "Phase 2 · 2025 · Growth",
+    "roadmap-phase2-title":  "Ecosystem & Community",
+    "roadmap-phase2-desc":   "Launch of Staking Hub and AMGF Code App. Strategic airdrop campaigns. Listing on DEXs (Uniswap / Base). Launch of Crypto Vault Keeper. Strategic partnerships. Growing the community to 10,000+ members.",
+    "roadmap-phase3-label":  "Phase 3 · 2026 · Maturity",
+    "roadmap-phase3-title":  "DAO & Learn-to-Earn",
+    "roadmap-phase3-desc":   "Full DAO mechanism implementation. Launch of the Learn-to-Earn educational platform. Active Build-to-Earn system. Independent smart contract audit. Ecosystem expansion with new tools and integrations.",
+    "roadmap-phase4-label":  "Phase 4 · 2026-2027 · Expansion",
+    "roadmap-phase4-title":  "Autonomy & Scaling",
+    "roadmap-phase4-desc":   "Listing on centralized exchanges (CEX). Fully autonomous DAO governance. Community-managed collective fund. International expansion. AMGF as a model of community autonomy in Web3.",
+    "roadmap-status-done":   "✔ Completed",
+    "roadmap-status-active": "⚡ In Progress",
+    "roadmap-status-soon":   "🔜 Coming Soon",
+    "roadmap-status-future": "◎ Future",
+    "liq-title":       "Transparency & Locked Liquidity",
+    "liq-founder-msg": '🔒 <strong>Founder\'s Commitment:</strong> The AMGF Founder gradually adds liquidity and locks it on GemPad for long periods. This is concrete proof of long-term commitment to the community — funds cannot be withdrawn until the lock period expires. <strong>Transparency is not a promise, but a publicly verifiable reality.</strong>',
+    "liq-card1-title": "Locked Liquidity",
+    "liq-card1-desc":  'Uniswap V2 · Base Network<br>Locked until <strong style="color:#E8B832;">June 5, 2027</strong>',
+    "liq-card2-title": "Team & Founder",
+    "liq-card2-desc":  'Team & Founder Lock<br><strong style="color:#E8B832;">451+ days</strong> remaining',
+    "liq-card3-title": "DAO Treasury",
+    "liq-card3-desc":  'DAO Treasury & Ecosystem<br><strong style="color:#E8B832;">Gradual Vesting</strong> · 534+ days',
+    "liq-card4-title": "Founder Reserve",
+    "liq-card4-desc":  'Founder Reserve Lock<br><strong style="color:#E8B832;">841+ days</strong> remaining',
+    "liq-locked":      "🔒 LOCKED",
+    "liq-vesting":     "📈 VESTING",
+    "liq-total-label": "Total Locked Funds & Vesting",
+    "liq-total-sub":   "Verified on GemPad · Base Network · Updated in real time",
+    "liq-verify-btn":  "Verify on GemPad",
+    "tokenomics-title":       "AMGF Token Allocation (Updated)",
+    "tokenomics-th1":         "Allocation Category",
+    "tokenomics-th2":         "Percentage (%)",
+    "tokenomics-th3":         "AMGF Amount",
+    "tokenomics-th4":         "Purpose & Justification",
+    "tokenomics-th5":         "Vesting / Access Plan",
+    "tokenomics-row1-cat":    "Community & Ecosystem",
+    "tokenomics-row1-scope":  "Supporting organic growth through participation rewards (Learn-to-Earn, Build-to-Earn), promotional campaigns and strategic airdrops.",
+    "tokenomics-row1-vesting":"Gradual release over 5-10 years.",
+    "tokenomics-row2-cat":    "DAO Treasury / Ecosystem Development",
+    "tokenomics-row2-scope":  "Funding platform development, new partnerships and audits under community governance.",
+    "tokenomics-row2-vesting":"Locked in a DAO treasury.",
+    "tokenomics-row3-cat":    "Initial Liquidity Fund (DEX)",
+    "tokenomics-row3-scope":  "Ensuring liquidity on decentralized exchanges (DEX) on Base.",
+    "tokenomics-row3-vesting":"Locked through staking/farming contracts for at least 2-5 years.",
+    "tokenomics-row4-cat":    "Team and Founder",
+    "tokenomics-row4-scope":  "Allocation for Founder and core team. (Founder: 5%, Team: 5%)",
+    "tokenomics-row4-vesting":"1-year cliff, followed by 3-year release.",
+    "tokenomics-total":       "Total",
+    "tokenomics-note":        "<b>Note:</b> The Tokenomics strategy is designed to minimize selling pressure.",
+    "disclaimer-title": "Important Legal Disclaimer",
+    "disclaimer-p1": "The information presented on this website does not constitute financial, investment or legal advice. Investments in cryptocurrencies and digital tokens involve significant risks, including total loss of invested capital. Prices can be extremely volatile and unpredictable.",
+    "disclaimer-p2": "Conduct your own research (DYOR - Do Your Own Research) before any investment decision. Consult an authorized financial advisor if in doubt. Past performance does not guarantee future results.",
+    "disclaimer-p3": "Participation in the AMGF ecosystem implies acceptance of these terms and conditions. AMGF is not responsible for financial losses resulting from the use of the platform or from users' investment decisions.",
+    "footer-copyright": "© 2025 AMGF Financial Freedom. All rights reserved.",
+    "footer-contact":   "Contact: <a href='mailto:AMG3775@protonmail.com' style='color:#E8B832;'>AMG3775@protonmail.com</a>",
+  },
 
-        <!-- VIZIUNE -->
-        <section id="viziune" class="vision-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="vision-title">Viziune pe termen lung</h2>
-                <p data-i18n="vision-p1">Viziunea noastra pentru AMGF depaseste orizontul unui simplu token; ne propunem sa construim un ecosistem digital vibrant si autosustenabil, o adevarata Organizatie Autonoma Descentralizata (DAO), unde libertatea financiara devine accesibila tuturor. Pe termen lung, AMGF va fi recunoscut nu doar ca un simbol al potentialului Web3, ci ca un catalizator pentru transformarea personala si colectiva.</p>
-                <p data-i18n="vision-p2">Ne imaginam un viitor in care detinatorii de AMGF sunt co-proprietari si arhitecti ai propriului lor destin financiar. Prin platforma noastra, ei vor avea acces la:</p>
-                <ul>
-                    <li data-i18n="vision-li1"><b>O educatie financiara gamificata si practica</b>, adaptata nevoilor reale ale fiecaruia, recompensata direct prin sistemul nostru <b>Learn-to-Earn</b>.</li>
-                    <li data-i18n="vision-li2"><b>Instrumente intuitive si analize personalizate</b>, care demistifica lumea investitiilor si ii ajuta sa ia decizii informate, depasind zgomotul informational.</li>
-                    <li data-i18n="vision-li3"><b>O comunitate globala activa si interconectata</b>, unde membrii se sprijina reciproc si colaboreaza la dezvoltarea proiectului prin mecanismul <b>Build-to-Earn</b>.</li>
-                    <li data-i18n="vision-li4"><b>Un sistem de guvernanta DAO robust si transparent</b>, unde fiecare detinator de AMGF are o voce reala in deciziile cheie ale ecosistemului.</li>
-                </ul>
-                <p data-i18n="vision-p3">Pe masura ce ecosistemul AMGF se maturizeaza, ne vedem transformandu-ne intr-un model de autonomie comunitara si de sustenabilitate financiara, unde valoarea este generata si distribuita de si pentru membrii sai. AMGF va fi un exemplu al modului in care tehnologia blockchain poate imputernici indivizii sa-si preia controlul asupra viitorului lor financiar.</p>
-            </div>
-        </section>
+  // ============================================================
+  fr: {
+    "nav-about":      "À propos",
+    "nav-why":        "Pourquoi AMGF?",
+    "nav-links":      "Liens Utiles",
+    "nav-vision":     "Vision",
+    "nav-roadmap":    "Feuille de Route",
+    "nav-liquidity":  "Transparence",
+    "nav-tokenomics": "Tokenomics",
+    "nav-whitepaper": "Livre Blanc",
+    "nav-disclaimer": "Avertissement",
+    "hero-title":    "AMGF",
+    "hero-subtitle": "Liberté Financière",
+    "about-title": "Qui Sommes-Nous et Pourquoi AMGF?",
+    "about-p1": 'Bonjour, je suis le <b>"Fondateur d\'AMGF"</b> — une personne ordinaire avec une passion extraordinaire pour l\'avenir qu\'apportent le Web3 et les cryptomonnaies. À 53 ans, j\'explore cet univers numérique depuis plusieurs années, participant à de nombreux projets et airdrops.',
+    "about-p2": "Comme beaucoup d'autres, j'en ai eu assez d'investir du temps et de la confiance dans des projets anonymes guidés par des intérêts inconnus. C'est ainsi qu'est né AMGF. J'ai décidé qu'il était temps d'investir en moi-même et de construire un projet en lequel je crois vraiment.",
+    "about-p3": "AMGF n'a pas été créé par un « expert financier » de Wall Street, mais par une vraie personne qui comprend les défis et les aspirations de ceux qui recherchent la liberté financière. Ma vision pour AMGF est simple : créer un écosystème où chacun peut apprendre, contribuer et grandir avec nous.",
+    "about-p4": "Nous sommes ici pour construire sur le long terme, ensemble avec vous. La confiance se gagne par les actes, pas par les mots, et AMGF est mon engagement envers un avenir meilleur, construit pas à pas, aux côtés de la communauté.",
+    "why-title": "Pourquoi AMGF?",
+    "why-p1": "Dans le paysage dynamique et souvent chaotique du Web3 et des cryptomonnaies, les promesses abondent, mais la confiance et les informations authentiques sont souvent difficiles à trouver.",
+    "why-p2": "C'est là qu'intervient AMGF. Nous sommes plus qu'un token ; nous sommes un écosystème construit par une personne ordinaire, tout comme vous. Notre mission est d'offrir un espace transparent et accessible où vous pourrez apprendre, contribuer et grandir aux côtés d'une communauté unie.",
+    "links-title": "Communauté & Trading",
+    "links-desc":  "Adresse du Contrat (BASE):",
+    "link-telegram":  "Contact Telegram (@amgf_libertate_bot)",
+    "link-exchange1": "Acheter sur Uniswap (Base)",
+    "link-exchange2": "Graphique DexScreener",
+    "vision-title": "Vision à Long Terme",
+    "vision-p1": "Notre vision pour AMGF dépasse le cadre d'un simple token ; nous visons à construire un écosystème numérique vibrant et autonome, une véritable Organisation Autonome Décentralisée (DAO), où la liberté financière devient accessible à tous.",
+    "vision-p2": "Nous imaginons un avenir où les détenteurs d'AMGF sont copropriétaires et architectes de leur propre destin financier. Via notre plateforme, ils auront accès à :",
+    "vision-li1": "<b>Une éducation financière ludique et pratique</b>, adaptée aux besoins réels de chacun, récompensée directement par notre système <b>Learn-to-Earn</b>.",
+    "vision-li2": "<b>Des outils intuitifs et des analyses personnalisées</b>, démystifiant le monde de l'investissement et aidant les membres à prendre des décisions éclairées.",
+    "vision-li3": "<b>Une communauté mondiale active et interconnectée</b>, où les membres se soutiennent mutuellement via le mécanisme <b>Build-to-Earn</b>.",
+    "vision-li4": "<b>Un système de gouvernance DAO robuste et transparent</b>, où chaque détenteur d'AMGF a une voix réelle dans les décisions clés.",
+    "vision-p3": "À mesure que l'écosystème AMGF mûrit, nous nous voyons devenir un modèle d'autonomie communautaire et de durabilité financière.",
+    "roadmap-title":         "Feuille de Route",
+    "roadmap-phase1-label":  "Phase 1 · 2024-2025 · Fondation",
+    "roadmap-phase1-title":  "Lancement & Infrastructure",
+    "roadmap-phase1-desc":   "Création du token AMGF sur le réseau Base. Lancement du site principal amgf-finance.com. Construction de la communauté Telegram. Publication du Livre Blanc v1.0. Lancement d'AMGF Wallet N.C., Liberty Bot et Airdrop Manager.",
+    "roadmap-phase2-label":  "Phase 2 · 2025 · Croissance",
+    "roadmap-phase2-title":  "Écosystème & Communauté",
+    "roadmap-phase2-desc":   "Lancement du Staking Hub et d'AMGF Code App. Campagnes d'airdrop stratégiques. Cotation sur les DEX (Uniswap / Base). Lancement de Crypto Vault Keeper. Partenariats stratégiques. Croissance de la communauté à 10 000+ membres.",
+    "roadmap-phase3-label":  "Phase 3 · 2026 · Maturité",
+    "roadmap-phase3-title":  "DAO & Learn-to-Earn",
+    "roadmap-phase3-desc":   "Mise en place complète du mécanisme DAO. Lancement de la plateforme éducative Learn-to-Earn. Système Build-to-Earn actif. Audit indépendant du smart contract. Expansion de l'écosystème.",
+    "roadmap-phase4-label":  "Phase 4 · 2026-2027 · Expansion",
+    "roadmap-phase4-title":  "Autonomie & Mise à l'Échelle",
+    "roadmap-phase4-desc":   "Cotation sur les échanges centralisés (CEX). Gouvernance DAO entièrement autonome. Fonds collectif géré par la communauté. Expansion internationale. AMGF comme modèle d'autonomie communautaire dans le Web3.",
+    "roadmap-status-done":   "✔ Réalisé",
+    "roadmap-status-active": "⚡ En cours",
+    "roadmap-status-soon":   "🔜 En préparation",
+    "roadmap-status-future": "◎ Futur",
+    "liq-title":       "Transparence & Liquidité Bloquée",
+    "liq-founder-msg": '🔒 <strong>Engagement du Fondateur :</strong> Le Fondateur d\'AMGF ajoute progressivement de la liquidité et la bloque sur GemPad pour de longues périodes. C\'est la preuve concrète de l\'engagement à long terme envers la communauté. <strong>La transparence n\'est pas une promesse, mais une réalité vérifiable publiquement.</strong>',
+    "liq-card1-title": "Liquidité Bloquée",
+    "liq-card1-desc":  'Uniswap V2 · Réseau Base<br>Bloqué jusqu\'au <strong style="color:#E8B832;">5 Juin 2027</strong>',
+    "liq-card2-title": "Équipe & Fondateur",
+    "liq-card2-desc":  'Team & Founder Lock<br><strong style="color:#E8B832;">451+ jours</strong> restants',
+    "liq-card3-title": "Trésorerie DAO",
+    "liq-card3-desc":  'DAO Treasury & Ecosystem<br><strong style="color:#E8B832;">Vesting Progressif</strong> · 534+ jours',
+    "liq-card4-title": "Réserve Fondateur",
+    "liq-card4-desc":  'Founder Reserve Lock<br><strong style="color:#E8B832;">841+ jours</strong> restants',
+    "liq-locked":      "🔒 BLOQUÉ",
+    "liq-vesting":     "📈 VESTING",
+    "liq-total-label": "Total Fonds Bloqués & Vesting",
+    "liq-total-sub":   "Vérifié sur GemPad · Réseau Base · Mis à jour en temps réel",
+    "liq-verify-btn":  "Vérifier sur GemPad",
+    "tokenomics-title":       "Allocation des Tokens AMGF (Mise à jour)",
+    "tokenomics-th1":         "Catégorie d'Allocation",
+    "tokenomics-th2":         "Pourcentage (%)",
+    "tokenomics-th3":         "Quantité AMGF",
+    "tokenomics-th4":         "Objectif & Justification",
+    "tokenomics-th5":         "Plan de Vesting / Accès",
+    "tokenomics-row1-cat":    "Communauté & Écosystème",
+    "tokenomics-row1-scope":  "Soutenir la croissance organique par des récompenses de participation (Learn-to-Earn, Build-to-Earn), des campagnes promotionnelles et des airdrops stratégiques.",
+    "tokenomics-row1-vesting":"Libération progressive sur 5 à 10 ans.",
+    "tokenomics-row2-cat":    "Trésorerie DAO / Développement Écosystème",
+    "tokenomics-row2-scope":  "Financement du développement de la plateforme, nouveaux partenariats et audits sous gouvernance communautaire.",
+    "tokenomics-row2-vesting":"Bloqués dans une trésorerie DAO.",
+    "tokenomics-row3-cat":    "Fonds de Liquidité Initial (DEX)",
+    "tokenomics-row3-scope":  "Assurer la liquidité sur les échanges décentralisés (DEX) sur Base.",
+    "tokenomics-row3-vesting":"Bloquée via des contrats de staking/farming pour au moins 2 à 5 ans.",
+    "tokenomics-row4-cat":    "Équipe et Fondateur",
+    "tokenomics-row4-scope":  "Allocation pour le Fondateur et l'équipe principale. (Fondateur : 5%, Équipe : 5%)",
+    "tokenomics-row4-vesting":"Cliff d'1 an, suivi d'une libération sur 3 ans.",
+    "tokenomics-total":       "Total",
+    "tokenomics-note":        "<b>Note :</b> La stratégie Tokenomics est conçue pour minimiser la pression de vente.",
+    "disclaimer-title": "Avertissement Légal Important",
+    "disclaimer-p1": "Les informations présentées sur ce site ne constituent pas des conseils financiers, d'investissement ou juridiques. Les investissements dans les cryptomonnaies comportent des risques significatifs, y compris la perte totale du capital investi.",
+    "disclaimer-p2": "Effectuez vos propres recherches (DYOR) avant toute décision d'investissement. Consultez un conseiller financier agréé en cas de doute. Les performances passées ne garantissent pas les résultats futurs.",
+    "disclaimer-p3": "La participation à l'écosystème AMGF implique l'acceptation de ces termes. AMGF n'est pas responsable des pertes financières résultant de l'utilisation de la plateforme.",
+    "footer-copyright": "© 2025 AMGF Financial Freedom. Tous droits réservés.",
+    "footer-contact":   "Contact : <a href='mailto:AMG3775@protonmail.com' style='color:#E8B832;'>AMG3775@protonmail.com</a>",
+  },
 
-        <!-- ECOSISTEM -->
-        <section id="ecosistem" class="ecosystem-section">
-            <div class="container">
-                <h2 class="section-title">Ecosistemul AMGF</h2>
-                <div class="ecosystem-intro">
-                    <div class="ecosystem-free-badge">✅ Toate aplicatiile sunt gratuite</div>
-                    <br>
-                    <span>Fondatorul AMGF construieste activ un ecosistem complet de aplicatii Web3, toate disponibile gratuit pentru comunitate. Pe viitor, o <strong>taxa simbolica</strong> poate fi introdusa pentru a sustine dezvoltarea continua a proiectului.</span>
-                </div>
-                <div class="ecosystem-grid">
-                    <div class="eco-card">
-                        <div class="eco-card-icon">🗽</div>
-                        <div class="eco-card-name">AMGF Wallet N.C.</div>
-                        <div class="eco-card-url">wallet.amgf-finance.com</div>
-                        <div class="eco-card-desc">Portofel non-custodial pe reteaua Base. Tu detii cheile private - securitate maxima fara dependenta de terti.</div>
-                        <div class="eco-card-footer">
-                            <span class="eco-card-free">✅ GRATUIT</span>
-                            <a href="https://wallet.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
-                        </div>
-                    </div>
-                    <div class="eco-card">
-                        <div class="eco-card-icon">🎯</div>
-                        <div class="eco-card-name">Airdrop Manager</div>
-                        <div class="eco-card-url">airdrop.amgf-finance.com</div>
-                        <div class="eco-card-desc">Gestioneaza si participa la campaniile de airdrop AMGF. Recompenseaza participarea activa in comunitate.</div>
-                        <div class="eco-card-footer">
-                            <span class="eco-card-free">✅ GRATUIT</span>
-                            <a href="https://airdrop.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
-                        </div>
-                    </div>
-                    <div class="eco-card">
-                        <div class="eco-card-icon">💎</div>
-                        <div class="eco-card-name">Staking Hub</div>
-                        <div class="eco-card-url">staking.amgf-finance.com</div>
-                        <div class="eco-card-desc">Pune tokenurile AMGF la lucru si genereaza randamente pasive. Contribuie la stabilitatea ecosistemului.</div>
-                        <div class="eco-card-footer">
-                            <span class="eco-card-free">✅ GRATUIT</span>
-                            <a href="https://staking.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
-                        </div>
-                    </div>
-                    <div class="eco-card">
-                        <div class="eco-card-icon">💻</div>
-                        <div class="eco-card-name">AMGF Code App</div>
-                        <div class="eco-card-url">code.amgf-finance.com</div>
-                        <div class="eco-card-desc">Platforma de dezvoltare si colaborare pentru membrii tehnici. Sustine mecanismul Build-to-Earn al comunitatii.</div>
-                        <div class="eco-card-footer">
-                            <span class="eco-card-free">✅ GRATUIT</span>
-                            <a href="https://code.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
-                        </div>
-                    </div>
-                    <div class="eco-card">
-                        <div class="eco-card-icon">🎓</div>
-                        <div class="eco-card-name">Learn-to-Earn</div>
-                        <div class="eco-card-url">learn.amgf-finance.com</div>
-                        <div class="eco-card-desc">Platforma educationala crypto si finante. Completeaza lectii, castiga puncte si primesti recompense in $AMGF trimestrial.</div>
-                        <div class="eco-card-footer">
-                            <span class="eco-card-free">✅ GRATUIT</span>
-                            <a href="https://learn.amgf-finance.com" target="_blank" class="eco-card-link">Deschide ↗</a>
-                        </div>
-                    </div>
-                    <div class="eco-card">
-                        <div class="eco-card-icon">🤖</div>
-                        <div class="eco-card-name">Liberty Bot</div>
-                        <div class="eco-card-url">t.me/amgf_libertate_bot</div>
-                        <div class="eco-card-desc">Bot Telegram pentru interactiunea cu comunitatea, notificari in timp real si informatii despre tokenul AMGF.</div>
-                        <div class="eco-card-footer">
-                            <span class="eco-card-free">✅ GRATUIT</span>
-                            <a href="https://t.me/amgf_libertate_bot" target="_blank" class="eco-card-link">Deschide ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ecosystem-more-btn">
-                    <a href="#ecosistem">🌐 Vezi toate aplicatiile ↗</a>
-                </div>
-                <div class="ecosystem-future-note">
-                    💡 Toate aplicatiile sunt in prezent <strong>100% gratuite</strong>. Pe viitor, o taxa simbolica poate fi introdusa pentru a sustine dezvoltarea continua si echipa proiectului. Comunitatea va fi consultata inainte de orice schimbare.
-                </div>
-            </div>
-        </section>
+  // ============================================================
+  ru: {
+    "nav-about":      "О нас",
+    "nav-why":        "Почему AMGF?",
+    "nav-links":      "Полезные ссылки",
+    "nav-vision":     "Видение",
+    "nav-roadmap":    "Дорожная карта",
+    "nav-liquidity":  "Прозрачность",
+    "nav-tokenomics": "Токеномика",
+    "nav-whitepaper": "Белая книга",
+    "nav-disclaimer": "Отказ от ответственности",
+    "hero-title":    "AMGF",
+    "hero-subtitle": "Финансовая свобода",
+    "about-title": "Кто мы и почему AMGF?",
+    "about-p1": 'Привет, я <b>«Основатель AMGF»</b> — обычный человек с необыкновенной страстью к будущему, которое несут Web3 и криптовалюты. В 53 года я исследую этот цифровой мир уже несколько лет, участвуя в многочисленных проектах и аирдропах.',
+    "about-p2": "Как и многие другие, я устал вкладывать время и доверие в анонимные проекты с неизвестными интересами. Так родился AMGF. Я решил инвестировать в себя и создать проект, в который действительно верю, основанный на прозрачности и подлинном сообществе.",
+    "about-p3": "AMGF создан не «финансовым экспертом» с Уолл-стрит, а реальным человеком, понимающим вызовы тех, кто стремится к финансовой свободе. Моя цель: экосистема, где каждый может учиться, вносить вклад и расти вместе с нами.",
+    "about-p4": "Мы здесь, чтобы строить долгосрочно, вместе с вами. Доверие завоёвывается делами, а не словами, и AMGF — это моё обязательство перед лучшим будущим.",
+    "why-title": "Почему AMGF?",
+    "why-p1": "В мире Web3 и криптовалют обещаний много, но доверие и достоверная информация найти сложно. Многие чувствовали необходимость в месте, где финансовая свобода — не просто мечта, а реальное путешествие.",
+    "why-p2": "Здесь на помощь приходит AMGF. Мы больше, чем токен — мы экосистема, созданная обычным человеком. Наша миссия — прозрачное пространство, где вы сможете учиться, вносить вклад и расти вместе с сообществом.",
+    "links-title": "Сообщество и торговля",
+    "links-desc":  "Адрес контракта (BASE):",
+    "link-telegram":  "Контакт Telegram (@amgf_libertate_bot)",
+    "link-exchange1": "Купить на Uniswap (Base)",
+    "link-exchange2": "График DexScreener",
+    "vision-title": "Долгосрочное видение",
+    "vision-p1": "Наше видение AMGF выходит за рамки простого токена; мы строим яркую и самодостаточную цифровую экосистему — настоящую Децентрализованную Автономную Организацию (DAO), где финансовая свобода доступна каждому.",
+    "vision-p2": "Мы представляем будущее, в котором держатели AMGF являются совладельцами своей финансовой судьбы. Через нашу платформу у них будет доступ к:",
+    "vision-li1": "<b>Геймифицированному финансовому образованию</b>, с вознаграждением через систему <b>Learn-to-Earn</b>.",
+    "vision-li2": "<b>Интуитивным инструментам и персонализированной аналитике</b>, помогающим принимать взвешенные решения.",
+    "vision-li3": "<b>Активному глобальному сообществу</b>, где участники сотрудничают через механизм <b>Build-to-Earn</b>.",
+    "vision-li4": "<b>Надёжной системе управления DAO</b>, где каждый держатель AMGF имеет реальный голос.",
+    "vision-p3": "По мере созревания экосистемы AMGF мы станем моделью общественной автономии и финансовой устойчивости.",
+    "roadmap-title":         "Дорожная карта",
+    "roadmap-phase1-label":  "Фаза 1 · 2024-2025 · Основание",
+    "roadmap-phase1-title":  "Запуск и инфраструктура",
+    "roadmap-phase1-desc":   "Создание токена AMGF в сети Base. Запуск сайта amgf-finance.com. Создание сообщества Telegram. Публикация Белой книги v1.0. Запуск AMGF Wallet N.C., Liberty Bot и Airdrop Manager.",
+    "roadmap-phase2-label":  "Фаза 2 · 2025 · Рост",
+    "roadmap-phase2-title":  "Экосистема и сообщество",
+    "roadmap-phase2-desc":   "Запуск Staking Hub и AMGF Code App. Аирдроп-кампании. Листинг на DEX (Uniswap / Base). Запуск Crypto Vault Keeper. Стратегические партнёрства. Рост сообщества до 10 000+ участников.",
+    "roadmap-phase3-label":  "Фаза 3 · 2026 · Зрелость",
+    "roadmap-phase3-title":  "DAO и Learn-to-Earn",
+    "roadmap-phase3-desc":   "Полная реализация механизма DAO. Запуск образовательной платформы Learn-to-Earn. Активная система Build-to-Earn. Независимый аудит смарт-контракта. Расширение экосистемы.",
+    "roadmap-phase4-label":  "Фаза 4 · 2026-2027 · Расширение",
+    "roadmap-phase4-title":  "Автономия и масштабирование",
+    "roadmap-phase4-desc":   "Листинг на централизованных биржах (CEX). Полностью автономное управление DAO. Коллективный фонд под управлением сообщества. Международное расширение. AMGF как модель автономии в Web3.",
+    "roadmap-status-done":   "✔ Выполнено",
+    "roadmap-status-active": "⚡ В процессе",
+    "roadmap-status-soon":   "🔜 Скоро",
+    "roadmap-status-future": "◎ Будущее",
+    "liq-title":       "Прозрачность и заблокированная ликвидность",
+    "liq-founder-msg": '🔒 <strong>Обязательство основателя:</strong> Основатель AMGF постепенно добавляет ликвидность и блокирует её на GemPad на длительные периоды. Средства не могут быть выведены до истечения периода блокировки. <strong>Прозрачность — это публично проверяемая реальность.</strong>',
+    "liq-card1-title": "Заблокированная ликвидность",
+    "liq-card1-desc":  'Uniswap V2 · Сеть Base<br>Заблокировано до <strong style="color:#E8B832;">5 июня 2027</strong>',
+    "liq-card2-title": "Команда и основатель",
+    "liq-card2-desc":  'Team & Founder Lock<br><strong style="color:#E8B832;">451+ дней</strong> осталось',
+    "liq-card3-title": "Казначейство DAO",
+    "liq-card3-desc":  'DAO Treasury & Ecosystem<br><strong style="color:#E8B832;">Постепенный вестинг</strong> · 534+ дней',
+    "liq-card4-title": "Резерв основателя",
+    "liq-card4-desc":  'Founder Reserve Lock<br><strong style="color:#E8B832;">841+ дней</strong> осталось',
+    "liq-locked":      "🔒 ЗАБЛОКИРОВАНО",
+    "liq-vesting":     "📈 ВЕСТИНГ",
+    "liq-total-label": "Всего заблокированных средств и вестинга",
+    "liq-total-sub":   "Проверено на GemPad · Сеть Base · Обновляется в реальном времени",
+    "liq-verify-btn":  "Проверить на GemPad",
+    "tokenomics-title":       "Распределение токенов AMGF (обновлено)",
+    "tokenomics-th1":         "Категория распределения",
+    "tokenomics-th2":         "Процент (%)",
+    "tokenomics-th3":         "Количество AMGF",
+    "tokenomics-th4":         "Цель и обоснование",
+    "tokenomics-th5":         "План вестинга / Доступ",
+    "tokenomics-row1-cat":    "Сообщество и экосистема",
+    "tokenomics-row1-scope":  "Поддержка органического роста через вознаграждения (Learn-to-Earn, Build-to-Earn), рекламные кампании и стратегические аирдропы.",
+    "tokenomics-row1-vesting":"Постепенное высвобождение в течение 5-10 лет.",
+    "tokenomics-row2-cat":    "Казначейство DAO / Развитие экосистемы",
+    "tokenomics-row2-scope":  "Финансирование разработки платформы, новых партнёрств и аудитов под управлением сообщества.",
+    "tokenomics-row2-vesting":"Заблокированы в казначействе DAO.",
+    "tokenomics-row3-cat":    "Начальный фонд ликвидности (DEX)",
+    "tokenomics-row3-scope":  "Обеспечение ликвидности на децентрализованных биржах (DEX) в сети Base.",
+    "tokenomics-row3-vesting":"Заблокировано через контракты стейкинга/фарминга на срок не менее 2-5 лет.",
+    "tokenomics-row4-cat":    "Команда и основатель",
+    "tokenomics-row4-scope":  "Распределение для основателя и основной команды. (Основатель: 5%, Команда: 5%)",
+    "tokenomics-row4-vesting":"Клифф 1 год, затем высвобождение в течение 3 лет.",
+    "tokenomics-total":       "Итого",
+    "tokenomics-note":        "<b>Примечание:</b> Стратегия токеномики разработана для минимизации давления продаж.",
+    "disclaimer-title": "Важный правовой отказ от ответственности",
+    "disclaimer-p1": "Информация на этом сайте не является финансовым советом. Инвестиции в криптовалюты связаны со значительными рисками, включая полную потерю капитала.",
+    "disclaimer-p2": "Проводите собственное исследование (DYOR) перед любым инвестиционным решением. При наличии сомнений проконсультируйтесь с финансовым советником.",
+    "disclaimer-p3": "Участие в экосистеме AMGF подразумевает принятие этих условий. AMGF не несёт ответственности за финансовые потери пользователей.",
+    "footer-copyright": "© 2025 AMGF Financial Freedom. Все права защищены.",
+    "footer-contact":   "Контакт: <a href='mailto:AMG3775@protonmail.com' style='color:#E8B832;'>AMG3775@protonmail.com</a>",
+  }
+};
 
-        <!-- ROADMAP -->
-        <section id="roadmap" class="roadmap-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="roadmap-title">Roadmap</h2>
-                <div class="roadmap-timeline">
-                    <div class="roadmap-item">
-                        <div class="roadmap-phase" data-i18n="roadmap-phase1-label">Faza 1 · 2024-2025 · Fundatie</div>
-                        <div class="roadmap-item-title" data-i18n="roadmap-phase1-title">Lansare &amp; Infrastructura</div>
-                        <div class="roadmap-desc" data-i18n="roadmap-phase1-desc">Crearea tokenului AMGF pe reteaua Base. Lansarea site-ului principal amgf-finance.com. Construirea comunitatii Telegram. Publicarea Cartii Albe v1.0. Lansarea AMGF Wallet N.C., Liberty Bot si Airdrop Manager.</div>
-                        <span class="roadmap-status status-done" data-i18n="roadmap-status-done">✔ Realizat</span>
-                    </div>
-                    <div class="roadmap-item">
-                        <div class="roadmap-phase" data-i18n="roadmap-phase2-label">Faza 2 · 2025 · Crestere</div>
-                        <div class="roadmap-item-title" data-i18n="roadmap-phase2-title">Ecosistem &amp; Comunitate</div>
-                        <div class="roadmap-desc" data-i18n="roadmap-phase2-desc">Lansarea Staking Hub si AMGF Code App. Campanii de airdrop strategice. Listare pe DEX-uri (Uniswap / Base). Lansarea Crypto Vault Keeper. Parteneriate strategice. Cresterea comunitatii la 10,000+ membri.</div>
-                        <span class="roadmap-status status-active" data-i18n="roadmap-status-active">⚡ In desfasurare</span>
-                    </div>
-                    <div class="roadmap-item">
-                        <div class="roadmap-phase" data-i18n="roadmap-phase3-label">Faza 3 · 2026 · Maturizare</div>
-                        <div class="roadmap-item-title" data-i18n="roadmap-phase3-title">DAO &amp; Learn-to-Earn</div>
-                        <div class="roadmap-desc" data-i18n="roadmap-phase3-desc">Implementarea mecanismului DAO complet. Lansarea platformei educationale Learn-to-Earn. Sistem Build-to-Earn activ. Audit smart contract independent. Extinderea ecosistemului cu noi instrumente si integrari.</div>
-                        <span class="roadmap-status status-soon" data-i18n="roadmap-status-soon">🔜 In pregatire</span>
-                    </div>
-                    <div class="roadmap-item">
-                        <div class="roadmap-phase" data-i18n="roadmap-phase4-label">Faza 4 · 2026-2027 · Expansiune</div>
-                        <div class="roadmap-item-title" data-i18n="roadmap-phase4-title">Autonomie &amp; Scalare</div>
-                        <div class="roadmap-desc" data-i18n="roadmap-phase4-desc">Listare pe exchange-uri centralizate (CEX). Guvernanta DAO complet autonoma. Fond colectiv administrat de comunitate. Extindere internationala. AMGF ca model de autonomie comunitara in Web3.</div>
-                        <span class="roadmap-status status-future" data-i18n="roadmap-status-future">◎ Viitor</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+// ============================================================
+//  LOGICA DE SCHIMBARE A LIMBII
+// ============================================================
 
-        <!-- TRANSPARENTA -->
-        <section id="lichiditate" class="liquidity-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="liq-title">Transparenta &amp; Lichiditate Blocata</h2>
-                <div class="liquidity-founder-msg" data-i18n="liq-founder-msg">
-                    🔒 <strong>Angajamentul Fondatorului:</strong> Fondatorul AMGF adauga lichiditate treptat si o blocheaza pe GemPad pentru perioade lungi de timp. Aceasta este dovada concreta a angajamentului pe termen lung fata de comunitate — fondurile nu pot fi retrase pana la expirarea perioadei de blocare. <strong>Transparenta nu este o promisiune, ci o realitate verificabila public.</strong>
-                </div>
-                <div class="liquidity-grid">
-                    <div class="lock-card">
-                        <div class="lock-card-icon">💧</div>
-                        <div class="lock-card-pct">61%</div>
-                        <div class="lock-card-title" data-i18n="liq-card1-title">Lichiditate Blocata</div>
-                        <div class="lock-card-desc" data-i18n="liq-card1-desc">Uniswap V2 · Reteaua Base<br>Blocat pana pe <strong style="color:#E8B832;">5 Iunie 2027</strong></div>
-                        <span class="lock-card-badge" data-i18n="liq-locked">🔒 BLOCAT</span>
-                    </div>
-                    <div class="lock-card">
-                        <div class="lock-card-icon">👥</div>
-                        <div class="lock-card-pct">25%</div>
-                        <div class="lock-card-title" data-i18n="liq-card2-title">Echipa &amp; Fondator</div>
-                        <div class="lock-card-desc" data-i18n="liq-card2-desc">Team &amp; Founder Lock<br><strong style="color:#E8B832;">451+ zile</strong> ramase</div>
-                        <span class="lock-card-badge" data-i18n="liq-locked">🔒 BLOCAT</span>
-                    </div>
-                    <div class="lock-card">
-                        <div class="lock-card-icon">🏛️</div>
-                        <div class="lock-card-pct">20%</div>
-                        <div class="lock-card-title" data-i18n="liq-card3-title">Trezorerie DAO</div>
-                        <div class="lock-card-desc" data-i18n="liq-card3-desc">DAO Treasury &amp; Ecosystem<br><strong style="color:#E8B832;">Vesting treptat</strong> · 534+ zile</div>
-                        <span class="lock-card-badge-yellow" data-i18n="liq-vesting">📈 VESTING</span>
-                    </div>
-                    <div class="lock-card">
-                        <div class="lock-card-icon">🛡️</div>
-                        <div class="lock-card-pct">15%</div>
-                        <div class="lock-card-title" data-i18n="liq-card4-title">Rezerva Fondator</div>
-                        <div class="lock-card-desc" data-i18n="liq-card4-desc">Founder Reserve Lock<br><strong style="color:#E8B832;">841+ zile</strong> ramase</div>
-                        <span class="lock-card-badge" data-i18n="liq-locked">🔒 BLOCAT</span>
-                    </div>
-                </div>
-                <div class="liquidity-total-bar">
-                    <div class="liquidity-total-label" data-i18n="liq-total-label">Total Fonduri Blocate &amp; Vesting</div>
-                    <div class="liquidity-total-value">61.65%</div>
-                    <div class="liquidity-total-sub" data-i18n="liq-total-sub">Verificat pe GemPad · Reteaua Base · Actualizat in timp real</div>
-                </div>
-                <div class="liquidity-verify-wrap" style="margin-top:28px;">
-                    <a href="https://gempad.app/locks/project?token=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&lockId=0&nftId=0&network=Base" target="_blank" class="liquidity-verify-btn">
-                        🔍 <span data-i18n="liq-verify-btn">Verifica pe GemPad</span> ↗
-                    </a>
-                </div>
-            </div>
-        </section>
+const langs      = ['ro', 'en', 'fr', 'ru'];
+const langLabels = { ro: 'RO', en: 'EN', fr: 'FR', ru: 'RU' };
 
-        <!-- TOKENOMICS -->
-        <section id="tokenomics" class="tokenomics-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="tokenomics-title">Alocarea Tokenurilor AMGF (Actualizata)</h2>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-i18n="tokenomics-th1">Categorie de Alocare</th>
-                                <th data-i18n="tokenomics-th2">Procent (%)</th>
-                                <th data-i18n="tokenomics-th3">Cantitate AMGF</th>
-                                <th data-i18n="tokenomics-th4">Scop si Justificare</th>
-                                <th data-i18n="tokenomics-th5">Plan de Vesting / Acces</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-i18n="tokenomics-row1-cat">Comunitate &amp; Ecosistem</td>
-                                <td>40%</td><td>400,000,000</td>
-                                <td data-i18n="tokenomics-row1-scope">Sustinerea cresterii organice prin recompense pentru participare (Learn-to-Earn, Build-to-Earn), campanii de promovare si airdrop-uri strategice.</td>
-                                <td data-i18n="tokenomics-row1-vesting">Eliberare treptata pe parcursul a 5-10 ani.</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="tokenomics-row2-cat">Trezorerie DAO / Dezvoltare Ecosistem</td>
-                                <td>20%</td><td>200,000,000</td>
-                                <td data-i18n="tokenomics-row2-scope">Finantarea dezvoltarii platformei, noi parteneriate si audituri sub guvernanta comunitatii.</td>
-                                <td data-i18n="tokenomics-row2-vesting">Blocate intr-o trezorerie DAO.</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="tokenomics-row3-cat">Fond de Lichiditate Initiala (DEX)</td>
-                                <td>15%</td><td>150,000,000</td>
-                                <td data-i18n="tokenomics-row3-scope">Asigurarea lichiditatii pe burse descentralizate (DEX) pe Base.</td>
-                                <td data-i18n="tokenomics-row3-vesting">Blocata prin contracte de staking/farming pentru cel putin 2-5 ani.</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="tokenomics-row4-cat">Echipa si Fondator</td>
-                                <td>25%</td><td>250,000,000</td>
-                                <td data-i18n="tokenomics-row4-scope">Alocare pentru Fondator si echipa de baza. (Fondatorul: 5%, Echipa 5%)</td>
-                                <td data-i18n="tokenomics-row4-vesting">Cliff de 1 an, urmat de eliberare pe 3 ani.</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2" data-i18n="tokenomics-total">Total</td>
-                                <td>1,000,000,000</td>
-                                <td colspan="2">100% (Total Supply)</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <div class="token-note" data-i18n="tokenomics-note"><b>Nota:</b> Strategia Tokenomics este proiectata pentru a minimiza presiunea de vanzare.</div>
-            </div>
-        </section>
+let currentLangIndex = 0;
 
-        <!-- DISCLAIMER -->
-        <section id="disclaimer" class="disclaimer-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="disclaimer-title">Disclaimer Legal Important</h2>
-                <p data-i18n="disclaimer-p1">Informatiile prezentate pe acest site nu constituie sfaturi financiare, de investitii sau juridice. Investitiile in criptomonede si tokenuri digitale implica riscuri semnificative, inclusiv pierderea totala a capitalului investit. Preturile pot fi extrem de volatile si imprevizibile.</p>
-                <p data-i18n="disclaimer-p2">Efectuati propria cercetare (DYOR - Do Your Own Research) inainte de orice decizie de investitie. Consultati un consilier financiar autorizat daca aveti dubii. Performantele trecute nu garanteaza rezultate viitoare.</p>
-                <p data-i18n="disclaimer-p3">Participarea la ecosistemul AMGF implica acceptarea acestor termeni si conditii. AMGF nu este responsabil pentru pierderile financiare rezultate din utilizarea platformei sau din deciziile de investitie ale utilizatorilor.</p>
-                <p style="margin-top:20px;">📧 Contact: <a href="mailto:AMG3775@protonmail.com" style="color:#E8B832;">AMG3775@protonmail.com</a> &nbsp;|&nbsp; Telegram: <a href="https://t.me/amgf_libertate_bot" target="_blank" style="color:#E8B832;">@amgf_libertate_bot</a></p>
-            </div>
-        </section>
-    </main>
+function applyTranslations(lang) {
+  const t = translations[lang];
+  if (!t) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      el.innerHTML = t[key];
+    }
+  });
+  document.documentElement.lang = lang;
+}
 
-    <footer>
-        <div class="container">
-            <p data-i18n="footer-copyright">&copy; 2025 AMGF Financial Freedom. Toate drepturile rezervate.</p>
-            <p data-i18n="footer-contact">Contact: <a href="mailto:AMG3775@protonmail.com" style="color:#E8B832;">AMG3775@protonmail.com</a></p>
-        </div>
-    </footer>
+function updateToggleButton(lang) {
+  const btn = document.getElementById('language-toggle');
+  if (!btn) return;
+  btn.textContent = langs.map(l =>
+    l === lang ? `[${langLabels[l]}]` : langLabels[l]
+  ).join(' / ');
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+function initLanguage() {
+  const saved = localStorage.getItem('amgf-lang');
+  if (saved && langs.includes(saved)) {
+    currentLangIndex = langs.indexOf(saved);
+  } else {
+    const browserLang = (navigator.language || 'ro').slice(0, 2).toLowerCase();
+    if (langs.includes(browserLang)) {
+      currentLangIndex = langs.indexOf(browserLang);
+    }
+  }
+  applyTranslations(langs[currentLangIndex]);
+  updateToggleButton(langs[currentLangIndex]);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('language-toggle');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      currentLangIndex = (currentLangIndex + 1) % langs.length;
+      const newLang = langs[currentLangIndex];
+      applyTranslations(newLang);
+      updateToggleButton(newLang);
+      localStorage.setItem('amgf-lang', newLang);
+    });
+  }
+  initLanguage();
+});
