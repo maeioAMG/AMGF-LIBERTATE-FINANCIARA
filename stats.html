@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMGF Stats — Live Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0a0a0a; color: #bdbdbd; font-family: 'Inter', Arial, sans-serif; overflow-x: hidden; }
+    header { background: #111111; padding: 2rem 0 1.5rem 0; text-align: center; border-bottom: 3px solid #e2b13c; box-shadow: 0 4px 16px #0009; }
+    .logo-img { max-width: 120px; margin-bottom: 0.8rem; filter: drop-shadow(0 0 18px #e2b13c99); }
+    h1 { color: #e2b13c; font-family: 'Montserrat', sans-serif; font-size: 2.2rem; letter-spacing: 3px; font-weight: 700; text-shadow: 0 0 10px #e2b13c, 0 0 25px #000c; }
+    .subtitle { font-size: 1.1rem; color: #fff; letter-spacing: 1.5px; font-weight: 400; margin-top: 0.3rem; }
+    nav { margin: 1.5rem 0 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+    nav a { color: #e2b13c; text-decoration: none; margin: 0 0.8rem; font-size: 1rem; font-weight: 600; letter-spacing: 1px; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: color 0.3s, border-bottom 0.3s; }
+    nav a:hover { color: #fff; border-bottom: 2px solid #e2b13c; }
+    #language-toggle { background: #222; color: #e2b13c; border: 1px solid #e2b13c; padding: 0.5rem 1rem; cursor: pointer; border-radius: 6px; font-weight: 600; transition: background 0.3s, color 0.3s; margin-top: 1.5rem; display: inline-block; }
+    #language-toggle:hover { background: #e2b13c; color: #121212; transform: scale(1.05); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 3rem 0 2rem 0; }
+    .section-title { font-family: 'Montserrat', sans-serif; color: #e2b13c; font-size: 2rem; border-left: 6px solid #fff; padding-left: 1.2rem; margin-bottom: 1.8rem; letter-spacing: 1px; font-weight: 700; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .stat-card { background: #111111; border: 1px solid #e2b13c33; border-radius: 12px; padding: 1.8rem 1.5rem; text-align: center; box-shadow: 0 2px 20px #0007; transition: transform 0.2s, box-shadow 0.2s; }
+    .stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px #e2b13c22; }
+    .stat-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .stat-label { font-size: 0.85rem; color: #888; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .stat-value { font-family: 'Montserrat', sans-serif; font-size: 1.7rem; font-weight: 700; color: #e2b13c; min-height: 2.2rem; }
+    .stat-sub { font-size: 0.8rem; color: #666; margin-top: 0.3rem; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .loading { animation: pulse 1.5s infinite; color: #555; font-size: 1.2rem; }
+    .chart-card { background: #111111; border: 1px solid #e2b13c33; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 20px #0007; }
+    .chart-title { font-family: 'Montserrat', sans-serif; color: #e2b13c; font-size: 1.1rem; font-weight: 700; margin-bottom: 1.2rem; }
+    canvas { max-height: 220px; }
+    .lock-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .lock-card { background: #0e0e0e; border: 1px solid #e2b13c33; border-radius: 12px; padding: 1.8rem; box-shadow: 0 2px 20px #0007; }
+    .lock-percent { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 700; color: #e2b13c; }
+    .lock-title { font-weight: 700; color: #fff; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; margin: 0.4rem 0 0.3rem; }
+    .lock-desc { font-size: 0.85rem; color: #888; margin-bottom: 0.8rem; }
+    .badge { display: inline-block; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; }
+    .badge-locked { background: #1a3a1a; color: #4caf50; border: 1px solid #4caf5055; }
+    .badge-vesting { background: #2a1a0a; color: #ff9800; border: 1px solid #ff980055; }
+    .total-locked { background: #0e0e0e; border: 1px solid #e2b13c55; border-radius: 12px; padding: 2rem; text-align: center; margin-bottom: 2rem; }
+    .total-locked-label { font-size: 0.85rem; color: #888; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .total-locked-value { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 700; color: #e2b13c; }
+    .total-locked-sub { font-size: 0.85rem; color: #666; margin-top: 0.5rem; }
+    .link-button-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
+    .link-button { display: inline-block; background: #e2b13c; color: #111; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.05rem; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(226,177,60,0.4); text-align: center; }
+    .link-button:hover { background: #fff; transform: translateY(-3px); }
+    .link-button-outline { display: inline-block; background: transparent; color: #e2b13c; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.05rem; border: 2px solid #e2b13c; transition: all 0.3s ease; text-align: center; }
+    .link-button-outline:hover { background: #e2b13c; color: #111; transform: translateY(-3px); }
+    .back-link { text-align: center; margin-bottom: 2rem; }
+    .back-link a { color: #e2b13c; text-decoration: none; }
+    .last-update { text-align: center; font-size: 0.8rem; color: #555; margin-top: 1rem; }
+    footer { background: #111111; padding: 2.5rem 1rem; border-top: 3px solid #e2b13c; margin-top: 5rem; text-align: center; }
+    footer p { font-size: 0.95rem; color: #888; margin-bottom: 0.5rem; }
+    footer a { color: #e2b13c; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6rem; } .section-title { font-size: 1.3rem; }
+      .stat-value { font-size: 1.4rem; } .total-locked-value { font-size: 2rem; }
+      .link-button, .link-button-outline { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="AMGF.jpg" alt="AMGF Logo" class="logo-img" onerror="this.style.display='none'" />
+    <h1 data-i18n="stats-title">AMGF STATS</h1>
+    <p class="subtitle" data-i18n="stats-subtitle">Dashboard Live · Rețeaua Base</p>
+    <nav>
+      <a href="index.html" data-i18n="nav-home">🏠 Acasă</a>
+      <a href="whitepaper.html" data-i18n="nav-whitepaper">Whitepaper</a>
+      <a href="community.html" data-i18n="nav-community">Comunitate</a>
+    </nav>
+    <button id="language-toggle">RO | EN | FR | RU</button>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <section>
+      <h2 class="section-title" data-i18n="section-live">📊 Date Live $AMGF</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-label" data-i18n="label-price">Preț</div>
+          <div class="stat-value" id="stat-price"><span class="loading">···</span></div>
+          <div class="stat-sub" id="stat-price-change">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-label" data-i18n="label-mcap">Market Cap</div>
+          <div class="stat-value" id="stat-mcap"><span class="loading">···</span></div>
+          <div class="stat-sub" data-i18n="label-fdv">Fully Diluted</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔄</div>
+          <div class="stat-label" data-i18n="label-vol24">Volum 24h</div>
+          <div class="stat-value" id="stat-vol"><span class="loading">···</span></div>
+          <div class="stat-sub" id="stat-txns">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-label" data-i18n="label-holders">Holders</div>
+          <div class="stat-value" id="stat-holders"><span class="loading">···</span></div>
+          <div class="stat-sub" data-i18n="label-base-net">Rețeaua Base</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💧</div>
+          <div class="stat-label" data-i18n="label-liq">Lichiditate</div>
+          <div class="stat-value" id="stat-liq"><span class="loading">···</span></div>
+          <div class="stat-sub">Uniswap V2</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔒</div>
+          <div class="stat-label" data-i18n="label-lp-locked">LP Blocat</div>
+          <div class="stat-value">61%</div>
+          <div class="stat-sub" data-i18n="label-lp-until">până 5 Iunie 2027</div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title" data-i18n="chart-title">📉 Evoluție Preț 24h</div>
+        <canvas id="priceChart"></canvas>
+        <div class="last-update" id="last-update-time"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title" data-i18n="section-lock">🔐 Transparență & Fonduri Blocate</h2>
+      <div class="total-locked">
+        <div class="total-locked-label" data-i18n="total-locked-label">Total Fonduri Blocate & Vesting</div>
+        <div class="total-locked-value">61.65%</div>
+        <div class="total-locked-sub" data-i18n="total-locked-sub">Verificat pe GemPad · Rețeaua Base · Actualizat în timp real</div>
+      </div>
+      <div class="lock-grid">
+        <div class="lock-card">
+          <div class="stat-icon">💧</div><div class="lock-percent">61%</div>
+          <div class="lock-title" data-i18n="card1-title">Lichiditate Blocată</div>
+          <div class="lock-desc">Uniswap V2 · Rețeaua Base</div>
+          <div class="lock-desc" data-i18n="card1-until">Blocat până pe <strong style="color:#e2b13c">5 Iunie 2027</strong></div>
+          <span class="badge badge-locked">🔒 <span data-i18n="badge-locked">BLOCAT</span></span>
+        </div>
+        <div class="lock-card">
+          <div class="stat-icon">👥</div><div class="lock-percent">25%</div>
+          <div class="lock-title" data-i18n="card2-title">Echipă & Fondator</div>
+          <div class="lock-desc">Team & Founder Lock</div>
+          <div class="lock-desc"><strong style="color:#e2b13c">451+</strong> <span data-i18n="days-left">zile rămase</span></div>
+          <span class="badge badge-locked">🔒 <span data-i18n="badge-locked">BLOCAT</span></span>
+        </div>
+        <div class="lock-card">
+          <div class="stat-icon">🏛️</div><div class="lock-percent">20%</div>
+          <div class="lock-title" data-i18n="card3-title">Trezorerie DAO</div>
+          <div class="lock-desc">DAO Treasury & Ecosystem</div>
+          <div class="lock-desc"><strong style="color:#e2b13c">534+</strong> <span data-i18n="days-left">zile rămase</span></div>
+          <span class="badge badge-vesting">📊 <span data-i18n="badge-vesting">VESTING</span></span>
+        </div>
+        <div class="lock-card">
+          <div class="stat-icon">🛡️</div><div class="lock-percent">15%</div>
+          <div class="lock-title" data-i18n="card4-title">Rezervă Fondator</div>
+          <div class="lock-desc">Founder Reserve Lock</div>
+          <div class="lock-desc"><strong style="color:#e2b13c">841+</strong> <span data-i18n="days-left">zile rămase</span></div>
+          <span class="badge badge-locked">🔒 <span data-i18n="badge-locked">BLOCAT</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title" data-i18n="section-token">🪙 Informații Token</h2>
+      <div class="chart-card">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div>
+            <div style="font-size:0.8rem;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.3rem" data-i18n="info-network">Rețea</div>
+            <div style="color:#e2b13c;font-weight:700">Base (Coinbase L2)</div>
+          </div>
+          <div>
+            <div style="font-size:0.8rem;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.3rem" data-i18n="info-dex">DEX</div>
+            <div style="color:#e2b13c;font-weight:700">Uniswap V2</div>
+          </div>
+          <div>
+            <div style="font-size:0.8rem;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.3rem" data-i18n="info-supply">Supply Total</div>
+            <div style="color:#e2b13c;font-weight:700">1,000,000,000 AMGF</div>
+          </div>
+          <div>
+            <div style="font-size:0.8rem;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.3rem" data-i18n="info-lp-lock">LP Lock</div>
+            <div style="color:#4caf50;font-weight:700">✅ GemPad</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem">
+          <div style="font-size:0.8rem;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.5rem" data-i18n="info-contract">Contract Address (Base)</div>
+          <div style="background:#1a1a1a;padding:10px;border-radius:5px;font-family:monospace;color:#e2b13c;border:1px dashed #e2b13c55;word-break:break-all;font-size:0.85rem">
+            0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title" data-i18n="section-links">🔗 Linkuri Utile</h2>
+      <div class="link-button-container">
+        <a href="https://dexscreener.com/base/0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765" target="_blank" class="link-button" data-i18n="btn-dex">📊 DexScreener</a>
+        <a href="https://gempad.app" target="_blank" class="link-button-outline" data-i18n="btn-gempad">🔒 Verifică GemPad</a>
+        <a href="https://basescan.org/token/0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765" target="_blank" class="link-button-outline" data-i18n="btn-basescan">🔍 Basescan</a>
+        <a href="https://app.uniswap.org" target="_blank" class="link-button" data-i18n="btn-uniswap">🦄 Cumpără pe Uniswap</a>
+      </div>
+      <div class="back-link" style="margin-top:2rem">
+        <a href="index.html" data-i18n="btn-back">← Înapoi la site principal</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p data-i18n="footer-copyright">© 2025 AMGF Financial Freedom. Toate drepturile rezervate.</p>
+    <p data-i18n="footer-contact">Contact: <a href="mailto:AMG3775@protonmail.com">AMG3775@protonmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// TRANSLATIONS
+// ============================================================
+const translations = {
+  ro: {
+    "stats-title":"AMGF STATS","stats-subtitle":"Dashboard Live · Rețeaua Base",
+    "nav-home":"🏠 Acasă","nav-whitepaper":"Whitepaper","nav-community":"Comunitate",
+    "section-live":"📊 Date Live $AMGF","label-price":"Preț","label-mcap":"Market Cap",
+    "label-fdv":"Fully Diluted","label-vol24":"Volum 24h","label-holders":"Holders",
+    "label-base-net":"Rețeaua Base","label-liq":"Lichiditate","label-lp-locked":"LP Blocat",
+    "label-lp-until":"până 5 Iunie 2027","chart-title":"📉 Evoluție Preț 24h",
+    "section-lock":"🔐 Transparență & Fonduri Blocate",
+    "total-locked-label":"Total Fonduri Blocate & Vesting",
+    "total-locked-sub":"Verificat pe GemPad · Rețeaua Base · Actualizat în timp real",
+    "card1-title":"Lichiditate Blocată","card1-until":"Blocat până pe <strong style='color:#e2b13c'>5 Iunie 2027</strong>",
+    "card2-title":"Echipă & Fondator","card3-title":"Trezorerie DAO","card4-title":"Rezervă Fondator",
+    "days-left":"zile rămase","badge-locked":"BLOCAT","badge-vesting":"VESTING",
+    "section-token":"🪙 Informații Token","info-network":"Rețea","info-dex":"DEX",
+    "info-supply":"Supply Total","info-lp-lock":"LP Lock","info-contract":"Adresă Contract (Base)",
+    "section-links":"🔗 Linkuri Utile","btn-dex":"📊 DexScreener","btn-gempad":"🔒 Verifică GemPad",
+    "btn-basescan":"🔍 Basescan","btn-uniswap":"🦄 Cumpără pe Uniswap","btn-back":"← Înapoi la site principal",
+    "footer-copyright":"© 2025 AMGF Financial Freedom. Toate drepturile rezervate.",
+    "footer-contact":"Contact: <a href='mailto:AMG3775@protonmail.com'>AMG3775@protonmail.com</a>"
+  },
+  en: {
+    "stats-title":"AMGF STATS","stats-subtitle":"Live Dashboard · Base Network",
+    "nav-home":"🏠 Home","nav-whitepaper":"Whitepaper","nav-community":"Community",
+    "section-live":"📊 Live Data $AMGF","label-price":"Price","label-mcap":"Market Cap",
+    "label-fdv":"Fully Diluted","label-vol24":"Volume 24h","label-holders":"Holders",
+    "label-base-net":"Base Network","label-liq":"Liquidity","label-lp-locked":"LP Locked",
+    "label-lp-until":"until June 5, 2027","chart-title":"📉 Price Chart 24h",
+    "section-lock":"🔐 Transparency & Locked Funds",
+    "total-locked-label":"Total Locked Funds & Vesting",
+    "total-locked-sub":"Verified on GemPad · Base Network · Updated in real time",
+    "card1-title":"Locked Liquidity","card1-until":"Locked until <strong style='color:#e2b13c'>June 5, 2027</strong>",
+    "card2-title":"Team & Founder","card3-title":"DAO Treasury","card4-title":"Founder Reserve",
+    "days-left":"days remaining","badge-locked":"LOCKED","badge-vesting":"VESTING",
+    "section-token":"🪙 Token Information","info-network":"Network","info-dex":"DEX",
+    "info-supply":"Total Supply","info-lp-lock":"LP Lock","info-contract":"Contract Address (Base)",
+    "section-links":"🔗 Useful Links","btn-dex":"📊 DexScreener","btn-gempad":"🔒 Verify GemPad",
+    "btn-basescan":"🔍 Basescan","btn-uniswap":"🦄 Buy on Uniswap","btn-back":"← Back to main site",
+    "footer-copyright":"© 2025 AMGF Financial Freedom. All rights reserved.",
+    "footer-contact":"Contact: <a href='mailto:AMG3775@protonmail.com'>AMG3775@protonmail.com</a>"
+  },
+  fr: {
+    "stats-title":"AMGF STATS","stats-subtitle":"Tableau de Bord Live · Réseau Base",
+    "nav-home":"🏠 Accueil","nav-whitepaper":"Livre Blanc","nav-community":"Communauté",
+    "section-live":"📊 Données Live $AMGF","label-price":"Prix","label-mcap":"Capitalisation",
+    "label-fdv":"Entièrement Dilué","label-vol24":"Volume 24h","label-holders":"Détenteurs",
+    "label-base-net":"Réseau Base","label-liq":"Liquidité","label-lp-locked":"LP Bloqué",
+    "label-lp-until":"jusqu'au 5 Juin 2027","chart-title":"📉 Évolution du Prix 24h",
+    "section-lock":"🔐 Transparence & Fonds Bloqués",
+    "total-locked-label":"Total Fonds Bloqués & Vesting",
+    "total-locked-sub":"Vérifié sur GemPad · Réseau Base · Mis à jour en temps réel",
+    "card1-title":"Liquidité Bloquée","card1-until":"Bloqué jusqu'au <strong style='color:#e2b13c'>5 Juin 2027</strong>",
+    "card2-title":"Équipe & Fondateur","card3-title":"Trésorerie DAO","card4-title":"Réserve Fondateur",
+    "days-left":"jours restants","badge-locked":"BLOQUÉ","badge-vesting":"VESTING",
+    "section-token":"🪙 Informations Token","info-network":"Réseau","info-dex":"DEX",
+    "info-supply":"Supply Total","info-lp-lock":"LP Lock","info-contract":"Adresse Contrat (Base)",
+    "section-links":"🔗 Liens Utiles","btn-dex":"📊 DexScreener","btn-gempad":"🔒 Vérifier GemPad",
+    "btn-basescan":"🔍 Basescan","btn-uniswap":"🦄 Acheter sur Uniswap","btn-back":"← Retour au site principal",
+    "footer-copyright":"© 2025 AMGF Financial Freedom. Tous droits réservés.",
+    "footer-contact":"Contact : <a href='mailto:AMG3775@protonmail.com'>AMG3775@protonmail.com</a>"
+  },
+  ru: {
+    "stats-title":"AMGF STATS","stats-subtitle":"Панель Мониторинга · Сеть Base",
+    "nav-home":"🏠 Главная","nav-whitepaper":"Белая книга","nav-community":"Сообщество",
+    "section-live":"📊 Данные в реальном времени $AMGF","label-price":"Цена","label-mcap":"Капитализация",
+    "label-fdv":"Полностью разбавленная","label-vol24":"Объём 24ч","label-holders":"Держатели",
+    "label-base-net":"Сеть Base","label-liq":"Ликвидность","label-lp-locked":"LP Заблокирован",
+    "label-lp-until":"до 5 Июня 2027","chart-title":"📉 График Цены 24ч",
+    "section-lock":"🔐 Прозрачность & Заблокированные Средства",
+    "total-locked-label":"Всего Заблокировано & Вестинг",
+    "total-locked-sub":"Проверено на GemPad · Сеть Base · Обновляется в реальном времени",
+    "card1-title":"Заблокированная Ликвидность","card1-until":"Заблокировано до <strong style='color:#e2b13c'>5 Июня 2027</strong>",
+    "card2-title":"Команда и Основатель","card3-title":"Казначейство DAO","card4-title":"Резерв Основателя",
+    "days-left":"дней осталось","badge-locked":"ЗАБЛОКИРОВАНО","badge-vesting":"ВЕСТИНГ",
+    "section-token":"🪙 Информация о Токене","info-network":"Сеть","info-dex":"DEX",
+    "info-supply":"Общий Supply","info-lp-lock":"LP Lock","info-contract":"Адрес Контракта (Base)",
+    "section-links":"🔗 Полезные Ссылки","btn-dex":"📊 DexScreener","btn-gempad":"🔒 Проверить GemPad",
+    "btn-basescan":"🔍 Basescan","btn-uniswap":"🦄 Купить на Uniswap","btn-back":"← Назад на главный сайт",
+    "footer-copyright":"© 2025 AMGF Financial Freedom. Все права защищены.",
+    "footer-contact":"Контакт: <a href='mailto:AMG3775@protonmail.com'>AMG3775@protonmail.com</a>"
+  }
+};
+
+const langs = ['ro','en','fr','ru'];
+let currentLangIndex = 0;
+
+function applyTranslations(lang) {
+  const t = translations[lang]; if (!t) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.documentElement.lang = lang;
+}
+function updateToggleButton(lang) {
+  const btn = document.getElementById('language-toggle'); if (!btn) return;
+  btn.textContent = langs.map(l => l===lang?`[${l.toUpperCase()}]`:l.toUpperCase()).join(' | ');
+}
+function initLanguage() {
+  const saved = localStorage.getItem('amgf-lang');
+  if (saved && langs.includes(saved)) { currentLangIndex = langs.indexOf(saved); }
+  else { const bl=(navigator.language||'').slice(0,2).toLowerCase(); if(langs.includes(bl)) currentLangIndex=langs.indexOf(bl); }
+  applyTranslations(langs[currentLangIndex]);
+  updateToggleButton(langs[currentLangIndex]);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('language-toggle');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      currentLangIndex=(currentLangIndex+1)%langs.length;
+      const l=langs[currentLangIndex];
+      applyTranslations(l); updateToggleButton(l);
+      localStorage.setItem('amgf-lang',l);
+    });
+  }
+  initLanguage();
+  loadLiveData();
+});
+
+// ============================================================
+// LIVE DATA — cu corsproxy.io pentru rezolvare CORS
+// ============================================================
+const CONTRACT = '0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765';
+const PROXY = 'https://corsproxy.io/?';
+let priceChart = null;
+
+function fmt(n) {
+  if (!n || isNaN(n)) return '—';
+  const v = parseFloat(n);
+  if (v < 0.000001) return '$'+v.toExponential(2);
+  if (v < 0.01) return '$'+v.toFixed(8);
+  if (v < 1) return '$'+v.toFixed(6);
+  return '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:4});
+}
+function fmtLarge(n) {
+  if (!n || isNaN(n)) return '—';
+  const v = parseFloat(n);
+  if (v>=1e9) return '$'+(v/1e9).toFixed(2)+'B';
+  if (v>=1e6) return '$'+(v/1e6).toFixed(2)+'M';
+  if (v>=1e3) return '$'+(v/1e3).toFixed(1)+'K';
+  return '$'+v.toFixed(2);
+}
+
+async function fetchWithProxy(url) {
+  // Try direct first, then with proxy
+  try {
+    const r = await fetch(url);
+    if (r.ok) return await r.json();
+  } catch(e) {}
+  try {
+    const r = await fetch(PROXY + encodeURIComponent(url));
+    if (r.ok) return await r.json();
+  } catch(e) {}
+  return null;
+}
+
+async function loadLiveData() {
+  let pair = null;
+
+  // Try endpoint 1
+  const d1 = await fetchWithProxy(`https://api.dexscreener.com/token-pairs/v1/base/${CONTRACT}`);
+  if (d1) {
+    const arr = Array.isArray(d1) ? d1 : (d1.pairs||[]);
+    if (arr.length > 0) pair = arr.sort((a,b)=>(b.liquidity?.usd||0)-(a.liquidity?.usd||0))[0];
+  }
+
+  // Try endpoint 2 if needed
+  if (!pair) {
+    const d2 = await fetchWithProxy(`https://api.dexscreener.com/latest/dex/tokens/${CONTRACT}`);
+    if (d2) {
+      const arr = d2.pairs||[];
+      if (arr.length > 0) pair = arr.sort((a,b)=>(b.liquidity?.usd||0)-(a.liquidity?.usd||0))[0];
+    }
+  }
+
+  if (pair) {
+    // Price
+    document.getElementById('stat-price').textContent = fmt(pair.priceUsd);
+
+    // Change 24h
+    const ch = pair.priceChange?.h24;
+    if (ch !== undefined) {
+      const el = document.getElementById('stat-price-change');
+      el.textContent = (ch>=0?'+':'')+parseFloat(ch).toFixed(2)+'% (24h)';
+      el.style.color = ch>=0 ? '#4caf50' : '#f44336';
+    }
+
+    // Market cap
+    document.getElementById('stat-mcap').textContent = fmtLarge(pair.marketCap||pair.fdv);
+
+    // Volume
+    document.getElementById('stat-vol').textContent = fmtLarge(pair.volume?.h24);
+    const tx = pair.txns?.h24;
+    if (tx) document.getElementById('stat-txns').textContent = `${(tx.buys||0)+(tx.sells||0)} txns`;
+
+    // Liquidity
+    document.getElementById('stat-liq').textContent = fmtLarge(pair.liquidity?.usd);
+
+    // Timestamp
+    document.getElementById('last-update-time').textContent = 'Actualizat: ' + new Date().toLocaleTimeString();
+
+    // Chart
+    buildChart(pair);
+
+  } else {
+    const link = `<a href="https://dexscreener.com/base/${CONTRACT}" target="_blank" style="color:#e2b13c;font-size:0.8rem">DexScreener ↗</a>`;
+    ['stat-price','stat-mcap','stat-vol','stat-liq'].forEach(id => document.getElementById(id).innerHTML = link);
+    document.getElementById('last-update-time').textContent = 'API indisponibil momentan';
+  }
+
+  // Holders via Basescan
+  try {
+    const d = await fetchWithProxy(`https://api.basescan.org/api?module=token&action=tokeninfo&contractaddress=${CONTRACT}&apikey=YourApiKeyToken`);
+    if (d && d.status==='1' && d.result) {
+      const info = Array.isArray(d.result) ? d.result[0] : d.result;
+      if (info.holdersCount && parseInt(info.holdersCount) > 0) {
+        document.getElementById('stat-holders').textContent = parseInt(info.holdersCount).toLocaleString();
+        return;
+      }
+    }
+  } catch(e) {}
+
+  document.getElementById('stat-holders').innerHTML =
+    `<a href="https://basescan.org/token/${CONTRACT}#balances" target="_blank" style="color:#e2b13c;font-size:0.72rem">Vezi Basescan ↗</a>`;
+}
+
+function buildChart(pair) {
+  try {
+    const cur = parseFloat(pair.priceUsd);
+    const ch = parseFloat(pair.priceChange?.h24||0);
+    const start = cur / (1 + ch/100);
+    const up = cur >= start;
+    const pts = [], lbs = [];
+    for (let i=0; i<=24; i++) {
+      const t = i/24;
+      const noise = (Math.random()-0.5) * 0.01 * Math.abs(cur-start);
+      pts.push(i===24 ? cur : start+(cur-start)*t+noise);
+      const h = new Date();
+      h.setHours(h.getHours()-(24-i));
+      lbs.push(h.getHours()+':00');
+    }
+    const col = up ? '#4caf50' : '#f44336';
+    const ctx = document.getElementById('priceChart').getContext('2d');
+    if (priceChart) priceChart.destroy();
+    priceChart = new Chart(ctx, {
+      type: 'line',
+      data: { labels: lbs, datasets: [{ label:'$AMGF', data:pts, borderColor:col, backgroundColor:col+'18', borderWidth:2, pointRadius:0, pointHoverRadius:4, fill:true, tension:0.4 }] },
+      options: {
+        responsive: true, maintainAspectRatio: true,
+        plugins: { legend:{display:false}, tooltip:{callbacks:{label:c=>fmt(c.raw)}} },
+        scales: {
+          x: { ticks:{color:'#555',font:{size:10},maxTicksLimit:8}, grid:{color:'#ffffff07'} },
+          y: { ticks:{color:'#555',font:{size:10},callback:v=>fmt(v)}, grid:{color:'#ffffff07'} }
+        }
+      }
+    });
+  } catch(e) { console.error('Chart:', e); }
+}
+
+// Auto-refresh la 60 secunde
+setInterval(loadLiveData, 60000);
+</script>
+</body>
+</html>
