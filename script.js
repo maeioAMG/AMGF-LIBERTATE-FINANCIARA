@@ -70,7 +70,7 @@ const translations = {
     "disclaimer-p2":"Efectuati propria cercetare (DYOR - Do Your Own Research) inainte de orice decizie de investitie. Consultati un consilier financiar autorizat daca aveti dubii. Performantele trecute nu garanteaza rezultate viitoare.",
     "disclaimer-p3":"Participarea la ecosistemul AMGF implica acceptarea acestor termeni si conditii. AMGF nu este responsabil pentru pierderile financiare rezultate din utilizarea platformei sau din deciziile de investitie ale utilizatorilor.","disclaimer-p4":"Acest site si documentul Cartea Alba au caracter informativ. Ele nu reprezinta un white paper in sensul Regulamentului (UE) 2023/1114 (MiCA) si nu au fost revizuite sau aprobate de nicio autoritate competenta. $AMGF nu ofera randamente garantate; lichiditatea poate fi redusa, iar tokenul isi poate pierde intreaga valoare.",
     "footer-copyright":"© 2025 AMGF Financial Freedom. Toate drepturile rezervate.",
-    "footer-contact":"Contact: <a href='mailto:AMG3775@protonmail.com' style='color:#E8B832;'>AMG3775@protonmail.com</a>",
+    "footer-contact":"Contact: <a href='mailto:contact@amgf-finance.com' style='color:#E8B832;'>contact@amgf-finance.com</a>",
   },
 
   en: {
@@ -138,7 +138,7 @@ const translations = {
     "disclaimer-p2":"Conduct your own research (DYOR - Do Your Own Research) before any investment decision. Consult an authorized financial advisor if in doubt. Past performance does not guarantee future results.",
     "disclaimer-p3":"Participation in the AMGF ecosystem implies acceptance of these terms and conditions. AMGF is not responsible for financial losses resulting from the use of the platform or from users' investment decisions.","disclaimer-p4":"This website and the White Paper document are for information only. They are not a crypto-asset white paper within the meaning of Regulation (EU) 2023/1114 (MiCA) and have not been reviewed or approved by any competent authority. $AMGF offers no guaranteed returns; liquidity may be limited and the token may lose all of its value.",
     "footer-copyright":"© 2025 AMGF Financial Freedom. All rights reserved.",
-    "footer-contact":"Contact: <a href='mailto:AMG3775@protonmail.com' style='color:#E8B832;'>AMG3775@protonmail.com</a>",
+    "footer-contact":"Contact: <a href='mailto:contact@amgf-finance.com' style='color:#E8B832;'>contact@amgf-finance.com</a>",
   },
 
   fr: {
@@ -206,7 +206,7 @@ const translations = {
     "disclaimer-p2":"Effectuez vos propres recherches (DYOR) avant toute décision. Consultez un conseiller financier agréé en cas de doute.",
     "disclaimer-p3":"La participation à l'écosystème AMGF implique l'acceptation de ces termes. AMGF n'est pas responsable des pertes financières des utilisateurs.","disclaimer-p4":"Ce site et le document Livre Blanc ont un caractère informatif. Ils ne constituent pas un livre blanc au sens du Règlement (UE) 2023/1114 (MiCA) et n'ont été ni examinés ni approuvés par aucune autorité compétente. $AMGF n'offre aucun rendement garanti ; la liquidité peut être limitée et le token peut perdre toute sa valeur.",
     "footer-copyright":"© 2025 AMGF Financial Freedom. Tous droits réservés.",
-    "footer-contact":"Contact : <a href='mailto:AMG3775@protonmail.com' style='color:#E8B832;'>AMG3775@protonmail.com</a>",
+    "footer-contact":"Contact : <a href='mailto:contact@amgf-finance.com' style='color:#E8B832;'>contact@amgf-finance.com</a>",
   },
 
   ru: {
@@ -274,7 +274,7 @@ const translations = {
     "disclaimer-p2":"Проводите собственное исследование (DYOR) перед любым решением. При сомнениях проконсультируйтесь с финансовым советником.",
     "disclaimer-p3":"Участие в экосистеме AMGF подразумевает принятие этих условий. AMGF не несёт ответственности за финансовые потери пользователей.","disclaimer-p4":"Этот сайт и документ «Белая книга» носят информационный характер. Они не являются white paper в смысле Регламента (ЕС) 2023/1114 (MiCA) и не проверялись и не утверждались каким-либо компетентным органом. $AMGF не предлагает гарантированного дохода; ликвидность может быть ограничена, а токен может полностью потерять стоимость.",
     "footer-copyright":"© 2025 AMGF Financial Freedom. Все права защищены.",
-    "footer-contact":"Контакт: <a href='mailto:AMG3775@protonmail.com' style='color:#E8B832;'>AMG3775@protonmail.com</a>",
+    "footer-contact":"Контакт: <a href='mailto:contact@amgf-finance.com' style='color:#E8B832;'>contact@amgf-finance.com</a>",
   }
 };
 
