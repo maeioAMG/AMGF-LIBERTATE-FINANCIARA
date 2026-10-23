@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AMGF - Informații legale și confidențialitate</title>
+    <meta name="description" content="Informații legale (mentions légales) și politica de confidențialitate pentru amgf-finance.com.">
+    <link rel="canonical" href="https://amgf-finance.com/legal.html">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .lg-hero { text-align: center; padding: 60px 20px 32px; border-bottom: 1px solid #e2b13c44; }
+        .lg-hero h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 5vw, 44px); color: #e2b13c; margin-bottom: 12px; }
+        .lg-hero .lg-updated { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #7a6a3a; }
+        .lg-toc { background: #111; border: 1px solid #e2b13c33; border-radius: 10px; padding: 20px 28px; margin: 32px 0; }
+        .lg-toc a { display: block; padding: 7px 0; color: #bdbdbd; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 14px; }
+        .lg-toc a:hover { color: #e2b13c; }
+        .lg-section { padding: 40px 0 16px; border-bottom: 1px solid #e2b13c22; }
+        .lg-section h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 3vw, 26px); color: #e2b13c; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2b13c44; }
+        .lg-section h3 { font-family: 'Montserrat', sans-serif; font-size: 16px; color: #fff; margin: 24px 0 10px; }
+        .lg-section p, .lg-section li { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; color: #bdbdbd; }
+        .lg-section p { margin-bottom: 14px; }
+        .lg-section ul { padding-left: 20px; margin-bottom: 14px; }
+        .lg-section strong { color: #e2b13c; }
+        .lg-section a { color: #e2b13c; word-break: break-word; }
+        .lg-back { display: inline-flex; align-items: center; gap: 8px; margin: 32px 0 40px; padding: 10px 24px; border: 1px solid #e2b13c44; color: #e2b13c; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 14px; }
+        .lg-back:hover { background: rgba(226,177,60,0.08); border-color: #e2b13c; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="AMGF.jpg" alt="Logo AMGF" class="logo-img">
+        <h1>AMGF</h1>
+        <div class="subtitle">Financial Freedom</div>
+        <nav>
+            <a href="index.html" data-i18n="nav-home">Acasă</a>
+            <a href="whitepaper.html" data-i18n="nav-whitepaper">Cartea Albă</a>
+        </nav>
+        <button id="language-toggle">RO / EN / FR / RU</button>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="lg-hero">
+                <h1 data-i18n="title">Informații legale și confidențialitate</h1>
+                <div class="lg-updated" data-i18n="updated">Ultima actualizare: 23 octombrie 2026</div>
+            </div>
+
+            <div class="lg-toc">
+                <a href="#informatii-legale" data-i18n="toc1">01 · Informații legale</a>
+                <a href="#confidentialitate" data-i18n="toc2">02 · Politica de confidențialitate</a>
+            </div>
+
+            <section class="lg-section" id="informatii-legale" data-i18n="legal"></section>
+            <section class="lg-section" id="confidentialitate" data-i18n="privacy"></section>
+
+            <a href="index.html" class="lg-back" data-i18n="back">← Înapoi la site principal</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025-2026 AMGF Financial Freedom.</p>
+            <p>Contact: <a href="mailto:AMG3775@protonmail.com" style="color:#E8B832;">AMG3775@protonmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        const EMAIL = '<a href="mailto:AMG3775@protonmail.com">AMG3775@protonmail.com</a>';
+        const BOT = '<a href="https://t.me/amgf_liberty_bot" target="_blank" rel="noopener">@amgf_liberty_bot</a>';
+        const HOST = 'GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA · +1 877 448 4820 · <a href="https://pages.github.com" target="_blank" rel="noopener">pages.github.com</a>';
+        const GH_PRIV = '<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub</a>';
+        const G_PRIV = '<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>';
+        const TG_PRIV = '<a href="https://telegram.org/privacy" target="_blank" rel="noopener">Telegram</a>';
+        const CNIL = '<a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>';
+
+        const T = {
+            title:   { ro: 'Informații legale și confidențialitate', en: 'Legal notice and privacy', fr: 'Mentions légales et confidentialité', ru: 'Правовая информация и конфиденциальность' },
+            updated: { ro: 'Ultima actualizare: 23 octombrie 2026', en: 'Last updated: 23 October 2026', fr: 'Dernière mise à jour : 23 octobre 2026', ru: 'Последнее обновление: 23 октября 2026' },
+            toc1:    { ro: '01 · Informații legale', en: '01 · Legal notice', fr: '01 · Mentions légales', ru: '01 · Правовая информация' },
+            toc2:    { ro: '02 · Politica de confidențialitate', en: '02 · Privacy policy', fr: '02 · Politique de confidentialité', ru: '02 · Политика конфиденциальности' },
+            back:    { ro: '← Înapoi la site principal', en: '← Back to main site', fr: '← Retour au site principal', ru: '← Вернуться на главный сайт' },
+            'nav-home':       { ro: 'Acasă', en: 'Home', fr: 'Accueil', ru: 'Главная' },
+            'nav-whitepaper': { ro: 'Cartea Albă', en: 'White Paper', fr: 'Livre Blanc', ru: 'Белая книга' },
+
+            legal: {
+ro: `<h2>1. Informații legale</h2>
+<h3>Editorul site-ului</h3>
+<p><strong>AMGF Finance</strong> — proiect comunitar editat de o persoană fizică.<br>Contact: ${EMAIL} · Telegram: ${BOT}</p>
+<h3>Găzduire</h3>
+<p>${HOST}</p>
+<h3>Natura conținutului</h3>
+<p>Conținutul acestui site are caracter informativ. Nu reprezintă o ofertă de investiții, un sfat financiar sau un white paper în sensul Regulamentului (UE) 2023/1114 (MiCA). Detalii în secțiunea <a href="index.html#disclaimer">Disclaimer</a>.</p>
+<h3>Proprietate intelectuală</h3>
+<p>Textele, logo-ul și elementele grafice AMGF aparțin proiectului AMGF Finance. Reproducerea lor fără acord nu este permisă. Mărcile și serviciile terților menționate (Base, Uniswap, DexScreener, GemPad, Telegram) aparțin proprietarilor lor; AMGF nu este afiliat cu aceștia.</p>`,
+en: `<h2>1. Legal notice</h2>
+<h3>Website publisher</h3>
+<p><strong>AMGF Finance</strong> — a community project published by a private individual.<br>Contact: ${EMAIL} · Telegram: ${BOT}</p>
+<h3>Hosting</h3>
+<p>${HOST}</p>
+<h3>Nature of the content</h3>
+<p>The content of this website is for information only. It is not an investment offer, financial advice or a white paper within the meaning of Regulation (EU) 2023/1114 (MiCA). See the <a href="index.html#disclaimer">Disclaimer</a>.</p>
+<h3>Intellectual property</h3>
+<p>The AMGF texts, logo and graphics belong to the AMGF Finance project and may not be reproduced without permission. Third-party brands and services mentioned (Base, Uniswap, DexScreener, GemPad, Telegram) belong to their owners; AMGF is not affiliated with them.</p>`,
+fr: `<h2>1. Mentions légales</h2>
+<h3>Éditeur du site</h3>
+<p><strong>AMGF Finance</strong> — projet communautaire édité par une personne physique.<br>Contact : ${EMAIL} · Telegram : ${BOT}</p>
+<h3>Hébergeur</h3>
+<p>${HOST}</p>
+<h3>Nature du contenu</h3>
+<p>Le contenu de ce site a un caractère informatif. Il ne constitue ni une offre d'investissement, ni un conseil financier, ni un livre blanc au sens du Règlement (UE) 2023/1114 (MiCA). Voir l'<a href="index.html#disclaimer">Avertissement</a>.</p>
+<h3>Propriété intellectuelle</h3>
+<p>Les textes, le logo et les éléments graphiques AMGF appartiennent au projet AMGF Finance ; toute reproduction sans accord est interdite. Les marques et services tiers cités (Base, Uniswap, DexScreener, GemPad, Telegram) appartiennent à leurs propriétaires ; AMGF n'y est pas affilié.</p>`,
+ru: `<h2>1. Правовая информация</h2>
+<h3>Издатель сайта</h3>
+<p><strong>AMGF Finance</strong> — общественный проект, издаваемый частным лицом.<br>Контакт: ${EMAIL} · Telegram: ${BOT}</p>
+<h3>Хостинг</h3>
+<p>${HOST}</p>
+<h3>Характер содержания</h3>
+<p>Содержание сайта носит информационный характер. Оно не является инвестиционным предложением, финансовым советом или white paper в смысле Регламента (ЕС) 2023/1114 (MiCA). См. <a href="index.html#disclaimer">Отказ от ответственности</a>.</p>
+<h3>Интеллектуальная собственность</h3>
+<p>Тексты, логотип и графика AMGF принадлежат проекту AMGF Finance; их воспроизведение без согласия запрещено. Упомянутые сторонние бренды и сервисы (Base, Uniswap, DexScreener, GemPad, Telegram) принадлежат их владельцам; AMGF с ними не связан.</p>`
+            },
+
+            privacy: {
+ro: `<h2>2. Politica de confidențialitate</h2>
+<p>Această politică explică ce date personale prelucrează AMGF Finance, conform Regulamentului (UE) 2016/679 (GDPR).</p>
+<h3>Cine răspunde de date</h3>
+<p>AMGF Finance (persoană fizică). Pentru orice întrebare despre datele tale: ${EMAIL}.</p>
+<h3>Ce date prelucrăm și de ce</h3>
+<ul>
+<li><strong>Vizitarea site-ului.</strong> Site-ul este static. Nu folosim cookie-uri proprii, Google Analytics sau publicitate. Serverele gazdei ${GH_PRIV} înregistrează adresa IP în jurnale tehnice, pentru securitate. Preferința de limbă se salvează doar în browserul tău și nu ne este transmisă.</li>
+<li><strong>Fonturi.</strong> Pentru afișarea textului, browserul tău se conectează la Google Fonts, care primește adresa IP (${G_PRIV}).</li>
+<li><strong>Formularul de comunitate.</strong> Datele pe care le completezi sunt colectate prin Google Forms (${G_PRIV}) și le folosim doar pentru a-ți trimite noutăți despre proiect. Temei: consimțământul tău, pe care îl poți retrage oricând.</li>
+<li><strong>Email.</strong> Dacă ne scrii, folosim adresa și mesajul doar pentru a-ți răspunde.</li>
+<li><strong>Botul Telegram ${BOT}.</strong> Botul păstrează ID-ul și numele de utilizator Telegram, împreună cu activitatea ta în bot (de exemplu puncte și invitații), ca să poată funcționa. Temei: furnizarea serviciului pe care l-ai cerut. Telegram are propria politică (${TG_PRIV}).</li>
+<li><strong>Grafice și link-uri externe.</strong> Pagina de statistici afișează un grafic DexScreener, iar link-urile spre Uniswap, Basescan sau GemPad duc la servicii terțe, cu propriile politici.</li>
+</ul>
+<h3>Blockchain</h3>
+<p>Tranzacțiile pe rețeaua Base sunt publice și permanente prin natura blockchain-ului. Nu le putem modifica sau șterge.</p>
+<h3>Cât timp păstrăm datele</h3>
+<p>Doar cât timp sunt necesare scopului pentru care au fost colectate. Ștergem datele la cererea ta sau când nu mai sunt necesare. Nu vindem și nu închiriem date personale.</p>
+<h3>Transferuri în afara UE</h3>
+<p>GitHub și Google sunt companii din SUA, iar Telegram operează și în afara UE. Transferurile se fac pe baza garanțiilor oferite de acești furnizori (de exemplu EU-US Data Privacy Framework sau clauze contractuale standard).</p>
+<h3>Drepturile tale</h3>
+<p>Ai dreptul de acces, rectificare, ștergere, restricționare, opoziție și portabilitate, precum și dreptul de a-ți retrage consimțământul. Scrie-ne la ${EMAIL}; răspundem în cel mult o lună. Poți depune și o plângere la autoritatea de protecție a datelor: în Franța, ${CNIL}, sau autoritatea din țara ta.</p>`,
+en: `<h2>2. Privacy policy</h2>
+<p>This policy explains which personal data AMGF Finance processes, in line with Regulation (EU) 2016/679 (GDPR).</p>
+<h3>Who is responsible</h3>
+<p>AMGF Finance (private individual). For any question about your data: ${EMAIL}.</p>
+<h3>What we process and why</h3>
+<ul>
+<li><strong>Visiting the website.</strong> The site is static. We use no cookies of our own, no Google Analytics and no advertising. The servers of our host ${GH_PRIV} record IP addresses in technical logs for security. Your language preference is stored only in your browser and is not sent to us.</li>
+<li><strong>Fonts.</strong> To display text, your browser connects to Google Fonts, which receives your IP address (${G_PRIV}).</li>
+<li><strong>Community form.</strong> The data you enter is collected through Google Forms (${G_PRIV}) and used only to send you project news. Legal basis: your consent, which you can withdraw at any time.</li>
+<li><strong>Email.</strong> If you write to us, we use your address and message only to reply.</li>
+<li><strong>Telegram bot ${BOT}.</strong> The bot stores your Telegram ID and username together with your activity in the bot (for example points and invitations) so that it can work. Legal basis: providing the service you requested. Telegram has its own policy (${TG_PRIV}).</li>
+<li><strong>Charts and external links.</strong> The statistics page shows a DexScreener chart, and links to Uniswap, Basescan or GemPad lead to third-party services with their own policies.</li>
+</ul>
+<h3>Blockchain</h3>
+<p>Transactions on the Base network are public and permanent by the nature of blockchain. We cannot change or delete them.</p>
+<h3>How long we keep data</h3>
+<p>Only as long as needed for the purpose it was collected for. We delete data on request or when it is no longer needed. We never sell or rent personal data.</p>
+<h3>Transfers outside the EU</h3>
+<p>GitHub and Google are US companies and Telegram also operates outside the EU. Transfers rely on the safeguards offered by these providers (for example the EU-US Data Privacy Framework or standard contractual clauses).</p>
+<h3>Your rights</h3>
+<p>You have the right of access, rectification, erasure, restriction, objection and portability, and the right to withdraw consent. Write to ${EMAIL}; we reply within one month. You may also complain to a data protection authority: in France the ${CNIL}, or the authority in your country.</p>`,
+fr: `<h2>2. Politique de confidentialité</h2>
+<p>Cette politique explique quelles données personnelles AMGF Finance traite, conformément au Règlement (UE) 2016/679 (RGPD).</p>
+<h3>Responsable du traitement</h3>
+<p>AMGF Finance (personne physique). Pour toute question sur vos données : ${EMAIL}.</p>
+<h3>Données traitées et finalités</h3>
+<ul>
+<li><strong>Visite du site.</strong> Le site est statique. Nous n'utilisons ni cookies propres, ni Google Analytics, ni publicité. Les serveurs de notre hébergeur ${GH_PRIV} enregistrent l'adresse IP dans des journaux techniques, pour la sécurité. Votre préférence de langue est enregistrée uniquement dans votre navigateur et ne nous est pas transmise.</li>
+<li><strong>Polices.</strong> Pour afficher le texte, votre navigateur se connecte à Google Fonts, qui reçoit votre adresse IP (${G_PRIV}).</li>
+<li><strong>Formulaire communauté.</strong> Les données saisies sont collectées via Google Forms (${G_PRIV}) et utilisées uniquement pour vous envoyer des nouvelles du projet. Base légale : votre consentement, que vous pouvez retirer à tout moment.</li>
+<li><strong>E-mail.</strong> Si vous nous écrivez, nous utilisons votre adresse et votre message uniquement pour vous répondre.</li>
+<li><strong>Bot Telegram ${BOT}.</strong> Le bot conserve votre identifiant et votre nom d'utilisateur Telegram ainsi que votre activité dans le bot (par exemple points et invitations), afin de fonctionner. Base légale : la fourniture du service demandé. Telegram dispose de sa propre politique (${TG_PRIV}).</li>
+<li><strong>Graphiques et liens externes.</strong> La page de statistiques affiche un graphique DexScreener ; les liens vers Uniswap, Basescan ou GemPad mènent à des services tiers ayant leurs propres politiques.</li>
+</ul>
+<h3>Blockchain</h3>
+<p>Les transactions sur le réseau Base sont publiques et permanentes par nature. Nous ne pouvons ni les modifier ni les supprimer.</p>
+<h3>Durée de conservation</h3>
+<p>Uniquement le temps nécessaire à la finalité de la collecte. Nous supprimons les données sur demande ou lorsqu'elles ne sont plus nécessaires. Nous ne vendons ni ne louons de données personnelles.</p>
+<h3>Transferts hors UE</h3>
+<p>GitHub et Google sont des sociétés américaines et Telegram opère aussi hors UE. Les transferts reposent sur les garanties offertes par ces prestataires (par exemple le EU-US Data Privacy Framework ou des clauses contractuelles types).</p>
+<h3>Vos droits</h3>
+<p>Vous disposez des droits d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité, ainsi que du droit de retirer votre consentement. Écrivez à ${EMAIL} ; nous répondons sous un mois. Vous pouvez aussi introduire une réclamation auprès de la ${CNIL} ou de l'autorité de votre pays.</p>`,
+ru: `<h2>2. Политика конфиденциальности</h2>
+<p>Эта политика объясняет, какие персональные данные обрабатывает AMGF Finance в соответствии с Регламентом (ЕС) 2016/679 (GDPR).</p>
+<h3>Кто отвечает за данные</h3>
+<p>AMGF Finance (частное лицо). По любым вопросам о ваших данных: ${EMAIL}.</p>
+<h3>Какие данные мы обрабатываем и зачем</h3>
+<ul>
+<li><strong>Посещение сайта.</strong> Сайт статический. Мы не используем собственные cookie, Google Analytics и рекламу. Серверы хостинга ${GH_PRIV} записывают IP-адреса в технические журналы для безопасности. Выбранный язык сохраняется только в вашем браузере и нам не передаётся.</li>
+<li><strong>Шрифты.</strong> Для отображения текста ваш браузер подключается к Google Fonts, который получает ваш IP-адрес (${G_PRIV}).</li>
+<li><strong>Форма сообщества.</strong> Введённые данные собираются через Google Forms (${G_PRIV}) и используются только для отправки новостей проекта. Основание: ваше согласие, которое можно отозвать в любой момент.</li>
+<li><strong>Электронная почта.</strong> Если вы нам пишете, мы используем ваш адрес и сообщение только для ответа.</li>
+<li><strong>Telegram-бот ${BOT}.</strong> Бот хранит ваш Telegram ID и имя пользователя, а также вашу активность в боте (например, баллы и приглашения), чтобы работать. Основание: предоставление запрошенного вами сервиса. У Telegram своя политика (${TG_PRIV}).</li>
+<li><strong>Графики и внешние ссылки.</strong> Страница статистики показывает график DexScreener, а ссылки на Uniswap, Basescan или GemPad ведут на сторонние сервисы со своими политиками.</li>
+</ul>
+<h3>Блокчейн</h3>
+<p>Транзакции в сети Base по своей природе публичны и необратимы. Мы не можем их изменить или удалить.</p>
+<h3>Срок хранения</h3>
+<p>Только пока данные нужны для цели сбора. Мы удаляем данные по запросу или когда они больше не нужны. Мы не продаём и не сдаём в аренду персональные данные.</p>
+<h3>Передача за пределы ЕС</h3>
+<p>GitHub и Google — компании из США, Telegram также работает за пределами ЕС. Передача основана на гарантиях этих поставщиков (например, EU-US Data Privacy Framework или стандартные договорные положения).</p>
+<h3>Ваши права</h3>
+<p>Вы имеете право на доступ, исправление, удаление, ограничение, возражение и переносимость данных, а также право отозвать согласие. Пишите на ${EMAIL}; мы отвечаем в течение месяца. Вы также можете подать жалобу в орган по защите данных: во Франции — ${CNIL}, или в орган вашей страны.</p>`
+            }
+        };
+
+        const LANGS = ['ro', 'en', 'fr', 'ru'];
+        function getStored() {
+            try { return localStorage.getItem('amgf-lang') || localStorage.getItem('language'); } catch (e) { return null; }
+        }
+        let lang = getStored();
+        if (!LANGS.includes(lang)) {
+            const b = (navigator.language || 'ro').slice(0, 2).toLowerCase();
+            lang = LANGS.includes(b) ? b : 'ro';
+        }
+        function apply(l) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const k = el.getAttribute('data-i18n');
+                if (T[k] && T[k][l]) el.innerHTML = T[k][l];
+            });
+            document.documentElement.lang = l;
+            document.title = 'AMGF - ' + T.title[l];
+            const btn = document.getElementById('language-toggle');
+            if (btn) btn.textContent = LANGS.map(x => x === l ? '[' + x.toUpperCase() + ']' : x.toUpperCase()).join(' / ');
+        }
+        apply(lang);
+        document.getElementById('language-toggle').addEventListener('click', () => {
+            lang = LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length];
+            try { localStorage.setItem('amgf-lang', lang); localStorage.setItem('language', lang); } catch (e) {}
+            apply(lang);
+        });
+    })();
+    </script>
+</body>
+</html>
