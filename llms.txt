@@ -1,20 +1,20 @@
 # AMGF - Libertate Financiara
 
-> AMGF este un ecosistem DeFi transparent construit pe reteaua Base (Ethereum L2), centrat pe tokenul $AMGF (ERC-20, contract 0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765). Include un portofel non-custodial multi-chain, staking, airdrop manager, platforma educationala Learn-to-Earn si guvernanta DAO.
+> AMGF este un ecosistem DeFi transparent construit pe reteaua Base (Ethereum L2), centrat pe tokenul $AMGF (ERC-20, contract 0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765). Include un portofel non-custodial multi-chain, AMGF Code App, platforma educationala AMGF Learn si botul de comunitate AMGF Liberty pe Telegram.
 
 ## Pagini principale
 
 - [Pagina principala](https://amgf-finance.com/): prezentarea proiectului, tokenomics, roadmap, transparenta lichiditatii
-- [Cartea Alba](https://amgf-finance.com/whitepaper.html): whitepaper complet v1.0 - misiune, tokenomics, guvernanta DAO, aspecte tehnice
+- [Cartea Alba](https://amgf-finance.com/whitepaper.html): whitepaper complet v1.0 - misiune, tokenomics, trezoreria ecosistemului, aspecte tehnice
 - [Comunitate](https://amgf-finance.com/community.html): pagina comunitatii AMGF
 - [Statistici Live](https://amgf-finance.com/stats.html): dashboard live cu pret, market cap si fonduri blocate
 
 ## Aplicatii din ecosistem
 
 - [AMGF Wallet N.C.](https://wallet.amgf-finance.com): portofel non-custodial multi-chain
-- [Airdrop Manager](https://airdrop.amgf-finance.com): campanii de airdrop
-- [Staking Hub](https://staking.amgf-finance.com): staking $AMGF
-- [AMGF Code App](https://code.amgf-finance.com): platforma de dezvoltare Build-to-Earn
+- [AMGF Code App](https://code.amgf-finance.com): platforma de dezvoltare
+- [AMGF Learn](https://learn.amgf-finance.com): platforma educationala gratuita
+- [AMGF Liberty Bot](https://t.me/amgf_liberty_bot): botul de comunitate pe Telegram
 
 ## Date cheie
 
