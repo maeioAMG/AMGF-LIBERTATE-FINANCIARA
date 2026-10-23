@@ -240,3 +240,10 @@ footer {
     nav a { margin: 0.3rem; font-size: 0.9rem; }
     .link-button { width: 100%; }
 }
+
+/* Linkuri oficiale & FAQ */
+.official-links { list-style-type: '🔗 '; }
+.safety-subtitle { font-family: 'Montserrat', sans-serif; color: #e2b13c; font-size: 1.3rem; margin: 1.5rem 0 1rem; }
+.faq-section details { border-bottom: 1px solid #e2b13c33; padding: 1rem 0; }
+.faq-section summary { cursor: pointer; color: #fff; font-weight: 600; font-size: 1.15rem; }
+.faq-section details p { margin: 0.8rem 0 0; }
