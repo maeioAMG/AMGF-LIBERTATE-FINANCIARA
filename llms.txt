@@ -20,5 +20,7 @@
 
 - Retea: Base (Coinbase Ethereum L2)
 - Total supply: 1,000,000,000 $AMGF
-- Lichiditate blocata pe GemPad pana in iunie 2027
+- Alocare: 25% echipa & fondator (blocat pe GemPad pana pe 9 iunie 2027), 20% trezorerie ecosistem (vesting pe GemPad pana pe 31 august 2027), 15% rezerva fondator (blocat pe GemPad pana pe 3 iulie 2028), 40% lichiditate & comunitate (in circulatie)
+- 61% din LP-ul Uniswap V2 blocat pe GemPad pana pe 5 iunie 2027
+- Contract imuabil: owner renuntat (0x000...000), minimal proxy EIP-1167 fara functie de upgrade
 - Contact: contact@amgf-finance.com | Telegram: @amgf_liberty_bot
