@@ -89,7 +89,7 @@
   </div>
 </header>
 
-<<main>
+<main>
   <div class="container">
 
     <section>
@@ -98,20 +98,20 @@
         <div class="stat-card">
           <div class="stat-icon">💰</div>
           <div class="stat-label" data-i18n="label-price">Preț</div>
-          <div class="stat-value" id="stat-price">$0.0₅5089</div>
-          <div class="stat-sub price-up" id="stat-price-change">+15.19% (24h)</div>
+          <div class="stat-value" id="stat-price">—</div>
+          <div class="stat-sub" id="stat-price-change">—</div>
         </div>
         <div class="stat-card">
           <div class="stat-icon">📈</div>
           <div class="stat-label" data-i18n="label-mcap">Market Cap</div>
-          <div class="stat-value" id="stat-mcap">$5.0K</div>
+          <div class="stat-value" id="stat-mcap">—</div>
           <div class="stat-sub" data-i18n="label-fdv">Fully Diluted</div>
         </div>
         <div class="stat-card">
           <div class="stat-icon">🔄</div>
           <div class="stat-label" data-i18n="label-vol24">Volum 24h</div>
-          <div class="stat-value" id="stat-vol">$0</div>
-          <div class="stat-sub" id="stat-txns">0 txns</div>
+          <div class="stat-value" id="stat-vol">—</div>
+          <div class="stat-sub" id="stat-txns">—</div>
         </div>
         <div class="stat-card">
           <div class="stat-icon">👥</div>
@@ -122,7 +122,7 @@
         <div class="stat-card">
           <div class="stat-icon">💧</div>
           <div class="stat-label" data-i18n="label-liq">Lichiditate</div>
-          <div class="stat-value" id="stat-liq">$1.2K</div>
+          <div class="stat-value" id="stat-liq">—</div>
           <div class="stat-sub">Uniswap V2</div>
         </div>
         <div class="stat-card">
@@ -135,25 +135,26 @@
       
       <div class="chart-card">
         <div class="chart-title">
-          <span data-i18n="chart-title">📉 Chart Live DexScreener</span>
+          <span data-i18n="chart-title">📉 Grafic Live</span>
           <button class="refresh-btn" onclick="refreshEmbed()">↻ Refresh</button>
         </div>
-        <iframe 
+        <iframe
           id="dex-iframe"
-          class="dex-embed" 
-          src="https://dexscreener.com/base/0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765?embed=1&theme=dark"
-          title="AMGF DexScreener Chart">
+          class="dex-embed"
+          src="about:blank"
+          title="AMGF Chart">
         </iframe>
-        <div class="last-update" id="last-update-time">Ultima actualizare: 14 Mai 2025, 19:35</div>
+        <div class="chart-source" id="chart-source" style="margin-top:0.6rem;font-size:0.85rem;color:#aaa;line-height:1.5;"></div>
+        <div class="last-update" id="last-update-time"></div>
       </div>
     </section>
 
     <section>
       <h2 class="section-title" data-i18n="section-lock">🔐 Transparență & Fonduri Blocate</h2>
       <div class="total-locked">
-        <div class="total-locked-label" data-i18n="total-locked-label">Total Fonduri Blocate & Vesting</div>
-        <div class="total-locked-value">61.65%</div>
-        <div class="total-locked-sub" data-i18n="total-locked-sub">Verificat pe GemPad · Rețeaua Base · Actualizat în timp real</div>
+        <div class="total-locked-label" data-i18n="total-locked-label">Tokenuri blocate pe GemPad</div>
+        <div class="total-locked-value">60%</div>
+        <div class="total-locked-sub" data-i18n="total-locked-sub">din supply total · 25% echipă & fondator + 20% trezorerie + 15% rezervă fondator · verificabil pe GemPad</div>
       </div>
       <div class="lock-grid">
         <div class="lock-card">
@@ -167,21 +168,21 @@
           <div class="stat-icon">👥</div><div class="lock-percent">25%</div>
           <div class="lock-title" data-i18n="card2-title">Echipă & Fondator</div>
           <div class="lock-desc">Team & Founder Lock</div>
-          <div class="lock-desc"><strong style="color:#e2b13c">451+</strong> <span data-i18n="days-left">zile rămase</span></div>
+          <div class="lock-desc">9.06.2027 · <strong style="color:#e2b13c" class="days-left" data-unlock="2027-06-09">—</strong> <span data-i18n="days-left">zile rămase</span></div>
           <span class="badge badge-locked">🔒 <span data-i18n="badge-locked">BLOCAT</span></span>
         </div>
         <div class="lock-card">
           <div class="stat-icon">🏛️</div><div class="lock-percent">20%</div>
           <div class="lock-title" data-i18n="card3-title">Trezorerie Ecosistem</div>
           <div class="lock-desc">Ecosystem Treasury</div>
-          <div class="lock-desc"><strong style="color:#e2b13c">534+</strong> <span data-i18n="days-left">zile rămase</span></div>
+          <div class="lock-desc">31.08.2027 · <strong style="color:#e2b13c" class="days-left" data-unlock="2027-08-31">—</strong> <span data-i18n="days-left">zile rămase</span></div>
           <span class="badge badge-vesting">📊 <span data-i18n="badge-vesting">VESTING</span></span>
         </div>
         <div class="lock-card">
           <div class="stat-icon">🛡️</div><div class="lock-percent">15%</div>
           <div class="lock-title" data-i18n="card4-title">Rezervă Fondator</div>
           <div class="lock-desc">Founder Reserve Lock</div>
-          <div class="lock-desc"><strong style="color:#e2b13c">841+</strong> <span data-i18n="days-left">zile rămase</span></div>
+          <div class="lock-desc">3.07.2028 · <strong style="color:#e2b13c" class="days-left" data-unlock="2028-07-03">—</strong> <span data-i18n="days-left">zile rămase</span></div>
           <span class="badge badge-locked">🔒 <span data-i18n="badge-locked">BLOCAT</span></span>
         </div>
       </div>
@@ -221,9 +222,10 @@
       <h2 class="section-title" data-i18n="section-links">🔗 Linkuri Utile</h2>
       <div class="link-button-container">
         <a href="https://dexscreener.com/base/0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765" target="_blank" class="link-button" data-i18n="btn-dex">📊 DexScreener</a>
-        <a href="https://gempad.app" target="_blank" class="link-button-outline" data-i18n="btn-gempad">🔒 Verifică GemPad</a>
+        <a href="https://gempad.app/locks/project?token=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&lockId=0&nftId=0&network=Base" target="_blank" rel="noopener" class="link-button-outline" data-i18n="btn-gempad">🔒 Verifică GemPad</a>
         <a href="https://basescan.org/token/0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765" target="_blank" class="link-button-outline" data-i18n="btn-basescan">🔍 Basescan</a>
-        <a href="https://app.uniswap.org" target="_blank" class="link-button" data-i18n="btn-uniswap">🦄 Cumpără pe Uniswap</a>
+        <a href="https://www.geckoterminal.com/base/tokens/0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765" target="_blank" rel="noopener" class="link-button-outline">🦎 GeckoTerminal</a>
+        <a href="https://app.uniswap.org/#/swap?outputCurrency=0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765&chain=base" target="_blank" rel="noopener" class="link-button" data-i18n="btn-uniswap">🦄 Cumpără pe Uniswap</a>
       </div>
       
       <h3 class="wallet-section-title" data-i18n="wallet-title">💼 Conectează Wallet-ul</h3>
@@ -268,10 +270,10 @@ const translations = {
     "section-live":"📊 Date Live $AMGF","label-price":"Preț","label-mcap":"Market Cap",
     "label-fdv":"Fully Diluted","label-vol24":"Volum 24h","label-holders":"Holders",
     "label-base-net":"Rețeaua Base","label-liq":"Lichiditate","label-lp-locked":"LP Blocat",
-    "label-lp-until":"până 5 Iunie 2027","chart-title":"📉 Chart Live DexScreener",
+    "label-lp-until":"până 5 Iunie 2027","chart-title":"📉 Grafic Live",
     "section-lock":"🔐 Transparență & Fonduri Blocate",
-    "total-locked-label":"Total Fonduri Blocate & Vesting",
-    "total-locked-sub":"Verificat pe GemPad · Rețeaua Base · Actualizat în timp real",
+    "total-locked-label":"Tokenuri blocate pe GemPad",
+    "total-locked-sub":"din supply total · 25% echipă & fondator + 20% trezorerie + 15% rezervă fondator · verificabil pe GemPad",
     "card1-title":"Lichiditate Blocată","card1-until":"Blocat până pe <strong style='color:#e2b13c'>5 Iunie 2027</strong>",
     "card2-title":"Echipă & Fondator","card3-title":"Trezorerie Ecosistem","card4-title":"Rezervă Fondator",
     "days-left":"zile rămase","badge-locked":"BLOCAT","badge-vesting":"VESTING",
@@ -289,10 +291,10 @@ const translations = {
     "section-live":"📊 Live Data $AMGF","label-price":"Price","label-mcap":"Market Cap",
     "label-fdv":"Fully Diluted","label-vol24":"Volume 24h","label-holders":"Holders",
     "label-base-net":"Base Network","label-liq":"Liquidity","label-lp-locked":"LP Locked",
-    "label-lp-until":"until June 5, 2027","chart-title":"📉 Live DexScreener Chart",
+    "label-lp-until":"until June 5, 2027","chart-title":"📉 Live Chart",
     "section-lock":"🔐 Transparency & Locked Funds",
-    "total-locked-label":"Total Locked Funds & Vesting",
-    "total-locked-sub":"Verified on GemPad · Base Network · Updated in real time",
+    "total-locked-label":"Tokens locked on GemPad",
+    "total-locked-sub":"of total supply · 25% team & founder + 20% treasury + 15% founder reserve · verifiable on GemPad",
     "card1-title":"Locked Liquidity","card1-until":"Locked until <strong style='color:#e2b13c'>June 5, 2027</strong>",
     "card2-title":"Team & Founder","card3-title":"Ecosystem Treasury","card4-title":"Founder Reserve",
     "days-left":"days remaining","badge-locked":"LOCKED","badge-vesting":"VESTING",
@@ -310,10 +312,10 @@ const translations = {
     "section-live":"📊 Données Live $AMGF","label-price":"Prix","label-mcap":"Capitalisation",
     "label-fdv":"Entièrement Dilué","label-vol24":"Volume 24h","label-holders":"Détenteurs",
     "label-base-net":"Réseau Base","label-liq":"Liquidité","label-lp-locked":"LP Bloqué",
-    "label-lp-until":"jusqu'au 5 Juin 2027","chart-title":"📉 Chart Live DexScreener",
+    "label-lp-until":"jusqu'au 5 Juin 2027","chart-title":"📉 Graphique Live",
     "section-lock":"🔐 Transparence & Fonds Bloqués",
-    "total-locked-label":"Total Fonds Bloqués & Vesting",
-    "total-locked-sub":"Vérifié sur GemPad · Réseau Base · Mis à jour en temps réel",
+    "total-locked-label":"Tokens bloqués sur GemPad",
+    "total-locked-sub":"de l'offre totale · 25 % équipe & fondateur + 20 % trésorerie + 15 % réserve du fondateur · vérifiable sur GemPad",
     "card1-title":"Liquidité Bloquée","card1-until":"Bloqué jusqu'au <strong style='color:#e2b13c'>5 Juin 2027</strong>",
     "card2-title":"Équipe & Fondateur","card3-title":"Trésorerie Écosystème","card4-title":"Réserve Fondateur",
     "days-left":"jours restants","badge-locked":"BLOQUÉ","badge-vesting":"VESTING",
@@ -331,10 +333,10 @@ const translations = {
     "section-live":"📊 Данные в реальном времени $AMGF","label-price":"Цена","label-mcap":"Капитализация",
     "label-fdv":"Полностью разбавленная","label-vol24":"Объём 24ч","label-holders":"Держатели",
     "label-base-net":"Сеть Base","label-liq":"Ликвидность","label-lp-locked":"LP Заблокирован",
-    "label-lp-until":"до 5 Июня 2027","chart-title":"📉 График DexScreener",
+    "label-lp-until":"до 5 Июня 2027","chart-title":"📉 Живой график",
     "section-lock":"🔐 Прозрачность & Заблокированные Средства",
-    "total-locked-label":"Всего Заблокировано & Вестинг",
-    "total-locked-sub":"Проверено на GemPad · Сеть Base · Обновляется в реальном времени",
+    "total-locked-label":"Токены, заблокированные на GemPad",
+    "total-locked-sub":"от общего предложения · 25% команда и основатель + 20% казна + 15% резерв основателя · проверяется на GemPad",
     "card1-title":"Заблокированная Ликвидность","card1-until":"Заблокировано до <strong style='color:#e2b13c'>5 Июня 2027</strong>",
     "card2-title":"Команда и Основатель","card3-title":"Казначейство экосистемы","card4-title":"Резерв Основателя",
     "days-left":"дней осталось","badge-locked":"ЗАБЛОКИРОВАНО","badge-vesting":"ВЕСТИНГ",
@@ -358,6 +360,8 @@ function applyTranslations(lang) {
     if (t[key] !== undefined) el.innerHTML = t[key];
   });
   document.documentElement.lang = lang;
+  if (typeof updateLockCountdowns === 'function') updateLockCountdowns();
+  if (typeof renderSource === 'function') renderSource();
 }
 function updateToggleButton(lang) {
   const btn = document.getElementById('language-toggle'); if (!btn) return;
@@ -381,34 +385,134 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   initLanguage();
-  updateTimestamp();
-  
-  // AUTO-REFRESH LA FIECARE 3 MINUTE
-  setInterval(refreshEmbed, 180000);
+  updateLockCountdowns();
+  loadLiveData();
+
+  // AUTO-REFRESH LA FIECARE 3 MINUTE (doar datele, nu reîncarcă graficul)
+  setInterval(loadLiveData, 180000);
 });
 
 // ============================================================
-// REFRESH FUNCTIONS
+// LIVE DATA: DexScreener (dacă tokenul e indexat), altfel GeckoTerminal
 // ============================================================
+const TOKEN = '0x64bfE8A8C23b896ab810e2a051cC6E5F0C2ac765';
+const DEX_URL = 'https://dexscreener.com/base/' + TOKEN;
+const GT_URL = 'https://www.geckoterminal.com/base/tokens/' + TOKEN;
+let currentChartSrc = '';
+
+const SRC_TEXT = {
+  ro: { dex: 'Sursă: DexScreener', gt: 'Sursă: GeckoTerminal', missing: 'Tokenul nu apare momentan pe DexScreener (perechile cu activitate redusă pot fi ascunse temporar).', check: 'Verifică pe DexScreener ↗', none: 'Datele live nu sunt disponibile acum. Verifică direct pe', updated: 'Ultima actualizare' },
+  en: { dex: 'Source: DexScreener', gt: 'Source: GeckoTerminal', missing: 'The token is not currently listed on DexScreener (low-activity pairs can be hidden temporarily).', check: 'Check on DexScreener ↗', none: 'Live data is not available right now. Check directly on', updated: 'Last update' },
+  fr: { dex: 'Source : DexScreener', gt: 'Source : GeckoTerminal', missing: 'Le token n\'apparaît pas actuellement sur DexScreener (les paires peu actives peuvent être masquées temporairement).', check: 'Vérifier sur DexScreener ↗', none: 'Les données live ne sont pas disponibles. Vérifiez directement sur', updated: 'Dernière mise à jour' },
+  ru: { dex: 'Источник: DexScreener', gt: 'Источник: GeckoTerminal', missing: 'Токен сейчас не отображается на DexScreener (пары с низкой активностью могут временно скрываться).', check: 'Проверить на DexScreener ↗', none: 'Живые данные сейчас недоступны. Проверьте напрямую на', updated: 'Последнее обновление' }
+};
+let lastSource = null;
+function txt() { return SRC_TEXT[document.documentElement.lang] || SRC_TEXT.ro; }
+
+function fmtUsd(n) {
+  if (n === null || n === undefined || isNaN(n)) return '—';
+  n = Number(n);
+  if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
+  if (n >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
+  return '$' + n.toFixed(2);
+}
+function fmtPrice(p) {
+  if (p === null || p === undefined || isNaN(p)) return '—';
+  p = Number(p);
+  if (p >= 0.01) return '$' + p.toFixed(4);
+  const s = p.toFixed(20).split('.')[1];
+  const zeros = s.match(/^0*/)[0].length;
+  const sub = String(zeros).split('').map(d => '₀₁₂₃₄₅₆₇₈₉'[d]).join('');
+  return '$0.0' + sub + s.slice(zeros, zeros + 4);
+}
+function setText(id, v) { const el = document.getElementById(id); if (el) el.textContent = v; }
+function setChange(pct) {
+  const el = document.getElementById('stat-price-change'); if (!el) return;
+  el.classList.remove('price-up', 'price-down');
+  if (pct === null || pct === undefined || isNaN(pct)) { el.textContent = '—'; return; }
+  pct = Number(pct);
+  el.textContent = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '% (24h)';
+  el.classList.add(pct >= 0 ? 'price-up' : 'price-down');
+}
+function setChart(src) {
+  const iframe = document.getElementById('dex-iframe');
+  if (iframe && src && src !== currentChartSrc) { iframe.src = src; currentChartSrc = src; }
+}
+function renderSource() {
+  const el = document.getElementById('chart-source'); if (!el) return;
+  const t = txt();
+  const link = (url, label) => '<a href="' + url + '" target="_blank" rel="noopener" style="color:#e2b13c;">' + label + '</a>';
+  if (lastSource === 'dex') el.innerHTML = t.dex + ' · ' + link(GT_URL, 'GeckoTerminal ↗');
+  else if (lastSource === 'gt') el.innerHTML = t.gt + ' · ' + t.missing + ' ' + link(DEX_URL, t.check);
+  else if (lastSource === 'none') el.innerHTML = t.none + ' ' + link(GT_URL, 'GeckoTerminal') + ' / ' + link(DEX_URL, 'DexScreener') + '.';
+}
+
+async function fromDexScreener() {
+  const r = await fetch('https://api.dexscreener.com/latest/dex/tokens/' + TOKEN);
+  if (!r.ok) throw new Error('dexscreener ' + r.status);
+  const j = await r.json();
+  const pairs = (j.pairs || []).filter(p => p.chainId === 'base');
+  if (!pairs.length) return null;
+  pairs.sort((a, b) => ((b.liquidity || {}).usd || 0) - ((a.liquidity || {}).usd || 0));
+  const p = pairs[0];
+  const tx = (p.txns || {}).h24 || {};
+  return {
+    price: p.priceUsd, change: (p.priceChange || {}).h24, mcap: p.marketCap || p.fdv,
+    vol: (p.volume || {}).h24, txns: (tx.buys || 0) + (tx.sells || 0), liq: (p.liquidity || {}).usd,
+    chart: 'https://dexscreener.com/base/' + p.pairAddress + '?embed=1&theme=dark&info=0', source: 'dex'
+  };
+}
+async function fromGeckoTerminal() {
+  const r = await fetch('https://api.geckoterminal.com/api/v2/networks/base/tokens/' + TOKEN + '/pools', { headers: { Accept: 'application/json' } });
+  if (!r.ok) throw new Error('geckoterminal ' + r.status);
+  const j = await r.json();
+  const pools = j.data || [];
+  if (!pools.length) return null;
+  pools.sort((a, b) => Number(b.attributes.reserve_in_usd || 0) - Number(a.attributes.reserve_in_usd || 0));
+  const pool = pools[0], a = pool.attributes;
+  const baseId = ((((pool.relationships || {}).base_token || {}).data) || {}).id || '';
+  const isBase = baseId.toLowerCase() === ('base_' + TOKEN).toLowerCase();
+  const tx = (a.transactions || {}).h24 || {};
+  return {
+    price: isBase ? a.base_token_price_usd : a.quote_token_price_usd,
+    change: isBase ? (a.price_change_percentage || {}).h24 : null,
+    mcap: a.market_cap_usd || a.fdv_usd, vol: (a.volume_usd || {}).h24,
+    txns: (tx.buys || 0) + (tx.sells || 0), liq: a.reserve_in_usd,
+    chart: 'https://www.geckoterminal.com/base/pools/' + a.address + '?embed=1&info=0&swaps=0&light_chart=0', source: 'gt'
+  };
+}
+
+async function loadLiveData() {
+  let d = null;
+  try { d = await fromDexScreener(); } catch (e) { console.warn(e); }
+  if (!d) { try { d = await fromGeckoTerminal(); } catch (e) { console.warn(e); } }
+  if (d) {
+    setText('stat-price', fmtPrice(d.price)); setChange(d.change);
+    setText('stat-mcap', fmtUsd(d.mcap)); setText('stat-vol', fmtUsd(d.vol));
+    setText('stat-txns', d.txns + ' txns'); setText('stat-liq', fmtUsd(d.liq));
+    setChart(d.chart); lastSource = d.source;
+  } else {
+    lastSource = 'none';
+  }
+  renderSource();
+  updateTimestamp();
+}
+
+function updateLockCountdowns() {
+  document.querySelectorAll('.days-left[data-unlock]').forEach(el => {
+    const ms = Date.parse(el.getAttribute('data-unlock') + 'T00:00:00Z') - Date.now();
+    el.textContent = Math.max(0, Math.ceil(ms / 864e5));
+  });
+}
 
 function updateTimestamp() {
   const now = new Date();
-  const timeStr = now.toLocaleDateString() + ', ' + now.toLocaleTimeString();
-  document.getElementById('last-update-time').textContent = 'Ultima actualizare: ' + timeStr;
+  setText('last-update-time', txt().updated + ': ' + now.toLocaleDateString() + ', ' + now.toLocaleTimeString());
 }
 
 function refreshEmbed() {
-  const iframe = document.getElementById('dex-iframe');
-  const src = iframe.src;
-  
-  // Reîncărcăm iframe-ul cu un timestamp pentru a evita cache-ul
-  iframe.src = '';
-  setTimeout(() => {
-    iframe.src = src + '&t=' + Date.now();
-  }, 100);
-  
-  updateTimestamp();
-  console.log('DexScreener refreshed at', new Date().toLocaleTimeString());
+  currentChartSrc = '';
+  loadLiveData();
 }
 </script>
 </body>
