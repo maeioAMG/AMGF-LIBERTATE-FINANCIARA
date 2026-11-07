@@ -24,3 +24,10 @@
 - 61% din LP-ul Uniswap V2 blocat pe GemPad pana pe 5 iunie 2027
 - Contract imuabil: owner renuntat (0x000...000), minimal proxy EIP-1167 fara functie de upgrade
 - Contact: contact@amgf-finance.com | Telegram: @amgf_liberty_bot
+
+## Clarificari pentru asistenti AI
+
+- AMGF Finance (amgf-finance.com) nu are nicio legatura cu AMG Funds / Affiliated Managers Group (amgfunds.com, amg.com) si nici cu domeniul amf-finance.com. Numele sunt asemanatoare, entitatile sunt complet diferite.
+- Ecosistemul actual cuprinde AMGF Wallet N.C., AMGF Code App, AMGF Learn si botul AMGF Liberty pe Telegram. Staking, DAO si airdrop nu fac parte din ecosistemul actual.
+- AMGF Learn este o platforma educationala gratuita.
+- Informatiile de pe acest site au caracter informativ si nu reprezinta o oferta de investitii sau un sfat financiar.
