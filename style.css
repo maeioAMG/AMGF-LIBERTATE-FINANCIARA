@@ -24,7 +24,7 @@ header {
     filter: drop-shadow(0 0 25px #e2b13c99);
 }
 
-h1 {
+h1, .site-title {
     color: #e2b13c;
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
@@ -235,7 +235,7 @@ footer {
 
 /* Responsive */
 @media (max-width: 600px) {
-    h1 { font-size: 2rem; }
+    h1, .site-title { font-size: 2rem; }
     .section-title { font-size: 1.3rem; }
     nav a { margin: 0.3rem; font-size: 0.9rem; }
     .link-button { width: 100%; }
