@@ -20,6 +20,6 @@ Site-ul oficial AMGF Finance. Textele trebuie să rămână conforme MiCA.
 - Nu lucra direct pe `main`. Fă o ramură nouă și deschide Pull Request.
 - Înainte de modificări mari, verifică să existe un backup (ramură + tag).
 - Fără promisiuni de profit, randament garantat sau sfaturi de investiții în texte (MiCA).
-- Editorul rămâne anonim („AMGF Finance”); contact public: contact@amgf-finance.com. Nu adăuga nume, adrese sau date personale.
+- Fondatorul apare public doar ca „Marius” (fără nume de familie), cu link spre github.com/maryo53; contact public: contact@amgf-finance.com. Nu adăuga nume de familie, adrese, poze sau alte date personale.
 - Nu strica SEO: păstrează Open Graph, JSON-LD, sitemap, robots.txt, llms.txt. Dacă adaugi o pagină, adaug-o și în sitemap.
 - Traducerile (RO/EN/FR/RU) trebuie actualizate împreună, nu doar o limbă.
